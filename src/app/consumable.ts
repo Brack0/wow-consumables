@@ -1,13 +1,7 @@
 import { Material } from './material'
+import { Spec } from './utils.service'
 
 export abstract class Consumable extends Material {
-    utility: Utility;
+    utility: Spec;
     craftMaterials: Array<[Material, number]>;
-}
-
-enum Utility {
-    DPS,
-    Tank,
-    Heal,
-    Hybrid
 }

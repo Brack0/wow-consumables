@@ -2,9 +2,30 @@ import { Content } from './content';
 import { Currency } from './currency';
 import { Plant } from './plant';
 import { Flask } from './flask';
-import { Spec } from './utils.service';
+import { Specialization } from './specialization';
+
 
 // Init data
+const specDd = new Specialization({
+    idSpec: 0,
+    name: 'Damage Dealer'
+});
+
+const specTank = new Specialization({
+    idSpec: 1,
+    name: 'Tank'
+});
+
+const specHealer = new Specialization({
+    idSpec: 2,
+    name: 'Healer'
+});
+
+const specHybrid = new Specialization({
+    idSpec: 3,
+    name: 'Hybrid'
+});
+
 const currentContent = new Content({
     idContent: 1,
     expansionName: 'Legion',
@@ -62,7 +83,7 @@ const flaskIntellect = new Flask(currentContent, {
     idMaterial: 127847,
     name: 'Flask of the Whispered Pact',
     stackSize: 20,
-    utility: Spec.DPS,
+    utility: [specDd, specHealer],
     craftMaterials: [
         {
             component: starlightRose,
@@ -83,7 +104,7 @@ const flaskAgility = new Flask(currentContent, {
     idMaterial: 127848,
     name: 'Flask of the Seventh Demon',
     stackSize: 20,
-    utility: Spec.DPS,
+    utility: [specDd, specTank],
     craftMaterials: [
         {
             component: starlightRose,
@@ -104,7 +125,7 @@ const flaskStrengh = new Flask(currentContent, {
     idMaterial: 127849,
     name: 'Flask of the Countless Armies',
     stackSize: 20,
-    utility: Spec.DPS,
+    utility: [specDd, specTank],
     craftMaterials: [
         {
             component: starlightRose,
@@ -125,7 +146,7 @@ const flaskStamina = new Flask(currentContent, {
     idMaterial: 127850,
     name: 'Flask of Ten Thousand Scars',
     stackSize: 20,
-    utility: Spec.Tank,
+    utility: [specTank],
     craftMaterials: [
         {
             component: starlightRose,
@@ -142,6 +163,6 @@ const flaskStamina = new Flask(currentContent, {
     ]
 });
 
-
+export const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
 export const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
 export const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];

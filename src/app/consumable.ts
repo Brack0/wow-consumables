@@ -1,9 +1,9 @@
 import { Content } from './content';
 import { Material } from './material';
-import { Spec } from './utils.service';
+import { Specialization } from './specialization';
 
 export abstract class Consumable extends Material {
-    utility: Spec;
+    utility: Array<Specialization>;
     craftMaterials: Array<{component: Material, amount: number}>;
     wantedNumber: number;
 

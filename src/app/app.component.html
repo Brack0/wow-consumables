@@ -13,14 +13,15 @@
   <ul class="flasks">
     <li *ngFor="let flask of flasks; let index=index">
       <span class="badge">{{flask.idMaterial}}</span>
-      <a href="https://www.wowhead.com/spell={{flask.idMaterial}}" class="itemRef">{{flask.name}}</a>
+      <a href="https://www.wowhead.com/item={{flask.idMaterial}}" class="itemRef">{{flask.name}}</a>
       <input type="number" [(ngModel)]="flasks[index].wantedNumber" placeholder="number" />
       <ul class="test">
-          <li *ngFor="let craftMaterial of flask.craftMaterials">
-            <span class="badge">{{craftMaterial.component.idMaterial}}</span>
-            <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
-          </li>
-        </ul>
+        <li *ngFor="let craftMaterial of flask.craftMaterials">
+          <span class="badge">{{craftMaterial.component.idMaterial}}</span>
+          <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
+          <span class="badge">{{craftMaterial.amount}}</span>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

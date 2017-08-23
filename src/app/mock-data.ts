@@ -18,12 +18,12 @@ const bloodOfSargeras = new Currency(currentContent, {
     stackSize: 1000
 });
 
-const starlightRose = new Plant(currentContent, {
-    idMaterial: 124105,
-    name: 'Starlight Rose',
+const aethril = new Plant(currentContent, {
+    idMaterial: 124101,
+    name: 'Aethril',
     stackSize: 200,
     currency: bloodOfSargeras,
-    ratio: 3
+    ratio: 10
 });
 
 const dreamleaf = new Plant(currentContent, {
@@ -42,40 +42,106 @@ const foxFlower = new Plant(currentContent, {
     ratio: 10
 });
 
-const flaskMeleeDps = new Flask(currentContent, {
-    idMaterial: 188343,
+const fjarnskaggl = new Plant(currentContent, {
+    idMaterial: 124104,
+    name: 'Fjarnskaggl',
+    stackSize: 200,
+    currency: bloodOfSargeras,
+    ratio: 10
+});
+
+const starlightRose = new Plant(currentContent, {
+    idMaterial: 124105,
+    name: 'Starlight Rose',
+    stackSize: 200,
+    currency: bloodOfSargeras,
+    ratio: 3
+});
+
+const flaskIntellect = new Flask(currentContent, {
+    idMaterial: 127847,
+    name: 'Flask of the Whispered Pact',
+    stackSize: 20,
+    utility: Spec.DPS,
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 7
+        },
+        {
+            component: fjarnskaggl,
+            amount: 10
+        },
+        {
+            component: dreamleaf,
+            amount: 10
+        }
+    ]
+});
+
+const flaskAgility = new Flask(currentContent, {
+    idMaterial: 127848,
+    name: 'Flask of the Seventh Demon',
+    stackSize: 20,
+    utility: Spec.DPS,
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 7
+        },
+        {
+            component: fjarnskaggl,
+            amount: 10
+        },
+        {
+            component: foxFlower,
+            amount: 10
+        }
+    ]
+});
+
+const flaskStrengh = new Flask(currentContent, {
+    idMaterial: 127849,
     name: 'Flask of the Countless Armies',
     stackSize: 20,
     utility: Spec.DPS,
     craftMaterials: [
         {
             component: starlightRose,
-            amount: 3
+            amount: 7
+        },
+        {
+            component: aethril,
+            amount: 10
         },
         {
             component: foxFlower,
-            amount : 10
+            amount: 10
         }
     ]
 });
 
-const flaskTank = new Flask(currentContent, {
-    idMaterial: 188346,
+const flaskStamina = new Flask(currentContent, {
+    idMaterial: 127850,
     name: 'Flask of Ten Thousand Scars',
     stackSize: 20,
     utility: Spec.Tank,
     craftMaterials: [
         {
             component: starlightRose,
-            amount: 12
+            amount: 7
+        },
+        {
+            component: aethril,
+            amount: 10
         },
         {
             component: dreamleaf,
-            amount : 10
+            amount: 10
         }
     ]
 });
 
 
-export const PLANTS: Plant[] = [starlightRose, foxFlower, dreamleaf];
-export const FLASKS: Flask[] = [flaskMeleeDps,flaskTank];
+export const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
+export const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];

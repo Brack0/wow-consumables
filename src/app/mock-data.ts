@@ -8,17 +8,20 @@ import { Specialization } from './specialization';
 // Init data
 const specDd = new Specialization({
     idSpec: 0,
-    name: 'Damage Dealer'
+    name: 'Damage Dealer',
+    icon: 'http://wow.zamimg.com/images/icons/ej-dps.png'
 });
 
 const specTank = new Specialization({
     idSpec: 1,
-    name: 'Tank'
+    name: 'Tank',
+    icon: 'https://wow.zamimg.com/images/icons/ej-tank.png'
 });
 
 const specHealer = new Specialization({
     idSpec: 2,
-    name: 'Healer'
+    name: 'Healer',
+    icon: 'http://wow.zamimg.com/images/icons/ej-healer.png'
 });
 
 const specHybrid = new Specialization({

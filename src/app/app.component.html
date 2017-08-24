@@ -7,9 +7,9 @@
   <h3>List of specializations</h3>
   <ul class="specializations">
     <li *ngFor="let specialization of specializations">
-      {{specialization.name}}
+      <img src="{{specialization.icon}}" />{{specialization.name}}
     </li>
-  </ul>
+  </ul>  
   <h3>List of plants</h3>
   <ul class="plants">
     <li *ngFor="let plant of plants">
@@ -24,7 +24,7 @@
       <br>
       <ul class="utility">
         <li *ngFor="let util of flask.utility">
-          {{util.name}}
+          <img src="{{util.icon}}" />{{util.name}}
         </li>
       </ul>
       <ul class="test">

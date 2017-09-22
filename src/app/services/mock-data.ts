@@ -1,8 +1,9 @@
-import { Content } from './content';
-import { Currency } from './currency';
-import { Plant } from './plant';
-import { Flask } from './flask';
-import { Specialization } from './specialization';
+import { Content } from '../model/content';
+import { Currency } from '../model/currency';
+import { Plant } from '../model/plant';
+import { Flask } from '../model/flask';
+import { Potion } from '../model/potion';
+import { Specialization } from '../model/specialization';
 
 
 // Init data
@@ -166,6 +167,28 @@ const flaskStamina = new Flask(currentContent, {
     ]
 });
 
-export const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
-export const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
-export const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];
+const potion1 = new Potion(currentContent, {
+    idMaterial: 1234567,
+    name: 'Puissance prolongée',
+    stackSize: 100,
+    utility: [specHybrid],
+    craftNumber: 10,
+    craftMaterials: [
+        {
+            component: bloodOfSargeras,
+            amount: 1
+        }
+    ]
+});
+
+const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
+const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
+const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];
+const POTIONS: Potion[] = [potion1];
+
+export const EXPORTDATA = {
+    SPECIALIZATIONS: SPECIALIZATIONS,
+    PLANTS: PLANTS,
+    FLASKS: FLASKS,
+    POTIONS: POTIONS
+};

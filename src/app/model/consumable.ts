@@ -5,6 +5,7 @@ import { Specialization } from './specialization';
 export abstract class Consumable extends Material {
     utility: Array<Specialization>;
     craftMaterials: Array<{component: Material, amount: number}>;
+    craftNumber: number = 1;
     wantedNumber: number;
 
     public constructor(content: Content, init?: Partial<Consumable>) {

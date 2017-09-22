@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from './data.service';
-import { ComputeService } from './compute.service';
-import { Specialization } from './specialization';
-import { Plant } from './plant';
-import { Flask } from './flask';
+import { DataService } from './services/data.service';
+import { ComputeService } from './services/compute.service';
+import { Specialization } from './model/specialization';
+import { Plant } from './model/plant';
+import { Flask } from './model/flask';
+import { Potion } from './model/potion';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit {
   specializations: Specialization[];
   plants: Plant[];
   flasks: Flask[];
+  potions: Potion[];
 
   constructor(private dataService: DataService) { }
 
@@ -34,6 +36,11 @@ export class AppComponent implements OnInit {
     this.dataService.getFlasks()
       .then(flasks => {
         this.flasks = flasks;
+      });
+
+    this.dataService.getPotions()
+      .then(potions => {
+        this.potions = potions;
       });
   }
 

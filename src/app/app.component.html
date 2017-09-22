@@ -9,7 +9,7 @@
     <li *ngFor="let specialization of specializations">
       <img src="{{specialization.icon}}" />{{specialization.name}}
     </li>
-  </ul>  
+  </ul>
   <h3>List of plants</h3>
   <ul class="plants">
     <li *ngFor="let plant of plants">
@@ -27,8 +27,27 @@
           <img src="{{util.icon}}" />{{util.name}}
         </li>
       </ul>
-      <ul class="test">
+      <ul class="craftMaterials">
         <li *ngFor="let craftMaterial of flask.craftMaterials">
+          <span class="badge">{{craftMaterial.amount}}</span>
+          <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3>List of potions with craft materials</h3>
+  <ul class="potions">
+    <li *ngFor="let potion of potions; let index=index">
+      <a href="https://www.wowhead.com/item={{potion.idMaterial}}" class="itemRef">{{potion.name}}</a>
+      <input type="number" [(ngModel)]="potions[index].wantedNumber" placeholder="number" /> {{potion.wantedNumber}}
+      <br>
+      <ul class="utility">
+        <li *ngFor="let util of potion.utility">
+          <img src="{{util.icon}}" />{{util.name}}
+        </li>
+      </ul>
+      <ul class="craftMaterials">
+        <li *ngFor="let craftMaterial of potion.craftMaterials">
           <span class="badge">{{craftMaterial.amount}}</span>
           <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
         </li>

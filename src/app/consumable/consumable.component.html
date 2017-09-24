@@ -1,3 +1,14 @@
-<p>
-  consumable works!
-</p>
+<a href="https://www.wowhead.com/item={{consumable.idMaterial}}" class="itemRef">{{consumable.name}}</a>
+<input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" /> {{consumable.wantedNumber}}
+<br>
+<ul class="utility">
+  <li *ngFor="let util of consumable.utility">
+    <img src="{{util.icon}}" />{{util.name}}
+  </li>
+</ul>
+<ul class="craftMaterials">
+  <li *ngFor="let craftMaterial of consumable.craftMaterials">
+    <span class="badge">{{craftMaterial.amount}}</span>
+    <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
+  </li>
+</ul>

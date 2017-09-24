@@ -10,7 +10,7 @@ import { Potion } from './model/potion';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   providers: [DataService, ComputeService]
 })
 export class AppComponent implements OnInit {

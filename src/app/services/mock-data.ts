@@ -33,7 +33,7 @@ const specHybrid = new Specialization({
 const currentContent = new Content({
     idContent: 1,
     expansionName: 'Legion',
-    patch: '7.2.5',
+    patch: '7.3.0',
     releaseDate: new Date()
 });
 

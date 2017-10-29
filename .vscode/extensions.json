@@ -1,0 +1,56 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=827846
+	// for the documentation about the extensions.json format
+	"recommendations": [
+		// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
+
+		// Extension tslint pour vscode. Pour la qualitÃ© de code.
+		"eg2.tslint",
+
+		// Snippets Angular 2
+		"johnpapa.Angular2",
+
+		// Snippets Angular 2 en commencant Ã  taper a2 puis CTRL+SPACE
+		"danwahlin.angular2-snippets",
+
+		// Permet de faire la gÃ©nÃ©ration d'angular CLI via un click droit directement dans vscode
+		"alexiv.vscode-angular2-files",
+
+		// Permet d'ajouter automatiquement les imports typescript
+		"moppitz.vscode-extension-auto-import",
+
+		// Permet d'ajouter automatiquement les imports typescript (semble mieux que moppitz.vscode-extension-auto-import)
+		"pmneo.tsimporter",
+
+		// Extension pour pouvoir debugger son code javascript qui s'affiche dans chrome directement dans vscode 
+		"msjsdiag.debugger-for-chrome",
+
+		// Extension permettant d'ajouter la jsoc simplement
+		"joelday.docthis",
+
+		// Permet de switcher d'un fichier Ã  un autre via des raccourcis
+		"infinity1207.angular2-switcher",
+
+		// Permet de faire de l'autocompletion sur les paths d'import typescript
+		"ionutvmi.path-autocomplete",
+
+		// Permet de voir la dÃ©finition d'une classe css directement Ã  partir de l'HTML (peek)
+		"pranaygp.vscode-css-peek",
+
+		// Permet de voir la dÃ©finition d'un fichier directement dans la dÃ©claration d'un composant typescript par exemple (peek)
+		"abierbaum.vscode-file-peek",
+
+		// Permet d'afficher des icons sur les rÃ©pertoires
+		"robertohuertasm.vscode-icons",
+
+		// Permet de marquer des lignes pour y retourner facilement
+		"alefragnani.Bookmarks",
+
+		// Permet de vÃ©rifier le code (qualitÃ© du code) HTML.
+		"mkaufman.HTMLHint",
+
+        "ecmel.vscode-html-css",
+
+        "lonefy.vscode-JS-CSS-HTML-formatter"
+	]
+}

@@ -1,0 +1,26 @@
+.grid-container-consumable-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+}
+
+.grid-consumable-header {
+    /* autoprefixer: off */
+    grid-column: span 2;
+    /* autoprefixer: off */
+    grid-row: span 3;
+}
+
+.grid-consumable-utility {
+    text-align: left;
+}
+
+.grid-container-craft-materials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    grid-column-gap: 1em;
+}
+
+.q1 {
+    color: black !important;
+}

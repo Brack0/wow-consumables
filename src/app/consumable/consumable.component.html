@@ -1,14 +1,14 @@
-<a href="https://www.wowhead.com/item={{consumable.idMaterial}}" class="itemRef">{{consumable.name}}</a>
-<input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" /> {{consumable.wantedNumber}}
-<br>
-<ul class="utility">
-  <li *ngFor="let util of consumable.utility">
-    <img src="{{util.icon}}" />{{util.name}}
-  </li>
-</ul>
-<ul class="craftMaterials">
-  <li *ngFor="let craftMaterial of consumable.craftMaterials">
-    <span class="badge">{{craftMaterial.amount}}</span>
-    <a href="https://www.wowhead.com/item={{craftMaterial.component.idMaterial}}" class="itemRef">{{craftMaterial.component.name}}</a>
-  </li>
-</ul>
+<div class="grid-container-consumable-info">
+    <div class="grid-consumable-header">
+        <app-material [material]="consumable" [wantedNumber]="consumable.wantedNumber"></app-material>
+    </div>
+    <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
+        <img src="{{util.icon}}" />{{util.name}}
+    </div>
+</div>
+<div class="grid-container-craft-materials">
+    <div *ngFor="let craftMaterial of consumable.craftMaterials">
+        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount"></app-material>
+    </div>
+</div>
+<input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" /> {{consumable.wantedNumber}}

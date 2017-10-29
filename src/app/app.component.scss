@@ -1,9 +1,17 @@
 h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
 }
 
 .q1 {
-  color: black !important;
+    color: black !important;
+}
+
+.grid-container-consumable {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-column-gap: 1em;
+    max-width: 87.4375em;
+    margin: 0 auto;
 }

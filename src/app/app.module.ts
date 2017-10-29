@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConsumableComponent } from './consumable/consumable.component';
+import { MaterialComponent } from './material/material.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsumableComponent
+    ConsumableComponent,
+    MaterialComponent
   ],
   imports: [
     BrowserModule,

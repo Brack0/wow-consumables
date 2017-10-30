@@ -10,8 +10,9 @@ h1 {
 
 .grid-container-consumable {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
     grid-column-gap: 1em;
     max-width: 87.4375em;
     margin: 0 auto;
+    justify-content: space-evenly;
 }

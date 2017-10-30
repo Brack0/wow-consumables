@@ -1,14 +1,16 @@
-<div class="grid-container-consumable-info">
-    <div class="grid-consumable-header">
-        <app-material [material]="consumable" [wantedNumber]="consumable.wantedNumber"></app-material>
+<div class="consumable">
+    <div class="grid-container-consumable-info">
+        <div class="grid-consumable-header">
+            <app-material [material]="consumable" [wantedNumber]="consumable.wantedNumber"></app-material>
+        </div>
+        <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
+            <img src="{{util.icon}}" />{{util.name}}
+        </div>
     </div>
-    <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
-        <img src="{{util.icon}}" />{{util.name}}
+    <div class="grid-container-craft-materials">
+        <div *ngFor="let craftMaterial of consumable.craftMaterials">
+            <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber / consumable.craftNumber"></app-material>
+        </div>
     </div>
+    <input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" />
 </div>
-<div class="grid-container-craft-materials">
-    <div *ngFor="let craftMaterial of consumable.craftMaterials">
-        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount"></app-material>
-    </div>
-</div>
-<input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" /> {{consumable.wantedNumber}}

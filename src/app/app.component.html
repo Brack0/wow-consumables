@@ -1,43 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
     <h1>
         <img width="35" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">        {{title}}
     </h1>
     <h2>Work in progress</h2>
-    <h3>Specializations</h3>
-    <div class="grid-container-specialization">
-        <div *ngFor="let specialization of specializations">
-            <app-specialization [specialization]="specialization"></app-specialization>
+    <div class="h3-container">
+        <h3>Specializations</h3>
+        <div class="grid-container-specialization">
+            <div *ngFor="let specialization of specializations">
+                <app-specialization [specialization]="specialization"></app-specialization>
+            </div>
         </div>
     </div>
-    <h3>Plants</h3>
-    <div class="grid-container-material">
-        <div *ngFor="let plant of plants">
-            <app-material [material]="plant"></app-material>
+    <div class="h3-container">
+        <h3>Plants</h3>
+        <div class="grid-container-material">
+            <div *ngFor="let plant of plants">
+                <app-material [material]="plant"></app-material>
+            </div>
         </div>
     </div>
-    <h3>Flasks</h3>
-    <div class="grid-container-consumable">
-        <div *ngFor="let flask of flasks; let index=index">
-            <app-consumable [consumable]=flask></app-consumable>
+    <div class="h3-container">
+        <h3>Flasks</h3>
+        <div class="grid-container-consumable">
+            <div *ngFor="let flask of flasks; let index=index">
+                <app-consumable [consumable]=flask></app-consumable>
+            </div>
         </div>
     </div>
-    <h3>Potions</h3>
-    <div class="grid-container-consumable">
-        <div *ngFor="let potion of potions; let index=index">
-            <app-consumable [consumable]=potion></app-consumable>
+    <div class="h3-container">
+        <h3>Potions</h3>
+        <div class="grid-container-consumable">
+            <div *ngFor="let potion of potions; let index=index">
+                <app-consumable [consumable]=potion></app-consumable>
+            </div>
         </div>
     </div>
-    <h3>Flasks (with crafts)</h3>
-    <div class="grid-container-consumable">
-        <div *ngFor="let flask of flasks; let index=index">
-            <app-consumable [consumable]=flask [displayMaterial]="true"></app-consumable>
+    <div class="h3-container">
+        <h3>Flasks (with crafts)</h3>
+        <div class="grid-container-consumable">
+            <div *ngFor="let flask of flasks; let index=index">
+                <app-consumable [consumable]=flask [displayMaterial]="true"></app-consumable>
+            </div>
         </div>
     </div>
-    <h3>Potions (with crafts)</h3>
-    <div class="grid-container-consumable">
-        <div *ngFor="let potion of potions; let index=index">
-            <app-consumable [consumable]=potion [displayMaterial]="true"></app-consumable>
+    <div class="h3-container">
+        <h3>Potions (with crafts)</h3>
+        <div class="grid-container-consumable">
+            <div *ngFor="let potion of potions; let index=index">
+                <app-consumable [consumable]=potion [displayMaterial]="true"></app-consumable>
+            </div>
         </div>
     </div>
 </div>

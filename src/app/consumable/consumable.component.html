@@ -3,8 +3,11 @@
         <div class="grid-consumable-header">
             <app-material [material]="consumable" [wantedNumber]="consumable.wantedNumber"></app-material>
         </div>
-        <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
-            <img src="{{util.icon}}" />{{util.name}}
+        <div class="grid-container-consumable-utility">
+            <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
+                <img src="{{util.icon}}" class="icone" />
+                <div class="utility-name">{{util.name}}</div>
+            </div>
         </div>
     </div>
     <div class="grid-container-craft-materials">

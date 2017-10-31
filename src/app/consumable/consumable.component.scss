@@ -1,24 +1,40 @@
 .grid-container-consumable-info {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 140px;
     grid-column-gap: 1rem;
 }
 
-.grid-consumable-header {
-    /* autoprefixer: off */
-    grid-column: span 2;
-    /* autoprefixer: off */
-    grid-row: span 3;
+.grid-container-consumable-utility {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    grid-row-gap: 0.5rem;
 }
 
 .grid-consumable-utility {
     text-align: left;
 }
 
+.icone {
+    vertical-align: middle;
+}
+
+.utility-name {
+    display: inline-block;
+    vertical-align: middle;
+    height: 22px;
+    width: 118px;
+    font-size: 1em;
+    font-variant: small-caps;
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    letter-spacing: -1px;
+}
+
 .grid-container-craft-materials {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, 100px);
     grid-column-gap: 1em;
+    justify-content: space-evenly;
 }
 
 .q1 {

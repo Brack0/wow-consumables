@@ -3,6 +3,31 @@
     grid-template-columns: 1fr;
 }
 
+.icon-number {
+    height: 68px;
+    width: 68px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+.number {
+    font-size: 2em;
+    color: white;
+    z-index: 30;
+    position: absolute;
+    vertical-align: middle;
+    top: 16px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.name {
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
 .q1 {
     color: black !important;
 }

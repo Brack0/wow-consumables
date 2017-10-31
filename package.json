@@ -6,7 +6,7 @@
         "ng": "ng",
         "start": "ng serve -o",
         "build": "ng build",
-        "prod": "ng build --prod base-href='brack0.github.io/wow-consumables/'",
+        "prod": "ng build --prod base-href='https://brack0.github.io/wow-consumables/'",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"

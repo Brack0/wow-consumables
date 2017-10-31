@@ -8,6 +8,23 @@ h1 {
     color: black !important;
 }
 
+.grid-container-specialization {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: fit-content;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
+.grid-container-material {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    grid-gap: 3em;
+    max-width: 87.4375em;
+    margin: 0 auto;
+    justify-content: space-evenly;
+}
+
 .grid-container-consumable {
     display: grid;
     grid-template-columns: repeat(auto-fit, 350px);

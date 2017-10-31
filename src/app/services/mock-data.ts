@@ -167,9 +167,9 @@ const flaskStamina = new Flask(currentContent, {
     ]
 });
 
-const potion1 = new Potion(currentContent, {
-    idMaterial: 1234567,
-    name: 'Puissance prolongée',
+const potionPP = new Potion(currentContent, {
+    idMaterial: 142117,
+    name: 'Potion of Prolonged Power',
     stackSize: 100,
     utility: [specHybrid],
     craftNumber: 10,
@@ -184,7 +184,7 @@ const potion1 = new Potion(currentContent, {
 const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
 const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
 const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];
-const POTIONS: Potion[] = [potion1];
+const POTIONS: Potion[] = [potionPP];
 
 export const EXPORTDATA = {
     SPECIALIZATIONS: SPECIALIZATIONS,

@@ -5,8 +5,7 @@
         </div>
         <div class="grid-container-consumable-utility">
             <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
-                <img src="{{util.icon}}" class="icone" />
-                <div class="utility-name">{{util.name}}</div>
+                <app-specialization [specialization]="util"></app-specialization>
             </div>
         </div>
     </div>

@@ -11,25 +11,6 @@
     grid-row-gap: 0.5rem;
 }
 
-.grid-consumable-utility {
-    text-align: left;
-}
-
-.icone {
-    vertical-align: middle;
-}
-
-.utility-name {
-    display: inline-block;
-    vertical-align: middle;
-    height: 22px;
-    width: 118px;
-    font-size: 1em;
-    font-variant: small-caps;
-    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    letter-spacing: -1px;
-}
-
 .grid-container-craft-materials {
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);

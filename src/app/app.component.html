@@ -5,13 +5,13 @@
     </h1>
     <h2>Work in progress</h2>
     <h3>List of specializations</h3>
-    <div class="specializations">
+    <div class="grid-container-specialization">
         <div *ngFor="let specialization of specializations">
-            <img src="{{specialization.icon}}" />{{specialization.name}}
+            <app-specialization [specialization]="specialization"></app-specialization>
         </div>
     </div>
     <h3>List of plants</h3>
-    <div class="grid-container-consumable">
+    <div class="grid-container-material">
         <div *ngFor="let plant of plants">
             <app-material [material]="plant"></app-material>
         </div>

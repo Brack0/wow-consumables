@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ConsumableComponent } from './consumable/consumable.component';
 import { MaterialComponent } from './material/material.component';
+import { SpecializationComponent } from './specialization/specialization.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConsumableComponent,
-    MaterialComponent
+    MaterialComponent,
+    SpecializationComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { Consumable } from '../model/consumable';
 })
 export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
+  @Input() displayMaterial = false;
 
   constructor() { }
 

@@ -27,7 +27,8 @@ const specHealer = new Specialization({
 
 const specHybrid = new Specialization({
     idSpec: 3,
-    name: 'Hybrid'
+    name: 'Hybrid',
+    icon: '../../assets/images/hybrid_wow.png'
 });
 
 const currentContent = new Content({

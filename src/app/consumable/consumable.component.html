@@ -9,10 +9,12 @@
             </div>
         </div>
     </div>
-    <div class="grid-container-craft-materials">
-        <div *ngFor="let craftMaterial of consumable.craftMaterials">
-            <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber / consumable.craftNumber"></app-material>
+    <div *ngIf="displayMaterial">
+        <div class="grid-container-craft-materials">
+            <div *ngFor="let craftMaterial of consumable.craftMaterials">
+                <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber / consumable.craftNumber"></app-material>
+            </div>
         </div>
+        <input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" />
     </div>
-    <input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" />
 </div>

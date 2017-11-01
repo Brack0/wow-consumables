@@ -1,3 +1,4 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 body {
     max-width: 87.4375em;
     text-align: center;

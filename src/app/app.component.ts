@@ -7,6 +7,8 @@ import { Plant } from './model/plant';
 import { Flask } from './model/flask';
 import { Potion } from './model/potion';
 
+declare let $WowheadPower;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -42,6 +44,10 @@ export class AppComponent implements OnInit {
       .then(potions => {
         this.potions = potions;
       });
+  }
+
+  reloadWowheadScript() {
+    $WowheadPower.init();
   }
 
   ngOnInit(): void {

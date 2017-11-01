@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { ConsumableComponent } from './consumable/consumable.component';
@@ -16,7 +20,10 @@ import { SpecializationComponent } from './specialization/specialization.compone
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

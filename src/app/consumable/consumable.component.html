@@ -15,6 +15,9 @@
                 <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber / consumable.craftNumber"></app-material>
             </div>
         </div>
-        <input type="number" [(ngModel)]="consumable.wantedNumber" placeholder="number" class="form-control" required #localNumber="ngModel" min="0" max="{{100*consumable.craftNumber}}" step="{{consumable.craftNumber}}" value="0" />
+        <mat-form-field>
+            <input matInput maxlength="3" type="number" #wantedNumber [(ngModel)]="consumable.wantedNumber" min="0" max="{{1000*consumable.craftNumber - 1}}" step="{{consumable.craftNumber}}" value="0" />
+            <mat-hint align="end">Enter the number you want</mat-hint>
+        </mat-form-field>
     </div>
 </div>

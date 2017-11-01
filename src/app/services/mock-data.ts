@@ -84,6 +84,12 @@ const starlightRose = new Plant(currentContent, {
     ratio: 3
 });
 
+const yserallineSeed = new Plant(currentContent, {
+    idMaterial: 128304,
+    name: 'Yseralline Seed',
+    stackSize: 200
+});
+
 const flaskIntellect = new Flask(currentContent, {
     idMaterial: 127847,
     name: 'Flask of the Whispered Pact',
@@ -168,7 +174,219 @@ const flaskStamina = new Flask(currentContent, {
     ]
 });
 
-const potionPP = new Potion(currentContent, {
+const ancientHealingPotion = new Potion(currentContent, {
+    idMaterial: 127834,
+    name: 'Ancient Healing Potion',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: yserallineSeed,
+            amount: 4
+        }
+    ]
+});
+
+const ancientManaPotion = new Potion(currentContent, {
+    idMaterial: 127835,
+    name: 'Ancient Mana Potion',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: yserallineSeed,
+            amount: 4
+        }
+    ]
+});
+
+const ancientRejuvenationPotion = new Potion(currentContent, {
+    idMaterial: 127836,
+    name: 'Ancient Rejuvenation Potion',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientHealingPotion,
+            amount: 1
+        },
+        {
+            component: ancientManaPotion,
+            amount: 1
+        }
+    ]
+});
+
+const draughtRawMagic = new Potion(currentContent, {
+    idMaterial: 127837,
+    name: 'Draught of Raw Magic',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientHealingPotion,
+            amount: 1
+        },
+        {
+            component: aethril,
+            amount: 20
+        }
+    ]
+});
+
+const sylvanElixir = new Potion(currentContent, {
+    idMaterial: 127838,
+    name: 'Sylvan Elixir',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientHealingPotion,
+            amount: 1
+        },
+        {
+            component: dreamleaf,
+            amount: 5
+        }
+    ]
+});
+
+const avalancheElixir = new Potion(currentContent, {
+    idMaterial: 127839,
+    name: 'Avalanche Elixir',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientManaPotion,
+            amount: 1
+        },
+        {
+            component: foxFlower,
+            amount: 5
+        }
+    ]
+});
+
+const skaggldrynk = new Potion(currentContent, {
+    idMaterial: 127840,
+    name: 'Skaggldrynk',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientManaPotion,
+            amount: 1
+        },
+        {
+            component: fjarnskaggl,
+            amount: 5
+        }
+    ]
+});
+
+const skystepPotion = new Potion(currentContent, {
+    idMaterial: 127840,
+    name: 'Skystep Potion',
+    stackSize: 20,
+    utility: [specHybrid],
+    craftMaterials: [
+        {
+            component: ancientRejuvenationPotion,
+            amount: 1
+        },
+        {
+            component: starlightRose,
+            amount: 4
+        }
+    ]
+});
+
+const leytorrentPotion = new Potion(currentContent, {
+    idMaterial: 127846,
+    name: 'Leytorrent Potion',
+    stackSize: 20,
+    utility: [specDd, specHealer],
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 1
+        },
+        {
+            component: aethril,
+            amount: 2
+        },
+        {
+            component: dreamleaf,
+            amount: 2
+        }
+    ]
+});
+
+const potionDeadlyGrace = new Potion(currentContent, {
+    idMaterial: 127843,
+    name: 'Potion of Deadly Grace',
+    stackSize: 20,
+    utility: [specDd],
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 1
+        },
+        {
+            component: fjarnskaggl,
+            amount: 2
+        },
+        {
+            component: dreamleaf,
+            amount: 2
+        }
+    ]
+});
+
+const potionOldWar = new Potion(currentContent, {
+    idMaterial: 127844,
+    name: 'Potion of the Old War',
+    stackSize: 20,
+    utility: [specDd],
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 1
+        },
+        {
+            component: fjarnskaggl,
+            amount: 2
+        },
+        {
+            component: foxFlower,
+            amount: 2
+        }
+    ]
+});
+
+const unbendingPotion = new Potion(currentContent, {
+    idMaterial: 127845,
+    name: 'Unbending Potion',
+    stackSize: 20,
+    utility: [specTank],
+    craftMaterials: [
+        {
+            component: starlightRose,
+            amount: 1
+        },
+        {
+            component: aethril,
+            amount: 2
+        },
+        {
+            component: foxFlower,
+            amount: 2
+        }
+    ]
+});
+
+const potionProlongedPower = new Potion(currentContent, {
     idMaterial: 142117,
     name: 'Potion of Prolonged Power',
     stackSize: 100,
@@ -183,9 +401,11 @@ const potionPP = new Potion(currentContent, {
 });
 
 const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
-const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
+const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose, yserallineSeed];
 const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina];
-const POTIONS: Potion[] = [potionPP];
+const POTIONS: Potion[] = [ancientHealingPotion, ancientManaPotion, ancientRejuvenationPotion, draughtRawMagic,
+    sylvanElixir, avalancheElixir, skaggldrynk, skystepPotion, leytorrentPotion, potionDeadlyGrace, potionOldWar,
+    unbendingPotion, potionProlongedPower];
 
 export const EXPORTDATA = {
     SPECIALIZATIONS: SPECIALIZATIONS,

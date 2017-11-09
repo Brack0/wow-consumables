@@ -1,5 +1,3 @@
-import { Consumable } from './consumable'
+import { Consumable } from './consumable';
 
-export class Flask extends Consumable {
-
-}
+export class Flask extends Consumable {}

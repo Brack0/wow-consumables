@@ -22,28 +22,24 @@ export class AppComponent implements OnInit {
   flasks: Flask[];
   potions: Potion[];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   getData(): void {
-    this.dataService.getSpecializations()
-      .then(specializations => {
-        this.specializations = specializations;
-      });
+    this.dataService.getSpecializations().then(specializations => {
+      this.specializations = specializations;
+    });
 
-    this.dataService.getPlants()
-      .then(plants => {
-        this.plants = plants;
-      });
+    this.dataService.getPlants().then(plants => {
+      this.plants = plants;
+    });
 
-    this.dataService.getFlasks()
-      .then(flasks => {
-        this.flasks = flasks;
-      });
+    this.dataService.getFlasks().then(flasks => {
+      this.flasks = flasks;
+    });
 
-    this.dataService.getPotions()
-      .then(potions => {
-        this.potions = potions;
-      });
+    this.dataService.getPotions().then(potions => {
+      this.potions = potions;
+    });
   }
 
   reloadWowheadScript() {

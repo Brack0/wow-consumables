@@ -11,9 +11,7 @@ export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
   @Input() displayMaterial = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

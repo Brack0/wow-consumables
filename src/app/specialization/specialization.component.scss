@@ -1,20 +1,21 @@
 .grid-container-specialization {
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  margin: 0 auto;
 }
 
 .name {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: left;
-    height: 22px;
-    width: 118px;
-    font-variant: small-caps;
-    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    letter-spacing: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  height: 22px;
+  width: 118px;
+  font-variant: small-caps;
+  font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica,
+    sans-serif;
+  letter-spacing: -1px;
 }
 
 .icon {
-    vertical-align: middle;
+  vertical-align: middle;
 }

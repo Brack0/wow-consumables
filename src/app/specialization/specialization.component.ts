@@ -9,9 +9,7 @@ import { Specialization } from '../model/specialization';
 export class SpecializationComponent implements OnInit {
   @Input() specialization: Specialization;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -7,19 +7,19 @@ import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class DataService {
-    getSpecializations(): Promise<Specialization[]> {
-        return Promise.resolve(EXPORTDATA.SPECIALIZATIONS);
-    }
+  getSpecializations(): Promise<Specialization[]> {
+    return Promise.resolve(EXPORTDATA.SPECIALIZATIONS);
+  }
 
-    getPlants(): Promise<Plant[]> {
-        return Promise.resolve(EXPORTDATA.PLANTS);
-    }
+  getPlants(): Promise<Plant[]> {
+    return Promise.resolve(EXPORTDATA.PLANTS);
+  }
 
-    getFlasks(): Promise<Flask[]> {
-        return Promise.resolve(EXPORTDATA.FLASKS);
-    }
+  getFlasks(): Promise<Flask[]> {
+    return Promise.resolve(EXPORTDATA.FLASKS);
+  }
 
-    getPotions(): Promise<Potion[]> {
-        return Promise.resolve(EXPORTDATA.POTIONS);
-    }
+  getPotions(): Promise<Potion[]> {
+    return Promise.resolve(EXPORTDATA.POTIONS);
+  }
 }

@@ -1,5 +1,3 @@
-import { Material } from './material'
+import { Material } from './material';
 
-export class Currency extends Material {
-
-}
+export class Currency extends Material {}

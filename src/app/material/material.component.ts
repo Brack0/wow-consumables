@@ -11,9 +11,7 @@ export class MaterialComponent implements OnInit {
   @Input() material: Material;
   @Input() wantedNumber: number;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -28,4 +28,4 @@ import { SpecializationComponent } from './specialization/specialization.compone
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

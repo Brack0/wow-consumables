@@ -1,5 +1,3 @@
-import { TradableMaterial } from './tradable-material'
+import { TradableMaterial } from './tradable-material';
 
-export class Plant extends TradableMaterial {
-
-}
+export class Plant extends TradableMaterial {}

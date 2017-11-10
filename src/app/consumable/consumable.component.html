@@ -1,23 +1,26 @@
 <div class="consumable">
-    <div class="grid-container-consumable-info">
-        <div class="grid-consumable-header">
-            <app-material [material]="consumable" [wantedNumber]="displayMaterial?consumable.wantedNumber:null"></app-material>
-        </div>
-        <div class="grid-container-consumable-utility">
-            <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
-                <app-specialization [specialization]="util"></app-specialization>
-            </div>
-        </div>
+  <div class="grid-container-consumable-info">
+    <div class="grid-consumable-header">
+      <app-material [material]="consumable" [wantedNumber]="displayMaterial?consumable.wantedNumber:null"></app-material>
     </div>
-    <div *ngIf="displayMaterial">
-        <div class="grid-container-craft-materials">
-            <div *ngFor="let craftMaterial of consumable.craftMaterials">
-                <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber / consumable.craftNumber"></app-material>
-            </div>
-        </div>
-        <mat-form-field>
-            <input matInput maxlength="3" type="number" #wantedNumber [(ngModel)]="consumable.wantedNumber" min="0" max="{{1000*consumable.craftNumber - 1}}" step="{{consumable.craftNumber}}" value="0" />
-            <mat-hint align="end">Enter the number you want</mat-hint>
-        </mat-form-field>
+    <div class="grid-container-consumable-utility">
+      <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
+        <app-specialization [specialization]="util"></app-specialization>
+      </div>
     </div>
+  </div>
+  <div *ngIf="displayMaterial">
+    <div class="grid-container-craft-materials">
+      <div *ngFor="let craftMaterial of consumable.craftMaterials">
+        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber"></app-material>
+      </div>
+    </div>
+    <form novalidate [formGroup]="form">
+      <mat-form-field>
+        <input matInput class="form-control" formControlName="wantedNumber" name="wantedNumber" type="number" />
+        <mat-hint align="end">Enter the number you want</mat-hint>
+      </mat-form-field>
+    </form>
+  </div>
 </div>
+<!-- min="0" max="{{1000*consumable.craftNumber - 1}}" step="{{consumable.craftNumber}}" maxlength="3" -->

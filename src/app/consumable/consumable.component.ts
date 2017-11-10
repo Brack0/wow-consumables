@@ -26,13 +26,17 @@ export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
   @Input() displayMaterial = false;
   form: FormGroup;
+  errorMessage: string;
 
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
     // init form
     this.form = this.fb.group({
-      wantedNumber: [this.consumable.wantedNumber, [Validators.min(0)]]
+      wantedNumber: [
+        '',
+        [Validators.min(0), Validators.max(100 * this.consumable.craftNumber)]
+      ]
     });
 
     // subscribe to input value and update with a debounce time of 500ms
@@ -52,7 +56,9 @@ export class ConsumableComponent implements OnInit {
   computeWantedNumber(n: number, c: AbstractControl): void {
     if (c.touched || c.dirty) {
       if (c.errors) {
-        // show error on input (see doc on material.angular.io)
+        this.errorMessage = `Please enter a number between 0 and ${100 *
+          this.consumable.craftNumber}`;
+        this.cd.markForCheck();
       } else {
         this.consumable.wantedNumber = n;
         this.cd.markForCheck();

@@ -17,8 +17,9 @@
     </div>
     <form novalidate [formGroup]="form">
       <mat-form-field>
-        <input matInput class="form-control" formControlName="wantedNumber" name="wantedNumber" type="number" />
-        <mat-hint align="end">Enter the number you want</mat-hint>
+        <input matInput placeholder="Enter the number you want" class="form-control" formControlName="wantedNumber" name="wantedNumber"
+          type="number" />
+        <mat-error>{{errorMessage}}</mat-error>
       </mat-form-field>
     </form>
   </div>

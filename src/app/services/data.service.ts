@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import '@rxjs';
+
 import { Specialization } from '../model/specialization';
 import { Plant } from '../model/plant';
 import { Flask } from '../model/flask';
@@ -7,19 +10,19 @@ import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class DataService {
-  getSpecializations(): Promise<Specialization[]> {
-    return Promise.resolve(EXPORTDATA.SPECIALIZATIONS);
+  getSpecializations(): Observable<Specialization[]> {
+    return Observable.of(EXPORTDATA.SPECIALIZATIONS);
   }
 
-  getPlants(): Promise<Plant[]> {
-    return Promise.resolve(EXPORTDATA.PLANTS);
+  getPlants(): Observable<Plant[]> {
+    return Observable.of(EXPORTDATA.PLANTS);
   }
 
-  getFlasks(): Promise<Flask[]> {
-    return Promise.resolve(EXPORTDATA.FLASKS);
+  getFlasks(): Observable<Flask[]> {
+    return Observable.of(EXPORTDATA.FLASKS);
   }
 
-  getPotions(): Promise<Potion[]> {
-    return Promise.resolve(EXPORTDATA.POTIONS);
+  getPotions(): Observable<Potion[]> {
+    return Observable.of(EXPORTDATA.POTIONS);
   }
 }

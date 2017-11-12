@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 
 import { DataService } from './services/data.service';
+import { StateService } from './services/state.service';
 import { ComputeService } from './services/compute.service';
+
 import { Specialization } from './model/specialization';
 import { Plant } from './model/plant';
 import { Flask } from './model/flask';
 import { Potion } from './model/potion';
+import { Material } from './model/material';
 
 declare let $WowheadPower;
 
@@ -13,40 +16,57 @@ declare let $WowheadPower;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DataService, ComputeService]
+  providers: [DataService, StateService, ComputeService]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewChecked {
+  needWowRefresh: boolean = false;
   title = 'World of Warcraft - Consumables';
   specializations: Specialization[];
+  requiredMaterials: Array<{ component: Material; amount: number }>;
   plants: Plant[];
   flasks: Flask[];
   potions: Potion[];
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private stateService: StateService
+  ) {}
 
   getData(): void {
-    this.dataService.getSpecializations().then(specializations => {
+    this.dataService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
     });
 
-    this.dataService.getPlants().then(plants => {
+    this.dataService.getPlants().subscribe(plants => {
       this.plants = plants;
     });
 
-    this.dataService.getFlasks().then(flasks => {
+    this.dataService.getFlasks().subscribe(flasks => {
       this.flasks = flasks;
     });
 
-    this.dataService.getPotions().then(potions => {
+    this.dataService.getPotions().subscribe(potions => {
       this.potions = potions;
+    });
+
+    this.stateService.getRequiredMaterial().subscribe(materials => {
+      this.requiredMaterials = materials;
+      this.needWowRefresh = true;
     });
   }
 
   reloadWowheadScript() {
-    $WowheadPower.init();
+    $WowheadPower.refreshLinks();
   }
 
   ngOnInit(): void {
     this.getData();
+  }
+
+  ngAfterViewChecked(): void {
+    if (this.needWowRefresh) {
+      this.needWowRefresh = false;
+      this.reloadWowheadScript();
+    }
   }
 }

@@ -6,15 +6,16 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 
-import { Consumable } from '../model/consumable';
 import {
   FormBuilder,
   FormGroup,
-  FormControl,
   Validators,
   AbstractControl
 } from '@angular/forms';
-import '@rxjs';
+
+import { Consumable } from '../model/consumable';
+import { StateService } from '../services/state.service';
+import { CustomValidators } from '../shared/validators.imports';
 
 @Component({
   selector: 'app-consumable',
@@ -28,14 +29,22 @@ export class ConsumableComponent implements OnInit {
   form: FormGroup;
   errorMessage: string;
 
-  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {}
+  constructor(
+    private fb: FormBuilder,
+    private stateService: StateService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     // init form
     this.form = this.fb.group({
       wantedNumber: [
         '',
-        [Validators.min(0), Validators.max(100 * this.consumable.craftNumber)]
+        [
+          Validators.min(0),
+          Validators.max(100 * this.consumable.craftNumber),
+          CustomValidators.inputStep(this.consumable.craftNumber)
+        ]
       ]
     });
 
@@ -61,6 +70,7 @@ export class ConsumableComponent implements OnInit {
         this.cd.markForCheck();
       } else {
         this.consumable.wantedNumber = n;
+        this.stateService.updateWantedConsumables(this.consumable);
         this.cd.markForCheck();
       }
     }

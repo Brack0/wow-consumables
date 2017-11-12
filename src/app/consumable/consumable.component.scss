@@ -1,3 +1,9 @@
+.consumable {
+  border: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
 .grid-container-consumable-info {
   display: grid;
   grid-template-columns: 1fr 140px;
@@ -16,11 +22,12 @@
   grid-template-columns: repeat(auto-fit, 100px);
   grid-column-gap: 1em;
   justify-content: space-evenly;
-  margin: 20px auto;
+  margin-top: 20px;
 }
 
 .mat-form-field {
-  width: 215px;
+  margin-top: 10px;
+  width: 250px;
 }
 
 .q1 {

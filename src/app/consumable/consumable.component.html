@@ -1,7 +1,7 @@
 <div class="consumable">
   <div class="grid-container-consumable-info">
     <div class="grid-consumable-header">
-      <app-material [material]="consumable" [wantedNumber]="displayMaterial?consumable.wantedNumber:null"></app-material>
+      <app-material [material]="consumable" [wantedNumber]="displayMaterial?consumable.craftNumber:consumable.wantedNumber"></app-material>
     </div>
     <div class="grid-container-consumable-utility">
       <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
@@ -12,9 +12,11 @@
   <div *ngIf="displayMaterial">
     <div class="grid-container-craft-materials">
       <div *ngFor="let craftMaterial of consumable.craftMaterials">
-        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount * consumable.wantedNumber"></app-material>
+        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount"></app-material>
       </div>
     </div>
+  </div>
+  <div *ngIf="!displayMaterial">
     <form novalidate [formGroup]="form">
       <mat-form-field>
         <input matInput placeholder="Enter the number you want" class="form-control" formControlName="wantedNumber" name="wantedNumber"

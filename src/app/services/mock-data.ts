@@ -285,7 +285,7 @@ const skaggldrynk = new Potion(currentContent, {
 });
 
 const skystepPotion = new Potion(currentContent, {
-  idMaterial: 127840,
+  idMaterial: 127841,
   name: 'Skystep Potion',
   stackSize: 20,
   utility: [specHybrid],

@@ -1,12 +1,10 @@
 import { Content } from './content';
-import { Material } from './material';
 import { Specialization } from './specialization';
+import { CraftedMaterial } from './crafted-material';
 
-export abstract class Consumable extends Material {
+export abstract class Consumable extends CraftedMaterial {
   utility: Array<Specialization>;
-  craftMaterials: Array<{ component: Material; amount: number }>;
-  craftNumber = 1; // number
-  wantedNumber = 0; // number
+  wantedNumber: number = 0;
 
   public constructor(content: Content, init?: Partial<Consumable>) {
     super(content, init);

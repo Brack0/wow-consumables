@@ -12,17 +12,28 @@ declare let $WowheadPower;
   providers: [StateService, ComputeService]
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  needWowRefresh: boolean = false;
-  title = 'World of Warcraft - Consumables';
-  specializations: Specialization[];
-  requiredMaterials: Array<{ component: Material; amount: number }>;
-  plants: Plant[];
-  flasks: Flask[];
-  potions: Potion[];
+  private needWowRefresh: boolean = false;
+  private title = 'World of Warcraft - Consumables';
+  private specializations: Specialization[];
+  private requiredMaterials: Array<{ component: Material; amount: number }>;
+  private plants: Plant[];
+  private flasks: Flask[];
+  private potions: Potion[];
 
   constructor(private stateService: StateService) {}
 
-  getData(): void {
+  public ngOnInit(): void {
+    this.getData();
+  }
+
+  public ngAfterViewChecked(): void {
+    if (this.needWowRefresh) {
+      this.needWowRefresh = false;
+      this.reloadWowheadScript();
+    }
+  }
+
+  private getData(): void {
     this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
     });
@@ -45,18 +56,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
     });
   }
 
-  reloadWowheadScript() {
+  private reloadWowheadScript() {
     $WowheadPower.refreshLinks();
-  }
-
-  ngOnInit(): void {
-    this.getData();
-  }
-
-  ngAfterViewChecked(): void {
-    if (this.needWowRefresh) {
-      this.needWowRefresh = false;
-      this.reloadWowheadScript();
-    }
   }
 }

@@ -10,7 +10,7 @@ export class ComputeService {
    * Return Recipe for a CraftedMaterial
    * @param craftMaterial
    */
-  computeRecipe(
+  public computeRecipe(
     craftMaterial: CraftedMaterial
   ): Array<{ component: Material; amount: number }> {
     return this.getCraftMaterial(craftMaterial);

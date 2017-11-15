@@ -19,12 +19,11 @@ import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class StateService {
-  requiredMaterialsSubject: ReplaySubject<
+  private requiredMaterialsSubject: ReplaySubject<
     Array<{ component: Material; amount: number }>
   > = new ReplaySubject(1);
-  wantedConsumables: { [idConsumable: number]: number } = {};
-  recipes: Recipes = new Recipes();
-  consumables: { [idConsumable: number]: Consumable } = {};
+  private wantedConsumables: { [idConsumable: number]: number } = {};
+  private recipes: Recipes = new Recipes();
 
   constructor(private computeService: ComputeService) {}
 
@@ -32,25 +31,25 @@ export class StateService {
    * Create a ReplaySubject
    * Subscribe to get updated list of required material
    */
-  getRequiredMaterial(): ReplaySubject<
+  public getRequiredMaterial(): ReplaySubject<
     Array<{ component: Material; amount: number }>
   > {
     return this.requiredMaterialsSubject;
   }
 
-  getSpecializations(): Observable<Specialization[]> {
+  public getSpecializations(): Observable<Specialization[]> {
     return Observable.of(EXPORTDATA.SPECIALIZATIONS);
   }
 
-  getPlants(): Observable<Plant[]> {
+  public getPlants(): Observable<Plant[]> {
     return Observable.of(EXPORTDATA.PLANTS);
   }
 
-  getFlasks(): Observable<Flask[]> {
+  public getFlasks(): Observable<Flask[]> {
     return Observable.of(EXPORTDATA.FLASKS);
   }
 
-  getPotions(): Observable<Potion[]> {
+  public getPotions(): Observable<Potion[]> {
     return Observable.of(EXPORTDATA.POTIONS);
   }
 
@@ -58,7 +57,7 @@ export class StateService {
    * Update list of wanted materials
    * @param consumable New Consumable to handle
    */
-  updateWantedConsumables(consumable: Consumable): void {
+  public updateWantedConsumables(consumable: Consumable): void {
     if (consumable.wantedNumber) {
       this.wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
       this.updateRecipes(consumable);

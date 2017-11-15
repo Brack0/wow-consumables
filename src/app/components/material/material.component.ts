@@ -7,11 +7,9 @@ import { Material } from '@model';
   templateUrl: './material.component.html',
   styleUrls: ['./material.component.scss']
 })
-export class MaterialComponent implements OnInit {
+export class MaterialComponent {
   @Input() material: Material;
   @Input() wantedNumber: number;
 
   constructor() {}
-
-  ngOnInit() {}
 }

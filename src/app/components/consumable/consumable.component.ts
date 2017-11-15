@@ -25,8 +25,8 @@ import { CustomValidators } from '@validators';
 export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
   @Input() displayMaterial = false;
-  form: FormGroup;
-  errorMessage: string;
+  private form: FormGroup;
+  private errorMessage: string;
 
   constructor(
     private fb: FormBuilder,
@@ -34,7 +34,7 @@ export class ConsumableComponent implements OnInit {
     private cd: ChangeDetectorRef
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     // init form
     this.form = this.fb.group({
       wantedNumber: [
@@ -61,7 +61,7 @@ export class ConsumableComponent implements OnInit {
    * @param n input value
    * @param c input control
    */
-  computeWantedNumber(n: number, c: AbstractControl): void {
+  private computeWantedNumber(n: number, c: AbstractControl): void {
     if (c.touched || c.dirty) {
       if (c.errors) {
         this.errorMessage = `Please enter a number between 0 and ${100 *

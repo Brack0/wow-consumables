@@ -7,10 +7,8 @@ import { Specialization } from '@model';
   templateUrl: './specialization.component.html',
   styleUrls: ['./specialization.component.scss']
 })
-export class SpecializationComponent implements OnInit {
+export class SpecializationComponent {
   @Input() specialization: Specialization;
 
   constructor() {}
-
-  ngOnInit() {}
 }

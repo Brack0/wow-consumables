@@ -8,7 +8,7 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [true, "rxjs"],
+    "import-blacklist": [true, "rxjs", "rxjs/Rx"],
     "import-spacing": true,
     "indent": [true, "spaces"],
     "interface-over-type-literal": true,
@@ -21,9 +21,9 @@
         "order": [
           "public-static-field",
           "public-instance-field",
-          "public-constructor",
           "private-static-field",
           "private-instance-field",
+          "public-constructor",
           "private-constructor",
           "public-instance-method",
           "protected-instance-method",
@@ -37,7 +37,7 @@
         "import-sources-order": "lowercase-last",
         "named-importes-order": "lowercase-first"
       }
-		],
+    ],
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],

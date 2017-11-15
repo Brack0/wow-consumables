@@ -12,13 +12,13 @@ declare let $WowheadPower;
   providers: [StateService, ComputeService]
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  private needWowRefresh: boolean = false;
-  private title = 'World of Warcraft - Consumables';
-  private specializations: Specialization[];
-  private requiredMaterials: Array<{ component: Material; amount: number }>;
-  private plants: Plant[];
-  private flasks: Flask[];
-  private potions: Potion[];
+  public needWowRefresh: boolean = false;
+  public title = 'World of Warcraft - Consumables';
+  public specializations: Specialization[];
+  public requiredMaterials: Array<{ component: Material; amount: number }>;
+  public plants: Plant[];
+  public flasks: Flask[];
+  public potions: Potion[];
 
   constructor(private stateService: StateService) {}
 
@@ -31,6 +31,10 @@ export class AppComponent implements OnInit, AfterViewChecked {
       this.needWowRefresh = false;
       this.reloadWowheadScript();
     }
+  }
+
+  public reloadWowheadScript() {
+    $WowheadPower.refreshLinks();
   }
 
   private getData(): void {
@@ -54,9 +58,5 @@ export class AppComponent implements OnInit, AfterViewChecked {
       this.requiredMaterials = materials;
       this.needWowRefresh = true;
     });
-  }
-
-  private reloadWowheadScript() {
-    $WowheadPower.refreshLinks();
   }
 }

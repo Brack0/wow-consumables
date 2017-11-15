@@ -1,21 +1,22 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   Input,
-  OnInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef
+  OnInit
 } from '@angular/core';
-
 import {
+  AbstractControl,
   FormBuilder,
   FormGroup,
-  Validators,
-  AbstractControl
+  Validators
 } from '@angular/forms';
 
-import { Consumable } from '../model/consumable';
 import { StateService } from '../services/state.service';
-import { CustomValidators } from '../shared/validators.imports';
+
+import { CustomValidators } from '@validators';
+
+import { Consumable } from '@model';
 
 @Component({
   selector: 'app-consumable',

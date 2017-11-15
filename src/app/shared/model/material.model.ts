@@ -1,4 +1,4 @@
-import { Content } from './content';
+import { Content } from './content.model';
 
 // Abstract class for wow materials
 export abstract class Material extends Content {

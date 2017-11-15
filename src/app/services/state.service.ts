@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
-
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-
 import '@rxjs';
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 import { ComputeService } from './compute.service';
 
-import { Material } from '../model/material';
-import { Recipes } from '../model/recipes';
-import { CraftedMaterial } from '../model/crafted-material';
-import { Consumable } from '../model/consumable';
+import {
+  Consumable,
+  CraftedMaterial,
+  Flask,
+  Material,
+  Plant,
+  Potion,
+  Recipes,
+  Specialization
+} from '@model';
+import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class StateService {
@@ -32,16 +38,20 @@ export class StateService {
     return this.requiredMaterialsSubject;
   }
 
-  /**
-   * Create a new recipe for the material if needed (ie. not known by the StateService)
-   * @param material New Material to handle
-   */
-  updateRecipes(material: CraftedMaterial): void {
-    if (!this.recipes[material.idMaterial]) {
-      this.recipes[material.idMaterial] = this.computeService.computeRecipe(
-        material
-      );
-    }
+  getSpecializations(): Observable<Specialization[]> {
+    return Observable.of(EXPORTDATA.SPECIALIZATIONS);
+  }
+
+  getPlants(): Observable<Plant[]> {
+    return Observable.of(EXPORTDATA.PLANTS);
+  }
+
+  getFlasks(): Observable<Flask[]> {
+    return Observable.of(EXPORTDATA.FLASKS);
+  }
+
+  getPotions(): Observable<Potion[]> {
+    return Observable.of(EXPORTDATA.POTIONS);
   }
 
   /**
@@ -56,6 +66,18 @@ export class StateService {
     } else {
       delete this.wantedConsumables[consumable.idMaterial];
       this.updateRequiredMaterial();
+    }
+  }
+
+  /**
+   * Create a new recipe for the material if needed (ie. not known by the StateService)
+   * @param material New Material to handle
+   */
+  private updateRecipes(material: CraftedMaterial): void {
+    if (!this.recipes[material.idMaterial]) {
+      this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+        material
+      );
     }
   }
 

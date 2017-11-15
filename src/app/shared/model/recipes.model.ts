@@ -1,4 +1,4 @@
-import { Material } from './material';
+import { Material } from './material.model';
 
 export class Recipes {
   [idMaterial: number]: Array<{ component: Material; amount: number }>;

@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { Material } from '../model/material';
+import { Material } from '@model';
 
 @Component({
   selector: 'app-material',

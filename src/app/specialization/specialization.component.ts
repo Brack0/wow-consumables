@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Specialization } from '../model/specialization';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Specialization } from '@model';
 
 @Component({
   selector: 'app-specialization',

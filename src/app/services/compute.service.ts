@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Recipes } from '../model/recipes';
-import { Material } from '../model/material';
-import { CraftedMaterial } from '../model/crafted-material';
+import { CraftedMaterial, Material, Recipes } from '@model';
 
 @Injectable()
 export class ComputeService {
@@ -16,6 +14,29 @@ export class ComputeService {
     craftMaterial: CraftedMaterial
   ): Array<{ component: Material; amount: number }> {
     return this.getCraftMaterial(craftMaterial);
+  }
+
+
+  /**
+   * Merge Material with amount in an array
+   * @param array
+   * @param material
+   */
+  public mergeMaterial(
+    array: Array<{ component: Material; amount: number }>,
+    material: { component: Material; amount: number }
+  ): Array<{ component: Material; amount: number }> {
+    let added: boolean = false;
+    array.forEach(e => {
+      if (e.component.idMaterial === material.component.idMaterial) {
+        e.amount += material.amount;
+        added = true;
+      }
+    });
+    if (!added) {
+      array.push(Object.assign({}, material));
+    }
+    return array;
   }
 
   /**
@@ -38,28 +59,6 @@ export class ComputeService {
           : this.mergeMaterial(a, b),
       []
     );
-  }
-
-  /**
-   * Merge Material with amount in an array
-   * @param array
-   * @param material
-   */
-  public mergeMaterial(
-    array: Array<{ component: Material; amount: number }>,
-    material: { component: Material; amount: number }
-  ): Array<{ component: Material; amount: number }> {
-    let added: boolean = false;
-    array.forEach(e => {
-      if (e.component.idMaterial === material.component.idMaterial) {
-        e.amount += material.amount;
-        added = true;
-      }
-    });
-    if (!added) {
-      array.push(Object.assign({}, material));
-    }
-    return array;
   }
 
   /**

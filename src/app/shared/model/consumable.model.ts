@@ -1,6 +1,6 @@
-import { Content } from './content';
-import { Specialization } from './specialization';
-import { CraftedMaterial } from './crafted-material';
+import { Content } from './content.model';
+import { CraftedMaterial } from './crafted-material.model';
+import { Specialization } from './specialization.model';
 
 export abstract class Consumable extends CraftedMaterial {
   utility: Array<Specialization>;

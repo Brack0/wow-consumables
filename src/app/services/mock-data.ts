@@ -1,9 +1,11 @@
-import { Content } from '../model/content';
-import { Currency } from '../model/currency';
-import { Plant } from '../model/plant';
-import { Flask } from '../model/flask';
-import { Potion } from '../model/potion';
-import { Specialization } from '../model/specialization';
+import {
+  Content,
+  Currency,
+  Flask,
+  Plant,
+  Potion,
+  Specialization
+} from '@model';
 
 // Init data
 const specDd = new Specialization({

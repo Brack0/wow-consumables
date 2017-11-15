@@ -1,14 +1,9 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 
-import { DataService } from './services/data.service';
-import { StateService } from './services/state.service';
 import { ComputeService } from './services/compute.service';
+import { StateService } from './services/state.service';
 
-import { Specialization } from './model/specialization';
-import { Plant } from './model/plant';
-import { Flask } from './model/flask';
-import { Potion } from './model/potion';
-import { Material } from './model/material';
+import { Flask, Material, Plant, Potion, Specialization } from '@model';
 
 declare let $WowheadPower;
 
@@ -16,7 +11,7 @@ declare let $WowheadPower;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [DataService, StateService, ComputeService]
+  providers: [StateService, ComputeService]
 })
 export class AppComponent implements OnInit, AfterViewChecked {
   needWowRefresh: boolean = false;
@@ -27,25 +22,22 @@ export class AppComponent implements OnInit, AfterViewChecked {
   flasks: Flask[];
   potions: Potion[];
 
-  constructor(
-    private dataService: DataService,
-    private stateService: StateService
-  ) {}
+  constructor(private stateService: StateService) {}
 
   getData(): void {
-    this.dataService.getSpecializations().subscribe(specializations => {
+    this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
     });
 
-    this.dataService.getPlants().subscribe(plants => {
+    this.stateService.getPlants().subscribe(plants => {
       this.plants = plants;
     });
 
-    this.dataService.getFlasks().subscribe(flasks => {
+    this.stateService.getFlasks().subscribe(flasks => {
       this.flasks = flasks;
     });
 
-    this.dataService.getPotions().subscribe(potions => {
+    this.stateService.getPotions().subscribe(potions => {
       this.potions = potions;
     });
 

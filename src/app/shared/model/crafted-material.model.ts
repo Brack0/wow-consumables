@@ -1,5 +1,5 @@
-import { Material } from './material';
-import { Content } from './content';
+import { Content } from './content.model';
+import { Material } from './material.model';
 
 export class CraftedMaterial extends Material {
   craftMaterials: Array<{ component: Material; amount: number }>;

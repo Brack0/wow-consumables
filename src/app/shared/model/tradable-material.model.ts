@@ -1,5 +1,5 @@
-import { Content } from './content';
-import { Material } from './material';
+import { Content } from './content.model';
+import { Material } from './material.model';
 
 // Abstract for tradable wow materials with a currency (which is another Material)
 export abstract class TradableMaterial extends Material {

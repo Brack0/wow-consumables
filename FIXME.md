@@ -6,15 +6,12 @@ Here is a list of bugs and stuffs i'm working/thinking of for a close to mid ran
 
 ### On Consumables
 
-- Scale the "wanted number" with the "craft number".
-- Input number should be positive.
+Fix potion of prolonged power. One Blood of Sageras = Ten potions;
 
 ## ADD ME !
 
 ### Configuration
 
-- Customize npm commands (start, build, test, etc...)
-
 ### Features
 
-- Material Angular
+Tradable material

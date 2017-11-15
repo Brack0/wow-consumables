@@ -16,6 +16,45 @@ export class ComputeService {
     return this.getCraftMaterial(craftMaterial);
   }
 
+  /**
+   * Update the list of all required Material for the wanted Consumables.
+   * - Get Recipes
+   * - Merge all Materials and required amount
+   * - Push to ReplaySubject
+   * @param wantedConsumables
+   * @param recipes
+   */
+  public updateRequiredMaterial(
+    wantedConsumables: { [idConsumable: number]: number },
+    recipes: Recipes
+  ): Array<{
+    component: Material;
+    amount: number;
+  }> {
+    // Using temp array to not trigger ReplaySubject
+    const requiredMaterials: Array<{
+      component: Material;
+      amount: number;
+    }> = [];
+
+    Object.entries(wantedConsumables).forEach(e => {
+      const idConsumable = e[0];
+      // Object.entries() does not handle type
+      const wantedNumber = e[1] as number;
+
+      // Find recipe
+      const recipe = recipes[idConsumable];
+
+      // merge material ( recipê * number )
+      recipe.forEach(r => {
+        this.mergeMaterial(requiredMaterials, {
+          component: r.component,
+          amount: r.amount * wantedNumber
+        });
+      });
+    });
+    return requiredMaterials;
+  }
 
   /**
    * Merge Material with amount in an array

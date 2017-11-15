@@ -87,29 +87,11 @@ export class StateService {
    * - Push to ReplaySubject
    */
   private updateRequiredMaterial(): void {
-    // Using temp array to not trigger ReplaySubject
-    const requiredMaterials: Array<{
-      component: Material;
-      amount: number;
-    }> = [];
-
-    Object.entries(this.wantedConsumables).forEach(e => {
-      const idConsumable = e[0];
-      // Object.entries() does not handle type
-      const wantedNumber = e[1] as number;
-
-      // Find recipe
-      const recipe = this.recipes[idConsumable];
-
-      // merge material ( recipê * number )
-      recipe.forEach(r => {
-        this.computeService.mergeMaterial(requiredMaterials, {
-          component: r.component,
-          amount: r.amount * wantedNumber
-        });
-      });
-    });
-
-    this.requiredMaterialsSubject.next(requiredMaterials);
+    this.requiredMaterialsSubject.next(
+      this.computeService.updateRequiredMaterial(
+        this.wantedConsumables,
+        this.recipes
+      )
+    );
   }
 }

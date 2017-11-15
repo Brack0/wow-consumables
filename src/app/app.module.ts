@@ -3,13 +3,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material';
-import { MatTabsModule } from '@angular/material';
+import { MatInputModule, MatTabsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { ConsumableComponent } from './consumable/consumable.component';
-import { MaterialComponent } from './material/material.component';
-import { SpecializationComponent } from './specialization/specialization.component';
+import { ConsumableComponent } from './components/consumable/consumable.component';
+import { MaterialComponent } from './components/material/material.component';
+import { SpecializationComponent } from './components/specialization/specialization.component';
 
 @NgModule({
   declarations: [

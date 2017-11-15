@@ -12,11 +12,9 @@ import {
   Validators
 } from '@angular/forms';
 
-import { StateService } from '../services/state.service';
-
-import { CustomValidators } from '@validators';
-
 import { Consumable } from '@model';
+import { StateService } from '@services';
+import { CustomValidators } from '@validators';
 
 @Component({
   selector: 'app-consumable',

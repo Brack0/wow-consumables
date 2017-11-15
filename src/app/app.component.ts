@@ -1,9 +1,7 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 
-import { ComputeService } from './services/compute.service';
-import { StateService } from './services/state.service';
-
 import { Flask, Material, Plant, Potion, Specialization } from '@model';
+import { ComputeService, StateService } from '@services';
 
 declare let $WowheadPower;
 

@@ -6,8 +6,8 @@
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
-    "prod": "ng build --prod base-href='https://brack0.github.io/wow-consumables/'",
-    "deploy": "ng build --prod base-href='https://brack0.github.io/wow-consumables/' && angular-cli-ghpages",
+    "prod": "ng build --prod",
+    "deploy": "ng build --prod && angular-cli-ghpages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

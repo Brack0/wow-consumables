@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+// Include material core styles.
+@include mat-core();
+
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-amber, A200, A100, A400);
+$theme: mat-light-theme($primary, $accent);
+
+// Import custom theme files
+@import 'app/shared/navbar/_navbar-theme.scss';
+
+// Apply theme
+@include angular-material-theme($theme);
+@include nav-bar-theme($theme);
+
+.iconlarge {
+  margin: auto;
+}

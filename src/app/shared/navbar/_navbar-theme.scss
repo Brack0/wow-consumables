@@ -11,6 +11,17 @@
     .navbar,
     .navbar-header {
       background: mat-color($primary);
+
+      .mat-button[disabled] {
+        &.mat-primary,
+        &.mat-accent,
+        &.mat-warn,
+        &[disabled] {
+          &[disabled] {
+            color: mat-color($accent);
+          }
+        }
+      }
     }
   }
 }

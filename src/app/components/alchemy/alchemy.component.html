@@ -1,15 +1,16 @@
-<mat-tab-group (selectChange)="callRefreshWowTooltip()">
-  <mat-tab label="Legion Consumables">
-    <div class="h3-container" *ngIf="requiredMaterials?.length">
-      <h3>Give these to your favorite alchemist !</h3>
-      <div class="box-border-container">
-        <div class="grid-container-material">
-          <div *ngFor="let material of requiredMaterials; let index=index">
-            <app-material [material]="material.component" [wantedNumber]="material.amount"></app-material>
-          </div>
-        </div>
+<div class="h3-container" *ngIf="requiredMaterials?.length">
+  <h3>Give these to your favorite alchemist !</h3>
+  <div class="box-border-container">
+    <div class="grid-container-material">
+      <div *ngFor="let material of requiredMaterials; let index=index">
+        <app-material [material]="material.component" [wantedNumber]="material.amount"></app-material>
       </div>
     </div>
+  </div>
+</div>
+
+<mat-tab-group (selectChange)="callRefreshWowTooltip()">
+  <mat-tab label="Consumables">
     <div class="h3-container">
       <h3>Flasks</h3>
       <div class="box-border-container">
@@ -32,7 +33,30 @@
     </div>
   </mat-tab>
 
-  <mat-tab label="All content">
+  <mat-tab label="Recipes">
+    <div class="h3-container">
+      <h3>Flasks</h3>
+      <div class="box-border-container">
+        <div class="grid-container-consumable">
+          <div *ngFor="let flask of flasks; let index=index">
+            <app-consumable [consumable]=flask [displayMaterial]="true"></app-consumable>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h3-container">
+      <h3>Potions</h3>
+      <div class="box-border-container">
+        <div class="grid-container-consumable">
+          <div *ngFor="let potion of potions; let index=index">
+            <app-consumable [consumable]=potion [displayMaterial]="true"></app-consumable>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Overview">
     <div class="h3-container">
       <h3>Specializations</h3>
       <div class="box-border-container">
@@ -56,9 +80,9 @@
     <div class="h3-container">
       <h3>Flasks</h3>
       <div class="box-border-container">
-        <div class="grid-container-consumable">
+        <div class="grid-container-material">
           <div *ngFor="let flask of flasks; let index=index">
-            <app-consumable [consumable]=flask [displayMaterial]="true"></app-consumable>
+            <app-material [material]="flask"></app-material>
           </div>
         </div>
       </div>
@@ -66,9 +90,9 @@
     <div class="h3-container">
       <h3>Potions</h3>
       <div class="box-border-container">
-        <div class="grid-container-consumable">
+        <div class="grid-container-material">
           <div *ngFor="let potion of potions; let index=index">
-            <app-consumable [consumable]=potion [displayMaterial]="true"></app-consumable>
+            <app-material [material]="potion"></app-material>
           </div>
         </div>
       </div>

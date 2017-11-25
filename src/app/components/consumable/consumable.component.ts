@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnInit
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -19,8 +13,7 @@ import { CustomValidators } from '../../shared/validators.imports';
 @Component({
   selector: 'app-consumable',
   templateUrl: './consumable.component.html',
-  styleUrls: ['./consumable.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./consumable.component.scss']
 })
 export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
@@ -28,11 +21,7 @@ export class ConsumableComponent implements OnInit {
   public form: FormGroup;
   public errorMessage: string;
 
-  constructor(
-    private fb: FormBuilder,
-    private stateService: StateService,
-    private cd: ChangeDetectorRef
-  ) {}
+  constructor(private fb: FormBuilder, private stateService: StateService) {}
 
   public ngOnInit() {
     // init form

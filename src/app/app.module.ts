@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from 'app/app-routing.module';
 
+import { Home } from 'app/shared/home/home';
 import { Navbar } from 'app/shared/navbar/navbar';
 
 import { AppComponent } from 'app/app.component';
@@ -28,7 +29,8 @@ import { StateService } from 'app/services/state.service';
     MaterialComponent,
     SpecializationComponent,
     AlchemyComponent,
-    Navbar
+    Navbar,
+    Home
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,6 @@ declare let $WowheadPower;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  public title = 'World of Warcraft - Consumables';
   public needWowRefresh: boolean = false;
 
   constructor(private stateService: StateService) {}
@@ -23,11 +22,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
   public ngAfterViewChecked(): void {
     if (this.needWowRefresh) {
       this.needWowRefresh = false;
-      this.reloadWowheadScript();
+      $WowheadPower.refreshLinks();
     }
-  }
-
-  public reloadWowheadScript() {
-    $WowheadPower.refreshLinks();
   }
 }

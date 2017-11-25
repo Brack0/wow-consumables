@@ -1,12 +1,16 @@
 <nav class="navbar-header">
-  <a mat-raised-button color="primary" routerLink="/" aria-label="Home">
+  <a mat-button routerLink="/" aria-label="Home">
+    <img class="logo" src="../../../assets/images/angular-white-transparent.svg" alt="angular">
     <span>Home</span>
   </a>
-  <a mat-raised-button color="primary" class="navbar-hide-small" routerLink="/alchemy" aria-label="Alchemy">
+  <a mat-button class="navbar-hide-small" routerLink="/alchemy" aria-label="Alchemy">
     <span>Alchemy</span>
   </a>
-  <a mat-raised-button disabled class="navbar-hide-small" routerLink="/cooking" aria-label="Cooking">
+  <a mat-button disabled class="navbar-hide-small" routerLinkActive="disabled" aria-label="Cooking">
     <span>Cooking (Coming soon)</span>
+  </a>
+  <a mat-button class="button navbar-hide-small" href="https://github.com/Brack0/wow-consumables" aria-label="GitHub Repository">
+    <img class="logo" src="../../../assets/images/github-circle-white-transparent.svg"> GitHub
   </a>
 </nav>
 <nav class="navbar navbar-show-small">

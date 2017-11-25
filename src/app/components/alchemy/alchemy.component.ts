@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ComputeService } from '../../services/compute.service';
 import { StateService } from '../../services/state.service';
@@ -10,17 +10,16 @@ import { Flask, Material, Plant, Potion, Specialization } from '@model';
   templateUrl: './alchemy.component.html',
   styleUrls: ['./alchemy.component.scss']
 })
-export class AlchemyComponent implements OnInit {
+export class AlchemyComponent {
   public specializations: Specialization[];
   public requiredMaterials: Array<{ component: Material; amount: number }>;
   public plants: Plant[];
   public flasks: Flask[];
   public potions: Potion[];
 
-  constructor(private stateService: StateService) {}
-
-  public ngOnInit(): void {
+  constructor(private stateService: StateService) {
     this.getData();
+    this.callRefreshWowTooltip();
   }
 
   public callRefreshWowTooltip(): void {

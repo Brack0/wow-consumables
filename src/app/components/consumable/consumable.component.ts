@@ -25,8 +25,8 @@ import { CustomValidators } from '../../shared/validators.imports';
 export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
   @Input() displayMaterial = false;
-  private form: FormGroup;
-  private errorMessage: string;
+  public form: FormGroup;
+  public errorMessage: string;
 
   constructor(
     private fb: FormBuilder,

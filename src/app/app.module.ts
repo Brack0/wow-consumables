@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule, MatTabsModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatTabsModule
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from 'app/app-routing.module';
+
+import { Navbar } from 'app/shared/navbar/navbar';
 
 import { AppComponent } from 'app/app.component';
 import { AlchemyComponent } from 'app/components/alchemy/alchemy.component';
@@ -21,7 +27,8 @@ import { StateService } from 'app/services/state.service';
     ConsumableComponent,
     MaterialComponent,
     SpecializationComponent,
-    AlchemyComponent
+    AlchemyComponent,
+    Navbar
   ],
   imports: [
     BrowserModule,
@@ -30,6 +37,7 @@ import { StateService } from 'app/services/state.service';
     MatInputModule,
     BrowserAnimationsModule,
     MatTabsModule,
+    MatButtonModule,
     AppRoutingModule
   ],
   providers: [StateService, ComputeService],

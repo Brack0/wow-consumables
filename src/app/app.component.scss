@@ -16,3 +16,9 @@ app-navbar {
   right: 0;
   z-index: 100;
 }
+
+@media (max-width: 720px) {
+  .main-content {
+    top: 90px;
+  }
+}

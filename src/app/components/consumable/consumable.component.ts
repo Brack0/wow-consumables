@@ -27,7 +27,7 @@ export class ConsumableComponent implements OnInit {
     // init form
     this.form = this.fb.group({
       wantedNumber: [
-        '',
+        this.consumable.wantedNumber ? this.consumable.wantedNumber : '',
         [
           Validators.min(0),
           Validators.max(100 * this.consumable.craftNumber),

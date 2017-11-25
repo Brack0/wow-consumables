@@ -19,6 +19,7 @@ import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class StateService {
+  private refreshWowTooltip: ReplaySubject<any> = new ReplaySubject<any>();
   private requiredMaterialsSubject: ReplaySubject<
     Array<{ component: Material; amount: number }>
   > = new ReplaySubject(1);
@@ -26,6 +27,22 @@ export class StateService {
   private recipes: Recipes = new Recipes();
 
   constructor(private computeService: ComputeService) {}
+
+  /**
+   * Create a ReplaySubject
+   * Subscribe to get when to refresh wow tooltip
+   */
+  public getRefreshWowTooltip(): ReplaySubject<any> {
+    return this.refreshWowTooltip;
+  }
+
+  /**
+   * Call a refresh of wow tooltip
+   * All subscribers will receive a event
+   */
+  public callRefreshWowTooltip(): void {
+    this.refreshWowTooltip.next(null);
+  }
 
   /**
    * Create a ReplaySubject

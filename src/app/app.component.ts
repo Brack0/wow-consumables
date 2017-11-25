@@ -1,14 +1,5 @@
-import {
-  AfterViewChecked,
-  ChangeDetectorRef,
-  Component,
-  OnInit
-} from '@angular/core';
-
-import { ComputeService } from './services/compute.service';
-import { StateService } from './services/state.service';
-
-import { Flask, Material, Plant, Potion, Specialization } from '@model';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { StateService } from 'app/services/state.service';
 
 declare let $WowheadPower;
 
@@ -18,18 +9,15 @@ declare let $WowheadPower;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  public needWowRefresh: boolean = false;
   public title = 'World of Warcraft - Consumables';
-  public specializations: Specialization[];
-  public requiredMaterials: Array<{ component: Material; amount: number }>;
-  public plants: Plant[];
-  public flasks: Flask[];
-  public potions: Potion[];
+  public needWowRefresh: boolean = false;
 
   constructor(private stateService: StateService) {}
 
   public ngOnInit(): void {
-    this.getData();
+    this.stateService.getRefreshWowTooltip().subscribe(update => {
+      this.needWowRefresh = true;
+    });
   }
 
   public ngAfterViewChecked(): void {
@@ -41,28 +29,5 @@ export class AppComponent implements OnInit, AfterViewChecked {
 
   public reloadWowheadScript() {
     $WowheadPower.refreshLinks();
-  }
-
-  private getData(): void {
-    this.stateService.getSpecializations().subscribe(specializations => {
-      this.specializations = specializations;
-    });
-
-    this.stateService.getPlants().subscribe(plants => {
-      this.plants = plants;
-    });
-
-    this.stateService.getFlasks().subscribe(flasks => {
-      this.flasks = flasks;
-    });
-
-    this.stateService.getPotions().subscribe(potions => {
-      this.potions = potions;
-    });
-
-    this.stateService.getRequiredMaterial().subscribe(materials => {
-      this.requiredMaterials = materials;
-      this.needWowRefresh = true;
-    });
   }
 }

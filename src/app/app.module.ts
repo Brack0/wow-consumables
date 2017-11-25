@@ -1,4 +1,7 @@
 import { NgModule } from '@angular/core';
+
+import { APP_BASE_HREF } from '@angular/common';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
@@ -42,7 +45,11 @@ import { StateService } from 'app/services/state.service';
     MatButtonModule,
     AppRoutingModule
   ],
-  providers: [StateService, ComputeService],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/wow-consumables' },
+    StateService,
+    ComputeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

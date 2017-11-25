@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { ConsumableComponent } from './components/consumable/consumable.component';
 import { MaterialComponent } from './components/material/material.component';
 import { SpecializationComponent } from './components/specialization/specialization.component';
+import { ComputeService } from './services/compute.service';
+import { StateService } from './services/state.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { SpecializationComponent } from './components/specialization/specializat
     BrowserAnimationsModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [StateService, ComputeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

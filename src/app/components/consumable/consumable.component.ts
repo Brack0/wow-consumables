@@ -13,8 +13,8 @@ import {
 } from '@angular/forms';
 
 import { Consumable } from '@model';
-import { StateService } from '@services';
-import { CustomValidators } from '@validators';
+import { StateService } from '../../services/state.service';
+import { CustomValidators } from '../../shared/validators.imports';
 
 @Component({
   selector: 'app-consumable',
@@ -64,13 +64,17 @@ export class ConsumableComponent implements OnInit {
   private computeWantedNumber(n: number, c: AbstractControl): void {
     if (c.touched || c.dirty) {
       if (c.errors) {
-        this.errorMessage = `Please enter a number between 0 and ${100 *
-          this.consumable.craftNumber}`;
-        this.cd.markForCheck();
+        if (c.errors.min || c.errors.max) {
+          this.errorMessage = `Please enter a number between 0 and ${100 *
+            this.consumable.craftNumber}`;
+        } else if (c.errors.step) {
+          this.errorMessage = c.errors.step.message;
+        } else {
+          this.errorMessage = `Please enter a valid number.`;
+        }
       } else {
         this.consumable.wantedNumber = n;
         this.stateService.updateWantedConsumables(this.consumable);
-        this.cd.markForCheck();
       }
     }
   }

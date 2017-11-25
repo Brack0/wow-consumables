@@ -1,15 +1,21 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import {
+  AfterViewChecked,
+  ChangeDetectorRef,
+  Component,
+  OnInit
+} from '@angular/core';
+
+import { ComputeService } from './services/compute.service';
+import { StateService } from './services/state.service';
 
 import { Flask, Material, Plant, Potion, Specialization } from '@model';
-import { ComputeService, StateService } from '@services';
 
 declare let $WowheadPower;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [StateService, ComputeService]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewChecked {
   public needWowRefresh: boolean = false;

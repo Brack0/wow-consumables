@@ -13,9 +13,7 @@
     "baseUrl": "./src/",
     "paths": {
       "@model": ["./app/shared/model.imports"],
-      "@rxjs": ["./app/shared/rxjs.imports"],
-      "@services": ["./app/shared/services.imports"],
-      "@validators": ["./app/shared/validators.imports"]
+      "@rxjs": ["./app/shared/rxjs.imports"]
     }
   }
 }

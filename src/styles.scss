@@ -9,12 +9,14 @@ $theme: mat-light-theme($primary, $accent);
 
 // Import custom theme files
 @import 'app/shared/footer/_footer-theme.scss';
+@import 'app/shared/header/_header-theme.scss';
 @import 'app/shared/home/_home-theme.scss';
 @import 'app/shared/navbar/_navbar-theme.scss';
 
 // Apply theme
 @include angular-material-theme($theme);
 @include footer-theme($theme);
+@include header-theme($theme);
 @include home-theme($theme);
 @include nav-bar-theme($theme);
 

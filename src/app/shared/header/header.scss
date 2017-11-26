@@ -1,0 +1,27 @@
+.header-background {
+  .header-section {
+    text-align: center;
+
+    .header-headline {
+      h1 {
+        font-size: 56px;
+        font-weight: 300;
+        line-height: 56px;
+        margin: 15px 5px;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        margin: 15px 0 25px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .header-background {
+    top: 89px;
+  }
+}

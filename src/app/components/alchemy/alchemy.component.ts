@@ -11,6 +11,7 @@ import { Flask, Material, Plant, Potion, Specialization } from '@model';
   styleUrls: ['./alchemy.component.scss']
 })
 export class AlchemyComponent {
+  public title: string = 'Alchemy - Legion';
   public specializations: Specialization[];
   public requiredMaterials: Array<{ component: Material; amount: number }>;
   public plants: Plant[];

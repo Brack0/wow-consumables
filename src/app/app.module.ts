@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from 'app/app-routing.module';
 
 import { Footer } from 'app/shared/footer/footer';
+import { Header } from 'app/shared/header/header';
 import { Home } from 'app/shared/home/home';
 import { Navbar } from 'app/shared/navbar/navbar';
 
@@ -33,9 +34,10 @@ import { StateService } from 'app/services/state.service';
     MaterialComponent,
     SpecializationComponent,
     AlchemyComponent,
-    Navbar,
+    Header,
     Home,
-    Footer
+    Footer,
+    Navbar
   ],
   imports: [
     BrowserModule,

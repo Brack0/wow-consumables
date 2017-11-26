@@ -8,13 +8,15 @@ $accent: mat-palette($mat-amber, A200, A100, A400);
 $theme: mat-light-theme($primary, $accent);
 
 // Import custom theme files
-@import 'app/shared/navbar/_navbar-theme.scss';
+@import 'app/shared/footer/_footer-theme.scss';
 @import 'app/shared/home/_home-theme.scss';
+@import 'app/shared/navbar/_navbar-theme.scss';
 
 // Apply theme
 @include angular-material-theme($theme);
-@include nav-bar-theme($theme);
+@include footer-theme($theme);
 @include home-theme($theme);
+@include nav-bar-theme($theme);
 
 body {
   margin: 0;

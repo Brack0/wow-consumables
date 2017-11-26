@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from 'app/app-routing.module';
 
+import { Footer } from 'app/shared/footer/footer';
 import { Home } from 'app/shared/home/home';
 import { Navbar } from 'app/shared/navbar/navbar';
 
@@ -33,7 +34,8 @@ import { StateService } from 'app/services/state.service';
     SpecializationComponent,
     AlchemyComponent,
     Navbar,
-    Home
+    Home,
+    Footer
   ],
   imports: [
     BrowserModule,

@@ -58,9 +58,10 @@
         height: auto;
       }
     }
-
-    div:nth-child(4n-1) {
-      grid-column: 2;
+    @media (min-width: 721px) {
+      div:nth-child(4n-1) {
+        grid-column: 2;
+      }
     }
 
     .home-desc {

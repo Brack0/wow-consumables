@@ -26,6 +26,7 @@ import { SpecializationComponent } from './components/specialization/specializat
 
 import { ComputeService } from 'app/services/compute.service';
 import { StateService } from 'app/services/state.service';
+import { CookingComponent } from './components/cooking/cooking.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { StateService } from 'app/services/state.service';
     Header,
     Home,
     Footer,
-    Navbar
+    Navbar,
+    CookingComponent
   ],
   imports: [
     BrowserModule,

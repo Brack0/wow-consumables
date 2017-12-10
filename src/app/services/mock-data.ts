@@ -4,6 +4,7 @@ import {
   Flask,
   Plant,
   Potion,
+  Reagent,
   Specialization
 } from '@model';
 
@@ -45,6 +46,12 @@ const bloodOfSargeras = new Currency(currentContent, {
   stackSize: 1000
 });
 
+const yserallineSeed = new Reagent(currentContent, {
+  idMaterial: 128304,
+  name: 'Yseralline Seed',
+  stackSize: 200
+});
+
 const aethril = new Plant(currentContent, {
   idMaterial: 124101,
   name: 'Aethril',
@@ -83,12 +90,6 @@ const starlightRose = new Plant(currentContent, {
   stackSize: 200,
   currency: bloodOfSargeras,
   ratio: 3
-});
-
-const yserallineSeed = new Plant(currentContent, {
-  idMaterial: 128304,
-  name: 'Yseralline Seed',
-  stackSize: 200
 });
 
 const flaskIntellect = new Flask(currentContent, {
@@ -407,13 +408,13 @@ const SPECIALIZATIONS: Specialization[] = [
   specHealer,
   specHybrid
 ];
+const REAGENTS: Reagent[] = [yserallineSeed];
 const PLANTS: Plant[] = [
   aethril,
   dreamleaf,
   foxFlower,
   fjarnskaggl,
-  starlightRose,
-  yserallineSeed
+  starlightRose
 ];
 const FLASKS: Flask[] = [
   flaskIntellect,
@@ -439,6 +440,7 @@ const POTIONS: Potion[] = [
 
 export const EXPORTDATA = {
   SPECIALIZATIONS: SPECIALIZATIONS,
+  REAGENTS: REAGENTS,
   PLANTS: PLANTS,
   FLASKS: FLASKS,
   POTIONS: POTIONS

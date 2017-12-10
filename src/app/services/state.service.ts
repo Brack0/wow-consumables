@@ -77,7 +77,7 @@ export class StateService {
   public updateWantedConsumables(consumable: Consumable): void {
     if (consumable.wantedNumber) {
       this.wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
-      this.updateRecipes(consumable);
+      this.addRecipe(consumable);
       this.updateRequiredMaterial();
     } else {
       delete this.wantedConsumables[consumable.idMaterial];
@@ -89,7 +89,7 @@ export class StateService {
    * Create a new recipe for the material if needed (ie. not known by the StateService)
    * @param material New Material to handle
    */
-  private updateRecipes(material: CraftedMaterial): void {
+  private addRecipe(material: CraftedMaterial): void {
     if (!this.recipes[material.idMaterial]) {
       this.recipes[material.idMaterial] = this.computeService.computeRecipe(
         material

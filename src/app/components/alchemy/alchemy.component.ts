@@ -3,7 +3,14 @@ import { Component } from '@angular/core';
 import { ComputeService } from '../../services/compute.service';
 import { StateService } from '../../services/state.service';
 
-import { Flask, Material, Plant, Potion, Specialization } from '@model';
+import {
+  Flask,
+  Material,
+  Plant,
+  Potion,
+  Reagent,
+  Specialization
+} from '@model';
 
 @Component({
   selector: 'app-alchemy',
@@ -14,6 +21,7 @@ export class AlchemyComponent {
   public title: string = 'Alchemy - Legion';
   public specializations: Specialization[];
   public requiredMaterials: Array<{ component: Material; amount: number }>;
+  public reagents: Reagent[];
   public plants: Plant[];
   public flasks: Flask[];
   public potions: Potion[];
@@ -30,6 +38,10 @@ export class AlchemyComponent {
   private getData(): void {
     this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
+    });
+
+    this.stateService.getReagents().subscribe(reagents => {
+      this.reagents = reagents;
     });
 
     this.stateService.getPlants().subscribe(plants => {

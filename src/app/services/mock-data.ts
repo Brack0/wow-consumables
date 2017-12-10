@@ -1,7 +1,11 @@
 import {
   Content,
   Currency,
+  Feast,
+  Fish,
   Flask,
+  Food,
+  Meat,
   Plant,
   Potion,
   Reagent,
@@ -9,6 +13,10 @@ import {
 } from '@model';
 
 // Init data
+
+/**
+ * Specialization
+ */
 const specDd = new Specialization({
   idSpec: 0,
   name: 'Damage Dealer',
@@ -33,6 +41,9 @@ const specHybrid = new Specialization({
   icon: 'assets/images/hybrid_wow.png'
 });
 
+/**
+ * Content
+ */
 const currentContent = new Content({
   idContent: 1,
   expansionName: 'Legion',
@@ -40,10 +51,22 @@ const currentContent = new Content({
   releaseDate: new Date()
 });
 
+/**
+ * Currency
+ */
 const bloodOfSargeras = new Currency(currentContent, {
   idMaterial: 124124,
   name: 'Blood of Sargeras',
   stackSize: 1000
+});
+
+/**
+ * Reagent
+ */
+const riverOnion = new Reagent(currentContent, {
+  idMaterial: 133591,
+  name: 'River Onion',
+  stackSize: 200
 });
 
 const yserallineSeed = new Reagent(currentContent, {
@@ -52,6 +75,15 @@ const yserallineSeed = new Reagent(currentContent, {
   stackSize: 200
 });
 
+const muskenbutter = new Reagent(currentContent, {
+  idMaterial: 133590,
+  name: 'Muskenbutter',
+  stackSize: 200
+});
+
+/**
+ * Plant
+ */
 const aethril = new Plant(currentContent, {
   idMaterial: 124101,
   name: 'Aethril',
@@ -92,6 +124,31 @@ const starlightRose = new Plant(currentContent, {
   ratio: 3
 });
 
+/**
+ * Meat
+ */
+const fattyBearsteak = new Meat(currentContent, {
+  idMaterial: 124118,
+  name: 'Fatty Bearsteak',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+/**
+ * Fish
+ */
+const mossgillPerch = new Fish(currentContent, {
+  idMaterial: 124108,
+  name: 'Mossgill Perch',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+/**
+ * Flask
+ */
 const flaskIntellect = new Flask(currentContent, {
   idMaterial: 127847,
   name: 'Flask of the Whispered Pact',
@@ -176,6 +233,9 @@ const flaskStamina = new Flask(currentContent, {
   ]
 });
 
+/**
+ * Potion
+ */
 const ancientHealingPotion = new Potion(currentContent, {
   idMaterial: 127834,
   name: 'Ancient Healing Potion',
@@ -402,13 +462,130 @@ const potionProlongedPower = new Potion(currentContent, {
   ]
 });
 
+/**
+ * Food
+ */
+const bearTartare1 = new Food(currentContent, {
+  idMaterial: 133576,
+  name: 'Bear Tartare',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: fattyBearsteak,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const bearTartare2 = new Food(currentContent, {
+  idMaterial: 133576,
+  name: 'Bear Tartare',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: fattyBearsteak,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const bearTartare3 = new Food(currentContent, {
+  idMaterial: 133576,
+  name: 'Bear Tartare',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: fattyBearsteak,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const deepFriedMossgill1 = new Food(currentContent, {
+  idMaterial: 133561,
+  name: 'Deep-Fried Mossgill',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: mossgillPerch,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 5
+    }
+  ]
+});
+
+const deepFriedMossgill2 = new Food(currentContent, {
+  idMaterial: 133561,
+  name: 'Deep-Fried Mossgill',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: mossgillPerch,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 5
+    }
+  ]
+});
+
+const deepFriedMossgill3 = new Food(currentContent, {
+  idMaterial: 133561,
+  name: 'Deep-Fried Mossgill',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: mossgillPerch,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 5
+    }
+  ]
+});
+
 const SPECIALIZATIONS: Specialization[] = [
   specDd,
   specTank,
   specHealer,
   specHybrid
 ];
-const REAGENTS: Reagent[] = [yserallineSeed];
+const REAGENTS: Reagent[] = [muskenbutter, riverOnion, yserallineSeed];
 const PLANTS: Plant[] = [
   aethril,
   dreamleaf,
@@ -416,6 +593,8 @@ const PLANTS: Plant[] = [
   fjarnskaggl,
   starlightRose
 ];
+const MEATS: Meat[] = [fattyBearsteak];
+const FISHS: Fish[] = [mossgillPerch];
 const FLASKS: Flask[] = [
   flaskIntellect,
   flaskAgility,
@@ -437,11 +616,21 @@ const POTIONS: Potion[] = [
   unbendingPotion,
   potionProlongedPower
 ];
+const FOODS: [Food[]] = [
+  [bearTartare1, bearTartare2, bearTartare3],
+  [deepFriedMossgill1, deepFriedMossgill2, deepFriedMossgill3]
+];
+
+const FEASTS: [Feast[]] = undefined;
 
 export const EXPORTDATA = {
   SPECIALIZATIONS: SPECIALIZATIONS,
   REAGENTS: REAGENTS,
   PLANTS: PLANTS,
+  MEATS: MEATS,
+  FISHS: FISHS,
   FLASKS: FLASKS,
-  POTIONS: POTIONS
+  POTIONS: POTIONS,
+  FOODS: FOODS,
+  FEASTS: FEASTS
 };

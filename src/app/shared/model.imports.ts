@@ -2,6 +2,7 @@ export { Consumable } from './model/consumable.model';
 export { Content } from './model/content.model';
 export { CraftedMaterial } from './model/crafted-material.model';
 export { Currency } from './model/currency.model';
+export { Feast } from './model/feast.model';
 export { Fish } from './model/fish.model';
 export { Flask } from './model/flask.model';
 export { Food } from './model/food.model';

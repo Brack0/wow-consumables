@@ -8,10 +8,15 @@ import { ComputeService } from './compute.service';
 import {
   Consumable,
   CraftedMaterial,
+  Feast,
+  Fish,
   Flask,
+  Food,
   Material,
+  Meat,
   Plant,
   Potion,
+  Reagent,
   Recipes,
   Specialization
 } from '@model';
@@ -58,8 +63,20 @@ export class StateService {
     return Observable.of(EXPORTDATA.SPECIALIZATIONS);
   }
 
+  public getReagents(): Observable<Reagent[]> {
+    return Observable.of(EXPORTDATA.REAGENTS);
+  }
+
   public getPlants(): Observable<Plant[]> {
     return Observable.of(EXPORTDATA.PLANTS);
+  }
+
+  public getMeats(): Observable<Meat[]> {
+    return Observable.of(EXPORTDATA.MEATS);
+  }
+
+  public getFishs(): Observable<Fish[]> {
+    return Observable.of(EXPORTDATA.FISHS);
   }
 
   public getFlasks(): Observable<Flask[]> {
@@ -68,6 +85,14 @@ export class StateService {
 
   public getPotions(): Observable<Potion[]> {
     return Observable.of(EXPORTDATA.POTIONS);
+  }
+
+  public getFoods(): Observable<[Food[]]> {
+    return Observable.of(EXPORTDATA.FOODS);
+  }
+
+  public getFeasts(): Observable<[Feast[]]> {
+    return Observable.of(EXPORTDATA.FEASTS);
   }
 
   /**

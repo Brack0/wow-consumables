@@ -4,7 +4,7 @@ import { ComputeService } from '../../services/compute.service';
 import { StateService } from '../../services/state.service';
 
 import {
-  Feast,
+  ConsumableType,
   Fish,
   Food,
   Material,
@@ -25,8 +25,8 @@ export class CookingComponent {
   public reagents: Reagent[];
   public meats: Meat[];
   public fishs: Fish[];
-  public foods: Food[];
-  public feasts: Feast[];
+  public foods: [Food[]];
+  public feasts: [Food[]];
 
   constructor(private stateService: StateService) {
     this.getData();
@@ -54,19 +54,21 @@ export class CookingComponent {
       this.fishs = fishs;
     });
 
-    this.stateService.getFoods().subscribe(foodsArr => {
-      this.foods = foodsArr.map(e => e[0]);
+    this.stateService.getFoods().subscribe(foods => {
+      this.foods = foods;
     });
 
-    this.stateService.getFeasts().subscribe(feastsArr => {
-      if (feastsArr) {
-        this.feasts = feastsArr.map(e => e[0]);
+    this.stateService.getFeasts().subscribe(feasts => {
+      if (feasts) {
+        this.feasts = feasts;
       }
     });
 
-    this.stateService.getRequiredMaterial().subscribe(materials => {
-      this.requiredMaterials = materials;
-      this.callRefreshWowTooltip();
-    });
+    this.stateService
+      .getRequiredMaterial(ConsumableType.Cooking)
+      .subscribe(materials => {
+        this.requiredMaterials = materials;
+        this.callRefreshWowTooltip();
+      });
   }
 }

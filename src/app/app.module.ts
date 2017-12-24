@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatInputModule,
+  MatSliderModule,
   MatTabsModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
@@ -49,6 +50,7 @@ import { CookingComponent } from './components/cooking/cooking.component';
     BrowserAnimationsModule,
     MatTabsModule,
     MatButtonModule,
+    MatSliderModule,
     AppRoutingModule
   ],
   providers: [

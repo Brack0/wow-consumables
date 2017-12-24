@@ -7,8 +7,8 @@ import { ComputeService } from './compute.service';
 
 import {
   Consumable,
+  ConsumableType,
   CraftedMaterial,
-  Feast,
   Fish,
   Flask,
   Food,
@@ -25,10 +25,14 @@ import { EXPORTDATA } from './mock-data';
 @Injectable()
 export class StateService {
   private refreshWowTooltip: ReplaySubject<any> = new ReplaySubject<any>();
-  private requiredMaterialsSubject: ReplaySubject<
+  private requiredMaterialsAlchemySubject: ReplaySubject<
     Array<{ component: Material; amount: number }>
   > = new ReplaySubject(1);
-  private wantedConsumables: { [idConsumable: number]: number } = {};
+  private requiredMaterialsCookingSubject: ReplaySubject<
+    Array<{ component: Material; amount: number }>
+  > = new ReplaySubject(1);
+  private wantedAlchemyConsumables: { [idConsumable: number]: number } = {};
+  private wantedCookingConsumables: { [idConsumable: number]: number } = {};
   private recipes: Recipes = new Recipes();
 
   constructor(private computeService: ComputeService) {}
@@ -53,10 +57,17 @@ export class StateService {
    * Create a ReplaySubject
    * Subscribe to get updated list of required material
    */
-  public getRequiredMaterial(): ReplaySubject<
-    Array<{ component: Material; amount: number }>
-  > {
-    return this.requiredMaterialsSubject;
+  public getRequiredMaterial(
+    type: ConsumableType
+  ): ReplaySubject<Array<{ component: Material; amount: number }>> {
+    switch (type) {
+      case ConsumableType.Alchemy:
+        return this.requiredMaterialsAlchemySubject;
+      case ConsumableType.Cooking:
+        return this.requiredMaterialsCookingSubject;
+      default:
+        return null;
+    }
   }
 
   public getSpecializations(): Observable<Specialization[]> {
@@ -91,7 +102,7 @@ export class StateService {
     return Observable.of(EXPORTDATA.FOODS);
   }
 
-  public getFeasts(): Observable<[Feast[]]> {
+  public getFeasts(): Observable<[Food[]]> {
     return Observable.of(EXPORTDATA.FEASTS);
   }
 
@@ -100,14 +111,32 @@ export class StateService {
    * @param consumable New Consumable to handle
    */
   public updateWantedConsumables(consumable: Consumable): void {
-    if (consumable.wantedNumber) {
-      this.wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
-      this.addRecipe(consumable);
-      this.updateRequiredMaterial();
+    const consumableType = this.computeService.getConsumableType(consumable);
+    let wantedConsumables;
+    if (consumableType === ConsumableType.Alchemy) {
+      wantedConsumables = this.wantedAlchemyConsumables;
     } else {
-      delete this.wantedConsumables[consumable.idMaterial];
-      this.updateRequiredMaterial();
+      wantedConsumables = this.wantedCookingConsumables;
     }
+
+    if (consumable.wantedNumber) {
+      wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
+      this.addRecipe(consumable);
+      this.updateRequiredMaterial(consumableType);
+    } else {
+      delete wantedConsumables[consumable.idMaterial];
+      this.updateRequiredMaterial(consumableType);
+    }
+  }
+
+  /**
+   * Update recipe for the material
+   * @param material Material to update
+   */
+  public updateRecipe(material: CraftedMaterial): void {
+    this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+      material
+    );
   }
 
   /**
@@ -128,10 +157,20 @@ export class StateService {
    * - Merge all Materials and required amount
    * - Push to ReplaySubject
    */
-  private updateRequiredMaterial(): void {
-    this.requiredMaterialsSubject.next(
+  private updateRequiredMaterial(type: ConsumableType): void {
+    let requiredMaterialsSubject, wantedConsumables;
+    if (type === ConsumableType.Alchemy) {
+      requiredMaterialsSubject = this.requiredMaterialsAlchemySubject;
+      wantedConsumables = this.wantedAlchemyConsumables;
+    } else {
+      requiredMaterialsSubject = this.requiredMaterialsCookingSubject;
+      wantedConsumables = this.wantedCookingConsumables;
+    }
+
+    // Pushing new subject
+    requiredMaterialsSubject.next(
       this.computeService.updateRequiredMaterial(
-        this.wantedConsumables,
+        wantedConsumables,
         this.recipes
       )
     );

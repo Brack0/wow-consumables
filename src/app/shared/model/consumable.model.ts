@@ -3,6 +3,7 @@ import { CraftedMaterial } from './crafted-material.model';
 import { Specialization } from './specialization.model';
 
 export abstract class Consumable extends CraftedMaterial {
+  effect: String = 'Testing effect';
   utility: Array<Specialization>;
   wantedNumber: number = 0;
 

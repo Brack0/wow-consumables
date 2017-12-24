@@ -1,10 +1,27 @@
 import { Injectable } from '@angular/core';
 
-import { CraftedMaterial, Material, Recipes } from '@model';
+import {
+  Consumable,
+  ConsumableType,
+  CraftedMaterial,
+  Flask,
+  Food,
+  Material,
+  Potion,
+  Recipes
+} from '@model';
 
 @Injectable()
 export class ComputeService {
   constructor() {}
+
+  public getConsumableType(consumable: Consumable): ConsumableType {
+    if (consumable instanceof Potion || consumable instanceof Flask) {
+      return ConsumableType.Alchemy;
+    } else if (consumable instanceof Food) {
+      return ConsumableType.Cooking;
+    }
+  }
 
   /**
    * Return Recipe for a CraftedMaterial

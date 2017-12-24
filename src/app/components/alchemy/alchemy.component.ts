@@ -4,6 +4,7 @@ import { ComputeService } from '../../services/compute.service';
 import { StateService } from '../../services/state.service';
 
 import {
+  ConsumableType,
   Flask,
   Material,
   Plant,
@@ -56,9 +57,11 @@ export class AlchemyComponent {
       this.potions = potions;
     });
 
-    this.stateService.getRequiredMaterial().subscribe(materials => {
-      this.requiredMaterials = materials;
-      this.callRefreshWowTooltip();
-    });
+    this.stateService
+      .getRequiredMaterial(ConsumableType.Alchemy)
+      .subscribe(materials => {
+        this.requiredMaterials = materials;
+        this.callRefreshWowTooltip();
+      });
   }
 }

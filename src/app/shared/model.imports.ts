@@ -1,8 +1,8 @@
 export { Consumable } from './model/consumable.model';
+export { ConsumableType } from './model/consumable-type.enum';
 export { Content } from './model/content.model';
 export { CraftedMaterial } from './model/crafted-material.model';
 export { Currency } from './model/currency.model';
-export { Feast } from './model/feast.model';
 export { Fish } from './model/fish.model';
 export { Flask } from './model/flask.model';
 export { Food } from './model/food.model';
@@ -10,6 +10,7 @@ export { Material } from './model/material.model';
 export { Meat } from './model/meat.model';
 export { Plant } from './model/plant.model';
 export { Potion } from './model/potion.model';
+export { RankedConsumable } from './model/ranked-consumable.model';
 export { Recipes } from './model/recipes.model';
 export { Reagent } from './model/reagent.model';
 export { Specialization } from './model/specialization.model';

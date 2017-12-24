@@ -1,7 +1,6 @@
 import {
   Content,
   Currency,
-  Feast,
   Fish,
   Flask,
   Food,
@@ -620,8 +619,7 @@ const FOODS: [Food[]] = [
   [bearTartare1, bearTartare2, bearTartare3],
   [deepFriedMossgill1, deepFriedMossgill2, deepFriedMossgill3]
 ];
-
-const FEASTS: [Feast[]] = undefined;
+const FEASTS: [Food[]] = undefined;
 
 export const EXPORTDATA = {
   SPECIALIZATIONS: SPECIALIZATIONS,

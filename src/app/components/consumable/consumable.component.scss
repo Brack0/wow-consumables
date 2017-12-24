@@ -1,10 +1,8 @@
 .consumable {
-  border: 1px solid #ddd;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 0.5rem;
+  align-content: space-between;
 }
 
 .grid-container-consumable-info {
@@ -28,8 +26,18 @@
   margin-top: 20px;
 }
 
-.mat-form-field, .mat-slider {
+.mat-form-field,
+.mat-slider {
   width: 250px;
+}
+.effect {
+  height: 36px;
+  width: 250px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-line;
 }
 
 .q1 {

@@ -151,6 +151,7 @@ const mossgillPerch = new Fish(currentContent, {
 const flaskIntellect = new Flask(currentContent, {
   idMaterial: 127847,
   name: 'Flask of the Whispered Pact',
+  effect: '+1300 Intellect',
   stackSize: 20,
   utility: [specDd, specHealer],
   craftMaterials: [
@@ -172,6 +173,7 @@ const flaskIntellect = new Flask(currentContent, {
 const flaskAgility = new Flask(currentContent, {
   idMaterial: 127848,
   name: 'Flask of the Seventh Demon',
+  effect: '+1300 Agility',
   stackSize: 20,
   utility: [specDd, specTank],
   craftMaterials: [
@@ -193,6 +195,7 @@ const flaskAgility = new Flask(currentContent, {
 const flaskStrengh = new Flask(currentContent, {
   idMaterial: 127849,
   name: 'Flask of the Countless Armies',
+  effect: '+1300 Strength',
   stackSize: 20,
   utility: [specDd, specTank],
   craftMaterials: [
@@ -214,6 +217,7 @@ const flaskStrengh = new Flask(currentContent, {
 const flaskStamina = new Flask(currentContent, {
   idMaterial: 127850,
   name: 'Flask of Ten Thousand Scars',
+  effect: '+1950 Stamina',
   stackSize: 20,
   utility: [specTank],
   craftMaterials: [
@@ -238,6 +242,7 @@ const flaskStamina = new Flask(currentContent, {
 const ancientHealingPotion = new Potion(currentContent, {
   idMaterial: 127834,
   name: 'Ancient Healing Potion',
+  effect: '+480 000 Health',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -251,6 +256,7 @@ const ancientHealingPotion = new Potion(currentContent, {
 const ancientManaPotion = new Potion(currentContent, {
   idMaterial: 127835,
   name: 'Ancient Mana Potion',
+  effect: '+168 000 Mana',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -264,6 +270,7 @@ const ancientManaPotion = new Potion(currentContent, {
 const ancientRejuvenationPotion = new Potion(currentContent, {
   idMaterial: 127836,
   name: 'Ancient Rejuvenation Potion',
+  effect: '+456000 to +504000 Health\n+114000 to +126000 Mana',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [

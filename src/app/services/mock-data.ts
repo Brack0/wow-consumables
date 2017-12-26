@@ -151,7 +151,7 @@ const mossgillPerch = new Fish(currentContent, {
 const flaskIntellect = new Flask(currentContent, {
   idMaterial: 127847,
   name: 'Flask of the Whispered Pact',
-  effect: '+1300 Intellect',
+  effect: 'Grant 1300 Intellect',
   stackSize: 20,
   utility: [specDd, specHealer],
   craftMaterials: [
@@ -173,7 +173,7 @@ const flaskIntellect = new Flask(currentContent, {
 const flaskAgility = new Flask(currentContent, {
   idMaterial: 127848,
   name: 'Flask of the Seventh Demon',
-  effect: '+1300 Agility',
+  effect: 'Grant 1300 Agility',
   stackSize: 20,
   utility: [specDd, specTank],
   craftMaterials: [
@@ -195,7 +195,7 @@ const flaskAgility = new Flask(currentContent, {
 const flaskStrengh = new Flask(currentContent, {
   idMaterial: 127849,
   name: 'Flask of the Countless Armies',
-  effect: '+1300 Strength',
+  effect: 'Grant 1300 Strength',
   stackSize: 20,
   utility: [specDd, specTank],
   craftMaterials: [
@@ -217,7 +217,7 @@ const flaskStrengh = new Flask(currentContent, {
 const flaskStamina = new Flask(currentContent, {
   idMaterial: 127850,
   name: 'Flask of Ten Thousand Scars',
-  effect: '+1950 Stamina',
+  effect: 'Grant 1950 Stamina',
   stackSize: 20,
   utility: [specTank],
   craftMaterials: [
@@ -236,13 +236,44 @@ const flaskStamina = new Flask(currentContent, {
   ]
 });
 
+const flaskCauldron = new Flask(currentContent, {
+  idMaterial: 127851,
+  name: 'Spirit Cauldron',
+  effect: 'Creates 30 flasks based on class and talents',
+  maxNumber: 20,
+  stackSize: 20,
+  utility: [specHybrid],
+  craftMaterials: [
+    {
+      component: flaskIntellect,
+      amount: 5
+    },
+    {
+      component: flaskAgility,
+      amount: 5
+    },
+    {
+      component: flaskStrengh,
+      amount: 5
+    },
+    {
+      component: flaskStamina,
+      amount: 5
+    },
+    {
+      component: bloodOfSargeras,
+      amount: 1
+    }
+  ]
+});
+
 /**
  * Potion
  */
 const ancientHealingPotion = new Potion(currentContent, {
   idMaterial: 127834,
   name: 'Ancient Healing Potion',
-  effect: '+480 000 Health',
+  effect: 'Restores 480 000 Health',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -256,7 +287,7 @@ const ancientHealingPotion = new Potion(currentContent, {
 const ancientManaPotion = new Potion(currentContent, {
   idMaterial: 127835,
   name: 'Ancient Mana Potion',
-  effect: '+168 000 Mana',
+  effect: 'Restores 168 000 Mana',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -270,7 +301,7 @@ const ancientManaPotion = new Potion(currentContent, {
 const ancientRejuvenationPotion = new Potion(currentContent, {
   idMaterial: 127836,
   name: 'Ancient Rejuvenation Potion',
-  effect: '+456000 to +504000 Health\n+114000 to +126000 Mana',
+  effect: 'Restores 456000 to 504000 Health\nand 114000 to 126000 Mana',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -288,6 +319,7 @@ const ancientRejuvenationPotion = new Potion(currentContent, {
 const draughtRawMagic = new Potion(currentContent, {
   idMaterial: 127837,
   name: 'Draught of Raw Magic',
+  effect: 'Cosmetic effect',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -305,6 +337,7 @@ const draughtRawMagic = new Potion(currentContent, {
 const sylvanElixir = new Potion(currentContent, {
   idMaterial: 127838,
   name: 'Sylvan Elixir',
+  effect: 'Grant Well-Rested\nIncrease all stats by 10%',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -322,6 +355,7 @@ const sylvanElixir = new Potion(currentContent, {
 const avalancheElixir = new Potion(currentContent, {
   idMaterial: 127839,
   name: 'Avalanche Elixir',
+  effect: 'Transform you to a meteor\nPrevents next falling damage',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -339,6 +373,7 @@ const avalancheElixir = new Potion(currentContent, {
 const skaggldrynk = new Potion(currentContent, {
   idMaterial: 127840,
   name: 'Skaggldrynk',
+  effect: 'Invisibility Potion',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -356,6 +391,7 @@ const skaggldrynk = new Potion(currentContent, {
 const skystepPotion = new Potion(currentContent, {
   idMaterial: 127841,
   name: 'Skystep Potion',
+  effect: 'Increase movement speed by 150%',
   stackSize: 20,
   utility: [specHybrid],
   craftMaterials: [
@@ -373,6 +409,7 @@ const skystepPotion = new Potion(currentContent, {
 const leytorrentPotion = new Potion(currentContent, {
   idMaterial: 127846,
   name: 'Leytorrent Potion',
+  effect: 'Restores 240 000 mana over 10 seconds',
   stackSize: 20,
   utility: [specDd, specHealer],
   craftMaterials: [
@@ -394,6 +431,7 @@ const leytorrentPotion = new Potion(currentContent, {
 const potionDeadlyGrace = new Potion(currentContent, {
   idMaterial: 127843,
   name: 'Potion of Deadly Grace',
+  effect: 'Unleash a bolt of energy to target\n(Ranged DPS)',
   stackSize: 20,
   utility: [specDd],
   craftMaterials: [
@@ -415,6 +453,7 @@ const potionDeadlyGrace = new Potion(currentContent, {
 const potionOldWar = new Potion(currentContent, {
   idMaterial: 127844,
   name: 'Potion of the Old War',
+  effect: 'Summons pets that mimic abilities\n(Melee DPS)',
   stackSize: 20,
   utility: [specDd],
   craftMaterials: [
@@ -436,6 +475,7 @@ const potionOldWar = new Potion(currentContent, {
 const unbendingPotion = new Potion(currentContent, {
   idMaterial: 127845,
   name: 'Unbending Potion',
+  effect: 'Increases armor by 3500',
   stackSize: 20,
   utility: [specTank],
   craftMaterials: [
@@ -457,6 +497,7 @@ const unbendingPotion = new Potion(currentContent, {
 const potionProlongedPower = new Potion(currentContent, {
   idMaterial: 142117,
   name: 'Potion of Prolonged Power',
+  effect: 'Increases all stats by 2500',
   stackSize: 100,
   utility: [specHybrid],
   craftNumber: 10,
@@ -605,7 +646,8 @@ const FLASKS: Flask[] = [
   flaskIntellect,
   flaskAgility,
   flaskStrengh,
-  flaskStamina
+  flaskStamina,
+  flaskCauldron
 ];
 const POTIONS: Potion[] = [
   ancientHealingPotion,

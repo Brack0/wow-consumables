@@ -5,6 +5,7 @@ import { Specialization } from './specialization.model';
 export abstract class Consumable extends CraftedMaterial {
   effect: String = '';
   utility: Array<Specialization>;
+  maxNumber: number = this.craftNumber * 100;
   wantedNumber: number = 0;
 
   public constructor(content: Content, init?: Partial<Consumable>) {

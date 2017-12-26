@@ -49,7 +49,7 @@ export class ConsumableComponent implements OnInit, OnDestroy {
         this.consumable.wantedNumber ? this.consumable.wantedNumber : '',
         [
           Validators.min(0),
-          Validators.max(100 * this.consumable.craftNumber),
+          Validators.max(this.consumable.maxNumber),
           CustomValidators.inputStep(this.consumable.craftNumber)
         ]
       ]
@@ -97,8 +97,9 @@ export class ConsumableComponent implements OnInit, OnDestroy {
     if (c.touched || c.dirty) {
       if (c.errors) {
         if (c.errors.min || c.errors.max) {
-          this.errorMessage = `Please enter a number between 0 and ${100 *
-            this.consumable.craftNumber}`;
+          this.errorMessage = `Please enter a number between 0 and ${
+            this.consumable.maxNumber
+          }`;
         } else if (c.errors.step) {
           this.errorMessage = c.errors.step.message;
         } else {

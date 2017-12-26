@@ -66,10 +66,8 @@ export class ComputeService {
       recipe.forEach(r => {
         this.mergeMaterial(
           requiredMaterials,
-          {
-            component: r.component,
-            amount: r.amount * wantedNumber
-          },
+          r,
+          wantedNumber,
           r.component instanceof CraftedMaterial ? r.craftNumber : 1
         );
       });
@@ -85,19 +83,20 @@ export class ComputeService {
   private mergeMaterial(
     array: Array<{ component: Material; amount: number }>,
     material: { component: Material; amount: number },
+    wantedNumber: number,
     craftNumber: number
   ): Array<{ component: Material; amount: number }> {
     let added: boolean = false;
     array.forEach(e => {
       if (e.component.idMaterial === material.component.idMaterial) {
-        e.amount += material.amount / craftNumber;
+        e.amount += material.amount * wantedNumber / craftNumber;
         added = true;
       }
     });
     if (!added) {
       array.push({
         component: material.component,
-        amount: material.amount / craftNumber
+        amount: material.amount * wantedNumber / craftNumber
       });
     }
     return array;
@@ -111,17 +110,19 @@ export class ComputeService {
    * @param craftMaterial
    */
   private getCraftMaterial(
-    craftMaterial: CraftedMaterial
+    craftMaterial: CraftedMaterial,
+    wantedNumber: number = 1
   ): Array<{ component: Material; amount: number }> {
     return craftMaterial.craftMaterials.reduce(
       (a, b) =>
         b.component instanceof CraftedMaterial
           ? this.mergeArrayMaterial(
               a,
-              this.getCraftMaterial(b.component as CraftedMaterial),
+              this.getCraftMaterial(b.component as CraftedMaterial, b.amount),
+              wantedNumber,
               b.component.craftNumber
             )
-          : this.mergeMaterial(a, b, craftMaterial.craftNumber),
+          : this.mergeMaterial(a, b, wantedNumber, craftMaterial.craftNumber),
       []
     );
   }
@@ -134,10 +135,11 @@ export class ComputeService {
   private mergeArrayMaterial(
     array: Array<{ component: Material; amount: number }>,
     arrayMaterial: Array<{ component: Material; amount: number }>,
+    wantedNumber: number,
     craftNumber: number
   ): Array<{ component: Material; amount: number }> {
     arrayMaterial.forEach(
-      e => (array = this.mergeMaterial(array, e, craftNumber))
+      e => (array = this.mergeMaterial(array, e, wantedNumber, craftNumber))
     );
     return array;
   }

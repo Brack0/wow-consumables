@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output
+} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -15,27 +22,29 @@ import { CustomValidators } from '../../shared/validators.imports';
   templateUrl: './consumable.component.html',
   styleUrls: ['./consumable.component.scss']
 })
-export class ConsumableComponent implements OnInit {
+export class ConsumableComponent implements OnInit, OnDestroy {
   @Input() consumable: Consumable;
   @Input() consumableArray: Consumable[];
   @Input() displayMaterial: boolean = false;
   @Input() rank: boolean = false;
   public form: FormGroup;
   public errorMessage: string;
+  private rankNumber: number;
 
   constructor(private fb: FormBuilder, private stateService: StateService) {}
 
   public ngOnInit() {
-    if (!this.consumable && this.consumableArray) {
-      // Rank 3 by default
-      this.consumable = this.consumableArray[2];
+    if (this.consumableArray) {
+      if (!this.rankNumber) {
+        // Rank 3 by default
+        this.rankNumber = 3;
+      }
+      this.consumable = this.consumableArray[this.rankNumber - 1];
     }
 
     // init form
     this.form = this.fb.group({
-      rankNumber: [
-        this.consumable instanceof RankedConsumable ? this.consumable.rank : 0
-      ],
+      rankNumber: [this.rankNumber],
       wantedNumber: [
         this.consumable.wantedNumber ? this.consumable.wantedNumber : '',
         [
@@ -56,6 +65,7 @@ export class ConsumableComponent implements OnInit {
       const rankNumberControl = this.form.get('rankNumber');
       rankNumberControl.valueChanges.subscribe((n: number) => {
         // Update consumable
+        this.rankNumber = n;
         this.consumable = this.consumableArray[n - 1];
 
         // Refresh validators
@@ -71,6 +81,11 @@ export class ConsumableComponent implements OnInit {
         this.stateService.callRefreshWowTooltip();
       });
     }
+  }
+
+  public ngOnDestroy(): void {
+    this.consumable.wantedNumber = 0;
+    this.stateService.updateWantedConsumables(this.consumable);
   }
 
   /**

@@ -410,6 +410,7 @@ const leytorrentPotion = new Potion(currentContent, {
   idMaterial: 127846,
   name: 'Leytorrent Potion',
   effect: 'Restores 240 000 mana over 10 seconds',
+  maxNumber: 500,
   stackSize: 20,
   utility: [specDd, specHealer],
   craftMaterials: [
@@ -432,6 +433,7 @@ const potionDeadlyGrace = new Potion(currentContent, {
   idMaterial: 127843,
   name: 'Potion of Deadly Grace',
   effect: 'Unleash a bolt of energy to target\n(Ranged DPS)',
+  maxNumber: 500,
   stackSize: 20,
   utility: [specDd],
   craftMaterials: [
@@ -454,6 +456,7 @@ const potionOldWar = new Potion(currentContent, {
   idMaterial: 127844,
   name: 'Potion of the Old War',
   effect: 'Summons pets that mimic abilities\n(Melee DPS)',
+  maxNumber: 500,
   stackSize: 20,
   utility: [specDd],
   craftMaterials: [

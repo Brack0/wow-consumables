@@ -46,8 +46,9 @@ const specHybrid = new Specialization({
 const currentContent = new Content({
   idContent: 1,
   expansionName: 'Legion',
-  patch: '7.3.0',
-  releaseDate: new Date()
+  patch: 'Version 7.3.2 (25549)',
+  releaseDate: new Date(2017, 10, 21),
+  url: 'https://worldofwarcraft.com/en-us/news/21121541'
 });
 
 /**
@@ -1593,6 +1594,7 @@ const BEST_FOODS: [Food[]] = undefined;
 const FEASTS: [Food[]] = undefined;
 
 export const EXPORTDATA = {
+  CONTENT: currentContent,
   SPECIALIZATIONS: SPECIALIZATIONS,
   REAGENTS: REAGENTS,
   PLANTS: PLANTS,

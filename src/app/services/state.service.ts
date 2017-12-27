@@ -8,6 +8,7 @@ import { ComputeService } from './compute.service';
 import {
   Consumable,
   ConsumableType,
+  Content,
   CraftedMaterial,
   Fish,
   Flask,
@@ -68,6 +69,10 @@ export class StateService {
       default:
         return null;
     }
+  }
+
+  public getContent(): Observable<Content> {
+    return Observable.of(EXPORTDATA.CONTENT);
   }
 
   public getSpecializations(): Observable<Specialization[]> {

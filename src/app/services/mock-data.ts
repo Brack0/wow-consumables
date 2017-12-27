@@ -80,6 +80,42 @@ const muskenbutter = new Reagent(currentContent, {
   stackSize: 200
 });
 
+const wildfowlEgg = new Reagent(currentContent, {
+  idMaterial: 124121,
+  name: 'Wildfowl Egg',
+  stackSize: 200
+});
+
+const royalOlive = new Reagent(currentContent, {
+  idMaterial: 133593,
+  name: 'Royal Olive',
+  stackSize: 200
+});
+
+const flakedSeaSalt = new Reagent(currentContent, {
+  idMaterial: 133588,
+  name: 'Flaked Sea Salt',
+  stackSize: 200
+});
+
+const dalapenoPepper = new Reagent(currentContent, {
+  idMaterial: 133589,
+  name: 'Dalapeño Pepper',
+  stackSize: 200
+});
+
+const leyblood = new Reagent(currentContent, {
+  idMaterial: 124120,
+  name: 'Leyblood',
+  stackSize: 200
+});
+
+const stonedarkSnail = new Reagent(currentContent, {
+  idMaterial: 133592,
+  name: 'Stonedark Snail',
+  stackSize: 200
+});
+
 /**
  * Plant
  */
@@ -134,12 +170,74 @@ const fattyBearsteak = new Meat(currentContent, {
   ratio: 10
 });
 
+const leanShank = new Meat(currentContent, {
+  idMaterial: 124117,
+  name: 'Lean Shank',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const bigGamyRibs = new Meat(currentContent, {
+  idMaterial: 124119,
+  name: 'Big Gamy Ribs',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
 /**
  * Fish
  */
 const mossgillPerch = new Fish(currentContent, {
   idMaterial: 124108,
   name: 'Mossgill Perch',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const silverMackerel = new Fish(currentContent, {
+  idMaterial: 133607,
+  name: 'Silver Mackerel',
+  stackSize: 200
+});
+
+const cursedQueenfish = new Fish(currentContent, {
+  idMaterial: 124107,
+  name: 'Cursed Queenfish',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const stormray = new Fish(currentContent, {
+  idMaterial: 124110,
+  name: 'Stormray',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const runescaleKoi = new Fish(currentContent, {
+  idMaterial: 124111,
+  name: 'Runescale Koi',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const blackBarracuda = new Fish(currentContent, {
+  idMaterial: 124112,
+  name: 'Black Barracuda',
+  stackSize: 200,
+  currency: bloodOfSargeras,
+  ratio: 10
+});
+
+const highmountainSalmon = new Fish(currentContent, {
+  idMaterial: 124109,
+  name: 'Highmountain Salmon',
   stackSize: 200,
   currency: bloodOfSargeras,
   ratio: 10
@@ -513,11 +611,12 @@ const potionProlongedPower = new Potion(currentContent, {
 });
 
 /**
- * Food
+ * Average Food
  */
 const bearTartare1 = new Food(currentContent, {
   idMaterial: 133576,
   name: 'Bear Tartare',
+  effect: 'Sprint for short time after killing enemy',
   stackSize: 20,
   utility: [specHybrid],
   rank: 1,
@@ -537,6 +636,7 @@ const bearTartare1 = new Food(currentContent, {
 const bearTartare2 = new Food(currentContent, {
   idMaterial: 133576,
   name: 'Bear Tartare',
+  effect: 'Sprint for short time after killing enemy',
   stackSize: 20,
   utility: [specHybrid],
   rank: 2,
@@ -556,6 +656,7 @@ const bearTartare2 = new Food(currentContent, {
 const bearTartare3 = new Food(currentContent, {
   idMaterial: 133576,
   name: 'Bear Tartare',
+  effect: 'Sprint for short time after killing enemy',
   stackSize: 20,
   utility: [specHybrid],
   rank: 3,
@@ -575,6 +676,7 @@ const bearTartare3 = new Food(currentContent, {
 const deepFriedMossgill1 = new Food(currentContent, {
   idMaterial: 133561,
   name: 'Deep-Fried Mossgill',
+  effect: 'Grant 225 Haste',
   stackSize: 20,
   utility: [specHybrid],
   rank: 1,
@@ -594,6 +696,7 @@ const deepFriedMossgill1 = new Food(currentContent, {
 const deepFriedMossgill2 = new Food(currentContent, {
   idMaterial: 133561,
   name: 'Deep-Fried Mossgill',
+  effect: 'Grant 225 Haste',
   stackSize: 20,
   utility: [specHybrid],
   rank: 2,
@@ -613,6 +716,7 @@ const deepFriedMossgill2 = new Food(currentContent, {
 const deepFriedMossgill3 = new Food(currentContent, {
   idMaterial: 133561,
   name: 'Deep-Fried Mossgill',
+  effect: 'Grant 225 Haste',
   stackSize: 20,
   utility: [specHybrid],
   rank: 3,
@@ -629,13 +733,806 @@ const deepFriedMossgill3 = new Food(currentContent, {
   ]
 });
 
+const driedMackerelStrips1 = new Food(currentContent, {
+  idMaterial: 133575,
+  name: 'Dried Mackerel Strips',
+  effect: 'Restore Health/Mana',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: silverMackerel,
+      amount: 5
+    }
+  ]
+});
+
+const driedMackerelStrips2 = new Food(currentContent, {
+  idMaterial: 133575,
+  name: 'Dried Mackerel Strips',
+  effect: 'Restore Health/Mana',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: silverMackerel,
+      amount: 5
+    }
+  ]
+});
+
+const driedMackerelStrips3 = new Food(currentContent, {
+  idMaterial: 133575,
+  name: 'Dried Mackerel Strips',
+  effect: 'Restore Health/Mana',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: silverMackerel,
+      amount: 5
+    }
+  ]
+});
+
+const faronaarFizz1 = new Food(currentContent, {
+  idMaterial: 133563,
+  name: 'Faronaar Fizz',
+  effect: 'Grant 225 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: wildfowlEgg,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 3
+    }
+  ]
+});
+
+const faronaarFizz2 = new Food(currentContent, {
+  idMaterial: 133563,
+  name: 'Faronaar Fizz',
+  effect: 'Grant 225 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: wildfowlEgg,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 3
+    }
+  ]
+});
+
+const faronaarFizz3 = new Food(currentContent, {
+  idMaterial: 133563,
+  name: 'Faronaar Fizz',
+  effect: 'Grant 225 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: wildfowlEgg,
+      amount: 5
+    },
+    {
+      component: riverOnion,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 3
+    }
+  ]
+});
+
+const fighterChow1 = new Food(currentContent, {
+  idMaterial: 133577,
+  name: 'Fighter Chow',
+  effect: '400% Increased Health Regeneration',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: cursedQueenfish,
+      amount: 5
+    },
+    {
+      component: royalOlive,
+      amount: 1
+    }
+  ]
+});
+
+const fighterChow2 = new Food(currentContent, {
+  idMaterial: 133577,
+  name: 'Fighter Chow',
+  effect: '400% Increased Health Regeneration',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: cursedQueenfish,
+      amount: 5
+    },
+    {
+      component: royalOlive,
+      amount: 1
+    }
+  ]
+});
+
+const fighterChow3 = new Food(currentContent, {
+  idMaterial: 133577,
+  name: 'Fighter Chow',
+  effect: '400% Increased Health Regeneration',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: cursedQueenfish,
+      amount: 5
+    },
+    {
+      component: royalOlive,
+      amount: 1
+    }
+  ]
+});
+
+const pickledStormray1 = new Food(currentContent, {
+  idMaterial: 133562,
+  name: 'Pickled Stormray',
+  effect: 'Grant 225 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 3
+    }
+  ]
+});
+
+const pickledStormray2 = new Food(currentContent, {
+  idMaterial: 133562,
+  name: 'Pickled Stormray',
+  effect: 'Grant 225 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 3
+    }
+  ]
+});
+
+const pickledStormray3 = new Food(currentContent, {
+  idMaterial: 133562,
+  name: 'Pickled Stormray',
+  effect: 'Grant 225 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 3
+    }
+  ]
+});
+
+const saltAndPepperShank1 = new Food(currentContent, {
+  idMaterial: 133557,
+  name: 'Salt and Pepper Shank',
+  effect: 'Grant 225 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 2
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    }
+  ]
+});
+
+const saltAndPepperShank2 = new Food(currentContent, {
+  idMaterial: 133557,
+  name: 'Salt and Pepper Shank',
+  effect: 'Grant 225 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 2
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    }
+  ]
+});
+
+const saltAndPepperShank3 = new Food(currentContent, {
+  idMaterial: 133557,
+  name: 'Salt and Pepper Shank',
+  effect: 'Grant 225 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 2
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    }
+  ]
+});
+
+const spicedRibRoast1 = new Food(currentContent, {
+  idMaterial: 133564,
+  name: 'Spiced Rib Roast',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+const spicedRibRoast2 = new Food(currentContent, {
+  idMaterial: 133564,
+  name: 'Spiced Rib Roast',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+const spicedRibRoast3 = new Food(currentContent, {
+  idMaterial: 133564,
+  name: 'Spiced Rib Roast',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+/**
+ * Better Food
+ */
+const suramarSurfAndTurf1 = new Food(currentContent, {
+  idMaterial: 133566,
+  name: 'Suramar Surf and Turf',
+  effect: 'Grant 300 Haste',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 2
+    }
+  ]
+});
+
+const suramarSurfAndTurf2 = new Food(currentContent, {
+  idMaterial: 133566,
+  name: 'Suramar Surf and Turf',
+  effect: 'Grant 300 Haste',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 2
+    }
+  ]
+});
+
+const suramarSurfAndTurf3 = new Food(currentContent, {
+  idMaterial: 133566,
+  name: 'Suramar Surf and Turf',
+  effect: 'Grant 300 Haste',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: leanShank,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: royalOlive,
+      amount: 2
+    }
+  ]
+});
+
+const koiScentedStormray1 = new Food(currentContent, {
+  idMaterial: 133568,
+  name: 'Koi-Scented Stormray',
+  effect: 'Grant 300 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: muskenbutter,
+      amount: 2
+    }
+  ]
+});
+
+const koiScentedStormray2 = new Food(currentContent, {
+  idMaterial: 133568,
+  name: 'Koi-Scented Stormray',
+  effect: 'Grant 300 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: muskenbutter,
+      amount: 2
+    }
+  ]
+});
+
+const koiScentedStormray3 = new Food(currentContent, {
+  idMaterial: 133568,
+  name: 'Koi-Scented Stormray',
+  effect: 'Grant 300 Versatility',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: runescaleKoi,
+      amount: 5
+    },
+    {
+      component: stormray,
+      amount: 5
+    },
+    {
+      component: flakedSeaSalt,
+      amount: 2
+    },
+    {
+      component: muskenbutter,
+      amount: 2
+    }
+  ]
+});
+
+const barracudaMrglgagh1 = new Food(currentContent, {
+  idMaterial: 133567,
+  name: 'Barracuda Mrglgagh',
+  effect: 'Grant 300 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: blackBarracuda,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 4
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const barracudaMrglgagh2 = new Food(currentContent, {
+  idMaterial: 133567,
+  name: 'Barracuda Mrglgagh',
+  effect: 'Grant 300 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: blackBarracuda,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 4
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const barracudaMrglgagh3 = new Food(currentContent, {
+  idMaterial: 133567,
+  name: 'Barracuda Mrglgagh',
+  effect: 'Grant 300 Mastery',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: blackBarracuda,
+      amount: 5
+    },
+    {
+      component: muskenbutter,
+      amount: 4
+    },
+    {
+      component: riverOnion,
+      amount: 1
+    }
+  ]
+});
+
+const leybequeRibs1 = new Food(currentContent, {
+  idMaterial: 133565,
+  name: 'Leybeque Ribs',
+  effect: 'Grant 300 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+const leybequeRibs2 = new Food(currentContent, {
+  idMaterial: 133565,
+  name: 'Leybeque Ribs',
+  effect: 'Grant 300 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+const leybequeRibs3 = new Food(currentContent, {
+  idMaterial: 133565,
+  name: 'Leybeque Ribs',
+  effect: 'Grant 300 Critical Strike',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: leyblood,
+      amount: 5
+    },
+    {
+      component: bigGamyRibs,
+      amount: 5
+    },
+    {
+      component: dalapenoPepper,
+      amount: 5
+    }
+  ]
+});
+
+const drogbarStyleSalmon1 = new Food(currentContent, {
+  idMaterial: 133569,
+  name: 'Drogbar-Style Salmon',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 1,
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: highmountainSalmon,
+      amount: 5
+    },
+    {
+      component: stonedarkSnail,
+      amount: 10
+    },
+    {
+      component: dalapenoPepper,
+      amount: 4
+    },
+    {
+      component: royalOlive,
+      amount: 10
+    }
+  ]
+});
+
+const drogbarStyleSalmon2 = new Food(currentContent, {
+  idMaterial: 133569,
+  name: 'Drogbar-Style Salmon',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 2,
+  craftNumber: 7,
+  craftMaterials: [
+    {
+      component: highmountainSalmon,
+      amount: 5
+    },
+    {
+      component: stonedarkSnail,
+      amount: 10
+    },
+    {
+      component: dalapenoPepper,
+      amount: 4
+    },
+    {
+      component: royalOlive,
+      amount: 10
+    }
+  ]
+});
+
+const drogbarStyleSalmon3 = new Food(currentContent, {
+  idMaterial: 133569,
+  name: 'Drogbar-Style Salmon',
+  effect: 'Pepper Breath Fireballs',
+  stackSize: 20,
+  utility: [specHybrid],
+  rank: 3,
+  craftNumber: 10,
+  craftMaterials: [
+    {
+      component: highmountainSalmon,
+      amount: 5
+    },
+    {
+      component: stonedarkSnail,
+      amount: 10
+    },
+    {
+      component: dalapenoPepper,
+      amount: 4
+    },
+    {
+      component: royalOlive,
+      amount: 10
+    }
+  ]
+});
+
 const SPECIALIZATIONS: Specialization[] = [
   specDd,
   specTank,
   specHealer,
   specHybrid
 ];
-const REAGENTS: Reagent[] = [muskenbutter, riverOnion, yserallineSeed];
+const REAGENTS: Reagent[] = [
+  muskenbutter,
+  riverOnion,
+  yserallineSeed,
+  wildfowlEgg,
+  royalOlive,
+  flakedSeaSalt,
+  dalapenoPepper,
+  leyblood,
+  stonedarkSnail
+];
 const PLANTS: Plant[] = [
   aethril,
   dreamleaf,
@@ -643,8 +1540,16 @@ const PLANTS: Plant[] = [
   fjarnskaggl,
   starlightRose
 ];
-const MEATS: Meat[] = [fattyBearsteak];
-const FISHS: Fish[] = [mossgillPerch];
+const MEATS: Meat[] = [fattyBearsteak, leanShank, bigGamyRibs];
+const FISHS: Fish[] = [
+  mossgillPerch,
+  silverMackerel,
+  cursedQueenfish,
+  stormray,
+  runescaleKoi,
+  blackBarracuda,
+  highmountainSalmon
+];
 const FLASKS: Flask[] = [
   flaskIntellect,
   flaskAgility,
@@ -667,10 +1572,24 @@ const POTIONS: Potion[] = [
   unbendingPotion,
   potionProlongedPower
 ];
-const FOODS: [Food[]] = [
+const AVERAGE_FOODS: [Food[]] = [
   [bearTartare1, bearTartare2, bearTartare3],
-  [deepFriedMossgill1, deepFriedMossgill2, deepFriedMossgill3]
+  [deepFriedMossgill1, deepFriedMossgill2, deepFriedMossgill3],
+  [driedMackerelStrips1, driedMackerelStrips2, driedMackerelStrips3],
+  [faronaarFizz1, faronaarFizz2, faronaarFizz3],
+  [fighterChow1, fighterChow2, fighterChow3],
+  [pickledStormray1, pickledStormray2, pickledStormray3],
+  [saltAndPepperShank1, saltAndPepperShank2, saltAndPepperShank3],
+  [spicedRibRoast1, spicedRibRoast2, spicedRibRoast3]
 ];
+const BETTER_FOODS: [Food[]] = [
+  [suramarSurfAndTurf1, suramarSurfAndTurf2, suramarSurfAndTurf3],
+  [koiScentedStormray1, koiScentedStormray2, koiScentedStormray3],
+  [barracudaMrglgagh1, barracudaMrglgagh2, barracudaMrglgagh3],
+  [leybequeRibs1, leybequeRibs2, leybequeRibs3],
+  [drogbarStyleSalmon1, drogbarStyleSalmon2, drogbarStyleSalmon3]
+];
+const BEST_FOODS: [Food[]] = undefined;
 const FEASTS: [Food[]] = undefined;
 
 export const EXPORTDATA = {
@@ -681,6 +1600,8 @@ export const EXPORTDATA = {
   FISHS: FISHS,
   FLASKS: FLASKS,
   POTIONS: POTIONS,
-  FOODS: FOODS,
+  AVERAGE_FOODS: AVERAGE_FOODS,
+  BETTER_FOODS: BETTER_FOODS,
+  BEST_FOODS: BEST_FOODS,
   FEASTS: FEASTS
 };

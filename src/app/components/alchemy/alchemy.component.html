@@ -4,7 +4,7 @@
     <div class="box-border-container">
       <div class="grid-container-material">
         <div *ngFor="let material of requiredMaterials; let index=index">
-          <app-material [material]="material.component" [wantedNumber]="material.amount"></app-material>
+          <app-material [material]="material.component" [wantedNumber]="-1" [craftNumber]="material.amount"></app-material>
         </div>
       </div>
     </div>

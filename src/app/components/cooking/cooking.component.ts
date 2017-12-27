@@ -25,7 +25,9 @@ export class CookingComponent {
   public reagents: Reagent[];
   public meats: Meat[];
   public fishs: Fish[];
-  public foods: [Food[]];
+  public averageFoods: [Food[]];
+  public betterFoods: [Food[]];
+  public bestFoods: [Food[]];
   public feasts: [Food[]];
 
   constructor(private stateService: StateService) {
@@ -54,8 +56,16 @@ export class CookingComponent {
       this.fishs = fishs;
     });
 
-    this.stateService.getFoods().subscribe(foods => {
-      this.foods = foods;
+    this.stateService.getAverageFoods().subscribe(foods => {
+      this.averageFoods = foods;
+    });
+
+    this.stateService.getBetterFoods().subscribe(foods => {
+      this.betterFoods = foods;
+    });
+
+    this.stateService.getBestFoods().subscribe(foods => {
+      this.bestFoods = foods;
     });
 
     this.stateService.getFeasts().subscribe(feasts => {

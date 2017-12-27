@@ -98,8 +98,16 @@ export class StateService {
     return Observable.of(EXPORTDATA.POTIONS);
   }
 
-  public getFoods(): Observable<[Food[]]> {
-    return Observable.of(EXPORTDATA.FOODS);
+  public getAverageFoods(): Observable<[Food[]]> {
+    return Observable.of(EXPORTDATA.AVERAGE_FOODS);
+  }
+
+  public getBetterFoods(): Observable<[Food[]]> {
+    return Observable.of(EXPORTDATA.BETTER_FOODS);
+  }
+
+  public getBestFoods(): Observable<[Food[]]> {
+    return Observable.of(EXPORTDATA.BEST_FOODS);
   }
 
   public getFeasts(): Observable<[Food[]]> {

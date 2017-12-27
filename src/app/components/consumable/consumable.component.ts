@@ -64,6 +64,9 @@ export class ConsumableComponent implements OnInit, OnDestroy {
     if (this.rank) {
       const rankNumberControl = this.form.get('rankNumber');
       rankNumberControl.valueChanges.subscribe((n: number) => {
+        // Reset model value
+        this.consumable.wantedNumber = 0;
+
         // Update consumable
         this.rankNumber = n;
         this.consumable = this.consumableArray[n - 1];

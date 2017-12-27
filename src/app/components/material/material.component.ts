@@ -10,6 +10,7 @@ import { Material } from '@model';
 export class MaterialComponent {
   @Input() material: Material;
   @Input() wantedNumber: number;
+  @Input() craftNumber: number;
 
   constructor() {}
 }

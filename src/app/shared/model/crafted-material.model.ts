@@ -1,11 +1,12 @@
 import { Content } from './content.model';
 import { Material } from './material.model';
+import { RequiredMaterial } from './required-material.model';
 
 export class CraftedMaterial extends Material {
-  craftMaterials: Array<{ component: Material; amount: number }>;
+  craftMaterials: RequiredMaterial[];
   craftNumber: number = 1;
 
-  public constructor(content: Content, init?: Partial<CraftedMaterial>) {
+  constructor(content: Content, init?: Partial<CraftedMaterial>) {
     super(content, init);
     Object.assign(this, init);
   }

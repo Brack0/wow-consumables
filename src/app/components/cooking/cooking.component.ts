@@ -10,6 +10,7 @@ import {
   Material,
   Meat,
   Reagent,
+  RequiredMaterial,
   Specialization
 } from '@model';
 
@@ -21,14 +22,14 @@ import {
 export class CookingComponent {
   public title: string = 'Cooking - Legion';
   public specializations: Specialization[];
-  public requiredMaterials: Array<{ component: Material; amount: number }>;
+  public requiredMaterials: RequiredMaterial[];
   public reagents: Reagent[];
   public meats: Meat[];
   public fishs: Fish[];
-  public averageFoods: [Food[]];
-  public betterFoods: [Food[]];
-  public bestFoods: [Food[]];
-  public feasts: [Food[]];
+  public averageFoods: Food[][];
+  public betterFoods: Food[][];
+  public bestFoods: Food[][];
+  public feasts: Food[][];
 
   constructor(private stateService: StateService) {
     this.getData();
@@ -39,6 +40,9 @@ export class CookingComponent {
     this.stateService.callRefreshWowTooltip();
   }
 
+  /**
+   * Gather data from StateService
+   */
   private getData(): void {
     this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
@@ -69,9 +73,7 @@ export class CookingComponent {
     });
 
     this.stateService.getFeasts().subscribe(feasts => {
-      if (feasts) {
-        this.feasts = feasts;
-      }
+      this.feasts = feasts;
     });
 
     this.stateService

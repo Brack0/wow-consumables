@@ -4,7 +4,7 @@ import { Content } from './content.model';
 export class RankedConsumable extends Consumable {
   rank: number;
 
-  public constructor(content: Content, init?: Partial<RankedConsumable>) {
+  constructor(content: Content, init?: Partial<RankedConsumable>) {
     super(content, init);
     Object.assign(this, init);
   }

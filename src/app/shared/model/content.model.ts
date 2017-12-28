@@ -11,7 +11,7 @@ export class Content {
 
   public getFullName(): string {
     return (
-      this.patch + '\nLast updated ' + this.releaseDate.toLocaleDateString()
+      this.patch + '\nLast updated : ' + this.releaseDate.toLocaleDateString()
     );
   }
 }

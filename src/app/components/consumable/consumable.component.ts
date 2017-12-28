@@ -34,6 +34,7 @@ export class ConsumableComponent implements OnInit, OnDestroy {
   constructor(private fb: FormBuilder, private stateService: StateService) {}
 
   public ngOnInit() {
+    // init consumable from array (only for consumable with rank)
     if (this.consumableArray) {
       if (!this.rankNumber) {
         // Rank 3 by default
@@ -93,7 +94,6 @@ export class ConsumableComponent implements OnInit, OnDestroy {
 
   /**
    * Either update data or create a message
-   * @param n input value
    * @param c input control
    */
   private computeWantedNumber(c: AbstractControl): void {

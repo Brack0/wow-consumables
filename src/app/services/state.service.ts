@@ -19,7 +19,9 @@ import {
   Potion,
   Reagent,
   Recipes,
-  Specialization
+  RequiredMaterial,
+  Specialization,
+  WantedConsumables
 } from '@model';
 import { EXPORTDATA } from './mock-data';
 
@@ -27,19 +29,18 @@ import { EXPORTDATA } from './mock-data';
 export class StateService {
   private refreshWowTooltip: ReplaySubject<any> = new ReplaySubject<any>();
   private requiredMaterialsAlchemySubject: ReplaySubject<
-    Array<{ component: Material; amount: number }>
+    RequiredMaterial[]
   > = new ReplaySubject(1);
   private requiredMaterialsCookingSubject: ReplaySubject<
-    Array<{ component: Material; amount: number }>
+    RequiredMaterial[]
   > = new ReplaySubject(1);
-  private wantedAlchemyConsumables: { [idConsumable: number]: number } = {};
-  private wantedCookingConsumables: { [idConsumable: number]: number } = {};
+  private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
+  private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
 
   constructor(private computeService: ComputeService) {}
 
   /**
-   * Create a ReplaySubject
    * Subscribe to get when to refresh wow tooltip
    */
   public getRefreshWowTooltip(): ReplaySubject<any> {
@@ -60,14 +61,11 @@ export class StateService {
    */
   public getRequiredMaterial(
     type: ConsumableType
-  ): ReplaySubject<Array<{ component: Material; amount: number }>> {
-    switch (type) {
-      case ConsumableType.Alchemy:
-        return this.requiredMaterialsAlchemySubject;
-      case ConsumableType.Cooking:
-        return this.requiredMaterialsCookingSubject;
-      default:
-        return null;
+  ): ReplaySubject<RequiredMaterial[]> {
+    if (type === ConsumableType.Alchemy) {
+      return this.requiredMaterialsAlchemySubject;
+    } else {
+      return this.requiredMaterialsCookingSubject;
     }
   }
 
@@ -103,20 +101,30 @@ export class StateService {
     return Observable.of(EXPORTDATA.POTIONS);
   }
 
-  public getAverageFoods(): Observable<[Food[]]> {
+  public getAverageFoods(): Observable<Food[][]> {
     return Observable.of(EXPORTDATA.AVERAGE_FOODS);
   }
 
-  public getBetterFoods(): Observable<[Food[]]> {
+  public getBetterFoods(): Observable<Food[][]> {
     return Observable.of(EXPORTDATA.BETTER_FOODS);
   }
 
-  public getBestFoods(): Observable<[Food[]]> {
+  public getBestFoods(): Observable<Food[][]> {
     return Observable.of(EXPORTDATA.BEST_FOODS);
   }
 
-  public getFeasts(): Observable<[Food[]]> {
+  public getFeasts(): Observable<Food[][]> {
     return Observable.of(EXPORTDATA.FEASTS);
+  }
+
+  public getFoods(): Observable<Food[][]> {
+    return Observable.of(
+      EXPORTDATA.AVERAGE_FOODS.concat(
+        EXPORTDATA.BETTER_FOODS,
+        EXPORTDATA.BEST_FOODS,
+        EXPORTDATA.FEASTS
+      )
+    );
   }
 
   /**
@@ -133,11 +141,16 @@ export class StateService {
     }
 
     if (consumable.wantedNumber) {
+      // Update wantedConsumables
       wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
+      // Compute recipe if needed
       this.addRecipe(consumable);
+      // Update list of required material
       this.updateRequiredMaterial(consumableType);
     } else {
+      // Update wantedConsumables
       delete wantedConsumables[consumable.idMaterial];
+      // Update list of required material
       this.updateRequiredMaterial(consumableType);
     }
   }
@@ -169,6 +182,7 @@ export class StateService {
    * - Get Recipes
    * - Merge all Materials and required amount
    * - Push to ReplaySubject
+   * @param type Type of Consumable
    */
   private updateRequiredMaterial(type: ConsumableType): void {
     let requiredMaterialsSubject, wantedConsumables;

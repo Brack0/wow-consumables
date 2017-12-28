@@ -2,7 +2,7 @@
   <div class="icon-number">
     <a href="https://www.wowhead.com/item={{material.idMaterial}}" class="itemRef"></a>
     <div *ngIf="wantedNumber > 0" class="number">x{{wantedNumber/craftNumber}}</div>
-    <div *ngIf="wantedNumber < 0" class="number">{{craftNumber}}</div>
+    <div *ngIf="wantedNumber < 0" class="number">{{craftNumber | number:'.0-1'}}</div>
   </div>
   <div class="name">{{material.name}}</div>
 </div>

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Home {
   public title = 'World of Warcraft - Consumables';
-  public subtitle = 'Work in progress';
+  public subtitle = 'BETA VERSION';
 
   constructor() {}
 }

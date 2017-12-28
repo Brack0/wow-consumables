@@ -1,32 +1,32 @@
 import { Component } from '@angular/core';
-
-import { ComputeService } from '../../services/compute.service';
-import { StateService } from '../../services/state.service';
-
 import {
-  ConsumableType,
+  Fish,
   Flask,
+  Food,
   Material,
+  Meat,
   Plant,
   Potion,
   Reagent,
-  RequiredMaterial,
   Specialization
 } from '@model';
+import { StateService } from 'app/services/state.service';
 
 @Component({
-  selector: 'app-alchemy',
-  templateUrl: './alchemy.component.html',
-  styleUrls: ['./alchemy.component.scss']
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss']
 })
-export class AlchemyComponent {
+export class OverviewComponent {
   public title: string = 'Alchemy - Legion';
   public specializations: Specialization[];
-  public requiredMaterials: RequiredMaterial[];
   public reagents: Reagent[];
   public plants: Plant[];
+  public meats: Meat[];
+  public fishs: Fish[];
   public flasks: Flask[];
   public potions: Potion[];
+  public foods: Food[][];
 
   constructor(private stateService: StateService) {
     this.getData();
@@ -53,6 +53,14 @@ export class AlchemyComponent {
       this.plants = plants;
     });
 
+    this.stateService.getMeats().subscribe(meats => {
+      this.meats = meats;
+    });
+
+    this.stateService.getFishs().subscribe(fishs => {
+      this.fishs = fishs;
+    });
+
     this.stateService.getFlasks().subscribe(flasks => {
       this.flasks = flasks;
     });
@@ -61,11 +69,8 @@ export class AlchemyComponent {
       this.potions = potions;
     });
 
-    this.stateService
-      .getRequiredMaterial(ConsumableType.Alchemy)
-      .subscribe(materials => {
-        this.requiredMaterials = materials;
-        this.callRefreshWowTooltip();
-      });
+    this.stateService.getFoods().subscribe(foods => {
+      this.foods = foods;
+    });
   }
 }

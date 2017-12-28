@@ -402,7 +402,7 @@ const ancientManaPotion = new Potion(currentContent, {
   name: 'Ancient Mana Potion',
   effect: 'Restores 168 000 Mana',
   stackSize: 20,
-  utility: [specHybrid],
+  utility: [specHealer],
   craftMaterials: [
     {
       component: yserallineSeed,
@@ -416,7 +416,7 @@ const ancientRejuvenationPotion = new Potion(currentContent, {
   name: 'Ancient Rejuvenation Potion',
   effect: 'Restores 456000 to 504000 Health\nand 114000 to 126000 Mana',
   stackSize: 20,
-  utility: [specHybrid],
+  utility: [specHealer],
   craftMaterials: [
     {
       component: ancientHealingPotion,
@@ -525,7 +525,7 @@ const leytorrentPotion = new Potion(currentContent, {
   effect: 'Restores 240 000 mana over 10 seconds',
   maxNumber: 500,
   stackSize: 20,
-  utility: [specDd, specHealer],
+  utility: [specHealer],
   craftMaterials: [
     {
       component: starlightRose,

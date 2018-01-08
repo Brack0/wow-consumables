@@ -2,20 +2,20 @@
   display: grid;
   grid-template-columns: 20px 1fr;
   margin: 0 auto;
-}
 
-.name {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  height: 22px;
-  width: 118px;
-  font-variant: small-caps;
-  font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica,
-    sans-serif;
-  letter-spacing: -1px;
-}
+  .name {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    height: 22px;
+    width: 118px;
+    font-variant: small-caps;
+    font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica,
+      sans-serif;
+    letter-spacing: -1px;
+  }
 
-.icon {
-  vertical-align: middle;
+  .icon {
+    vertical-align: middle;
+  }
 }

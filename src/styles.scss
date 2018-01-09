@@ -4,10 +4,11 @@
 @include mat-core();
 
 $primary: mat-palette($mat-green, 900);
-$accent: mat-palette($mat-amber, A200, A100, A400);
+$accent: mat-palette($mat-amber, A200);
 $theme: mat-light-theme($primary, $accent);
 
 // Import custom theme files
+@import 'app/_app-theme.scss';
 @import 'app/shared/footer/_footer-theme.scss';
 @import 'app/shared/header/_header-theme.scss';
 @import 'app/shared/home/_home-theme.scss';
@@ -15,6 +16,7 @@ $theme: mat-light-theme($primary, $accent);
 
 // Apply theme
 @include angular-material-theme($theme);
+@include app-theme($theme);
 @include footer-theme($theme);
 @include header-theme($theme);
 @include home-theme($theme);

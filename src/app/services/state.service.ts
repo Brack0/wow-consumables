@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+
 import '@rxjs';
 import { Observable } from 'rxjs/Observable';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subject } from 'rxjs/Subject';
 
 import { ComputeService } from './compute.service';
 
@@ -27,13 +28,13 @@ import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class StateService {
-  private refreshWowTooltip: ReplaySubject<any> = new ReplaySubject<any>();
-  private requiredMaterialsAlchemySubject: ReplaySubject<
+  private refreshWowTooltip: Subject<any> = new Subject<any>();
+  private requiredMaterialsAlchemySubject: Subject<
     RequiredMaterial[]
-  > = new ReplaySubject(1);
-  private requiredMaterialsCookingSubject: ReplaySubject<
+  > = new Subject();
+  private requiredMaterialsCookingSubject: Subject<
     RequiredMaterial[]
-  > = new ReplaySubject(1);
+  > = new Subject();
   private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
   private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
@@ -43,7 +44,7 @@ export class StateService {
   /**
    * Subscribe to get when to refresh wow tooltip
    */
-  public getRefreshWowTooltip(): ReplaySubject<any> {
+  public getRefreshWowTooltip(): Subject<any> {
     return this.refreshWowTooltip;
   }
 
@@ -56,12 +57,12 @@ export class StateService {
   }
 
   /**
-   * Create a ReplaySubject
+   * Create a Subject
    * Subscribe to get updated list of required material
    */
   public getRequiredMaterial(
     type: ConsumableType
-  ): ReplaySubject<RequiredMaterial[]> {
+  ): Subject<RequiredMaterial[]> {
     if (type === ConsumableType.Alchemy) {
       return this.requiredMaterialsAlchemySubject;
     } else {
@@ -181,7 +182,7 @@ export class StateService {
    * Update the list of all required Material for the wanted Consumables.
    * - Get Recipes
    * - Merge all Materials and required amount
-   * - Push to ReplaySubject
+   * - Push to Subject
    * @param type Type of Consumable
    */
   private updateRequiredMaterial(type: ConsumableType): void {

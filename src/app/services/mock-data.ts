@@ -1544,7 +1544,7 @@ const azshariSalad1 = new Food(currentContent, {
   craftNumber: 5,
   craftMaterials: [
     {
-      component: suramarSurfAndTurf1,
+      component: suramarSurfAndTurf3,
       amount: 1
     },
     {
@@ -1576,7 +1576,7 @@ const azshariSalad2 = new Food(currentContent, {
   craftNumber: 7,
   craftMaterials: [
     {
-      component: suramarSurfAndTurf1,
+      component: suramarSurfAndTurf3,
       amount: 1
     },
     {
@@ -1608,7 +1608,7 @@ const azshariSalad3 = new Food(currentContent, {
   craftNumber: 10,
   craftMaterials: [
     {
-      component: suramarSurfAndTurf1,
+      component: suramarSurfAndTurf3,
       amount: 1
     },
     {
@@ -1736,7 +1736,7 @@ const nightborneDelicacyPlatter1 = new Food(currentContent, {
   craftNumber: 5,
   craftMaterials: [
     {
-      component: barracudaMrglgagh1,
+      component: barracudaMrglgagh3,
       amount: 1
     },
     {
@@ -1768,7 +1768,7 @@ const nightborneDelicacyPlatter2 = new Food(currentContent, {
   craftNumber: 7,
   craftMaterials: [
     {
-      component: barracudaMrglgagh1,
+      component: barracudaMrglgagh3,
       amount: 1
     },
     {
@@ -1800,7 +1800,7 @@ const nightborneDelicacyPlatter3 = new Food(currentContent, {
   craftNumber: 10,
   craftMaterials: [
     {
-      component: barracudaMrglgagh1,
+      component: barracudaMrglgagh3,
       amount: 1
     },
     {

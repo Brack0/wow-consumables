@@ -1146,7 +1146,7 @@ const suramarSurfAndTurf1 = new Food(currentContent, {
     },
     {
       component: royalOlive,
-      amount: 2
+      amount: 4
     }
   ]
 });
@@ -1174,7 +1174,7 @@ const suramarSurfAndTurf2 = new Food(currentContent, {
     },
     {
       component: royalOlive,
-      amount: 2
+      amount: 4
     }
   ]
 });
@@ -1202,7 +1202,7 @@ const suramarSurfAndTurf3 = new Food(currentContent, {
     },
     {
       component: royalOlive,
-      amount: 2
+      amount: 4
     }
   ]
 });

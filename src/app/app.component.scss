@@ -2,8 +2,10 @@
 
 app-root {
   display: flex;
+  min-height: calc(100vh - 53px);
   flex-direction: column;
   position: absolute;
+  overflow-y: auto;
   top: 53px;
   bottom: 0;
   left: 0;
@@ -19,21 +21,24 @@ app-navbar {
   z-index: 2;
 }
 
-app-root > app-home,
-app-root > app-alchemy,
-app-root > app-cooking {
-  overflow-y: auto;
+#wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  flex: 1;
 }
 
 @media (max-width: 720px) {
   app-root {
     top: 89px;
-  }
-
-  app-root > app-home,
-  app-root > app-alchemy,
-  app-root > app-cooking {
-    overflow-y: visible;
   }
 }
 
@@ -73,6 +78,21 @@ app-root > app-cooking {
       grid-template-columns: repeat(auto-fit, 100px);
       grid-gap: 3em;
       justify-content: space-evenly;
+    }
+
+    .grid-container-material {
+      margin: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 100px);
+      grid-gap: 3em;
+      justify-content: space-evenly;
+    }
+
+    .grid-container-specialization {
+      margin: 20px 0;
+      display: grid;
+      grid-gap: 0.5rem;
+      justify-content: center;
     }
 
     .grid-container-consumable {

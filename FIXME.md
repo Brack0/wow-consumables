@@ -4,10 +4,6 @@ Here is a list of bugs and stuffs i'm working/thinking of for a close to mid ran
 
 ## BUGS
 
-### On Consumables
-
-Fix potion of prolonged power. One Blood of Sageras = Ten potions;
-
 ## ADD ME !
 
 ### Configuration
@@ -15,3 +11,6 @@ Fix potion of prolonged power. One Blood of Sageras = Ten potions;
 ### Features
 
 Tradable material
+Add all cooking recipes !
+Move "Overview" tab to a specific component.
+Add current content on footer

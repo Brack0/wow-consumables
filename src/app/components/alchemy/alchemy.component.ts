@@ -1,23 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ComputeService } from '../../services/compute.service';
-import { StateService } from '../../services/state.service';
+import { ComputeService, StateService } from 'app/services';
 
-import { Flask, Material, Plant, Potion, Specialization } from '@model';
+import {
+  ConsumableType,
+  Flask,
+  Material,
+  Plant,
+  Potion,
+  Reagent,
+  RequiredMaterial,
+  Specialization
+} from 'app/shared/model';
 
 @Component({
   selector: 'app-alchemy',
   templateUrl: './alchemy.component.html',
   styleUrls: ['./alchemy.component.scss']
 })
-export class AlchemyComponent {
+export class AlchemyComponent implements OnInit {
+  public title: string = 'Alchemy - Legion';
   public specializations: Specialization[];
-  public requiredMaterials: Array<{ component: Material; amount: number }>;
+  public requiredMaterials: RequiredMaterial[];
+  public reagents: Reagent[];
   public plants: Plant[];
   public flasks: Flask[];
   public potions: Potion[];
 
-  constructor(private stateService: StateService) {
+  constructor(private stateService: StateService) {}
+
+  ngOnInit() {
     this.getData();
     this.callRefreshWowTooltip();
   }
@@ -26,9 +38,16 @@ export class AlchemyComponent {
     this.stateService.callRefreshWowTooltip();
   }
 
+  /**
+   * Gather data from StateService
+   */
   private getData(): void {
     this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
+    });
+
+    this.stateService.getReagents().subscribe(reagents => {
+      this.reagents = reagents;
     });
 
     this.stateService.getPlants().subscribe(plants => {
@@ -43,7 +62,7 @@ export class AlchemyComponent {
       this.potions = potions;
     });
 
-    this.stateService.getRequiredMaterial().subscribe(materials => {
+    this.stateService.getRequiredMaterial(ConsumableType.Alchemy).subscribe(materials => {
       this.requiredMaterials = materials;
       this.callRefreshWowTooltip();
     });

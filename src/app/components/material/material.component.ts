@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Material } from '@model';
+import { Material } from 'app/shared/model';
 
 @Component({
   selector: 'app-material',
@@ -10,6 +10,7 @@ import { Material } from '@model';
 export class MaterialComponent {
   @Input() material: Material;
   @Input() wantedNumber: number;
+  @Input() craftNumber: number;
 
   constructor() {}
 }

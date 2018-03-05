@@ -1,14 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Consumable } from '@model';
-import { StateService } from '../../services/state.service';
-import { CustomValidators } from '../../shared/validators.imports';
+import 'rxjs/add/operator/debounceTime';
+
+import { StateService } from 'app/services';
+import { Consumable, RankedConsumable } from 'app/shared/model';
+import { CustomValidators } from 'app/shared/validators';
 
 @Component({
   selector: 'app-consumable',
@@ -17,20 +14,33 @@ import { CustomValidators } from '../../shared/validators.imports';
 })
 export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
-  @Input() displayMaterial = false;
+  @Input() consumableArray: Consumable[];
+  @Input() displayMaterial: boolean = false;
+  @Input() rank: boolean = false;
   public form: FormGroup;
   public errorMessage: string;
+  private rankNumber: number;
 
   constructor(private fb: FormBuilder, private stateService: StateService) {}
 
   public ngOnInit() {
+    // init consumable from array (only for consumable with rank)
+    if (this.consumableArray) {
+      if (!this.rankNumber) {
+        // Rank 3 by default
+        this.rankNumber = 3;
+      }
+      this.consumable = this.consumableArray[this.rankNumber - 1];
+    }
+
     // init form
     this.form = this.fb.group({
+      rankNumber: [this.rankNumber],
       wantedNumber: [
         this.consumable.wantedNumber ? this.consumable.wantedNumber : '',
         [
           Validators.min(0),
-          Validators.max(100 * this.consumable.craftNumber),
+          Validators.max(this.consumable.maxNumber),
           CustomValidators.inputStep(this.consumable.craftNumber)
         ]
       ]
@@ -40,29 +50,49 @@ export class ConsumableComponent implements OnInit {
     const wantedNumberControl = this.form.get('wantedNumber');
     wantedNumberControl.valueChanges
       .debounceTime(500)
-      .subscribe((n: number) =>
-        this.computeWantedNumber(n, wantedNumberControl)
-      );
+      .subscribe((n: number) => this.computeWantedNumber(wantedNumberControl));
+
+    if (this.rank) {
+      const rankNumberControl = this.form.get('rankNumber');
+      rankNumberControl.valueChanges.subscribe((n: number) => {
+        // Reset model value
+        this.consumable.wantedNumber = 0;
+
+        // Update consumable
+        this.rankNumber = n;
+        this.consumable = this.consumableArray[n - 1];
+
+        // Refresh validators
+        wantedNumberControl.setValidators([
+          Validators.min(0),
+          Validators.max(100 * this.consumable.craftNumber),
+          CustomValidators.inputStep(this.consumable.craftNumber)
+        ]);
+        wantedNumberControl.updateValueAndValidity();
+
+        // Update recipe
+        this.stateService.updateRecipe(this.consumable);
+        this.stateService.callRefreshWowTooltip();
+      });
+    }
   }
 
   /**
    * Either update data or create a message
-   * @param n input value
    * @param c input control
    */
-  private computeWantedNumber(n: number, c: AbstractControl): void {
+  private computeWantedNumber(c: AbstractControl): void {
     if (c.touched || c.dirty) {
       if (c.errors) {
         if (c.errors.min || c.errors.max) {
-          this.errorMessage = `Please enter a number between 0 and ${100 *
-            this.consumable.craftNumber}`;
+          this.errorMessage = `Please enter a number between 0 and ${this.consumable.maxNumber}`;
         } else if (c.errors.step) {
           this.errorMessage = c.errors.step.message;
         } else {
           this.errorMessage = `Please enter a valid number.`;
         }
       } else {
-        this.consumable.wantedNumber = n;
+        this.consumable.wantedNumber = c.value;
         this.stateService.updateWantedConsumables(this.consumable);
       }
     }

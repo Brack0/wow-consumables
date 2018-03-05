@@ -1,12 +1,13 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
-import { StateService } from 'app/services/state.service';
+import { AfterViewChecked, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { StateService } from 'app/services';
 
 declare let $WowheadPower;
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, AfterViewChecked {
   public needWowRefresh: boolean = false;

@@ -8,7 +8,7 @@ export abstract class TradableMaterial extends Material {
   // Amount of material given when traded
   ratio: number;
 
-  public constructor(content: Content, init?: Partial<TradableMaterial>) {
+  constructor(content: Content, init?: Partial<TradableMaterial>) {
     super(content, init);
     Object.assign(this, init);
   }

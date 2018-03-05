@@ -1,39 +1,33 @@
-.grid-container-material {
+.material {
   display: grid;
   grid-template-columns: 1fr;
-}
 
-.icon-number {
-  height: 68px;
-  width: 68px;
-  margin: auto;
-  text-align: center;
-  position: relative;
-}
+  .icon-number {
+    height: 68px;
+    width: 68px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+  }
 
-.number {
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  font-size: 2em;
-  color: white;
-  z-index: 30;
-  position: absolute;
-  vertical-align: middle;
-  top: 16px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000,
-    0 -2px 0 #000000, 1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000,
-    -1px 1px 0 #000000;
-}
+  .number {
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 32px;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    vertical-align: middle;
+    top: 16px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    text-shadow: 2px 0 0 #000000, -2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000,
+      1px 1px #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000;
+  }
 
-.name {
-  font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica,
-    sans-serif;
-  font-size: 0.8em;
-}
-
-.q1 {
-  color: black !important;
+  .name {
+    font-family: Verdana, 'Open Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+  }
 }

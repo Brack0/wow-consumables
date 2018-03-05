@@ -1,9 +1,6 @@
 import { Material } from './material.model';
+import { RequiredMaterial } from './required-material.model';
 
 export class Recipes {
-  [idMaterial: number]: Array<{ component: Material; amount: number }>;
-
-  constructor(init?: Partial<Recipes>) {
-    Object.assign(this, init);
-  }
+  [idMaterial: number]: RequiredMaterial[];
 }

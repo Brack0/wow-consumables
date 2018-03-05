@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Specialization } from '@model';
+import { Specialization } from 'app/shared/model';
 
 @Component({
   selector: 'app-specialization',

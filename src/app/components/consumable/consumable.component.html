@@ -1,7 +1,7 @@
 <div class="consumable">
   <div class="grid-container-consumable-info">
     <div class="grid-consumable-header">
-      <app-material [material]="consumable" [wantedNumber]="displayMaterial?consumable.craftNumber:consumable.wantedNumber"></app-material>
+      <app-material [material]="consumable" [wantedNumber]="!displayMaterial?consumable.wantedNumber:-1" [craftNumber]="consumable.craftNumber"></app-material>
     </div>
     <div class="grid-container-consumable-utility">
       <div *ngFor="let util of consumable.utility" class="grid-consumable-utility">
@@ -9,10 +9,16 @@
       </div>
     </div>
   </div>
+  <div *ngIf="rank">
+    <form novalidate [formGroup]="form">
+      <mat-slider thumbLabel min="1" max="3" step="1" color="primary" class="form-control" formControlName="rankNumber" name="rankNumber"></mat-slider>
+    </form>
+  </div>
+  <div class="effect">{{consumable.effect}}</div>
   <div *ngIf="displayMaterial">
     <div class="grid-container-craft-materials">
       <div *ngFor="let craftMaterial of consumable.craftMaterials">
-        <app-material [material]="craftMaterial.component" [wantedNumber]="craftMaterial.amount"></app-material>
+        <app-material [material]="craftMaterial.component" [wantedNumber]="-1" [craftNumber]="craftMaterial.amount"></app-material>
       </div>
     </div>
   </div>

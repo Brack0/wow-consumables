@@ -10,8 +10,6 @@ export class Content {
   }
 
   public getFullName(): string {
-    return (
-      this.patch + '\nLast updated : ' + this.releaseDate.toLocaleDateString()
-    );
+    return this.patch + '\nLast updated : ' + this.releaseDate.toLocaleDateString();
   }
 }

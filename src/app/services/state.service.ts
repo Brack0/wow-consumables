@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import '@rxjs';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/observable/of';
 
 import { ComputeService } from './compute.service';
 
@@ -23,18 +23,14 @@ import {
   RequiredMaterial,
   Specialization,
   WantedConsumables
-} from '@model';
+} from 'app/shared/model';
 import { EXPORTDATA } from './mock-data';
 
 @Injectable()
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
-  private requiredMaterialsAlchemySubject: Subject<
-    RequiredMaterial[]
-  > = new Subject();
-  private requiredMaterialsCookingSubject: Subject<
-    RequiredMaterial[]
-  > = new Subject();
+  private requiredMaterialsAlchemySubject: Subject<RequiredMaterial[]> = new Subject();
+  private requiredMaterialsCookingSubject: Subject<RequiredMaterial[]> = new Subject();
   private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
   private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
@@ -60,9 +56,7 @@ export class StateService {
    * Create a Subject
    * Subscribe to get updated list of required material
    */
-  public getRequiredMaterial(
-    type: ConsumableType
-  ): Subject<RequiredMaterial[]> {
+  public getRequiredMaterial(type: ConsumableType): Subject<RequiredMaterial[]> {
     if (type === ConsumableType.Alchemy) {
       return this.requiredMaterialsAlchemySubject;
     } else {
@@ -161,9 +155,7 @@ export class StateService {
    * @param material Material to update
    */
   public updateRecipe(material: CraftedMaterial): void {
-    this.recipes[material.idMaterial] = this.computeService.computeRecipe(
-      material
-    );
+    this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
   }
 
   /**
@@ -172,9 +164,7 @@ export class StateService {
    */
   private addRecipe(material: CraftedMaterial): void {
     if (!this.recipes[material.idMaterial]) {
-      this.recipes[material.idMaterial] = this.computeService.computeRecipe(
-        material
-      );
+      this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
     }
   }
 
@@ -197,10 +187,7 @@ export class StateService {
 
     // Pushing new subject
     requiredMaterialsSubject.next(
-      this.computeService.updateRequiredMaterial(
-        wantedConsumables,
-        this.recipes
-      )
+      this.computeService.updateRequiredMaterial(wantedConsumables, this.recipes)
     );
   }
 }

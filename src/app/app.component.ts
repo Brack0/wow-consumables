@@ -1,10 +1,5 @@
-import {
-  AfterViewChecked,
-  Component,
-  OnInit,
-  ViewEncapsulation
-} from '@angular/core';
-import { StateService } from 'app/services/state.service';
+import { AfterViewChecked, Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { StateService } from 'app/services';
 
 declare let $WowheadPower;
 

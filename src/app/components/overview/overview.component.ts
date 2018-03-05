@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StateService } from 'app/services';
 import {
   Fish,
   Flask,
@@ -9,15 +10,14 @@ import {
   Potion,
   Reagent,
   Specialization
-} from '@model';
-import { StateService } from 'app/services/state.service';
+} from 'app/shared/model';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewComponent {
+export class OverviewComponent implements OnInit {
   public title: string = 'Alchemy - Legion';
   public specializations: Specialization[];
   public reagents: Reagent[];
@@ -28,7 +28,9 @@ export class OverviewComponent {
   public potions: Potion[];
   public foods: Food[][];
 
-  constructor(private stateService: StateService) {
+  constructor(private stateService: StateService) {}
+
+  ngOnInit() {
     this.getData();
     this.callRefreshWowTooltip();
   }

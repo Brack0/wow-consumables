@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Material } from '@model';
+import { Material } from 'app/shared/model';
 
 @Component({
   selector: 'app-material',

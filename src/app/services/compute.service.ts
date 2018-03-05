@@ -11,7 +11,7 @@ import {
   Recipes,
   RequiredMaterial,
   WantedConsumables
-} from '@model';
+} from 'app/shared/model';
 
 @Injectable()
 export class ComputeService {
@@ -125,12 +125,7 @@ export class ComputeService {
           craftMaterial.craftNumber
         );
       } else {
-        return this.mergeMaterial(
-          a,
-          b,
-          wantedNumber,
-          craftMaterial.craftNumber
-        );
+        return this.mergeMaterial(a, b, wantedNumber, craftMaterial.craftNumber);
       }
     }, []);
   }
@@ -148,9 +143,7 @@ export class ComputeService {
     wantedNumber: number,
     craftNumber: number
   ): RequiredMaterial[] {
-    arrayMaterial.forEach(
-      e => (array = this.mergeMaterial(array, e, wantedNumber, craftNumber))
-    );
+    arrayMaterial.forEach(e => (array = this.mergeMaterial(array, e, wantedNumber, craftNumber)));
     return array;
   }
 }

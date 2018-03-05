@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ComputeService } from '../../services/compute.service';
-import { StateService } from '../../services/state.service';
+import { ComputeService, StateService } from 'app/services';
 
 import {
   ConsumableType,
@@ -12,14 +11,14 @@ import {
   Reagent,
   RequiredMaterial,
   Specialization
-} from '@model';
+} from 'app/shared/model';
 
 @Component({
   selector: 'app-cooking',
   templateUrl: './cooking.component.html',
   styleUrls: ['./cooking.component.scss']
 })
-export class CookingComponent {
+export class CookingComponent implements OnInit {
   public title: string = 'Cooking - Legion';
   public specializations: Specialization[];
   public requiredMaterials: RequiredMaterial[];
@@ -31,7 +30,9 @@ export class CookingComponent {
   public bestFoods: Food[][];
   public feasts: Food[][];
 
-  constructor(private stateService: StateService) {
+  constructor(private stateService: StateService) {}
+
+  ngOnInit() {
     this.getData();
     this.callRefreshWowTooltip();
   }
@@ -76,11 +77,9 @@ export class CookingComponent {
       this.feasts = feasts;
     });
 
-    this.stateService
-      .getRequiredMaterial(ConsumableType.Cooking)
-      .subscribe(materials => {
-        this.requiredMaterials = materials;
-        this.callRefreshWowTooltip();
-      });
+    this.stateService.getRequiredMaterial(ConsumableType.Cooking).subscribe(materials => {
+      this.requiredMaterials = materials;
+      this.callRefreshWowTooltip();
+    });
   }
 }

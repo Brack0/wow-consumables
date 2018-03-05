@@ -1,28 +1,18 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output
-} from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { Consumable, RankedConsumable } from '@model';
-import { StateService } from '../../services/state.service';
-import { CustomValidators } from '../../shared/validators.imports';
+import 'rxjs/add/operator/debounceTime';
+
+import { StateService } from 'app/services';
+import { Consumable, RankedConsumable } from 'app/shared/model';
+import { CustomValidators } from 'app/shared/validators';
 
 @Component({
   selector: 'app-consumable',
   templateUrl: './consumable.component.html',
   styleUrls: ['./consumable.component.scss']
 })
-export class ConsumableComponent implements OnInit, OnDestroy {
+export class ConsumableComponent implements OnInit {
   @Input() consumable: Consumable;
   @Input() consumableArray: Consumable[];
   @Input() displayMaterial: boolean = false;
@@ -87,11 +77,6 @@ export class ConsumableComponent implements OnInit, OnDestroy {
     }
   }
 
-  public ngOnDestroy(): void {
-    this.consumable.wantedNumber = 0;
-    this.stateService.updateWantedConsumables(this.consumable);
-  }
-
   /**
    * Either update data or create a message
    * @param c input control
@@ -100,9 +85,7 @@ export class ConsumableComponent implements OnInit, OnDestroy {
     if (c.touched || c.dirty) {
       if (c.errors) {
         if (c.errors.min || c.errors.max) {
-          this.errorMessage = `Please enter a number between 0 and ${
-            this.consumable.maxNumber
-          }`;
+          this.errorMessage = `Please enter a number between 0 and ${this.consumable.maxNumber}`;
         } else if (c.errors.step) {
           this.errorMessage = c.errors.step.message;
         } else {

@@ -9,7 +9,7 @@ import {
   Potion,
   Reagent,
   Specialization
-} from '@model';
+} from 'app/shared/model';
 
 // Init data
 
@@ -2290,12 +2290,7 @@ const lavishSuramarFeast3 = new Food(currentContent, {
   ]
 });
 
-const SPECIALIZATIONS: Specialization[] = [
-  specDd,
-  specTank,
-  specHealer,
-  specHybrid
-];
+const SPECIALIZATIONS: Specialization[] = [specDd, specTank, specHealer, specHybrid];
 const REAGENTS: Reagent[] = [
   muskenbutter,
   riverOnion,
@@ -2308,13 +2303,7 @@ const REAGENTS: Reagent[] = [
   stonedarkSnail,
   gemChip
 ];
-const PLANTS: Plant[] = [
-  aethril,
-  dreamleaf,
-  foxFlower,
-  fjarnskaggl,
-  starlightRose
-];
+const PLANTS: Plant[] = [aethril, dreamleaf, foxFlower, fjarnskaggl, starlightRose];
 const MEATS: Meat[] = [fattyBearsteak, leanShank, bigGamyRibs, sliceOfBacon];
 const FISHS: Fish[] = [
   mossgillPerch,
@@ -2325,13 +2314,7 @@ const FISHS: Fish[] = [
   blackBarracuda,
   highmountainSalmon
 ];
-const FLASKS: Flask[] = [
-  flaskIntellect,
-  flaskAgility,
-  flaskStrengh,
-  flaskStamina,
-  flaskCauldron
-];
+const FLASKS: Flask[] = [flaskIntellect, flaskAgility, flaskStrengh, flaskStamina, flaskCauldron];
 const POTIONS: Potion[] = [
   ancientHealingPotion,
   ancientManaPotion,
@@ -2367,11 +2350,7 @@ const BETTER_FOODS: Food[][] = [
 const BEST_FOODS: Food[][] = [
   [azshariSalad1, azshariSalad2, azshariSalad3],
   [seedBatteredFishPlate1, seedBatteredFishPlate2, seedBatteredFishPlate3],
-  [
-    nightborneDelicacyPlatter1,
-    nightborneDelicacyPlatter2,
-    nightborneDelicacyPlatter3
-  ],
+  [nightborneDelicacyPlatter1, nightborneDelicacyPlatter2, nightborneDelicacyPlatter3],
   [theHungryMagister1, theHungryMagister2, theHungryMagister3],
   [fishbrulSpecial1, fishbrulSpecial2, fishbrulSpecial3],
   [crispyBacon1, crispyBacon2, crispyBacon3]

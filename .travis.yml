@@ -1,0 +1,28 @@
+#.travis.yml
+
+language: node_js
+node_js:
+  - "8.9.1"
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng build --prod
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
+    
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: gh-pages

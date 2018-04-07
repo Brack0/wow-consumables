@@ -9,6 +9,8 @@ import { RouteReuseStrategy } from '@angular/router';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { CustomRouteReuseStrategy } from 'app/reuse-strategy';
 
+import { environment } from 'environments/environment';
+
 import { Footer } from 'app/shared/footer/footer';
 import { Header } from 'app/shared/header/header';
 import { Home } from 'app/shared/home/home';
@@ -51,7 +53,7 @@ import { StateService } from 'app/services/state.service';
     AppRoutingModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: '/wow-consumables' },
+    { provide: APP_BASE_HREF, useValue: environment.baseHref },
     {
       provide: RouteReuseStrategy,
       useClass: CustomRouteReuseStrategy

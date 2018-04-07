@@ -12,13 +12,13 @@ before_script:
   - npm install -g @angular/cli
 
 script:
-  - ng build --prod
+  - ng build --prod base-href='brack0.github.io/wow-consumables/
 
 notifications:
   email:
     on_failure: change
     on_success: change
-    
+
 deploy:
   provider: pages
   skip-cleanup: true

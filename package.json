@@ -4,10 +4,10 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --base-href /",
+    "start": "ng serve",
     "build": "ng build",
     "prod": "ng build --prod",
-    "deploy": "ng build --prod && angular-cli-ghpages",
+    "deploy:deprecated": "ng build --prod && angular-cli-ghpages",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

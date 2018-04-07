@@ -19,6 +19,9 @@ notifications:
     on_failure: change
     on_success: change
 
+before_deploy:
+  - cp dist/index.html dist/404.html
+
 deploy:
   provider: pages
   skip-cleanup: true

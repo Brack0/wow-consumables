@@ -46,9 +46,9 @@ const specHybrid = new Specialization({
 const currentContent = new Content({
   idContent: 1,
   expansionName: 'Legion',
-  patch: 'Version 7.3.2 (25549)',
-  releaseDate: new Date(2017, 10, 21),
-  url: 'https://worldofwarcraft.com/en-us/news/21121541'
+  patch: 'Version 7.3.5 (26365)',
+  releaseDate: new Date(2018, 3, 4),
+  url: 'https://worldofwarcraft.com/en-us/news/21365423'
 });
 
 /**

@@ -8,10 +8,9 @@ _A bit of role play : there are four types of consumables for raiding (flasks, f
 
 ## Project doc
 
-There is currently three documentation files :
+There is currently only one documentation file :
 
 * _README.md_ : Github doc and basic info
-* _FIXME.md_ : Short term view of things to do and fix (old version)
 
 ## Angular CLI doc
 

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { Material } from 'app/shared/model';
+import { Component, Input } from '@angular/core';
+import { Material } from '../../shared/model';
 
 @Component({
   selector: 'app-material',
@@ -8,9 +7,12 @@ import { Material } from 'app/shared/model';
   styleUrls: ['./material.component.scss']
 })
 export class MaterialComponent {
-  @Input() material: Material;
-  @Input() wantedNumber: number;
-  @Input() craftNumber: number;
+  @Input()
+  material: Material;
+  @Input()
+  wantedNumber: number;
+  @Input()
+  craftNumber: number;
 
   constructor() {}
 }

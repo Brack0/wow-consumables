@@ -1,11 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import 'rxjs/add/operator/debounceTime';
-
-import { StateService } from 'app/services';
-import { Consumable, RankedConsumable } from 'app/shared/model';
-import { CustomValidators } from 'app/shared/validators';
+import { debounceTime } from 'rxjs/operators';
+import { StateService } from '../../services';
+import { Consumable } from '../../shared/model';
+import { CustomValidators } from '../../shared/validators';
 
 @Component({
   selector: 'app-consumable',
@@ -13,10 +11,14 @@ import { CustomValidators } from 'app/shared/validators';
   styleUrls: ['./consumable.component.scss']
 })
 export class ConsumableComponent implements OnInit {
-  @Input() consumable: Consumable;
-  @Input() consumableArray: Consumable[];
-  @Input() displayMaterial: boolean = false;
-  @Input() rank: boolean = false;
+  @Input()
+  consumable: Consumable;
+  @Input()
+  consumableArray: Consumable[];
+  @Input()
+  displayMaterial: boolean = false;
+  @Input()
+  rank: boolean = false;
   public form: FormGroup;
   public errorMessage: string;
   private rankNumber: number;
@@ -49,7 +51,7 @@ export class ConsumableComponent implements OnInit {
     // subscribe to input value and update with a debounce time of 500ms
     const wantedNumberControl = this.form.get('wantedNumber');
     wantedNumberControl.valueChanges
-      .debounceTime(500)
+      .pipe(debounceTime(500))
       .subscribe((n: number) => this.computeWantedNumber(wantedNumberControl));
 
     if (this.rank) {

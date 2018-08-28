@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ComputeService, StateService } from 'app/services';
-
-import {
-  ConsumableType,
-  Flask,
-  Material,
-  Plant,
-  Potion,
-  Reagent,
-  RequiredMaterial,
-  Specialization
-} from 'app/shared/model';
+import { StateService } from '../../services';
+import { ConsumableType, Flask, Plant, Potion, Reagent, RequiredMaterial, Specialization } from '../../shared/model';
 
 @Component({
   selector: 'app-alchemy',

@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/observable/of';
-
+import { Observable, Subject, of } from 'rxjs';
 import { ComputeService } from './compute.service';
-
 import {
   Consumable,
   ConsumableType,
@@ -14,7 +9,6 @@ import {
   Fish,
   Flask,
   Food,
-  Material,
   Meat,
   Plant,
   Potion,
@@ -23,7 +17,7 @@ import {
   RequiredMaterial,
   Specialization,
   WantedConsumables
-} from 'app/shared/model';
+} from '../shared/model';
 import { EXPORTDATA } from './mock-data';
 
 @Injectable()
@@ -65,60 +59,56 @@ export class StateService {
   }
 
   public getContent(): Observable<Content> {
-    return Observable.of(EXPORTDATA.CONTENT);
+    return of(EXPORTDATA.CONTENT);
   }
 
   public getSpecializations(): Observable<Specialization[]> {
-    return Observable.of(EXPORTDATA.SPECIALIZATIONS);
+    return of(EXPORTDATA.SPECIALIZATIONS);
   }
 
   public getReagents(): Observable<Reagent[]> {
-    return Observable.of(EXPORTDATA.REAGENTS);
+    return of(EXPORTDATA.REAGENTS);
   }
 
   public getPlants(): Observable<Plant[]> {
-    return Observable.of(EXPORTDATA.PLANTS);
+    return of(EXPORTDATA.PLANTS);
   }
 
   public getMeats(): Observable<Meat[]> {
-    return Observable.of(EXPORTDATA.MEATS);
+    return of(EXPORTDATA.MEATS);
   }
 
   public getFishs(): Observable<Fish[]> {
-    return Observable.of(EXPORTDATA.FISHS);
+    return of(EXPORTDATA.FISHS);
   }
 
   public getFlasks(): Observable<Flask[]> {
-    return Observable.of(EXPORTDATA.FLASKS);
+    return of(EXPORTDATA.FLASKS);
   }
 
   public getPotions(): Observable<Potion[]> {
-    return Observable.of(EXPORTDATA.POTIONS);
+    return of(EXPORTDATA.POTIONS);
   }
 
   public getAverageFoods(): Observable<Food[][]> {
-    return Observable.of(EXPORTDATA.AVERAGE_FOODS);
+    return of(EXPORTDATA.AVERAGE_FOODS);
   }
 
   public getBetterFoods(): Observable<Food[][]> {
-    return Observable.of(EXPORTDATA.BETTER_FOODS);
+    return of(EXPORTDATA.BETTER_FOODS);
   }
 
   public getBestFoods(): Observable<Food[][]> {
-    return Observable.of(EXPORTDATA.BEST_FOODS);
+    return of(EXPORTDATA.BEST_FOODS);
   }
 
   public getFeasts(): Observable<Food[][]> {
-    return Observable.of(EXPORTDATA.FEASTS);
+    return of(EXPORTDATA.FEASTS);
   }
 
   public getFoods(): Observable<Food[][]> {
-    return Observable.of(
-      EXPORTDATA.AVERAGE_FOODS.concat(
-        EXPORTDATA.BETTER_FOODS,
-        EXPORTDATA.BEST_FOODS,
-        EXPORTDATA.FEASTS
-      )
+    return of(
+      EXPORTDATA.AVERAGE_FOODS.concat(EXPORTDATA.BETTER_FOODS, EXPORTDATA.BEST_FOODS, EXPORTDATA.FEASTS)
     );
   }
 
@@ -186,8 +176,6 @@ export class StateService {
     }
 
     // Pushing new subject
-    requiredMaterialsSubject.next(
-      this.computeService.updateRequiredMaterial(wantedConsumables, this.recipes)
-    );
+    requiredMaterialsSubject.next(this.computeService.updateRequiredMaterial(wantedConsumables, this.recipes));
   }
 }

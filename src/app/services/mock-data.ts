@@ -1,15 +1,4 @@
-import {
-  Content,
-  Currency,
-  Fish,
-  Flask,
-  Food,
-  Meat,
-  Plant,
-  Potion,
-  Reagent,
-  Specialization
-} from 'app/shared/model';
+import { Content, Currency, Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../shared/model';
 
 // Init data
 

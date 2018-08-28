@@ -1,17 +1,15 @@
 import { Injectable } from '@angular/core';
-
 import {
   Consumable,
   ConsumableType,
   CraftedMaterial,
   Flask,
   Food,
-  Material,
   Potion,
   Recipes,
   RequiredMaterial,
   WantedConsumables
-} from 'app/shared/model';
+} from '../shared/model';
 
 @Injectable()
 export class ComputeService {
@@ -45,10 +43,7 @@ export class ComputeService {
    * @param wantedConsumables WantedConsumables from user input
    * @param recipes Recipes for crafting consumables
    */
-  public updateRequiredMaterial(
-    wantedConsumables: WantedConsumables,
-    recipes: Recipes
-  ): RequiredMaterial[] {
+  public updateRequiredMaterial(wantedConsumables: WantedConsumables, recipes: Recipes): RequiredMaterial[] {
     const requiredMaterials: RequiredMaterial[] = [];
 
     Object.entries(wantedConsumables).forEach(e => {
@@ -85,8 +80,8 @@ export class ComputeService {
     wantedNumber: number,
     craftNumber: number
   ): RequiredMaterial[] {
-    let added: boolean = false;
-    const amountToAdd: number = material.amount * wantedNumber / craftNumber;
+    let added = false;
+    const amountToAdd: number = (material.amount * wantedNumber) / craftNumber;
 
     array.forEach(e => {
       if (e.component.idMaterial === material.component.idMaterial) {
@@ -112,10 +107,7 @@ export class ComputeService {
    * @param craftMaterial CraftedMaterial to compute
    * @param wantedNumber Number of Material wanted (default value for recipes)
    */
-  private getCraftMaterial(
-    craftMaterial: CraftedMaterial,
-    wantedNumber: number = 1
-  ): RequiredMaterial[] {
+  private getCraftMaterial(craftMaterial: CraftedMaterial, wantedNumber: number = 1): RequiredMaterial[] {
     return craftMaterial.craftMaterials.reduce((a, b) => {
       if (b.component instanceof CraftedMaterial) {
         return this.mergeArrayMaterial(

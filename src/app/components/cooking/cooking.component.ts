@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ComputeService, StateService } from 'app/services';
-
-import {
-  ConsumableType,
-  Fish,
-  Food,
-  Material,
-  Meat,
-  Reagent,
-  RequiredMaterial,
-  Specialization
-} from 'app/shared/model';
+import { StateService } from '../../services';
+import { ConsumableType, Fish, Food, Meat, Reagent, RequiredMaterial, Specialization } from '../../shared/model';
 
 @Component({
   selector: 'app-cooking',

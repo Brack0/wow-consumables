@@ -1,16 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StateService } from 'app/services';
-import {
-  Fish,
-  Flask,
-  Food,
-  Material,
-  Meat,
-  Plant,
-  Potion,
-  Reagent,
-  Specialization
-} from 'app/shared/model';
+import { StateService } from '../../services';
+import { Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../../shared/model';
 
 @Component({
   selector: 'app-overview',

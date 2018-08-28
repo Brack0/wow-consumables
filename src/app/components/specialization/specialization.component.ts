@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { Specialization } from 'app/shared/model';
+import { Component, Input } from '@angular/core';
+import { Specialization } from '../../shared/model';
 
 @Component({
   selector: 'app-specialization',
@@ -8,7 +7,8 @@ import { Specialization } from 'app/shared/model';
   styleUrls: ['./specialization.component.scss']
 })
 export class SpecializationComponent {
-  @Input() specialization: Specialization;
+  @Input()
+  specialization: Specialization;
 
   constructor() {}
 }

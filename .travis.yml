@@ -1,12 +1,18 @@
 #.travis.yml
 
 language: node_js
+sudo: false
+dist: trusty
 node_js:
   - '10.9.0'
 
 branches:
   except:
     - gh-pages
+
+cache:
+  directories:
+    - node_modules
 
 before_script:
   - npm install -g @angular/cli@~6.1.5

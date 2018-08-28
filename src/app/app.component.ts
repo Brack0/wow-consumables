@@ -10,7 +10,7 @@ declare let $WowheadPower;
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit, AfterViewChecked {
-  public needWowRefresh: boolean = false;
+  private needWowRefresh: boolean = false;
 
   constructor(private stateService: StateService) {}
 

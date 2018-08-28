@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import { ConsumableType, Flask, Plant, Potion, Reagent, RequiredMaterial, Specialization } from '../../shared/model';
+import {
+  ConsumableType,
+  Flask,
+  Plant,
+  Potion,
+  Reagent,
+  RequiredMaterial,
+  Specialization
+} from '../../shared/model';
 
 @Component({
   selector: 'app-alchemy',
@@ -15,16 +23,25 @@ export class AlchemyComponent implements OnInit {
   public plants: Plant[];
   public flasks: Flask[];
   public potions: Potion[];
+  private tabInit: boolean[];
 
   constructor(private stateService: StateService) {}
 
   ngOnInit() {
     this.getData();
-    this.callRefreshWowTooltip();
+    this.initFirstTab();
   }
 
-  public callRefreshWowTooltip(): void {
+  public callRefreshWowTooltip($event): void {
+    if (!this.tabInit[$event.index]) {
+      this.stateService.callRefreshWowTooltip();
+      this.tabInit[$event.index] = true;
+    }
+  }
+
+  private initFirstTab() {
     this.stateService.callRefreshWowTooltip();
+    this.tabInit = [true];
   }
 
   /**
@@ -53,7 +70,7 @@ export class AlchemyComponent implements OnInit {
 
     this.stateService.getRequiredMaterial(ConsumableType.Alchemy).subscribe(materials => {
       this.requiredMaterials = materials;
-      this.callRefreshWowTooltip();
+      this.stateService.callRefreshWowTooltip();
     });
   }
 }

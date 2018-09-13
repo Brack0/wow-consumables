@@ -16,12 +16,10 @@ export abstract class ProfessionComponent implements OnInit {
     if (!this.tabInit[$event.index]) {
       this.stateService.callRefreshWowTooltip();
       this.tabInit[$event.index] = true;
-      console.log('init tab ' + $event.index);
     }
   }
 
   protected initFirstTab() {
-    console.log('init first tab');
     this.stateService.callRefreshWowTooltip();
     this.tabInit = [true];
   }

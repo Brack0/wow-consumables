@@ -9,10 +9,10 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   styleUrls: ['./cooking.component.scss']
 })
 export class CookingComponent extends ProfessionComponent implements OnInit {
-  protected averageFoods: Food[][];
-  protected betterFoods: Food[][];
-  protected bestFoods: Food[][];
-  protected feasts: Food[][];
+  public averageFoods: Food[][];
+  public betterFoods: Food[][];
+  public bestFoods: Food[][];
+  public feasts: Food[][];
 
   constructor(protected stateService: StateService) {
     super(stateService);

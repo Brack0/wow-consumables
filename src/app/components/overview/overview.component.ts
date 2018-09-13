@@ -18,14 +18,14 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent extends ProfessionComponent implements OnInit {
-  protected specializations: Specialization[];
-  protected reagents: Reagent[];
-  protected plants: Plant[];
-  protected meats: Meat[];
-  protected fishs: Fish[];
-  protected flasks: Flask[];
-  protected potions: Potion[];
-  protected foods: Food[][];
+  public specializations: Specialization[];
+  public reagents: Reagent[];
+  public plants: Plant[];
+  public meats: Meat[];
+  public fishs: Fish[];
+  public flasks: Flask[];
+  public potions: Potion[];
+  public foods: Food[][];
 
   constructor(protected stateService: StateService) {
     super(stateService);

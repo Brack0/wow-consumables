@@ -9,8 +9,8 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   styleUrls: ['./alchemy.component.scss']
 })
 export class AlchemyComponent extends ProfessionComponent implements OnInit {
-  protected flasks: Flask[];
-  protected potions: Potion[];
+  public flasks: Flask[];
+  public potions: Potion[];
 
   constructor(protected stateService: StateService) {
     super(stateService);

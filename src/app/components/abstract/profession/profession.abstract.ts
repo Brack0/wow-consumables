@@ -3,7 +3,7 @@ import { StateService } from '../../../services';
 import { RequiredMaterial } from '../../../shared/model';
 
 export abstract class ProfessionComponent implements OnInit {
-  protected requiredMaterials: RequiredMaterial[];
+  public requiredMaterials: RequiredMaterial[];
   private tabInit: boolean[];
 
   constructor(protected stateService: StateService) {}

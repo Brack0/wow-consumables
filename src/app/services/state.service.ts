@@ -18,7 +18,7 @@ import {
   Specialization,
   WantedConsumables
 } from '../shared/model';
-import { EXPORTDATA } from './mock-data';
+import { EXPORTDATA } from './legion-data';
 
 @Injectable()
 export class StateService {

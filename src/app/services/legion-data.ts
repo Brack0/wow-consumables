@@ -8,25 +8,25 @@ import { Content, Currency, Fish, Flask, Food, Meat, Plant, Potion, Reagent, Spe
 const specDd = new Specialization({
   idSpec: 0,
   name: 'Damage Dealer',
-  icon: 'http://wow.zamimg.com/images/icons/ej-dps.png'
+  icon: 'assets/images/svg/battle-axe.svg'
 });
 
 const specTank = new Specialization({
   idSpec: 1,
   name: 'Tank',
-  icon: 'https://wow.zamimg.com/images/icons/ej-tank.png'
+  icon: 'assets/images/svg/slashed-shield.svg'
 });
 
 const specHealer = new Specialization({
   idSpec: 2,
   name: 'Healer',
-  icon: 'http://wow.zamimg.com/images/icons/ej-healer.png'
+  icon: 'assets/images/svg/health-increase.svg'
 });
 
 const specHybrid = new Specialization({
   idSpec: 3,
   name: 'Hybrid',
-  icon: 'assets/images/hybrid_wow.png'
+  icon: 'assets/images/svg/wizard-staff.svg'
 });
 
 /**

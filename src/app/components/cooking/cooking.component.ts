@@ -1,55 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import { ConsumableType, Fish, Food, Meat, Reagent, RequiredMaterial, Specialization } from '../../shared/model';
+import { ConsumableType, Food } from '../../shared/model';
+import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
   selector: 'app-cooking',
   templateUrl: './cooking.component.html',
   styleUrls: ['./cooking.component.scss']
 })
-export class CookingComponent implements OnInit {
-  public title: string = 'Cooking - Legion';
-  public specializations: Specialization[];
-  public requiredMaterials: RequiredMaterial[];
-  public reagents: Reagent[];
-  public meats: Meat[];
-  public fishs: Fish[];
-  public averageFoods: Food[][];
-  public betterFoods: Food[][];
-  public bestFoods: Food[][];
-  public feasts: Food[][];
+export class CookingComponent extends ProfessionComponent implements OnInit {
+  protected averageFoods: Food[][];
+  protected betterFoods: Food[][];
+  protected bestFoods: Food[][];
+  protected feasts: Food[][];
 
-  constructor(private stateService: StateService) {}
-
-  ngOnInit() {
-    this.getData();
-    this.callRefreshWowTooltip();
+  constructor(protected stateService: StateService) {
+    super(stateService);
   }
 
-  public callRefreshWowTooltip(): void {
-    this.stateService.callRefreshWowTooltip();
+  ngOnInit() {
+    super.ngOnInit();
+    this.getData();
   }
 
   /**
    * Gather data from StateService
    */
-  private getData(): void {
-    this.stateService.getSpecializations().subscribe(specializations => {
-      this.specializations = specializations;
-    });
-
-    this.stateService.getReagents().subscribe(reagents => {
-      this.reagents = reagents;
-    });
-
-    this.stateService.getMeats().subscribe(meats => {
-      this.meats = meats;
-    });
-
-    this.stateService.getFishs().subscribe(fishs => {
-      this.fishs = fishs;
-    });
-
+  protected getData(): void {
     this.stateService.getAverageFoods().subscribe(foods => {
       this.averageFoods = foods;
     });
@@ -68,7 +45,7 @@ export class CookingComponent implements OnInit {
 
     this.stateService.getRequiredMaterial(ConsumableType.Cooking).subscribe(materials => {
       this.requiredMaterials = materials;
-      this.callRefreshWowTooltip();
+      this.stateService.callRefreshWowTooltip();
     });
   }
 }

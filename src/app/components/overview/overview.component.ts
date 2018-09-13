@@ -1,38 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import { Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../../shared/model';
+import {
+  Fish,
+  Flask,
+  Food,
+  Meat,
+  Plant,
+  Potion,
+  Reagent,
+  Specialization
+} from '../../shared/model';
+import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss']
 })
-export class OverviewComponent implements OnInit {
-  public title: string = 'Alchemy - Legion';
-  public specializations: Specialization[];
-  public reagents: Reagent[];
-  public plants: Plant[];
-  public meats: Meat[];
-  public fishs: Fish[];
-  public flasks: Flask[];
-  public potions: Potion[];
-  public foods: Food[][];
+export class OverviewComponent extends ProfessionComponent implements OnInit {
+  protected specializations: Specialization[];
+  protected reagents: Reagent[];
+  protected plants: Plant[];
+  protected meats: Meat[];
+  protected fishs: Fish[];
+  protected flasks: Flask[];
+  protected potions: Potion[];
+  protected foods: Food[][];
 
-  constructor(private stateService: StateService) {}
-
-  ngOnInit() {
-    this.getData();
-    this.callRefreshWowTooltip();
+  constructor(protected stateService: StateService) {
+    super(stateService);
   }
 
-  public callRefreshWowTooltip(): void {
-    this.stateService.callRefreshWowTooltip();
+  ngOnInit() {
+    super.ngOnInit();
+    this.getData();
   }
 
   /**
    * Gather data from StateService
    */
-  private getData(): void {
+  protected getData(): void {
     this.stateService.getSpecializations().subscribe(specializations => {
       this.specializations = specializations;
     });

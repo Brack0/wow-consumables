@@ -1,0 +1,30 @@
+import { OnInit } from '@angular/core';
+import { StateService } from '../../../services';
+import { RequiredMaterial } from '../../../shared/model';
+
+export abstract class ProfessionComponent implements OnInit {
+  protected requiredMaterials: RequiredMaterial[];
+  private tabInit: boolean[];
+
+  constructor(protected stateService: StateService) {}
+
+  ngOnInit(): void {
+    this.initFirstTab();
+  }
+
+  public callRefreshWowTooltip($event): void {
+    if (!this.tabInit[$event.index]) {
+      this.stateService.callRefreshWowTooltip();
+      this.tabInit[$event.index] = true;
+      console.log('init tab ' + $event.index);
+    }
+  }
+
+  protected initFirstTab() {
+    console.log('init first tab');
+    this.stateService.callRefreshWowTooltip();
+    this.tabInit = [true];
+  }
+
+  protected abstract getData();
+}

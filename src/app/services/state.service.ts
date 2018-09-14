@@ -18,7 +18,7 @@ import {
   Specialization,
   WantedConsumables
 } from '../shared/model';
-import { EXPORTDATA } from './legion-data';
+import { DATA } from './data/bfa-data';
 
 @Injectable()
 export class StateService {
@@ -59,56 +59,56 @@ export class StateService {
   }
 
   public getContent(): Observable<Content> {
-    return of(EXPORTDATA.CONTENT);
+    return of(DATA.CONTENT);
   }
 
   public getSpecializations(): Observable<Specialization[]> {
-    return of(EXPORTDATA.SPECIALIZATIONS);
+    return of(DATA.SPECIALIZATIONS);
   }
 
   public getReagents(): Observable<Reagent[]> {
-    return of(EXPORTDATA.REAGENTS);
+    return of(DATA.REAGENTS);
   }
 
   public getPlants(): Observable<Plant[]> {
-    return of(EXPORTDATA.PLANTS);
+    return of(DATA.PLANTS);
   }
 
   public getMeats(): Observable<Meat[]> {
-    return of(EXPORTDATA.MEATS);
+    return of(DATA.MEATS);
   }
 
   public getFishs(): Observable<Fish[]> {
-    return of(EXPORTDATA.FISHS);
+    return of(DATA.FISHS);
   }
 
   public getFlasks(): Observable<Flask[]> {
-    return of(EXPORTDATA.FLASKS);
+    return of(DATA.FLASKS);
   }
 
   public getPotions(): Observable<Potion[]> {
-    return of(EXPORTDATA.POTIONS);
+    return of(DATA.POTIONS);
   }
 
   public getAverageFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.AVERAGE_FOODS);
+    return of(DATA.AVERAGE_FOODS);
   }
 
   public getBetterFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.BETTER_FOODS);
+    return of(DATA.BETTER_FOODS);
   }
 
   public getBestFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.BEST_FOODS);
+    return of(DATA.BEST_FOODS);
   }
 
   public getFeasts(): Observable<Food[][]> {
-    return of(EXPORTDATA.FEASTS);
+    return of(DATA.FEASTS);
   }
 
   public getFoods(): Observable<Food[][]> {
     return of(
-      EXPORTDATA.AVERAGE_FOODS.concat(EXPORTDATA.BETTER_FOODS, EXPORTDATA.BEST_FOODS, EXPORTDATA.FEASTS)
+      DATA.AVERAGE_FOODS.concat(DATA.BETTER_FOODS, DATA.BEST_FOODS, DATA.FEASTS)
     );
   }
 

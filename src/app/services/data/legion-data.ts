@@ -1,4 +1,15 @@
-import { Content, Currency, Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../shared/model';
+import {
+  Content,
+  Currency,
+  Fish,
+  Flask,
+  Food,
+  Meat,
+  Plant,
+  Potion,
+  Reagent,
+  Specialization
+} from '../../shared/model';
 
 // Init data
 
@@ -2349,7 +2360,7 @@ const FEASTS: Food[][] = [
   [heartyFeast1, heartyFeast2, heartyFeast3]
 ];
 
-export const EXPORTDATA = {
+export const DATA = {
   CONTENT: currentContent,
   SPECIALIZATIONS: SPECIALIZATIONS,
   REAGENTS: REAGENTS,

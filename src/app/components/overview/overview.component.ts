@@ -1,21 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import {
-  Fish,
-  Flask,
-  Food,
-  Meat,
-  Plant,
-  Potion,
-  Reagent,
-  Specialization
-} from '../../shared/model';
+import { Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  styleUrls: ['./overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverviewComponent extends ProfessionComponent implements OnInit {
   public specializations: Specialization[];

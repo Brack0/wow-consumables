@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
 import { ConsumableType, Food } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
@@ -6,7 +6,8 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
 @Component({
   selector: 'app-cooking',
   templateUrl: './cooking.component.html',
-  styleUrls: ['./cooking.component.scss']
+  styleUrls: ['./cooking.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CookingComponent extends ProfessionComponent implements OnInit {
   public averageFoods: Food[][];
@@ -14,7 +15,7 @@ export class CookingComponent extends ProfessionComponent implements OnInit {
   public bestFoods: Food[][];
   public feasts: Food[][];
 
-  constructor(protected stateService: StateService) {
+  constructor(protected stateService: StateService, private cd: ChangeDetectorRef) {
     super(stateService);
   }
 
@@ -46,6 +47,7 @@ export class CookingComponent extends ProfessionComponent implements OnInit {
     this.stateService.getRequiredMaterial(ConsumableType.Cooking).subscribe(materials => {
       this.requiredMaterials = materials;
       this.stateService.callRefreshWowTooltip();
+      this.cd.markForCheck();
     });
   }
 }

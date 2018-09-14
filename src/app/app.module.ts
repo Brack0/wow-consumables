@@ -23,17 +23,17 @@ import { Navbar } from './shared/navbar/navbar';
 
 @NgModule({
   declarations: [
+    AlchemyComponent,
     AppComponent,
     ConsumableComponent,
+    CookingComponent,
     MaterialComponent,
+    OverviewComponent,
     SpecializationComponent,
-    AlchemyComponent,
     Header,
     Home,
     Footer,
-    Navbar,
-    CookingComponent,
-    OverviewComponent
+    Navbar
   ],
   imports: [
     BrowserModule,

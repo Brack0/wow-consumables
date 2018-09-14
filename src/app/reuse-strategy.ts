@@ -58,8 +58,8 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
   }
 
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
-    const furtureKey = calcKey(future);
+    const futureKey = calcKey(future);
     const currentKey = calcKey(curr);
-    return furtureKey === currentKey;
+    return futureKey === currentKey;
   }
 }

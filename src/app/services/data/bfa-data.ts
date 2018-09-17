@@ -75,6 +75,42 @@ const hydrocore = new Reagent(currentContent, {
   stackSize: 200
 });
 
+const wildFlour = new Reagent(currentContent, {
+  idMaterial: 160399,
+  name: 'Wild Flour',
+  stackSize: 200
+});
+
+const powderedSugar = new Reagent(currentContent, {
+  idMaterial: 160712,
+  name: 'Powdered Sugar',
+  stackSize: 200
+});
+
+const freshPotato = new Reagent(currentContent, {
+  idMaterial: 160709,
+  name: 'Fresh Potato',
+  stackSize: 200
+});
+
+const choralHoney = new Reagent(currentContent, {
+  idMaterial: 160398,
+  name: 'Choral Honey',
+  stackSize: 200
+});
+
+const foosaka = new Reagent(currentContent, {
+  idMaterial: 160400,
+  name: 'Foosaka',
+  stackSize: 200
+});
+
+const wildBerries = new Reagent(currentContent, {
+  idMaterial: 160710,
+  name: 'Wild Berries',
+  stackSize: 200
+});
+
 /**
  * Plant
  */
@@ -123,13 +159,84 @@ const anchorWeed = new Plant(currentContent, {
 /**
  * Meat
  */
+const thickPaleoSteak = new Meat(currentContent, {
+  idMaterial: 154899,
+  name: 'Thick Paleo Steak',
+  stackSize: 200
+});
+
+const meatyHaunch = new Meat(currentContent, {
+  idMaterial: 154898,
+  name: 'Meaty Haunch',
+  stackSize: 200
+});
+
+const stringyLoins = new Meat(currentContent, {
+  idMaterial: 154897,
+  name: 'Stringy Loins',
+  stackSize: 200
+});
+
+const brinyFlesh = new Meat(currentContent, {
+  idMaterial: 152631,
+  name: 'Briny Flesh',
+  stackSize: 200
+});
+
+const cursedHaunch = new Meat(currentContent, {
+  idMaterial: 163782,
+  name: 'Cursed Haunch',
+  stackSize: 200
+});
 
 /**
  * Fish
  */
+const redtailLoach = new Fish(currentContent, {
+  idMaterial: 152549,
+  name: 'Redtail Loach',
+  stackSize: 200
+});
+
+const tiragardePerch = new Fish(currentContent, {
+  idMaterial: 152548,
+  name: 'Tiragarde Perch',
+  stackSize: 200
+});
+
+const greatSeaCatfish = new Fish(currentContent, {
+  idMaterial: 152547,
+  name: 'Great Sea Catfish',
+  stackSize: 200
+});
+
+const laneSnapper = new Fish(currentContent, {
+  idMaterial: 152546,
+  name: 'Lane Snapper',
+  stackSize: 200
+});
+
+const frenziedFangtooth = new Fish(currentContent, {
+  idMaterial: 152545,
+  name: 'Frenzied Fangtooth',
+  stackSize: 200
+});
+
+const slimyMackerel = new Fish(currentContent, {
+  idMaterial: 152544,
+  name: 'Slimy Mackerel',
+  stackSize: 200
+});
+
 const sandShifter = new Fish(currentContent, {
   idMaterial: 152543,
   name: 'Sand Shifterd',
+  stackSize: 200
+});
+
+const aromaticFishOil = new Fish(currentContent, {
+  idMaterial: 160711,
+  name: 'Aromatic Fish Oil',
   stackSize: 200
 });
 
@@ -1434,6 +1541,120 @@ const draughtDeception = new Potion(currentContent, {
 /**
  * Average Food
  */
+const grilledCatfish = new Food(currentContent, {
+  idMaterial: 154889,
+  name: 'Grilled Catfish',
+  stackSize: 20,
+  effect: ' Restores 83 128 health and 41 564 mana over 20 seconds',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: greatSeaCatfish,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: greatSeaCatfish,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: greatSeaCatfish,
+          amount: 5
+        }
+      ]
+    }
+  ]
+});
+
+const seasonedLoins = new Food(currentContent, {
+  idMaterial: 154891,
+  name: 'Seasoned Loins',
+  stackSize: 20,
+  effect: '  Restores 166 256 health and 83 128 mana over 20 seconds',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 5
+        }
+      ]
+    }
+  ]
+});
+
+const heartsbaneHexwurst = new Food(currentContent, {
+  idMaterial: 163781,
+  name: 'Heartsbane Hexwurst',
+  stackSize: 20,
+  effect: '  Restores 35 757 health and 17 878 mana over 20 seconds',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: foosaka,
+      amount: 5
+    },
+    {
+      component: meatyHaunch,
+      amount: 5
+    },
+    {
+      component: cursedHaunch,
+      amount: 5
+    }
+  ]
+});
 
 /**
  * Better Food
@@ -1443,8 +1664,27 @@ const draughtDeception = new Potion(currentContent, {
  * Best Food
  */
 
-const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
-const REAGENTS: Reagent[] = [crystalVial, expulsom, hydrocore];
+/**
+ * Feasts
+ */
+
+const SPECIALIZATIONS: Specialization[] = [
+  specMelee,
+  specRanged,
+  specTank,
+  specHealer
+];
+const REAGENTS: Reagent[] = [
+  crystalVial,
+  expulsom,
+  hydrocore,
+  wildFlour,
+  powderedSugar,
+  freshPotato,
+  choralHoney,
+  foosaka,
+  wildBerries
+];
 const PLANTS: Plant[] = [
   riverbud,
   seaStalk,
@@ -1454,8 +1694,23 @@ const PLANTS: Plant[] = [
   sirensPollen,
   anchorWeed
 ];
-const MEATS: Meat[] = [];
-const FISHS: Fish[] = [sandShifter];
+const MEATS: Meat[] = [
+  thickPaleoSteak,
+  meatyHaunch,
+  stringyLoins,
+  brinyFlesh,
+  cursedHaunch
+];
+const FISHS: Fish[] = [
+  redtailLoach,
+  tiragardePerch,
+  greatSeaCatfish,
+  laneSnapper,
+  frenziedFangtooth,
+  slimyMackerel,
+  sandShifter,
+  aromaticFishOil
+];
 const FLASKS: Flask[] = [
   flaskCurrents,
   flaskFathoms,
@@ -1480,7 +1735,11 @@ const POTIONS: Potion[] = [
   potionConcealment,
   draughtDeception
 ];
-const AVERAGE_FOODS: Food[] = [];
+const AVERAGE_FOODS: Food[] = [
+  grilledCatfish,
+  seasonedLoins,
+  heartsbaneHexwurst
+];
 const BETTER_FOODS: Food[] = [];
 const BEST_FOODS: Food[] = [];
 const FEASTS: Food[] = [];

@@ -25,7 +25,9 @@ export class ConsumableComponent implements OnInit {
 
   public ngOnInit() {
     // Cloning consumable (Read only access to recipes)
-    this.consumable = this.displayMaterial ? _.cloneDeep(this.consumableInput) : this.consumableInput;
+    this.consumable = this.displayMaterial
+      ? _.cloneDeep(this.consumableInput)
+      : this.consumableInput;
     // Init slider on model
     this.rankNumber = this.consumable.rank;
 
@@ -79,6 +81,8 @@ export class ConsumableComponent implements OnInit {
           // Update recipes and wanted consumables
           this.stateService.updateWantedConsumables(this.consumable);
         }
+      } else {
+        this.stateService.callRefreshWowTooltip();
       }
     });
   }

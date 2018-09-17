@@ -1,4 +1,14 @@
-import { Content, Currency, Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../../shared/model';
+import {
+  Content,
+  Fish,
+  Flask,
+  Food,
+  Meat,
+  Plant,
+  Potion,
+  Reagent,
+  Specialization
+} from '../../shared/model';
 
 // Init data
 
@@ -50,6 +60,18 @@ const currentContent = new Content({
 const crystalVial = new Reagent(currentContent, {
   idMaterial: 3371,
   name: 'Crystal Vial',
+  stackSize: 200
+});
+
+const expulsom = new Reagent(currentContent, {
+  idMaterial: 152668,
+  name: 'Expulsom',
+  stackSize: 200
+});
+
+const hydrocore = new Reagent(currentContent, {
+  idMaterial: 162460,
+  name: 'Hydrocore',
   stackSize: 200
 });
 
@@ -105,76 +127,84 @@ const anchorWeed = new Plant(currentContent, {
 /**
  * Fish
  */
+const sandShifter = new Fish(currentContent, {
+  idMaterial: 152543,
+  name: 'Sand Shifterd',
+  stackSize: 200
+});
 
 /**
  * Flask
  */
-
-/**
- * Potion
- */
-
-/**
- * Average Food
- */
-const riverOnion = new Reagent(currentContent, {
-  idMaterial: 133591,
-  name: 'River Onion',
-  stackSize: 200
-});
-
-const fattyBearsteak = new Meat(currentContent, {
-  idMaterial: 124118,
-  name: 'Fatty Bearsteak',
-  stackSize: 200,
-  ratio: 10
-});
-
-const bearTartare = new Food(currentContent, {
-  idMaterial: 133576,
-  name: 'Bear Tartare',
-  effect: 'Sprint for short time after killing enemy',
+const flaskCurrents = new Flask(currentContent, {
+  idMaterial: 152638,
+  name: 'Flask of the Currents',
   stackSize: 20,
-  utility: [specMelee, specRanged, specTank, specHealer],
+  effect: 'Increases Agility by 238',
+  utility: [specMelee, specTank],
   rankedCraftMaterial: [
     {
       rank: 1,
-      craftNumber: 5,
+      craftNumber: 1,
       craftMaterials: [
         {
-          component: fattyBearsteak,
-          amount: 5
+          component: anchorWeed,
+          amount: 10
         },
         {
-          component: riverOnion,
+          component: akundasBite,
+          amount: 15
+        },
+        {
+          component: seaStalk,
+          amount: 20
+        },
+        {
+          component: crystalVial,
           amount: 1
         }
       ]
     },
     {
       rank: 2,
-      craftNumber: 7,
+      craftNumber: 1,
       craftMaterials: [
         {
-          component: fattyBearsteak,
+          component: anchorWeed,
           amount: 5
         },
         {
-          component: riverOnion,
+          component: akundasBite,
+          amount: 10
+        },
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: crystalVial,
           amount: 1
         }
       ]
     },
     {
       rank: 3,
-      craftNumber: 10,
+      craftNumber: 1,
       craftMaterials: [
         {
-          component: fattyBearsteak,
+          component: anchorWeed,
           amount: 5
         },
         {
-          component: riverOnion,
+          component: akundasBite,
+          amount: 10
+        },
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: crystalVial,
           amount: 1
         }
       ]
@@ -182,19 +212,1228 @@ const bearTartare = new Food(currentContent, {
   ]
 });
 
-const ancientManaPotion = new Food(currentContent, {
-  idMaterial: 127835,
-  name: 'Ancient Mana Potion',
-  effect: 'Restores 168 000 Mana',
+const flaskFathoms = new Flask(currentContent, {
+  idMaterial: 152639,
+  name: 'Flask of Endless Fathoms',
   stackSize: 20,
-  utility: [specHealer],
-  craftMaterials: [
+  effect: 'Increases Intellect by 238',
+  utility: [specRanged, specHealer],
+  rankedCraftMaterial: [
     {
-      component: bearTartare,
-      amount: 70
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 10
+        },
+        {
+          component: wintersKiss,
+          amount: 15
+        },
+        {
+          component: riverbud,
+          amount: 20
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: wintersKiss,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: wintersKiss,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
     }
   ]
 });
+
+const flaskUndertow = new Flask(currentContent, {
+  idMaterial: 152641,
+  name: 'Flask of the Undertow',
+  stackSize: 20,
+  effect: 'Increases Strength by 238',
+  utility: [specMelee, specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 10
+        },
+        {
+          component: akundasBite,
+          amount: 15
+        },
+        {
+          component: sirensPollen,
+          amount: 20
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: akundasBite,
+          amount: 10
+        },
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: akundasBite,
+          amount: 10
+        },
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const flaskHorizon = new Flask(currentContent, {
+  idMaterial: 152640,
+  name: 'Flask of the Vast Horizon',
+  stackSize: 20,
+  effect: 'Increases Stamina by 357',
+  utility: [specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 10
+        },
+        {
+          component: wintersKiss,
+          amount: 15
+        },
+        {
+          component: starMoss,
+          amount: 20
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: wintersKiss,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: anchorWeed,
+          amount: 5
+        },
+        {
+          component: wintersKiss,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const mysticalCauldron = new Flask(currentContent, {
+  idMaterial: 162519,
+  name: 'Mystical Cauldron',
+  stackSize: 20,
+  effect: 'Creates 30 flasks based on class and talents',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: flaskCurrents,
+          amount: 4
+        },
+        {
+          component: flaskFathoms,
+          amount: 4
+        },
+        {
+          component: flaskUndertow,
+          amount: 4
+        },
+        {
+          component: flaskHorizon,
+          amount: 4
+        },
+        {
+          component: expulsom,
+          amount: 5
+        },
+        {
+          component: hydrocore,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: flaskCurrents,
+          amount: 3
+        },
+        {
+          component: flaskFathoms,
+          amount: 3
+        },
+        {
+          component: flaskUndertow,
+          amount: 3
+        },
+        {
+          component: flaskHorizon,
+          amount: 3
+        },
+        {
+          component: expulsom,
+          amount: 5
+        },
+        {
+          component: hydrocore,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: flaskCurrents,
+          amount: 3
+        },
+        {
+          component: flaskFathoms,
+          amount: 3
+        },
+        {
+          component: flaskUndertow,
+          amount: 3
+        },
+        {
+          component: flaskHorizon,
+          amount: 3
+        },
+        {
+          component: expulsom,
+          amount: 5
+        },
+        {
+          component: hydrocore,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+/**
+ * Potion
+ */
+const coastalHealingPotion = new Potion(currentContent, {
+  idMaterial: 152494,
+  name: 'Coastal Healing Potion',
+  stackSize: 20,
+  effect: 'Restores 33 251 health',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 7
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 2
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 2
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const coastalManaPotion = new Potion(currentContent, {
+  idMaterial: 152495,
+  name: 'Coastal Mana Potion',
+  stackSize: 20,
+  effect: 'Restores 11 084 mana',
+  utility: [specRanged, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: riverbud,
+          amount: 7
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: riverbud,
+          amount: 2
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: riverbud,
+          amount: 2
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const coastalRejuvenationPotion = new Potion(currentContent, {
+  idMaterial: 163082,
+  name: 'Coastal Rejuvenation Potion',
+  stackSize: 20,
+  effect: 'Restores 33 251 health and 8 313 mana',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: coastalHealingPotion,
+          amount: 2
+        },
+        {
+          component: coastalManaPotion,
+          amount: 2
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: coastalHealingPotion,
+          amount: 1
+        },
+        {
+          component: coastalManaPotion,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: coastalHealingPotion,
+          amount: 1
+        },
+        {
+          component: coastalManaPotion,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const potionReplenishment = new Potion(currentContent, {
+  idMaterial: 152561,
+  name: 'Potion of Replenishment',
+  stackSize: 20,
+  effect: 'Restores 25 000 mana over 10 seconds',
+  utility: [specRanged, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const battlePotionAgility = new Potion(currentContent, {
+  idMaterial: 163223,
+  name: 'Battle Potion of Agility',
+  stackSize: 20,
+  effect: 'Increases Agility by 900 for 25 seconds',
+  utility: [specMelee, specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: riverbud,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const battlePotionIntellect = new Potion(currentContent, {
+  idMaterial: 163222,
+  name: 'Battle Potion of Intellect',
+  stackSize: 20,
+  effect: 'Increases Intellect by 900 for 25 seconds',
+  utility: [specRanged, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: riverbud,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const battlePotionStrength = new Potion(currentContent, {
+  idMaterial: 163224,
+  name: 'Battle Potion of Strength',
+  stackSize: 20,
+  effect: 'Increases Strength by 900 for 25 seconds',
+  utility: [specMelee, specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const battlePotionStamina = new Potion(currentContent, {
+  idMaterial: 163225,
+  name: 'Battle Potion of Stamina',
+  stackSize: 20,
+  effect: 'Increases Stamina by 1100 for 25 seconds',
+  utility: [specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const potionRisingDeath = new Potion(currentContent, {
+  idMaterial: 152559,
+  name: 'Potion of Rising Death',
+  stackSize: 20,
+  effect: 'Throws death bolts at target for 25 seconds',
+  utility: [specRanged],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: starMoss,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const potionBurstingBlood = new Potion(currentContent, {
+  idMaterial: 152560,
+  name: 'Potion of Bursting Blood',
+  stackSize: 20,
+  effect: 'Gives melee a chance of additionnal damage for 25 seconds',
+  utility: [specMelee],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: riverbud,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const steelskinPotion = new Potion(currentContent, {
+  idMaterial: 152557,
+  name: 'Steelskin Potion',
+  stackSize: 20,
+  effect: 'Increases Armor by 900 for 25 seconds',
+  utility: [specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: riverbud,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: riverbud,
+          amount: 8
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const lightfootPotion = new Potion(currentContent, {
+  idMaterial: 152497,
+  name: 'Potion of Bursting Blood',
+  stackSize: 20,
+  effect: 'Increases movement speed by 150%',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const seaMistPotion = new Potion(currentContent, {
+  idMaterial: 152550,
+  name: 'Sea Mist Potion',
+  stackSize: 20,
+  effect: 'Slow fall for 1 minute',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: seaStalk,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const potionConcealment = new Potion(currentContent, {
+  idMaterial: 152503,
+  name: 'Potion of Concealment',
+  stackSize: 20,
+  effect: 'Hides while standing still. Lasts 3 minutes',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sirensPollen,
+          amount: 10
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const draughtDeception = new Potion(currentContent, {
+  idMaterial: 152503,
+  name: "Demitri's Draught of Deception",
+  stackSize: 20,
+  effect: 'Invisibility for 18 seconds',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sandShifter,
+          amount: 5
+        },
+        {
+          component: seaStalk,
+          amount: 15
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sandShifter,
+          amount: 5
+        },
+        {
+          component: seaStalk,
+          amount: 5
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: sandShifter,
+          amount: 5
+        },
+        {
+          component: seaStalk,
+          amount: 5
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+/**
+ * Average Food
+ */
 
 /**
  * Better Food
@@ -205,14 +1444,44 @@ const ancientManaPotion = new Food(currentContent, {
  */
 
 const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
-const REAGENTS: Reagent[] = [crystalVial];
-const PLANTS: Plant[] = [riverbud, seaStalk, starMoss, akundasBite, wintersKiss, sirensPollen, anchorWeed];
+const REAGENTS: Reagent[] = [crystalVial, expulsom, hydrocore];
+const PLANTS: Plant[] = [
+  riverbud,
+  seaStalk,
+  starMoss,
+  akundasBite,
+  wintersKiss,
+  sirensPollen,
+  anchorWeed
+];
 const MEATS: Meat[] = [];
-const FISHS: Fish[] = [];
-const FLASKS: Flask[] = [];
-const POTIONS: Potion[] = [];
-const AVERAGE_FOODS: Food[] = [bearTartare];
-const BETTER_FOODS: Food[] = [ancientManaPotion];
+const FISHS: Fish[] = [sandShifter];
+const FLASKS: Flask[] = [
+  flaskCurrents,
+  flaskFathoms,
+  flaskUndertow,
+  flaskHorizon,
+  mysticalCauldron
+];
+const POTIONS: Potion[] = [
+  coastalHealingPotion,
+  coastalManaPotion,
+  coastalRejuvenationPotion,
+  potionReplenishment,
+  battlePotionAgility,
+  battlePotionIntellect,
+  battlePotionStrength,
+  battlePotionStamina,
+  potionRisingDeath,
+  potionBurstingBlood,
+  steelskinPotion,
+  lightfootPotion,
+  seaMistPotion,
+  potionConcealment,
+  draughtDeception
+];
+const AVERAGE_FOODS: Food[] = [];
+const BETTER_FOODS: Food[] = [];
 const BEST_FOODS: Food[] = [];
 const FEASTS: Food[] = [];
 

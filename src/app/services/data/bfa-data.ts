@@ -117,6 +117,84 @@ const anchorWeed = new Plant(currentContent, {
 /**
  * Average Food
  */
+const riverOnion = new Reagent(currentContent, {
+  idMaterial: 133591,
+  name: 'River Onion',
+  stackSize: 200
+});
+
+const fattyBearsteak = new Meat(currentContent, {
+  idMaterial: 124118,
+  name: 'Fatty Bearsteak',
+  stackSize: 200,
+  ratio: 10
+});
+
+const bearTartare = new Food(currentContent, {
+  idMaterial: 133576,
+  name: 'Bear Tartare',
+  effect: 'Sprint for short time after killing enemy',
+  stackSize: 20,
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: fattyBearsteak,
+          amount: 5
+        },
+        {
+          component: riverOnion,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: fattyBearsteak,
+          amount: 5
+        },
+        {
+          component: riverOnion,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: fattyBearsteak,
+          amount: 5
+        },
+        {
+          component: riverOnion,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
+const ancientManaPotion = new Food(currentContent, {
+  idMaterial: 127835,
+  name: 'Ancient Mana Potion',
+  effect: 'Restores 168 000 Mana',
+  stackSize: 20,
+  utility: [specHealer],
+  craftMaterials: [
+    {
+      component: bearTartare,
+      amount: 70
+    }
+  ]
+});
 
 /**
  * Better Food
@@ -133,10 +211,10 @@ const MEATS: Meat[] = [];
 const FISHS: Fish[] = [];
 const FLASKS: Flask[] = [];
 const POTIONS: Potion[] = [];
-const AVERAGE_FOODS: Food[][] = [];
-const BETTER_FOODS: Food[][] = [];
-const BEST_FOODS: Food[][] = [];
-const FEASTS: Food[][] = [];
+const AVERAGE_FOODS: Food[] = [bearTartare];
+const BETTER_FOODS: Food[] = [ancientManaPotion];
+const BEST_FOODS: Food[] = [];
+const FEASTS: Food[] = [];
 
 export const DATA = {
   CONTENT: currentContent,

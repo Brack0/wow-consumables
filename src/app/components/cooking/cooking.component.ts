@@ -14,10 +14,10 @@ export class CookingComponent implements OnInit {
   public reagents: Reagent[];
   public meats: Meat[];
   public fishs: Fish[];
-  public averageFoods: Food[][];
-  public betterFoods: Food[][];
-  public bestFoods: Food[][];
-  public feasts: Food[][];
+  public averageFoods: Food[];
+  public betterFoods: Food[];
+  public bestFoods: Food[];
+  public feasts: Food[];
 
   constructor(private stateService: StateService) {}
 

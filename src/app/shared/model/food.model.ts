@@ -1,3 +1,3 @@
-import { RankedConsumable } from './ranked-consumable.model';
+import { Consumable } from './consumable.model';
 
-export class Food extends RankedConsumable {}
+export class Food extends Consumable {}

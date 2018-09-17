@@ -16,7 +16,7 @@ export class OverviewComponent implements OnInit {
   public fishs: Fish[];
   public flasks: Flask[];
   public potions: Potion[];
-  public foods: Food[][];
+  public foods: Food[];
 
   constructor(private stateService: StateService) {}
 

@@ -1,0 +1,10 @@
+$bfa-primary: (
+  500: #051f46,
+  contrast: (
+    500: #ffffff
+  )
+);
+// no ligther and darker theme
+$primary: mat-palette($bfa-primary, 500, 500, 500);
+$accent: mat-palette($mat-grey, 600);
+$theme: mat-light-theme($primary, $accent);

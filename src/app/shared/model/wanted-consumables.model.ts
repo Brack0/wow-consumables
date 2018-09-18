@@ -1,3 +1,5 @@
+import { Consumable } from './consumable.model';
+
 export class WantedConsumables {
-  [idConsumable: number]: number;
+  [idConsumable: number]: Consumable;
 }

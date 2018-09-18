@@ -18,7 +18,7 @@ import {
   Specialization,
   WantedConsumables
 } from '../shared/model';
-import { EXPORTDATA } from './mock-data';
+import { DATA } from './data/bfa-data';
 
 @Injectable()
 export class StateService {
@@ -59,57 +59,55 @@ export class StateService {
   }
 
   public getContent(): Observable<Content> {
-    return of(EXPORTDATA.CONTENT);
+    return of(DATA.CONTENT);
   }
 
   public getSpecializations(): Observable<Specialization[]> {
-    return of(EXPORTDATA.SPECIALIZATIONS);
+    return of(DATA.SPECIALIZATIONS);
   }
 
   public getReagents(): Observable<Reagent[]> {
-    return of(EXPORTDATA.REAGENTS);
+    return of(DATA.REAGENTS);
   }
 
   public getPlants(): Observable<Plant[]> {
-    return of(EXPORTDATA.PLANTS);
+    return of(DATA.PLANTS);
   }
 
   public getMeats(): Observable<Meat[]> {
-    return of(EXPORTDATA.MEATS);
+    return of(DATA.MEATS);
   }
 
   public getFishs(): Observable<Fish[]> {
-    return of(EXPORTDATA.FISHS);
+    return of(DATA.FISHS);
   }
 
   public getFlasks(): Observable<Flask[]> {
-    return of(EXPORTDATA.FLASKS);
+    return of(DATA.FLASKS);
   }
 
   public getPotions(): Observable<Potion[]> {
-    return of(EXPORTDATA.POTIONS);
+    return of(DATA.POTIONS);
   }
 
-  public getAverageFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.AVERAGE_FOODS);
+  public getAverageFoods(): Observable<Food[]> {
+    return of(DATA.AVERAGE_FOODS);
   }
 
-  public getBetterFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.BETTER_FOODS);
+  public getBetterFoods(): Observable<Food[]> {
+    return of(DATA.BETTER_FOODS);
   }
 
-  public getBestFoods(): Observable<Food[][]> {
-    return of(EXPORTDATA.BEST_FOODS);
+  public getBestFoods(): Observable<Food[]> {
+    return of(DATA.BEST_FOODS);
   }
 
-  public getFeasts(): Observable<Food[][]> {
-    return of(EXPORTDATA.FEASTS);
+  public getFeasts(): Observable<Food[]> {
+    return of(DATA.FEASTS);
   }
 
-  public getFoods(): Observable<Food[][]> {
-    return of(
-      EXPORTDATA.AVERAGE_FOODS.concat(EXPORTDATA.BETTER_FOODS, EXPORTDATA.BEST_FOODS, EXPORTDATA.FEASTS)
-    );
+  public getFoods(): Observable<Food[]> {
+    return of(DATA.AVERAGE_FOODS.concat(DATA.BETTER_FOODS, DATA.BEST_FOODS, DATA.FEASTS));
   }
 
   /**
@@ -118,16 +116,23 @@ export class StateService {
    */
   public updateWantedConsumables(consumable: Consumable): void {
     const consumableType = this.computeService.getConsumableType(consumable);
-    let wantedConsumables;
+    let wantedConsumables: WantedConsumables;
     if (consumableType === ConsumableType.Alchemy) {
       wantedConsumables = this.wantedAlchemyConsumables;
     } else {
       wantedConsumables = this.wantedCookingConsumables;
     }
 
+    // Update recipes for every consumables asked
+    Object.values(wantedConsumables).forEach((wantedConsumable: Consumable) => {
+      if (wantedConsumable.wantedNumber) {
+        this.updateRecipe(wantedConsumable);
+      }
+    });
+
     if (consumable.wantedNumber) {
       // Update wantedConsumables
-      wantedConsumables[consumable.idMaterial] = consumable.wantedNumber;
+      wantedConsumables[consumable.idMaterial] = consumable;
       // Compute recipe if needed
       this.addRecipe(consumable);
       // Update list of required material
@@ -166,7 +171,7 @@ export class StateService {
    * @param type Type of Consumable
    */
   private updateRequiredMaterial(type: ConsumableType): void {
-    let requiredMaterialsSubject, wantedConsumables;
+    let requiredMaterialsSubject: Subject<RequiredMaterial[]>, wantedConsumables: WantedConsumables;
     if (type === ConsumableType.Alchemy) {
       requiredMaterialsSubject = this.requiredMaterialsAlchemySubject;
       wantedConsumables = this.wantedAlchemyConsumables;

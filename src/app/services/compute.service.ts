@@ -49,7 +49,7 @@ export class ComputeService {
     Object.entries(wantedConsumables).forEach(e => {
       const idConsumable = e[0];
       // Object.entries() does not handle type
-      const wantedNumber = e[1] as number;
+      const wantedNumber = e[1].wantedNumber as number;
 
       // Find recipe
       const recipe = recipes[idConsumable];

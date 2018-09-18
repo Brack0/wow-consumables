@@ -4,6 +4,7 @@ import { debounceTime } from 'rxjs/operators';
 import { StateService } from '../../services';
 import { Consumable } from '../../shared/model';
 import { CustomValidators } from '../../shared/validators';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-consumable',
@@ -13,13 +14,10 @@ import { CustomValidators } from '../../shared/validators';
 })
 export class ConsumableComponent implements OnInit {
   @Input()
-  consumable: Consumable;
-  @Input()
-  consumableArray: Consumable[];
+  consumableInput: Consumable;
   @Input()
   displayMaterial: boolean = false;
-  @Input()
-  rank: boolean = false;
+  public consumable: Consumable;
   public form: FormGroup;
   public errorMessage: string;
   private rankNumber: number;
@@ -27,20 +25,22 @@ export class ConsumableComponent implements OnInit {
   constructor(private fb: FormBuilder, private stateService: StateService) {}
 
   public ngOnInit() {
-    // init consumable from array (only for consumable with rank)
-    if (this.consumableArray) {
-      if (!this.rankNumber) {
-        // Rank 3 by default
-        this.rankNumber = 3;
-      }
-      this.consumable = this.consumableArray[this.rankNumber - 1];
-    }
+    // Cloning consumable (Read only access to recipes)
+    this.consumable = this.displayMaterial ? _.cloneDeep(this.consumableInput) : this.consumableInput;
+    // Init slider on model
+    this.rankNumber = this.consumable.rank;
 
-    // init form
+    // Init form and behavior
+    this.initForm();
+  }
+
+  private initForm() {
     this.form = this.fb.group({
-      rankNumber: [this.rankNumber],
+      // Slider
+      rankNumber: [{ value: this.rankNumber, disabled: !this.rankNumber }],
+      // Input number with custom validators
       wantedNumber: [
-        this.consumable.wantedNumber ? this.consumable.wantedNumber : '',
+        this.consumable.wantedNumber || '',
         [
           Validators.min(0),
           Validators.max(this.consumable.maxNumber),
@@ -49,21 +49,22 @@ export class ConsumableComponent implements OnInit {
       ]
     });
 
-    // subscribe to input value and update with a debounce time of 500ms
     const wantedNumberControl = this.form.get('wantedNumber');
+    const rankNumberControl = this.form.get('rankNumber');
+
+    // subscribe to input value and update with a debounce time of 500ms
     wantedNumberControl.valueChanges
       .pipe(debounceTime(500))
-      .subscribe((n: number) => this.computeWantedNumber(wantedNumberControl));
+      .subscribe((n: number) => this.validityCheckAndUpdate(wantedNumberControl));
 
-    if (this.rank) {
-      const rankNumberControl = this.form.get('rankNumber');
-      rankNumberControl.valueChanges.subscribe((n: number) => {
+    // subscribe to slider
+    rankNumberControl.valueChanges.subscribe((n: number) => {
+      // Update consumable
+      this.consumable.changeRank(n);
+
+      if (!this.displayMaterial) {
         // Reset model value
         this.consumable.wantedNumber = 0;
-
-        // Update consumable
-        this.rankNumber = n;
-        this.consumable = this.consumableArray[n - 1];
 
         // Refresh validators
         wantedNumberControl.setValidators([
@@ -71,20 +72,25 @@ export class ConsumableComponent implements OnInit {
           Validators.max(100 * this.consumable.craftNumber),
           CustomValidators.inputStep(this.consumable.craftNumber)
         ]);
-        wantedNumberControl.updateValueAndValidity();
 
-        // Update recipe
-        this.stateService.updateRecipe(this.consumable);
+        if (wantedNumberControl.value) {
+          // Update field validity, then update recipes and wanted consumables
+          wantedNumberControl.updateValueAndValidity();
+        } else {
+          // Update recipes and wanted consumables
+          this.stateService.updateWantedConsumables(this.consumable);
+        }
+      } else {
         this.stateService.callRefreshWowTooltip();
-      });
-    }
+      }
+    });
   }
 
   /**
-   * Either update data or create a message
+   * Generate error message and/or push value to compute service
    * @param c input control
    */
-  private computeWantedNumber(c: AbstractControl): void {
+  private validityCheckAndUpdate(c: AbstractControl): void {
     if (c.touched || c.dirty) {
       if (c.errors) {
         if (c.errors.min || c.errors.max) {
@@ -94,10 +100,11 @@ export class ConsumableComponent implements OnInit {
         } else {
           this.errorMessage = `Please enter a valid number.`;
         }
+        this.consumable.wantedNumber = 0;
       } else {
         this.consumable.wantedNumber = c.value;
-        this.stateService.updateWantedConsumables(this.consumable);
       }
+      this.stateService.updateWantedConsumables(this.consumable);
     }
   }
 }

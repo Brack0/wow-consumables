@@ -17,7 +17,7 @@ export class OverviewComponent extends ProfessionComponent implements OnInit {
   public fishs: Fish[];
   public flasks: Flask[];
   public potions: Potion[];
-  public foods: Food[][];
+  public foods: Food[];
 
   constructor(protected stateService: StateService) {
     super(stateService);

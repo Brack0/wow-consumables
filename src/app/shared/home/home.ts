@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class Home {
   public title = 'World of Warcraft - Consumables';
-  public subtitle = 'BETA VERSION';
+  public subtitle = 'Battle for Azeroth';
 
   constructor() {}
 }

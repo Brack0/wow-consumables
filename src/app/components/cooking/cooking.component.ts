@@ -10,10 +10,10 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CookingComponent extends ProfessionComponent implements OnInit {
-  public averageFoods: Food[][];
-  public betterFoods: Food[][];
-  public bestFoods: Food[][];
-  public feasts: Food[][];
+  public averageFoods: Food[];
+  public betterFoods: Food[];
+  public bestFoods: Food[];
+  public feasts: Food[];
 
   constructor(protected stateService: StateService, private cd: ChangeDetectorRef) {
     super(stateService);

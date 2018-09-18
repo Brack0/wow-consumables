@@ -10,14 +10,14 @@
     </div>
   </div>
 
-  <mat-tab-group (selectedTabChange)="callRefreshWowTooltip()">
+  <mat-tab-group [@.disabled]="true" (selectedTabChange)="callRefreshWowTooltip($event)">
     <mat-tab label="Consumables">
       <div class="h3-container">
         <h3>Flasks</h3>
         <div class="box-border-container">
           <div class="grid-container-consumable">
             <div *ngFor="let flask of flasks; let index=index">
-              <app-consumable [consumable]="flask"></app-consumable>
+              <app-consumable [consumableInput]="flask"></app-consumable>
             </div>
           </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="box-border-container">
           <div class="grid-container-consumable">
             <div *ngFor="let potion of potions; let index=index">
-              <app-consumable [consumable]="potion"></app-consumable>
+              <app-consumable [consumableInput]="potion"></app-consumable>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="box-border-container">
           <div class="grid-container-consumable">
             <div *ngFor="let flask of flasks; let index=index">
-              <app-consumable [consumable]="flask" [displayMaterial]="true"></app-consumable>
+              <app-consumable [consumableInput]="flask" [displayMaterial]="true"></app-consumable>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
         <div class="box-border-container">
           <div class="grid-container-consumable">
             <div *ngFor="let potion of potions; let index=index">
-              <app-consumable [consumable]="potion" [displayMaterial]="true"></app-consumable>
+              <app-consumable [consumableInput]="potion" [displayMaterial]="true"></app-consumable>
             </div>
           </div>
         </div>

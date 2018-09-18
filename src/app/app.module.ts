@@ -5,41 +5,35 @@ import { MatButtonModule, MatInputModule, MatSliderModule, MatTabsModule } from 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
-
-import { AppRoutingModule } from 'app/app-routing.module';
-import { CustomRouteReuseStrategy } from 'app/reuse-strategy';
-
-import { environment } from 'environments/environment';
-
-import { Footer } from 'app/shared/footer/footer';
-import { Header } from 'app/shared/header/header';
-import { Home } from 'app/shared/home/home';
-import { Navbar } from 'app/shared/navbar/navbar';
-
-import { AppComponent } from 'app/app.component';
-import { AlchemyComponent } from 'app/components/alchemy/alchemy.component';
-import { ConsumableComponent } from 'app/components/consumable/consumable.component';
-import { CookingComponent } from 'app/components/cooking/cooking.component';
-import { MaterialComponent } from 'app/components/material/material.component';
-import { OverviewComponent } from 'app/components/overview/overview.component';
-import { SpecializationComponent } from 'app/components/specialization/specialization.component';
-
-import { ComputeService } from 'app/services/compute.service';
-import { StateService } from 'app/services/state.service';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AlchemyComponent } from './components/alchemy/alchemy.component';
+import { ConsumableComponent } from './components/consumable/consumable.component';
+import { CookingComponent } from './components/cooking/cooking.component';
+import { MaterialComponent } from './components/material/material.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { SpecializationComponent } from './components/specialization/specialization.component';
+import { CustomRouteReuseStrategy } from './reuse-strategy';
+import { ComputeService, StateService } from './services';
+import { Footer } from './shared/footer/footer';
+import { Header } from './shared/header/header';
+import { Home } from './shared/home/home';
+import { Navbar } from './shared/navbar/navbar';
 
 @NgModule({
   declarations: [
+    AlchemyComponent,
     AppComponent,
     ConsumableComponent,
+    CookingComponent,
     MaterialComponent,
+    OverviewComponent,
     SpecializationComponent,
-    AlchemyComponent,
     Header,
     Home,
     Footer,
-    Navbar,
-    CookingComponent,
-    OverviewComponent
+    Navbar
   ],
   imports: [
     BrowserModule,

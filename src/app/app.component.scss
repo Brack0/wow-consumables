@@ -67,21 +67,8 @@ main {
       font-family: Roboto, 'Helvetica Neue', sans-serif;
     }
 
-    .box-border-container {
-      background-color: #fff;
-      border: 1px solid #ddd;
-    }
-
-    .grid-container-required-material {
-      margin: 20px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 100px);
-      grid-gap: 3em;
-      justify-content: space-evenly;
-    }
-
-    .grid-container-material {
-      margin: 20px 0;
+    .grid-container-material, .grid-container-required-material {
+      padding: 20px 0;
       display: grid;
       grid-template-columns: repeat(auto-fit, 100px);
       grid-gap: 3em;
@@ -89,21 +76,20 @@ main {
     }
 
     .grid-container-specialization {
-      margin: 20px 0;
+      padding: 20px 0;
       display: grid;
       grid-gap: 0.5rem;
       justify-content: center;
     }
 
     .grid-container-consumable {
-      margin: 20px 0;
+      padding: 20px 0;
       display: grid;
       grid-template-columns: repeat(auto-fit, 350px);
       grid-gap: 3em;
       justify-content: space-evenly;
       & > div {
         @include mat-elevation(2);
-        border: 1px solid #ddd;
       }
     }
   }

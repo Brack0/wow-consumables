@@ -5,10 +5,15 @@
   align-content: space-between;
 }
 
+.grid-consumable-header {
+  align-self: center;
+}
+
 .grid-container-consumable-info {
   display: grid;
   grid-template-columns: 1fr 140px;
   grid-column-gap: 1rem;
+  height: 120px;
 }
 
 .grid-container-consumable-utility {

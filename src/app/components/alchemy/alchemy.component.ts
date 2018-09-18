@@ -1,65 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import {
-  ConsumableType,
-  Flask,
-  Plant,
-  Potion,
-  Reagent,
-  RequiredMaterial,
-  Specialization
-} from '../../shared/model';
+import { ConsumableType, Flask, Potion } from '../../shared/model';
+import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
   selector: 'app-alchemy',
   templateUrl: './alchemy.component.html',
-  styleUrls: ['./alchemy.component.scss']
+  styleUrls: ['./alchemy.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AlchemyComponent implements OnInit {
-  public title: string = 'Alchemy - Legion';
-  public specializations: Specialization[];
-  public requiredMaterials: RequiredMaterial[];
-  public reagents: Reagent[];
-  public plants: Plant[];
+export class AlchemyComponent extends ProfessionComponent implements OnInit {
   public flasks: Flask[];
   public potions: Potion[];
-  private tabInit: boolean[];
 
-  constructor(private stateService: StateService) {}
+  constructor(protected stateService: StateService, private cd: ChangeDetectorRef) {
+    super(stateService);
+  }
 
   ngOnInit() {
+    super.ngOnInit();
     this.getData();
-    this.initFirstTab();
-  }
-
-  public callRefreshWowTooltip($event): void {
-    if (!this.tabInit[$event.index]) {
-      this.stateService.callRefreshWowTooltip();
-      this.tabInit[$event.index] = true;
-    }
-  }
-
-  private initFirstTab() {
-    this.stateService.callRefreshWowTooltip();
-    this.tabInit = [true];
   }
 
   /**
    * Gather data from StateService
    */
-  private getData(): void {
-    this.stateService.getSpecializations().subscribe(specializations => {
-      this.specializations = specializations;
-    });
-
-    this.stateService.getReagents().subscribe(reagents => {
-      this.reagents = reagents;
-    });
-
-    this.stateService.getPlants().subscribe(plants => {
-      this.plants = plants;
-    });
-
+  protected getData(): void {
     this.stateService.getFlasks().subscribe(flasks => {
       this.flasks = flasks;
     });
@@ -71,6 +37,7 @@ export class AlchemyComponent implements OnInit {
     this.stateService.getRequiredMaterial(ConsumableType.Alchemy).subscribe(materials => {
       this.requiredMaterials = materials;
       this.stateService.callRefreshWowTooltip();
+      this.cd.markForCheck();
     });
   }
 }

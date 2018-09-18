@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { StateService } from '../../services';
@@ -9,7 +9,8 @@ import * as _ from 'lodash';
 @Component({
   selector: 'app-consumable',
   templateUrl: './consumable.component.html',
-  styleUrls: ['./consumable.component.scss']
+  styleUrls: ['./consumable.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConsumableComponent implements OnInit {
   @Input()

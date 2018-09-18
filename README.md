@@ -45,6 +45,11 @@ Deploy on GH pages : https://brack0.github.io/wow-consumables/
 
 &nbsp;&nbsp;&nbsp;&nbsp;_Work in Progress_
 
+- [Source code (zip)](https://github.com/Brack0/wow-consumables/archive/bfa-release-src-v1.0.0.zip)
+- [Source code (tar.gz)](https://github.com/Brack0/wow-consumables/archive/bfa-release-src-v1.0.0.tar.gz)
+- [Build app (zip)](https://github.com/Brack0/wow-consumables/archive/bfa-release-prod-v1.0.0.zip)
+- [Build app (tar.gz)](https://github.com/Brack0/wow-consumables/archive/bfa-release-prod-v1.0.0.tar.gz)
+
 #### Legion :
 
 - [Source code (zip)](https://github.com/Brack0/wow-consumables/archive/legion-release-src.zip)

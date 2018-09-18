@@ -25,9 +25,7 @@ export class ConsumableComponent implements OnInit {
 
   public ngOnInit() {
     // Cloning consumable (Read only access to recipes)
-    this.consumable = this.displayMaterial
-      ? _.cloneDeep(this.consumableInput)
-      : this.consumableInput;
+    this.consumable = this.displayMaterial ? _.cloneDeep(this.consumableInput) : this.consumableInput;
     // Init slider on model
     this.rankNumber = this.consumable.rank;
 
@@ -38,7 +36,7 @@ export class ConsumableComponent implements OnInit {
   private initForm() {
     this.form = this.fb.group({
       // Slider
-      rankNumber: [this.rankNumber],
+      rankNumber: [{ value: this.rankNumber, disabled: !this.rankNumber }],
       // Input number with custom validators
       wantedNumber: [
         this.consumable.wantedNumber || '',

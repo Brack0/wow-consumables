@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as _ from 'lodash';
 import { debounceTime } from 'rxjs/operators';
 import { StateService } from '../../services';
 import { Consumable } from '../../shared/model';
 import { CustomValidators } from '../../shared/validators';
-import * as _ from 'lodash';
 
 @Component({
   selector: 'app-consumable',
@@ -22,7 +22,7 @@ export class ConsumableComponent implements OnInit {
   public errorMessage: string;
   private rankNumber: number;
 
-  constructor(private fb: FormBuilder, private stateService: StateService) {}
+  constructor(private fb: FormBuilder, private cd: ChangeDetectorRef, private stateService: StateService) {}
 
   public ngOnInit() {
     // Cloning consumable (Read only access to recipes)
@@ -53,9 +53,10 @@ export class ConsumableComponent implements OnInit {
     const rankNumberControl = this.form.get('rankNumber');
 
     // subscribe to input value and update with a debounce time of 500ms
-    wantedNumberControl.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe((n: number) => this.validityCheckAndUpdate(wantedNumberControl));
+    wantedNumberControl.valueChanges.pipe(debounceTime(500)).subscribe((n: number) => {
+      this.validityCheckAndUpdate(wantedNumberControl);
+      this.cd.markForCheck();
+    });
 
     // subscribe to slider
     rankNumberControl.valueChanges.subscribe((n: number) => {

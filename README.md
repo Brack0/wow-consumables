@@ -1,6 +1,6 @@
 # WowConsumables [![Build Status](https://travis-ci.org/Brack0/wow-consumables.svg?branch=master)](https://travis-ci.org/Brack0/wow-consumables)
 
-_Edit (**August 2018**)_ : This is an Angular App (v6.1) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
+_Edit (**September 2018**)_ : This is an Angular App (v6.1) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
 
 The app is supposed to give the component people need in order to have consumables for raiding in wow.
 
@@ -18,14 +18,15 @@ High level stuff planned :
 
 #### Tech
 
-- Angular 6.1
-- Performance issues
+- Angular 6.1 :heavy_check_mark:
+- Performance issues :heavy_check_mark:
+- Reset button
 - Expansion/Theme switch
 
 #### Content
 
-- New theme (Colors, icons, ...)
-- Battle for Azeroth professions data
+- New theme (Colors, icons, ...) :heavy_check_mark:
+- Battle for Azeroth professions data :heavy_check_mark:
 - New professions ?
 
 ## Angular CLI doc

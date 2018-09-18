@@ -1665,7 +1665,7 @@ const kulTiramisu = new Food(currentContent, {
   idMaterial: 154881,
   name: 'Kul Tiramisu',
   stackSize: 20,
-  effect: 'Grants 53 Critical Strike',
+  effect: 'Grants 41 Critical Strike',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1741,7 +1741,7 @@ const loaLoaf = new Food(currentContent, {
   idMaterial: 154887,
   name: 'Loa Loaf',
   stackSize: 20,
-  effect: 'Grants 53 Mastery',
+  effect: 'Grants 41 Mastery',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1817,7 +1817,7 @@ const ravenberryTarts = new Food(currentContent, {
   idMaterial: 154883,
   name: 'Ravenberry Tarts',
   stackSize: 20,
-  effect: 'Grants 53 Haste',
+  effect: 'Grants 41 Haste',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1893,7 +1893,7 @@ const monDazi = new Food(currentContent, {
   idMaterial: 154885,
   name: "Mon'Dazi",
   stackSize: 20,
-  effect: 'Grants 53 Versatility',
+  effect: 'Grants 41 Versatility',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1972,7 +1972,7 @@ const honeyGlazedHaunches = new Food(currentContent, {
   idMaterial: 154882,
   name: 'Honey-Glazed Haunches',
   stackSize: 20,
-  effect: 'Grants 70 Critical Strike',
+  effect: 'Grants 55 Critical Strike',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2024,7 +2024,7 @@ const sailorsPie = new Food(currentContent, {
   idMaterial: 154888,
   name: "Sailor's Pie",
   stackSize: 20,
-  effect: 'Grants 70 Mastery',
+  effect: 'Grants 55 Mastery',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2100,7 +2100,7 @@ const swampFishChips = new Food(currentContent, {
   idMaterial: 154884,
   name: "Swamp Fish 'n Chips",
   stackSize: 20,
-  effect: 'Grants 70 Haste',
+  effect: 'Grants 55 Haste',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2164,7 +2164,7 @@ const spicedSnapper = new Food(currentContent, {
   idMaterial: 154886,
   name: 'Spiced Snapper',
   stackSize: 20,
-  effect: 'Grants 70 Versatility',
+  effect: 'Grants 55 Versatility',
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {

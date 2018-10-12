@@ -48,49 +48,4 @@ main {
   margin: auto;
   padding-top: 50px;
   padding-bottom: 50px;
-
-  .h3-container {
-    @include mat-elevation(4);
-    border-radius: 3px;
-    margin: 30px 5px;
-
-    h3 {
-      font-size: 20px;
-      letter-spacing: 1px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0;
-      border: 1px solid rgba(27, 31, 35, 0.15);
-      border-bottom: 0;
-      font-family: Roboto, 'Helvetica Neue', sans-serif;
-    }
-
-    .grid-container-material, .grid-container-required-material {
-      padding: 20px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 100px);
-      grid-gap: 3em;
-      justify-content: space-evenly;
-    }
-
-    .grid-container-specialization {
-      padding: 20px 0;
-      display: grid;
-      grid-gap: 0.5rem;
-      justify-content: center;
-    }
-
-    .grid-container-consumable {
-      padding: 20px 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 350px);
-      grid-gap: 3em;
-      justify-content: space-evenly;
-      & > div {
-        @include mat-elevation(2);
-      }
-    }
-  }
 }

@@ -1,30 +1,29 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, of } from 'rxjs';
-import { ComputeService } from './compute.service';
+import { Observable, of, Subject } from 'rxjs';
 import {
   Consumable,
+  ConsumableCategory,
   ConsumableType,
   Content,
   CraftedMaterial,
-  Fish,
-  Flask,
-  Food,
-  Meat,
-  Plant,
-  Potion,
-  Reagent,
+  MaterialCategory,
   Recipes,
   RequiredMaterial,
   Specialization,
   WantedConsumables
 } from '../shared/model';
+import { ComputeService } from './compute.service';
 import { DATA } from './data/bfa-data';
 
 @Injectable()
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
-  private requiredMaterialsAlchemySubject: Subject<RequiredMaterial[]> = new Subject();
-  private requiredMaterialsCookingSubject: Subject<RequiredMaterial[]> = new Subject();
+  private requiredMaterialsAlchemySubject: Subject<
+    RequiredMaterial[]
+  > = new Subject();
+  private requiredMaterialsCookingSubject: Subject<
+    RequiredMaterial[]
+  > = new Subject();
   private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
   private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
@@ -50,7 +49,9 @@ export class StateService {
    * Create a Subject
    * Subscribe to get updated list of required material
    */
-  public getRequiredMaterial(type: ConsumableType): Subject<RequiredMaterial[]> {
+  public getRequiredMaterial(
+    type: ConsumableType
+  ): Subject<RequiredMaterial[]> {
     if (type === ConsumableType.Alchemy) {
       return this.requiredMaterialsAlchemySubject;
     } else {
@@ -66,48 +67,16 @@ export class StateService {
     return of(DATA.SPECIALIZATIONS);
   }
 
-  public getReagents(): Observable<Reagent[]> {
-    return of(DATA.REAGENTS);
+  public getMaterials(): Observable<MaterialCategory[]> {
+    return of(DATA.ALL_MATERIALS);
   }
 
-  public getPlants(): Observable<Plant[]> {
-    return of(DATA.PLANTS);
+  public getAlchemy(): Observable<ConsumableCategory[]> {
+    return of(DATA.ALL_ALCHEMY);
   }
 
-  public getMeats(): Observable<Meat[]> {
-    return of(DATA.MEATS);
-  }
-
-  public getFishs(): Observable<Fish[]> {
-    return of(DATA.FISHS);
-  }
-
-  public getFlasks(): Observable<Flask[]> {
-    return of(DATA.FLASKS);
-  }
-
-  public getPotions(): Observable<Potion[]> {
-    return of(DATA.POTIONS);
-  }
-
-  public getAverageFoods(): Observable<Food[]> {
-    return of(DATA.AVERAGE_FOODS);
-  }
-
-  public getBetterFoods(): Observable<Food[]> {
-    return of(DATA.BETTER_FOODS);
-  }
-
-  public getBestFoods(): Observable<Food[]> {
-    return of(DATA.BEST_FOODS);
-  }
-
-  public getFeasts(): Observable<Food[]> {
-    return of(DATA.FEASTS);
-  }
-
-  public getFoods(): Observable<Food[]> {
-    return of(DATA.AVERAGE_FOODS.concat(DATA.BETTER_FOODS, DATA.BEST_FOODS, DATA.FEASTS));
+  public getFoods(): Observable<ConsumableCategory[]> {
+    return of(DATA.ALL_FOODS);
   }
 
   /**
@@ -150,7 +119,9 @@ export class StateService {
    * @param material Material to update
    */
   public updateRecipe(material: CraftedMaterial): void {
-    this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
+    this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+      material
+    );
   }
 
   /**
@@ -159,7 +130,9 @@ export class StateService {
    */
   private addRecipe(material: CraftedMaterial): void {
     if (!this.recipes[material.idMaterial]) {
-      this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
+      this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+        material
+      );
     }
   }
 
@@ -171,7 +144,8 @@ export class StateService {
    * @param type Type of Consumable
    */
   private updateRequiredMaterial(type: ConsumableType): void {
-    let requiredMaterialsSubject: Subject<RequiredMaterial[]>, wantedConsumables: WantedConsumables;
+    let requiredMaterialsSubject: Subject<RequiredMaterial[]>,
+      wantedConsumables: WantedConsumables;
     if (type === ConsumableType.Alchemy) {
       requiredMaterialsSubject = this.requiredMaterialsAlchemySubject;
       wantedConsumables = this.wantedAlchemyConsumables;
@@ -181,6 +155,11 @@ export class StateService {
     }
 
     // Pushing new subject
-    requiredMaterialsSubject.next(this.computeService.updateRequiredMaterial(wantedConsumables, this.recipes));
+    requiredMaterialsSubject.next(
+      this.computeService.updateRequiredMaterial(
+        wantedConsumables,
+        this.recipes
+      )
+    );
   }
 }

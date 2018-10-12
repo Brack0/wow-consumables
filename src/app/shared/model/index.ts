@@ -1,3 +1,4 @@
+export { ConsumableCategory } from './consumable-category.model';
 export { ConsumableType } from './consumable-type.enum';
 export { Consumable } from './consumable.model';
 export { Content } from './content.model';
@@ -6,6 +7,7 @@ export { Currency } from './currency.model';
 export { Fish } from './fish.model';
 export { Flask } from './flask.model';
 export { Food } from './food.model';
+export { MaterialCategory } from './material-category.model';
 export { Material } from './material.model';
 export { Meat } from './meat.model';
 export { Plant } from './plant.model';

@@ -1,0 +1,10 @@
+<div class="h3-container">
+  <h3>{{consumableCategory.category}}</h3>
+  <div class="box-border-container">
+    <div class="grid-container-consumable">
+      <div *ngFor="let consumable of consumableCategory.consumableArray; let index=index">
+        <app-consumable [consumableInput]="consumable" [displayMaterial]="displayMaterial"></app-consumable>
+      </div>
+    </div>
+  </div>
+</div>

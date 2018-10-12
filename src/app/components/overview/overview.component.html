@@ -9,74 +9,7 @@
       </div>
     </div>
   </div>
-  <div class="h3-container">
-    <h3>Reagents</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let reagent of reagents">
-          <app-material [material]="reagent"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Plants</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let plant of plants">
-          <app-material [material]="plant"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Meats</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let meat of meats">
-          <app-material [material]="meat"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Fishs</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let fish of fishs; let index=index">
-          <app-material [material]="fish"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Flasks</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let flask of flasks; let index=index">
-          <app-material [material]="flask"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Potions</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let potion of potions; let index=index">
-          <app-material [material]="potion"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="h3-container">
-    <h3>Food</h3>
-    <div class="box-border-container">
-      <div class="grid-container-material">
-        <div *ngFor="let food of foods; let index=index">
-          <app-material [material]="food"></app-material>
-        </div>
-      </div>
-    </div>
+  <div *ngFor="let category of materialCategories">
+    <app-material-grid [materialCategory]="category"></app-material-grid>
   </div>
 </div>

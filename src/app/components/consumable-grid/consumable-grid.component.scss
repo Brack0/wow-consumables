@@ -18,10 +18,14 @@
     font-family: Roboto, 'Helvetica Neue', sans-serif;
   }
 
-  .grid-container-specialization {
+  .grid-container-consumable {
     padding: 20px 0;
     display: grid;
-    grid-gap: 0.5rem;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 350px);
+    grid-gap: 3em;
+    justify-content: space-evenly;
+    & > div {
+      @include mat-elevation(2);
+    }
   }
 }

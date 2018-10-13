@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import { ConsumableType, Food } from '../../shared/model';
+import { ConsumableCategory, ConsumableType } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
@@ -10,13 +10,10 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CookingComponent extends ProfessionComponent implements OnInit {
-  public averageFoods: Food[];
-  public betterFoods: Food[];
-  public bestFoods: Food[];
-  public feasts: Food[];
+  public foodsCategories: ConsumableCategory[];
 
-  constructor(protected stateService: StateService, private cd: ChangeDetectorRef) {
-    super(stateService);
+  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {
+    super(stateService, cd);
   }
 
   ngOnInit() {
@@ -28,26 +25,10 @@ export class CookingComponent extends ProfessionComponent implements OnInit {
    * Gather data from StateService
    */
   protected getData(): void {
-    this.stateService.getAverageFoods().subscribe(foods => {
-      this.averageFoods = foods;
+    this.stateService.getFoods().subscribe(foodsCategories => {
+      this.foodsCategories = foodsCategories;
     });
 
-    this.stateService.getBetterFoods().subscribe(foods => {
-      this.betterFoods = foods;
-    });
-
-    this.stateService.getBestFoods().subscribe(foods => {
-      this.bestFoods = foods;
-    });
-
-    this.stateService.getFeasts().subscribe(feasts => {
-      this.feasts = feasts;
-    });
-
-    this.stateService.getRequiredMaterial(ConsumableType.Cooking).subscribe(materials => {
-      this.requiredMaterials = materials;
-      this.stateService.callRefreshWowTooltip();
-      this.cd.markForCheck();
-    });
+    this.getRequiredMaterial(ConsumableType.Cooking);
   }
 }

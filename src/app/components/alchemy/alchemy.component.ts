@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
-import { ConsumableType, Flask, Potion } from '../../shared/model';
+import { ConsumableCategory, ConsumableType } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
 
 @Component({
@@ -10,11 +10,10 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlchemyComponent extends ProfessionComponent implements OnInit {
-  public flasks: Flask[];
-  public potions: Potion[];
+  public alchemyCategories: ConsumableCategory[];
 
-  constructor(protected stateService: StateService, private cd: ChangeDetectorRef) {
-    super(stateService);
+  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {
+    super(stateService, cd);
   }
 
   ngOnInit() {
@@ -26,18 +25,10 @@ export class AlchemyComponent extends ProfessionComponent implements OnInit {
    * Gather data from StateService
    */
   protected getData(): void {
-    this.stateService.getFlasks().subscribe(flasks => {
-      this.flasks = flasks;
+    this.stateService.getAlchemy().subscribe(alchemyCategories => {
+      this.alchemyCategories = alchemyCategories;
     });
 
-    this.stateService.getPotions().subscribe(potions => {
-      this.potions = potions;
-    });
-
-    this.stateService.getRequiredMaterial(ConsumableType.Alchemy).subscribe(materials => {
-      this.requiredMaterials = materials;
-      this.stateService.callRefreshWowTooltip();
-      this.cd.markForCheck();
-    });
+    this.getRequiredMaterial(ConsumableType.Alchemy);
   }
 }

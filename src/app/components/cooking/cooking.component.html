@@ -1,99 +1,16 @@
 <div class="main-content">
-  <div class="h3-container" *ngIf="requiredMaterials?.length">
-    <h3>Required materials</h3>
-    <div class="box-border-container">
-      <div class="grid-container-required-material">
-        <div *ngFor="let material of requiredMaterials; let index=index">
-          <app-material [material]="material.component" [wantedNumber]="-1" [craftNumber]="material.amount"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-material-grid [materialCategory]="requiredMaterials" *ngIf="requiredMaterials && requiredMaterials.requiredMaterialArray?.length"></app-material-grid>
 
   <mat-tab-group [@.disabled]="true" (selectedTabChange)="callRefreshWowTooltip($event)">
     <mat-tab label="Consumables">
-      <div class="h3-container">
-        <h3>Raid Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let feast of feasts; let index=index">
-              <app-consumable [consumableInput]="feast"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Best Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of bestFoods; let index=index">
-              <app-consumable [consumableInput]="food"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Better Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of betterFoods; let index=index">
-              <app-consumable [consumableInput]="food"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Average Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of averageFoods; let index=index">
-              <app-consumable [consumableInput]="food"></app-consumable>
-            </div>
-          </div>
-        </div>
+      <div *ngFor="let category of foodsCategories">
+        <app-consumable-grid [consumableCategory]="category"></app-consumable-grid>
       </div>
     </mat-tab>
 
     <mat-tab label="Recipes">
-      <div class="h3-container">
-        <h3>Raid Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let feast of feasts; let index=index">
-              <app-consumable [consumableInput]="feast" [displayMaterial]="true"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Best Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of bestFoods; let index=index">
-              <app-consumable [consumableInput]="food" [displayMaterial]="true"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Better Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of betterFoods; let index=index">
-              <app-consumable [consumableInput]="food" [displayMaterial]="true"></app-consumable>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="h3-container">
-        <h3>Average Food</h3>
-        <div class="box-border-container">
-          <div class="grid-container-consumable">
-            <div *ngFor="let food of averageFoods; let index=index">
-              <app-consumable [consumableInput]="food" [displayMaterial]="true"></app-consumable>
-            </div>
-          </div>
-        </div>
+      <div *ngFor="let category of foodsCategories">
+        <app-consumable-grid [consumableCategory]="category" [displayMaterial]="true"></app-consumable-grid>
       </div>
     </mat-tab>
   </mat-tab-group>

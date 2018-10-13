@@ -1,4 +1,16 @@
-import { Content, Fish, Flask, Food, Meat, Plant, Potion, Reagent, Specialization } from '../../shared/model';
+import {
+  ConsumableCategory,
+  Content,
+  Fish,
+  Flask,
+  Food,
+  MaterialCategory,
+  Meat,
+  Plant,
+  Potion,
+  Reagent,
+  Specialization
+} from '../../shared/model';
 
 // Init data
 
@@ -2439,66 +2451,153 @@ const bountifulCaptainsFeast = new Food(currentContent, {
   ]
 });
 
-const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
-const REAGENTS: Reagent[] = [
-  crystalVial,
-  expulsom,
-  hydrocore,
-  wildFlour,
-  powderedSugar,
-  freshPotato,
-  choralHoney,
-  foosaka,
-  wildBerries,
-  majorsFrothyCoffee
+const SPECIALIZATIONS: Specialization[] = [
+  specMelee,
+  specRanged,
+  specTank,
+  specHealer
 ];
-const PLANTS: Plant[] = [riverbud, seaStalk, starMoss, akundasBite, wintersKiss, sirensPollen, anchorWeed];
-const MEATS: Meat[] = [thickPaleoSteak, meatyHaunch, stringyLoins, brinyFlesh, cursedHaunch];
-const FISHS: Fish[] = [
-  midnightSalmon,
-  redtailLoach,
-  tiragardePerch,
-  greatSeaCatfish,
-  laneSnapper,
-  frenziedFangtooth,
-  slimyMackerel,
-  sandShifter,
-  aromaticFishOil
+const REAGENTS: MaterialCategory = {
+  category: 'Reagents',
+  materialArray: [
+    crystalVial,
+    expulsom,
+    hydrocore,
+    wildFlour,
+    powderedSugar,
+    freshPotato,
+    choralHoney,
+    foosaka,
+    wildBerries,
+    majorsFrothyCoffee
+  ]
+};
+const PLANTS: MaterialCategory = {
+  category: 'Plants',
+  materialArray: [
+    riverbud,
+    seaStalk,
+    starMoss,
+    akundasBite,
+    wintersKiss,
+    sirensPollen,
+    anchorWeed
+  ]
+};
+const MEATS: MaterialCategory = {
+  category: 'Meats',
+  materialArray: [
+    thickPaleoSteak,
+    meatyHaunch,
+    stringyLoins,
+    brinyFlesh,
+    cursedHaunch
+  ]
+};
+const FISHS: MaterialCategory = {
+  category: 'Fishs',
+  materialArray: [
+    midnightSalmon,
+    redtailLoach,
+    tiragardePerch,
+    greatSeaCatfish,
+    laneSnapper,
+    frenziedFangtooth,
+    slimyMackerel,
+    sandShifter,
+    aromaticFishOil
+  ]
+};
+const FLASKS: ConsumableCategory = {
+  category: 'Flasks',
+  consumableArray: [
+    flaskCurrents,
+    flaskFathoms,
+    flaskUndertow,
+    flaskHorizon,
+    mysticalCauldron
+  ]
+};
+const POTIONS: ConsumableCategory = {
+  category: 'Potions',
+  consumableArray: [
+    coastalHealingPotion,
+    coastalManaPotion,
+    coastalRejuvenationPotion,
+    potionReplenishment,
+    battlePotionAgility,
+    battlePotionIntellect,
+    battlePotionStrength,
+    battlePotionStamina,
+    potionRisingDeath,
+    potionBurstingBlood,
+    steelskinPotion,
+    lightfootPotion,
+    seaMistPotion,
+    potionConcealment,
+    draughtDeception
+  ]
+};
+const LIGHT_MEALS: ConsumableCategory = {
+  category: 'Light Meals',
+  consumableArray: [grilledCatfish, seasonedLoins, heartsbaneHexwurst]
+};
+const DESSERTS: ConsumableCategory = {
+  category: 'Desserts',
+  consumableArray: [kulTiramisu, loaLoaf, ravenberryTarts, monDazi]
+};
+const LARGE_MEALS: ConsumableCategory = {
+  category: 'Large Meals',
+  consumableArray: [
+    honeyGlazedHaunches,
+    sailorsPie,
+    swampFishChips,
+    spicedSnapper
+  ]
+};
+const FEASTS: ConsumableCategory = {
+  category: 'Feasts',
+  consumableArray: [galleyBanquet, bountifulCaptainsFeast]
+};
+
+const ALL_ALCHEMY: ConsumableCategory[] = [FLASKS, POTIONS];
+
+const ALL_FOODS: ConsumableCategory[] = [
+  FEASTS,
+  LARGE_MEALS,
+  DESSERTS,
+  LIGHT_MEALS
 ];
-const FLASKS: Flask[] = [flaskCurrents, flaskFathoms, flaskUndertow, flaskHorizon, mysticalCauldron];
-const POTIONS: Potion[] = [
-  coastalHealingPotion,
-  coastalManaPotion,
-  coastalRejuvenationPotion,
-  potionReplenishment,
-  battlePotionAgility,
-  battlePotionIntellect,
-  battlePotionStrength,
-  battlePotionStamina,
-  potionRisingDeath,
-  potionBurstingBlood,
-  steelskinPotion,
-  lightfootPotion,
-  seaMistPotion,
-  potionConcealment,
-  draughtDeception
+
+const ALL_ALCHEMY_MATERIAL: MaterialCategory[] = ALL_ALCHEMY.map(
+  alchemyCategory =>
+    new MaterialCategory(
+      alchemyCategory.category,
+      alchemyCategory.consumableArray
+    )
+);
+
+const ALL_FOODS_MATERIAL: MaterialCategory = new MaterialCategory(
+  'Foods',
+  ALL_FOODS.reduce((foodArray, food) => {
+    foodArray.push(...food.consumableArray);
+    return foodArray;
+  }, [])
+);
+
+const ALL_MATERIALS: MaterialCategory[] = [
+  REAGENTS,
+  PLANTS,
+  MEATS,
+  FISHS,
+  ...ALL_ALCHEMY_MATERIAL,
+  ALL_FOODS_MATERIAL
 ];
-const AVERAGE_FOODS: Food[] = [grilledCatfish, seasonedLoins, heartsbaneHexwurst];
-const BETTER_FOODS: Food[] = [kulTiramisu, loaLoaf, ravenberryTarts, monDazi];
-const BEST_FOODS: Food[] = [honeyGlazedHaunches, sailorsPie, swampFishChips, spicedSnapper];
-const FEASTS: Food[] = [galleyBanquet, bountifulCaptainsFeast];
 
 export const DATA = {
   CONTENT: currentContent,
   SPECIALIZATIONS: SPECIALIZATIONS,
-  REAGENTS: REAGENTS,
-  PLANTS: PLANTS,
-  MEATS: MEATS,
-  FISHS: FISHS,
-  FLASKS: FLASKS,
-  POTIONS: POTIONS,
-  AVERAGE_FOODS: AVERAGE_FOODS,
-  BETTER_FOODS: BETTER_FOODS,
-  BEST_FOODS: BEST_FOODS,
-  FEASTS: FEASTS
+  ALL_ALCHEMY: ALL_ALCHEMY,
+  ALL_FOODS: ALL_FOODS,
+  ALL_MATERIALS: ALL_MATERIALS
 };

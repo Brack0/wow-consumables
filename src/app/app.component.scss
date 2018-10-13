@@ -38,6 +38,7 @@ main {
 
 @media (max-width: 720px) {
   app-root {
+    min-height: calc(100vh - 89px);
     top: 89px;
   }
 }

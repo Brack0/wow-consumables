@@ -1,12 +1,12 @@
-import { OnInit } from '@angular/core';
+import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { StateService } from '../../../services';
-import { RequiredMaterial } from '../../../shared/model';
+import { ConsumableType, MaterialCategory } from '../../../shared/model';
 
 export abstract class ProfessionComponent implements OnInit {
-  public requiredMaterials: RequiredMaterial[];
+  public requiredMaterials: MaterialCategory;
   private tabInit: boolean[];
 
-  constructor(protected stateService: StateService) {}
+  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.initFirstTab();
@@ -22,6 +22,14 @@ export abstract class ProfessionComponent implements OnInit {
   protected initFirstTab() {
     this.stateService.callRefreshWowTooltip();
     this.tabInit = [true];
+  }
+
+  protected getRequiredMaterial(type: ConsumableType) {
+    this.stateService.getRequiredMaterial(type).subscribe(materials => {
+      this.requiredMaterials = materials;
+      this.stateService.callRefreshWowTooltip();
+      this.cd.markForCheck();
+    });
   }
 
   protected abstract getData();

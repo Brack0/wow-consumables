@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { StateService } from '../../services';
 import { MaterialCategory, Specialization } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
@@ -13,8 +13,8 @@ export class OverviewComponent extends ProfessionComponent implements OnInit {
   public specializations: Specialization[];
   public materialCategories: MaterialCategory[];
 
-  constructor(protected stateService: StateService) {
-    super(stateService);
+  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {
+    super(stateService, cd);
   }
 
   ngOnInit() {

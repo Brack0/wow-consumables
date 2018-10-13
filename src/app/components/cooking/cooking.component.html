@@ -1,14 +1,5 @@
 <div class="main-content">
-  <div class="h3-container" *ngIf="requiredMaterials?.length">
-    <h3>Required materials</h3>
-    <div class="box-border-container">
-      <div class="grid-container-required-material">
-        <div *ngFor="let material of requiredMaterials; let index=index">
-          <app-material [material]="material.component" [wantedNumber]="-1" [craftNumber]="material.amount"></app-material>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-material-grid [materialCategory]="requiredMaterials" *ngIf="requiredMaterials && requiredMaterials.requiredMaterialArray?.length"></app-material-grid>
 
   <mat-tab-group [@.disabled]="true" (selectedTabChange)="callRefreshWowTooltip($event)">
     <mat-tab label="Consumables">

@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
 import { ConsumableCategory, ConsumableType } from '../../shared/model';
 import { ProfessionComponent } from '../abstract/profession/profession.abstract';
@@ -17,11 +12,8 @@ import { ProfessionComponent } from '../abstract/profession/profession.abstract'
 export class AlchemyComponent extends ProfessionComponent implements OnInit {
   public alchemyCategories: ConsumableCategory[];
 
-  constructor(
-    protected stateService: StateService,
-    private cd: ChangeDetectorRef
-  ) {
-    super(stateService);
+  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {
+    super(stateService, cd);
   }
 
   ngOnInit() {
@@ -37,12 +29,6 @@ export class AlchemyComponent extends ProfessionComponent implements OnInit {
       this.alchemyCategories = alchemyCategories;
     });
 
-    this.stateService
-      .getRequiredMaterial(ConsumableType.Alchemy)
-      .subscribe(materials => {
-        this.requiredMaterials = materials;
-        this.stateService.callRefreshWowTooltip();
-        this.cd.markForCheck();
-      });
+    this.getRequiredMaterial(ConsumableType.Alchemy);
   }
 }

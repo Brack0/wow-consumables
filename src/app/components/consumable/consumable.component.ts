@@ -73,8 +73,10 @@ export class ConsumableComponent implements OnInit {
     wantedNumberControl.valueChanges
       .pipe(debounceTime(500))
       .subscribe((n: number) => {
-        this.validityCheckAndUpdate(wantedNumberControl);
-        this.cd.markForCheck();
+        if (n !== this.consumable.wantedNumber) {
+          this.validityCheckAndUpdate(wantedNumberControl);
+          this.cd.markForCheck();
+        }
       });
 
     // subscribe to slider

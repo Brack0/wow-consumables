@@ -23,7 +23,21 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              {
+                "input": "src/styles.scss"
+              },
+              {
+                "input": "src/assets/bfa-theme.css",
+                "lazy": true,
+                "bundleName": "bfa-theme"
+              },
+              {
+                "input": "src/assets/legion-theme.css",
+                "lazy": true,
+                "bundleName": "legion-theme"
+              }
+            ],
             "scripts": []
           },
           "configurations": {

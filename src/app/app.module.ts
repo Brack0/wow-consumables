@@ -1,12 +1,8 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatInputModule,
-  MatSliderModule,
-  MatTabsModule
-} from '@angular/material';
+import { MatButtonModule, MatInputModule, MatSliderModule, MatTabsModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
@@ -27,6 +23,7 @@ import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
 import { Home } from './shared/home/home';
 import { Navbar } from './shared/navbar/navbar';
+import { StyleService } from './services/style.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +50,8 @@ import { Navbar } from './shared/navbar/navbar';
     MatTabsModule,
     MatButtonModule,
     MatSliderModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OverlayModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: environment.baseHref },
@@ -62,7 +60,8 @@ import { Navbar } from './shared/navbar/navbar';
       useClass: CustomRouteReuseStrategy
     },
     StateService,
-    ComputeService
+    ComputeService,
+    StyleService
   ],
   bootstrap: [AppComponent]
 })

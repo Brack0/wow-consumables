@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { StateService, StyleService } from 'src/app/services';
+import { StateService, StyleService, ThemeStorage } from 'src/app/services';
 import { Theme } from 'src/app/shared/model';
 
 @Component({
@@ -57,18 +57,23 @@ export class ThemeSelectorComponent implements OnInit {
       isDark: true
     }
   ];
-  constructor(private styleService: StyleService, private stateService: StateService) {
-    // const currentTheme = getThemeFromLocalStorage();
-    // this.installTheme(currentTheme);
-  }
+  constructor(
+    private styleService: StyleService,
+    private stateService: StateService,
+    private themeStorage: ThemeStorage
+  ) {}
 
   ngOnInit(): void {
-    this.currentTheme = this.themes[0];
-    this.stateService.setLogo(this.themes[0].logoUrl);
+    const currentTheme = this.themeStorage.getTheme();
+    if (currentTheme) {
+      this.installTheme(currentTheme);
+    } else {
+      this.installTheme(this.getDefaultTheme());
+    }
   }
 
   installTheme(theme: Theme) {
-    this.currentTheme = this._getCurrentThemeFromHref(theme.href);
+    this.currentTheme = this.getCurrentThemeFromHref(theme.href);
 
     if (theme.isDefault) {
       this.styleService.removeStyle('theme');
@@ -77,9 +82,17 @@ export class ThemeSelectorComponent implements OnInit {
     }
 
     this.stateService.setLogo(this.currentTheme.logoUrl);
+
+    if (this.currentTheme) {
+      this.themeStorage.setTheme(this.currentTheme);
+    }
   }
 
-  private _getCurrentThemeFromHref(href: string): Theme {
+  private getCurrentThemeFromHref(href: string): Theme {
     return this.themes.find(theme => theme.href === href);
+  }
+
+  private getDefaultTheme(): Theme {
+    return this.themes.find(theme => theme.isDefault);
   }
 }

@@ -4,6 +4,13 @@ $theme-picker-grid-cells-per-row: 2;
 $theme-picker-swatch-size: 36px;
 $theme-picker-accent-stripe-size: 6px;
 
+app-theme-selector {
+  .mat-button {
+    min-width: 0px;
+    padding: 0 5px;
+  }
+}
+
 .theme-selector-menu {
   .mat-menu-content {
     padding: $theme-picker-menu-padding;

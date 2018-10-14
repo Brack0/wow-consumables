@@ -9,7 +9,8 @@ import {
   MatInputModule,
   MatMenuModule,
   MatSliderModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTooltipModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +28,7 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { SpecializationComponent } from './components/specialization/specialization.component';
 import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { CustomRouteReuseStrategy } from './reuse-strategy';
-import { ComputeService, StateService } from './services';
+import { ComputeService, StateService, ThemeStorage } from './services';
 import { StyleService } from './services/style.service';
 import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
@@ -63,6 +64,7 @@ import { Navbar } from './shared/navbar/navbar';
     MatIconModule,
     MatGridListModule,
     MatMenuModule,
+    MatTooltipModule,
     AppRoutingModule,
     OverlayModule
   ],
@@ -74,7 +76,8 @@ import { Navbar } from './shared/navbar/navbar';
     },
     StateService,
     ComputeService,
-    StyleService
+    StyleService,
+    ThemeStorage
   ],
   bootstrap: [AppComponent]
 })

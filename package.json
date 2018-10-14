@@ -5,9 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build-themes && ng serve",
-    "start-jit": "npm run build-themes && ng serve --aot=false",
     "build": "npm run build-themes && ng build",
     "prod": "npm run build-themes && ng build --aot --prod",
+    "watch-themes": "node-sass --watch src/assets/custom-themes/ -o src/assets/",
     "build-themes": "node-sass src/assets/custom-themes/ -o src/assets/",
     "test": "ng test",
     "lint": "ng lint",

@@ -2,7 +2,15 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatInputModule, MatSliderModule, MatTabsModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatSliderModule,
+  MatTabsModule
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
@@ -17,13 +25,14 @@ import { MaterialGridComponent } from './components/material-grid/material-grid.
 import { MaterialComponent } from './components/material/material.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SpecializationComponent } from './components/specialization/specialization.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { CustomRouteReuseStrategy } from './reuse-strategy';
 import { ComputeService, StateService } from './services';
+import { StyleService } from './services/style.service';
 import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
 import { Home } from './shared/home/home';
 import { Navbar } from './shared/navbar/navbar';
-import { StyleService } from './services/style.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +45,7 @@ import { StyleService } from './services/style.service';
     MaterialGridComponent,
     OverviewComponent,
     SpecializationComponent,
+    ThemeSelectorComponent,
     Header,
     Home,
     Footer,
@@ -50,6 +60,9 @@ import { StyleService } from './services/style.service';
     MatTabsModule,
     MatButtonModule,
     MatSliderModule,
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
     AppRoutingModule,
     OverlayModule
   ],

@@ -17,5 +17,6 @@ export { Reagent } from './reagent.model';
 export { Recipes } from './recipes.model';
 export { RequiredMaterial } from './required-material.model';
 export { Specialization } from './specialization.model';
+export { Theme } from './theme.model';
 export { TradableMaterial } from './tradable-material.model';
 export { WantedConsumables } from './wanted-consumables.model';

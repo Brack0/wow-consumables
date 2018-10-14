@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StateService } from '../../services';
 import { Content } from '../model';
 
@@ -10,12 +10,18 @@ import { Content } from '../model';
 })
 export class Footer implements OnInit {
   public content: Content;
+  public logoUrl: string;
 
-  constructor(private stateService: StateService) {}
+  constructor(private cd: ChangeDetectorRef, private stateService: StateService) {}
 
   ngOnInit() {
     this.stateService.getContent().subscribe(content => {
       this.content = content;
+    });
+
+    this.stateService.getLogo().subscribe(logoUrl => {
+      this.logoUrl = logoUrl;
+      this.cd.markForCheck();
     });
   }
 }

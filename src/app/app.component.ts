@@ -1,6 +1,5 @@
 import { AfterViewChecked, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { StateService } from './services';
-import { StyleService } from './services/style.service';
 
 declare let $WowheadPower;
 
@@ -13,9 +12,7 @@ declare let $WowheadPower;
 export class AppComponent implements OnInit, AfterViewChecked {
   private needWowRefresh: boolean = false;
 
-  constructor(private styleService: StyleService, private stateService: StateService) {
-    this.styleService.setStyle('theme', 'assets/legion-theme.css');
-  }
+  constructor(private stateService: StateService) {}
 
   public ngOnInit(): void {
     this.stateService.getRefreshWowTooltip().subscribe(update => {

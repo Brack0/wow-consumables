@@ -15,6 +15,14 @@ import {
 export class ComputeService {
   constructor() {}
 
+  public compareRequiredMaterial(a: RequiredMaterial, b: RequiredMaterial): number {
+    if (a.component.order === b.component.order) {
+      return a.component.name.localeCompare(b.component.name);
+    } else {
+      return a.component.order - b.component.order;
+    }
+  }
+
   /**
    * Return type of Consumable (Enum)
    * @param consumable Consumable to handle
@@ -64,7 +72,7 @@ export class ComputeService {
         );
       });
     });
-    return requiredMaterials;
+    return requiredMaterials.sort(this.compareRequiredMaterial);
   }
 
   /**

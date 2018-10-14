@@ -36,16 +36,22 @@ main {
   flex: 1;
 }
 
-@media (max-width: 720px) {
-  app-root {
-    top: 89px;
-  }
-}
-
 .main-content {
   max-width: 87.4375em;
   text-align: center;
   margin: auto;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+
+@media (max-width: 720px) {
+  app-root {
+    min-height: calc(100vh - 89px);
+    top: 89px;
+  }
+
+  .main-content {
+    padding-top: 25px;
+    padding-bottom: 0;
+  }
 }

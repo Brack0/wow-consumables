@@ -12,7 +12,7 @@
   max-width: 920px;
   text-align: center;
   margin: auto;
-  padding-top: 20px;
+  padding: 20px 3% 0 3%;
 
   .home-grid {
     display: grid;
@@ -38,7 +38,7 @@
 
     .home-desc {
       align-self: center;
-      text-align: left;
+      text-align: justify;
       font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
         'Lucida Grande', sans-serif;
 

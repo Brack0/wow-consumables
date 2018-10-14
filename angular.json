@@ -36,6 +36,26 @@
                 "input": "src/assets/legion-theme.css",
                 "lazy": true,
                 "bundleName": "legion-theme"
+              },
+              {
+                "input": "src/assets/wod-theme.css",
+                "lazy": true,
+                "bundleName": "wod-theme"
+              },
+              {
+                "input": "src/assets/mop-theme.css",
+                "lazy": true,
+                "bundleName": "mop-theme"
+              },
+              {
+                "input": "src/assets/cataclysm-theme.css",
+                "lazy": true,
+                "bundleName": "cataclysm-theme"
+              },
+              {
+                "input": "src/assets/wotlk-theme.css",
+                "lazy": true,
+                "bundleName": "wotlk-theme"
               }
             ],
             "scripts": []

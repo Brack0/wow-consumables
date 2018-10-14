@@ -18,7 +18,7 @@ export class ThemeSelectorComponent implements OnInit {
       href: 'assets/bfa-theme.css',
       label: 'Battle for Azeroth',
       logoUrl: 'assets/images/png/wow-bfa-icon.png',
-      isDark: true,
+      isDark: false,
       isDefault: true
     },
     {
@@ -26,13 +26,34 @@ export class ThemeSelectorComponent implements OnInit {
       href: 'assets/legion-theme.css',
       label: 'Legion',
       logoUrl: 'assets/images/png/wow-legion-icon.png',
-      isDark: true
+      isDark: false
     },
     {
       primary: '#520000',
       href: 'assets/wod-theme.css',
       label: 'Warlords of Draenor',
       logoUrl: 'assets/images/png/wow-wod-icon.png',
+      isDark: false
+    },
+    {
+      primary: '#14aa6c',
+      href: 'assets/mop-theme.css',
+      label: 'Mists of Pandaria',
+      logoUrl: 'assets/images/png/wow-mop-icon.png',
+      isDark: true
+    },
+    {
+      primary: '#660000',
+      href: 'assets/cataclysm-theme.css',
+      label: 'Cataclysm',
+      logoUrl: 'assets/images/png/wow-cataclysm-icon.png',
+      isDark: false
+    },
+    {
+      primary: '#4fc3f7',
+      href: 'assets/wotlk-theme.css',
+      label: 'Wrath of the Lich King',
+      logoUrl: 'assets/images/png/wow-wotlk-icon.png',
       isDark: true
     }
   ];

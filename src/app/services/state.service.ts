@@ -8,7 +8,6 @@ import {
   CraftedMaterial,
   MaterialCategory,
   Recipes,
-  RequiredMaterial,
   Specialization,
   WantedConsumables
 } from '../shared/model';
@@ -18,8 +17,13 @@ import { DATA } from './data/bfa-data';
 @Injectable()
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
-  private requiredMaterialsAlchemySubject: Subject<MaterialCategory> = new Subject();
-  private requiredMaterialsCookingSubject: Subject<MaterialCategory> = new Subject();
+  private logoUrlSubject: Subject<string> = new Subject<string>();
+  private requiredMaterialsAlchemySubject: Subject<MaterialCategory> = new Subject<
+    MaterialCategory
+  >();
+  private requiredMaterialsCookingSubject: Subject<MaterialCategory> = new Subject<
+    MaterialCategory
+  >();
   private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
   private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
@@ -51,6 +55,14 @@ export class StateService {
     } else {
       return this.requiredMaterialsCookingSubject;
     }
+  }
+
+  public getLogo(): Subject<string> {
+    return this.logoUrlSubject;
+  }
+
+  public setLogo(logoUrl: string): void {
+    this.logoUrlSubject.next(logoUrl);
   }
 
   public getContent(): Observable<Content> {

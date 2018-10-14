@@ -18,7 +18,7 @@ before_script:
   - npm install -g @angular/cli@~6.1.5
 
 script:
-  - ng build --prod
+  - npm run prod
 
 notifications:
   email:

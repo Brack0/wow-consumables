@@ -1,11 +1,16 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
+  MatGridListModule,
+  MatIconModule,
   MatInputModule,
+  MatMenuModule,
   MatSliderModule,
-  MatTabsModule
+  MatTabsModule,
+  MatTooltipModule
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,8 +26,10 @@ import { MaterialGridComponent } from './components/material-grid/material-grid.
 import { MaterialComponent } from './components/material/material.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SpecializationComponent } from './components/specialization/specialization.component';
+import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { CustomRouteReuseStrategy } from './reuse-strategy';
-import { ComputeService, StateService } from './services';
+import { ComputeService, StateService, ThemeStorage } from './services';
+import { StyleService } from './services/style.service';
 import { Footer } from './shared/footer/footer';
 import { Header } from './shared/header/header';
 import { Home } from './shared/home/home';
@@ -39,6 +46,7 @@ import { Navbar } from './shared/navbar/navbar';
     MaterialGridComponent,
     OverviewComponent,
     SpecializationComponent,
+    ThemeSelectorComponent,
     Header,
     Home,
     Footer,
@@ -53,7 +61,12 @@ import { Navbar } from './shared/navbar/navbar';
     MatTabsModule,
     MatButtonModule,
     MatSliderModule,
-    AppRoutingModule
+    MatIconModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatTooltipModule,
+    AppRoutingModule,
+    OverlayModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: environment.baseHref },
@@ -62,7 +75,9 @@ import { Navbar } from './shared/navbar/navbar';
       useClass: CustomRouteReuseStrategy
     },
     StateService,
-    ComputeService
+    ComputeService,
+    StyleService,
+    ThemeStorage
   ],
   bootstrap: [AppComponent]
 })

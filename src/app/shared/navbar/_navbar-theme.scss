@@ -12,6 +12,10 @@
     .navbar-header {
       background: mat-color($primary);
 
+      .svg-logo {
+        fill: mat-color($primary, default-contrast);
+      }
+
       .mat-button[disabled] {
         &.mat-primary,
         &.mat-accent,

@@ -4,16 +4,11 @@
   align-items: center;
   padding: 8px 16px;
 
-  // .mat-button {
-  //   min-width: 0px;
-  //   padding: 0 5px 3px 5px;
-  // }
-
-  // > .mat-button {
-  //   &:last-child {
-  //     margin-left: auto;
-  //   }
-  // }
+  > .mat-button {
+    &:last-child {
+      padding-left: 10px;
+    }
+  }
 }
 
 .logo {

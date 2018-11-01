@@ -20,8 +20,8 @@ High level stuff planned :
 
 - Angular 6.1 :heavy_check_mark:
 - Performance issues :heavy_check_mark:
-- Reset button
-- Expansion/Theme switch
+- Reset button :heavy_check_mark:
+- ~~Expansion/~~ Theme switch :heavy_check_mark:
 
 #### Content
 

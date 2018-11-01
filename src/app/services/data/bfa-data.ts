@@ -2451,12 +2451,7 @@ const bountifulCaptainsFeast = new Food(currentContent, {
   ]
 });
 
-const SPECIALIZATIONS: Specialization[] = [
-  specMelee,
-  specRanged,
-  specTank,
-  specHealer
-];
+const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
 const REAGENTS: MaterialCategory = {
   category: 'Reagents',
   materialArray: [
@@ -2474,25 +2469,11 @@ const REAGENTS: MaterialCategory = {
 };
 const PLANTS: MaterialCategory = {
   category: 'Plants',
-  materialArray: [
-    riverbud,
-    seaStalk,
-    starMoss,
-    akundasBite,
-    wintersKiss,
-    sirensPollen,
-    anchorWeed
-  ]
+  materialArray: [riverbud, seaStalk, starMoss, akundasBite, wintersKiss, sirensPollen, anchorWeed]
 };
 const MEATS: MaterialCategory = {
   category: 'Meats',
-  materialArray: [
-    thickPaleoSteak,
-    meatyHaunch,
-    stringyLoins,
-    brinyFlesh,
-    cursedHaunch
-  ]
+  materialArray: [thickPaleoSteak, meatyHaunch, stringyLoins, brinyFlesh, cursedHaunch]
 };
 const FISHS: MaterialCategory = {
   category: 'Fishs',
@@ -2510,13 +2491,7 @@ const FISHS: MaterialCategory = {
 };
 const FLASKS: ConsumableCategory = {
   category: 'Flasks',
-  consumableArray: [
-    flaskCurrents,
-    flaskFathoms,
-    flaskUndertow,
-    flaskHorizon,
-    mysticalCauldron
-  ]
+  consumableArray: [flaskCurrents, flaskFathoms, flaskUndertow, flaskHorizon, mysticalCauldron]
 };
 const POTIONS: ConsumableCategory = {
   category: 'Potions',
@@ -2548,12 +2523,7 @@ const DESSERTS: ConsumableCategory = {
 };
 const LARGE_MEALS: ConsumableCategory = {
   category: 'Large Meals',
-  consumableArray: [
-    honeyGlazedHaunches,
-    sailorsPie,
-    swampFishChips,
-    spicedSnapper
-  ]
+  consumableArray: [honeyGlazedHaunches, sailorsPie, swampFishChips, spicedSnapper]
 };
 const FEASTS: ConsumableCategory = {
   category: 'Feasts',
@@ -2562,26 +2532,16 @@ const FEASTS: ConsumableCategory = {
 
 const ALL_ALCHEMY: ConsumableCategory[] = [FLASKS, POTIONS];
 
-const ALL_FOODS: ConsumableCategory[] = [
-  FEASTS,
-  LARGE_MEALS,
-  DESSERTS,
-  LIGHT_MEALS
-];
+const ALL_FOODS: ConsumableCategory[] = [FEASTS, LARGE_MEALS, DESSERTS, LIGHT_MEALS];
 
 const ALL_ALCHEMY_MATERIAL: MaterialCategory[] = ALL_ALCHEMY.map(
-  alchemyCategory =>
-    new MaterialCategory(
-      alchemyCategory.category,
-      alchemyCategory.consumableArray
-    )
+  alchemyCategory => new MaterialCategory(alchemyCategory.category, alchemyCategory.consumableArray)
 );
 
 const ALL_FOODS_MATERIAL: MaterialCategory = new MaterialCategory(
   'Foods',
   ALL_FOODS.reduce((foodArray, food) => {
-    foodArray.push(...food.consumableArray);
-    return foodArray;
+    return [...foodArray, ...food.consumableArray];
   }, [])
 );
 

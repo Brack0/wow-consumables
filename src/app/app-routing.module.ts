@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AlchemyComponent } from './components/alchemy/alchemy.component';
-import { CookingComponent } from './components/cooking/cooking.component';
-import { OverviewComponent } from './components/overview/overview.component';
-import { Home } from './shared/home/home';
+import {
+  AlchemyComponent,
+  CookingComponent,
+  HomeComponent,
+  OverviewComponent
+} from './components/pages';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: Home },
+  { path: 'home', component: HomeComponent },
   { path: 'alchemy', component: AlchemyComponent },
   { path: 'cooking', component: CookingComponent },
   { path: 'overview', component: OverviewComponent },

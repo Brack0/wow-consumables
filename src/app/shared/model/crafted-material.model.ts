@@ -13,13 +13,13 @@ export class CraftedMaterial extends Material {
     super(content, init);
     Object.assign(this, init);
     if (this.rankedCraftMaterial) {
-      this.rank = 3; // Default rank : 3
-      this.changeRank(this.rank);
+      // Default rank : 3
+      this.changeRank(3);
     }
   }
 
   changeRank(newRank: number) {
-    if (this.rankedCraftMaterial[newRank - 1]) {
+    if (this.rank !== newRank && this.rankedCraftMaterial[newRank - 1]) {
       this.rank = newRank;
       this.craftMaterials = this.rankedCraftMaterial[newRank - 1].craftMaterials;
       this.craftNumber = this.rankedCraftMaterial[newRank - 1].craftNumber;

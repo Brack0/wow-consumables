@@ -17,6 +17,7 @@ import { DATA } from './data/bfa-data';
 @Injectable()
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
+  private resetAllForms: Subject<any> = new Subject<any>();
   private logoUrlSubject: Subject<string> = new Subject<string>();
   private requiredMaterialsAlchemySubject: Subject<MaterialCategory> = new Subject<
     MaterialCategory
@@ -42,7 +43,22 @@ export class StateService {
    * All subscribers will receive a event
    */
   public callRefreshWowTooltip(): void {
-    this.refreshWowTooltip.next(null);
+    this.refreshWowTooltip.next();
+  }
+
+  /**
+   * Subscribe to get when to reset all forms
+   */
+  public getResetAllForms(): Subject<any> {
+    return this.resetAllForms;
+  }
+
+  /**
+   * Call a reset of all forms
+   * All subscribers will receive a event
+   */
+  public callResetAllForms(): void {
+    this.resetAllForms.next();
   }
 
   /**

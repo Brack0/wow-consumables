@@ -18,22 +18,29 @@ import { RouteReuseStrategy } from '@angular/router';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AlchemyComponent } from './components/alchemy/alchemy.component';
-import { ConsumableGridComponent } from './components/consumable-grid/consumable-grid.component';
-import { ConsumableComponent } from './components/consumable/consumable.component';
-import { CookingComponent } from './components/cooking/cooking.component';
-import { MaterialGridComponent } from './components/material-grid/material-grid.component';
-import { MaterialComponent } from './components/material/material.component';
-import { OverviewComponent } from './components/overview/overview.component';
-import { SpecializationComponent } from './components/specialization/specialization.component';
-import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
+import {
+  ConsumableComponent,
+  ConsumableGridComponent,
+  MaterialComponent,
+  MaterialGridComponent,
+  SpecializationComponent
+} from './components/elements';
+import {
+  FooterComponent,
+  HeaderComponent,
+  NavbarComponent,
+  ResetComponent,
+  ThemeSelectorComponent
+} from './components/global';
+import {
+  AlchemyComponent,
+  CookingComponent,
+  HomeComponent,
+  OverviewComponent
+} from './components/pages';
 import { CustomRouteReuseStrategy } from './reuse-strategy';
 import { ComputeService, StateService, ThemeStorage } from './services';
 import { StyleService } from './services/style.service';
-import { Footer } from './shared/footer/footer';
-import { Header } from './shared/header/header';
-import { Home } from './shared/home/home';
-import { Navbar } from './shared/navbar/navbar';
 
 @NgModule({
   declarations: [
@@ -47,10 +54,11 @@ import { Navbar } from './shared/navbar/navbar';
     OverviewComponent,
     SpecializationComponent,
     ThemeSelectorComponent,
-    Header,
-    Home,
-    Footer,
-    Navbar
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

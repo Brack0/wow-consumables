@@ -47,14 +47,10 @@ const specHealer = new Specialization({
 const currentContent = new Content({
   idContent: 2,
   expansionName: 'Battle for Azeroth',
-  patch: 'Version 8.0.1 (27602)',
-  releaseDate: new Date(2018, 8, 5),
-  url: 'https://worldofwarcraft.com/en-us/news/21959894'
+  patch: 'Version 8.1.0 (28833)',
+  releaseDate: new Date(2018, 11, 19),
+  url: 'https://worldofwarcraft.com/en-us/news/228248924'
 });
-
-/**
- * Currency
- */
 
 /**
  * Reagent
@@ -116,6 +112,12 @@ const wildBerries = new Reagent(currentContent, {
 const majorsFrothyCoffee = new Reagent(currentContent, {
   idMaterial: 160705,
   name: "Major's Frothy Coffee",
+  stackSize: 200
+});
+
+const sanguicell = new Reagent(currentContent, {
+  idMaterial: 162461,
+  name: 'Sanguicell',
   stackSize: 200
 });
 
@@ -620,7 +622,7 @@ const mysticalCauldron = new Flask(currentContent, {
         },
         {
           component: expulsom,
-          amount: 5
+          amount: 3
         },
         {
           component: hydrocore,
@@ -650,7 +652,7 @@ const mysticalCauldron = new Flask(currentContent, {
         },
         {
           component: expulsom,
-          amount: 5
+          amount: 3
         },
         {
           component: hydrocore,
@@ -1552,8 +1554,72 @@ const draughtDeception = new Potion(currentContent, {
   ]
 });
 
+const potionUnveilingEye = new Potion(currentContent, {
+  idMaterial: 166270,
+  name: 'Potion of the Unveiling Eye',
+  stackSize: 20,
+  effect: 'Stealth detection for 10 minutes',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 5
+        },
+        {
+          component: seaStalk,
+          amount: 5
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 3
+        },
+        {
+          component: seaStalk,
+          amount: 3
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: starMoss,
+          amount: 3
+        },
+        {
+          component: seaStalk,
+          amount: 3
+        },
+        {
+          component: crystalVial,
+          amount: 1
+        }
+      ]
+    }
+  ]
+});
+
 /**
- * Average Food
+ * Light meals
  */
 const grilledCatfish = new Food(currentContent, {
   idMaterial: 154889,
@@ -1670,8 +1736,31 @@ const heartsbaneHexwurst = new Food(currentContent, {
   ]
 });
 
+const honeyPotPie = new Food(currentContent, {
+  idMaterial: 165755,
+  name: 'Honey Potpie',
+  stackSize: 20,
+  effect: "Slows melee attackers' movement speed by 30% for 5 sec",
+  utility: [specMelee, specRanged, specTank, specHealer],
+  craftNumber: 5,
+  craftMaterials: [
+    {
+      component: choralHoney,
+      amount: 10
+    },
+    {
+      component: meatyHaunch,
+      amount: 5
+    },
+    {
+      component: cursedHaunch,
+      amount: 5
+    }
+  ]
+});
+
 /**
- * Better Food
+ * Desserts
  */
 const kulTiramisu = new Food(currentContent, {
   idMaterial: 154881,
@@ -1977,8 +2066,84 @@ const monDazi = new Food(currentContent, {
   ]
 });
 
+const wildBerryBread = new Food(currentContent, {
+  idMaterial: 166343,
+  name: 'Wild Berry Bread',
+  stackSize: 20,
+  effect: 'Grants 113 Stamina',
+  utility: [specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: wildFlour,
+          amount: 8
+        },
+        {
+          component: wildBerries,
+          amount: 8
+        },
+        {
+          component: powderedSugar,
+          amount: 5
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: wildFlour,
+          amount: 8
+        },
+        {
+          component: wildBerries,
+          amount: 8
+        },
+        {
+          component: powderedSugar,
+          amount: 5
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: wildFlour,
+          amount: 8
+        },
+        {
+          component: wildBerries,
+          amount: 8
+        },
+        {
+          component: powderedSugar,
+          amount: 5
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    }
+  ]
+});
+
 /**
- * Best Food
+ * Large Meals
  */
 const honeyGlazedHaunches = new Food(currentContent, {
   idMaterial: 154882,
@@ -2224,6 +2389,158 @@ const spicedSnapper = new Food(currentContent, {
   ]
 });
 
+const seasonedSteakAndPotatoes = new Food(currentContent, {
+  idMaterial: 166344,
+  name: 'Seasoned Steak and Potatoes',
+  stackSize: 20,
+  effect: 'Grants 150 Stamina',
+  utility: [specTank],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: freshPotato,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: freshPotato,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: freshPotato,
+          amount: 5
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        }
+      ]
+    }
+  ]
+});
+
+const boralusBloodSausage = new Food(currentContent, {
+  idMaterial: 166804,
+  name: 'Boralus Blood Sausage',
+  stackSize: 20,
+  effect: 'Gives 85 to a primary stat',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 5,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        },
+        {
+          component: sanguicell,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 7,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        },
+        {
+          component: sanguicell,
+          amount: 5
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 10,
+      craftMaterials: [
+        {
+          component: thickPaleoSteak,
+          amount: 6
+        },
+        {
+          component: foosaka,
+          amount: 2
+        },
+        {
+          component: aromaticFishOil,
+          amount: 2
+        },
+        {
+          component: sanguicell,
+          amount: 5
+        }
+      ]
+    }
+  ]
+});
+
 /**
  * Feasts
  */
@@ -2451,6 +2768,94 @@ const bountifulCaptainsFeast = new Food(currentContent, {
   ]
 });
 
+const sanguinatedFeast = new Food(currentContent, {
+  idMaterial: 166240,
+  name: 'Sanguinated Feast',
+  stackSize: 20,
+  effect: 'Gives 100 to a stat based on specilization',
+  utility: [specMelee, specRanged, specTank, specHealer],
+  rankedCraftMaterial: [
+    {
+      rank: 1,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 20
+        },
+        {
+          component: meatyHaunch,
+          amount: 20
+        },
+        {
+          component: freshPotato,
+          amount: 30
+        },
+        {
+          component: aromaticFishOil,
+          amount: 20
+        },
+        {
+          component: sanguicell,
+          amount: 20
+        }
+      ]
+    },
+    {
+      rank: 2,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 18
+        },
+        {
+          component: meatyHaunch,
+          amount: 18
+        },
+        {
+          component: freshPotato,
+          amount: 28
+        },
+        {
+          component: aromaticFishOil,
+          amount: 17
+        },
+        {
+          component: sanguicell,
+          amount: 17
+        }
+      ]
+    },
+    {
+      rank: 3,
+      craftNumber: 1,
+      craftMaterials: [
+        {
+          component: stringyLoins,
+          amount: 15
+        },
+        {
+          component: meatyHaunch,
+          amount: 15
+        },
+        {
+          component: freshPotato,
+          amount: 25
+        },
+        {
+          component: aromaticFishOil,
+          amount: 15
+        },
+        {
+          component: sanguicell,
+          amount: 15
+        }
+      ]
+    }
+  ]
+});
+
 const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
 const REAGENTS: MaterialCategory = {
   category: 'Reagents',
@@ -2464,7 +2869,8 @@ const REAGENTS: MaterialCategory = {
     choralHoney,
     foosaka,
     wildBerries,
-    majorsFrothyCoffee
+    majorsFrothyCoffee,
+    sanguicell
   ]
 };
 const PLANTS: MaterialCategory = {
@@ -2510,24 +2916,32 @@ const POTIONS: ConsumableCategory = {
     lightfootPotion,
     seaMistPotion,
     potionConcealment,
-    draughtDeception
+    draughtDeception,
+    potionUnveilingEye
   ]
 };
 const LIGHT_MEALS: ConsumableCategory = {
   category: 'Light Meals',
-  consumableArray: [grilledCatfish, seasonedLoins, heartsbaneHexwurst]
+  consumableArray: [grilledCatfish, seasonedLoins, heartsbaneHexwurst, honeyPotPie]
 };
 const DESSERTS: ConsumableCategory = {
   category: 'Desserts',
-  consumableArray: [kulTiramisu, loaLoaf, ravenberryTarts, monDazi]
+  consumableArray: [kulTiramisu, loaLoaf, ravenberryTarts, monDazi, wildBerryBread]
 };
 const LARGE_MEALS: ConsumableCategory = {
   category: 'Large Meals',
-  consumableArray: [honeyGlazedHaunches, sailorsPie, swampFishChips, spicedSnapper]
+  consumableArray: [
+    honeyGlazedHaunches,
+    sailorsPie,
+    swampFishChips,
+    spicedSnapper,
+    seasonedSteakAndPotatoes,
+    boralusBloodSausage
+  ]
 };
 const FEASTS: ConsumableCategory = {
   category: 'Feasts',
-  consumableArray: [galleyBanquet, bountifulCaptainsFeast]
+  consumableArray: [galleyBanquet, bountifulCaptainsFeast, sanguinatedFeast]
 };
 
 const ALL_ALCHEMY: ConsumableCategory[] = [FLASKS, POTIONS];

@@ -11,7 +11,9 @@ import {
   WantedConsumables
 } from '../shared/model';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ComputeService {
   constructor() {}
 

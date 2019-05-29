@@ -81,11 +81,7 @@ import { StyleService } from './services/style.service';
     {
       provide: RouteReuseStrategy,
       useClass: CustomRouteReuseStrategy
-    },
-    StateService,
-    ComputeService,
-    StyleService,
-    ThemeStorage
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -14,7 +14,9 @@ import {
 import { ComputeService } from './compute.service';
 import { DATA } from './data/bfa-data';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
   private resetAllForms: Subject<any> = new Subject<any>();

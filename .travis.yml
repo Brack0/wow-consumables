@@ -16,6 +16,7 @@ cache:
 
 before_script:
   - npm install -g @angular/cli@8.0.0
+  - npm install -g node-sass
 
 script:
   - npm run prod

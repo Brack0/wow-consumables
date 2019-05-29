@@ -162,7 +162,9 @@ export class StateService {
    * @param type Type of Consumable
    */
   private updateRequiredMaterial(type: ConsumableType): void {
-    let requiredMaterialsSubject: Subject<MaterialCategory>, wantedConsumables: WantedConsumables;
+    let requiredMaterialsSubject: Subject<MaterialCategory>;
+    let wantedConsumables: WantedConsumables;
+
     if (type === ConsumableType.Alchemy) {
       requiredMaterialsSubject = this.requiredMaterialsAlchemySubject;
       wantedConsumables = this.wantedAlchemyConsumables;

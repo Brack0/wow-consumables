@@ -1,6 +1,6 @@
 # WowConsumables [![Build Status](https://travis-ci.org/Brack0/wow-consumables.svg?branch=master)](https://travis-ci.org/Brack0/wow-consumables)
 
-_Edit (**September 2018**)_ : This is an Angular App (v6.1) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
+_Edit (**May 2019**)_ : This is an Angular App (v8.0) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
 
 The app is supposed to give the component people need in order to have consumables for raiding in wow.
 
@@ -31,7 +31,7 @@ High level stuff planned :
 
 ## Angular CLI doc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.
 
 ## CI & Deployment
 

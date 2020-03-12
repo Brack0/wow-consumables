@@ -1,18 +1,26 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { StateService } from 'src/app/services';
-import { ConsumableCategory, ConsumableType } from 'src/app/shared/model';
-import { ProfessionComponent } from '../abstract';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit
+} from "@angular/core";
+import { StateService } from "src/app/services";
+import { ConsumableCategory, ConsumableType } from "src/app/model";
+import { ProfessionComponent } from "../abstract";
 
 @Component({
-  selector: 'app-alchemy',
-  templateUrl: './alchemy.component.html',
-  styleUrls: ['./alchemy.component.scss'],
+  selector: "app-alchemy",
+  templateUrl: "./alchemy.component.html",
+  styleUrls: ["./alchemy.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlchemyComponent extends ProfessionComponent implements OnInit {
   public alchemyCategories: ConsumableCategory[];
 
-  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {
+  constructor(
+    protected stateService: StateService,
+    protected cd: ChangeDetectorRef
+  ) {
     super(stateService, cd);
   }
 

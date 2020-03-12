@@ -1,9 +1,9 @@
-@import '../node_modules/@angular/material/theming';
+@import "../node_modules/@angular/material/theming";
 
-@import 'app/components/global/footer/footer-theme';
-@import 'app/components/global/header/header-theme';
-@import 'app/components/pages/home/home-theme';
-@import 'app/components/global/navbar/navbar-theme';
+@import "app/shell/footer/footer-theme";
+@import "app/shell/header/header-theme";
+@import "app/pages/home/home-theme";
+@import "app/shell/navbar/navbar-theme";
 
 // Styles for the docs app that are based on the current theme.
 @mixin app-theme($theme) {

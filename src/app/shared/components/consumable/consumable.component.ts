@@ -4,18 +4,23 @@ import {
   Component,
   Input,
   OnInit
-} from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import * as _ from 'lodash';
-import { debounceTime } from 'rxjs/operators';
-import { StateService } from 'src/app/services';
-import { Consumable } from 'src/app/shared/model';
-import { CustomValidators } from 'src/app/shared/validators';
+} from "@angular/core";
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  Validators
+} from "@angular/forms";
+import * as _ from "lodash";
+import { debounceTime } from "rxjs/operators";
+import { StateService } from "src/app/services";
+import { Consumable } from "src/app/model";
+import { CustomValidators } from "src/app/shared/validators";
 
 @Component({
-  selector: 'app-consumable',
-  templateUrl: './consumable.component.html',
-  styleUrls: ['./consumable.component.scss'],
+  selector: "app-consumable",
+  templateUrl: "./consumable.component.html",
+  styleUrls: ["./consumable.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConsumableComponent implements OnInit {
@@ -52,7 +57,7 @@ export class ConsumableComponent implements OnInit {
       rankNumber: [{ value: this.rankNumber, disabled: !this.rankNumber }],
       // Input number with custom validators
       wantedNumber: [
-        this.consumable.wantedNumber || '',
+        this.consumable.wantedNumber || "",
         [
           Validators.min(0),
           Validators.max(this.consumable.maxNumber),
@@ -61,14 +66,16 @@ export class ConsumableComponent implements OnInit {
       ]
     });
 
-    const wantedNumberControl = this.form.get('wantedNumber');
-    const rankNumberControl = this.form.get('rankNumber');
+    const wantedNumberControl = this.form.get("wantedNumber");
+    const rankNumberControl = this.form.get("rankNumber");
 
     // subscribe to input value and update with a debounce time of 500ms
-    wantedNumberControl.valueChanges.pipe(debounceTime(500)).subscribe((n: number) => {
-      this.validityCheckAndUpdate(wantedNumberControl);
-      this.cd.markForCheck();
-    });
+    wantedNumberControl.valueChanges
+      .pipe(debounceTime(500))
+      .subscribe((n: number) => {
+        this.validityCheckAndUpdate(wantedNumberControl);
+        this.cd.markForCheck();
+      });
 
     // subscribe to slider
     rankNumberControl.valueChanges.subscribe((n: number) => {
@@ -101,7 +108,9 @@ export class ConsumableComponent implements OnInit {
     this.stateService
       .getResetAllForms()
       .subscribe(reset =>
-        this.form.reset({ rankNumber: { value: this.rankNumber, disabled: !this.rankNumber } })
+        this.form.reset({
+          rankNumber: { value: this.rankNumber, disabled: !this.rankNumber }
+        })
       );
   }
 

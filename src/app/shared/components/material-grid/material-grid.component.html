@@ -3,7 +3,8 @@
   <div class="box-border-container">
     <div class="grid-container-required-material" *ngIf="materialCategory.requiredMaterialArray">
       <div *ngFor="let requiredMaterial of materialCategory.requiredMaterialArray; let index=index">
-        <app-material [material]="requiredMaterial.component" [wantedNumber]="-1" [craftNumber]="requiredMaterial.amount"></app-material>
+        <app-material [material]="requiredMaterial.component" [wantedNumber]="-1"
+          [craftNumber]="requiredMaterial.amount"></app-material>
       </div>
     </div>
     <div class="grid-container-material" *ngIf="materialCategory.materialArray">

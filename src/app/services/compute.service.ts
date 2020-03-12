@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   Consumable,
   ConsumableType,
@@ -9,13 +9,16 @@ import {
   Recipes,
   RequiredMaterial,
   WantedConsumables
-} from '../shared/model';
+} from "../model";
 
 @Injectable()
 export class ComputeService {
   constructor() {}
 
-  public compareRequiredMaterial(a: RequiredMaterial, b: RequiredMaterial): number {
+  public compareRequiredMaterial(
+    a: RequiredMaterial,
+    b: RequiredMaterial
+  ): number {
     if (a.component.order === b.component.order) {
       return a.component.name.localeCompare(b.component.name);
     } else {
@@ -131,7 +134,12 @@ export class ComputeService {
           craftMaterial.craftNumber
         );
       } else {
-        return this.mergeMaterial(a, b, wantedNumber, craftMaterial.craftNumber);
+        return this.mergeMaterial(
+          a,
+          b,
+          wantedNumber,
+          craftMaterial.craftNumber
+        );
       }
     }, []);
   }
@@ -149,7 +157,9 @@ export class ComputeService {
     wantedNumber: number,
     craftNumber: number
   ): RequiredMaterial[] {
-    arrayMaterial.forEach(e => (array = this.mergeMaterial(array, e, wantedNumber, craftNumber)));
+    arrayMaterial.forEach(
+      e => (array = this.mergeMaterial(array, e, wantedNumber, craftNumber))
+    );
     return array;
   }
 }

@@ -1,12 +1,15 @@
-import { ChangeDetectorRef, OnInit } from '@angular/core';
-import { StateService } from 'src/app/services';
-import { ConsumableType, MaterialCategory } from 'src/app/shared/model';
+import { ChangeDetectorRef, OnInit } from "@angular/core";
+import { StateService } from "src/app/services";
+import { ConsumableType, MaterialCategory } from "src/app/model";
 
 export abstract class ProfessionComponent implements OnInit {
   public requiredMaterials: MaterialCategory;
   private tabInit: boolean[];
 
-  constructor(protected stateService: StateService, protected cd: ChangeDetectorRef) {}
+  constructor(
+    protected stateService: StateService,
+    protected cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.initFirstTab();

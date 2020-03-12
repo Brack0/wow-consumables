@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Observable, of, Subject } from "rxjs";
 import {
   Consumable,
   ConsumableCategory,
@@ -10,21 +10,21 @@ import {
   Recipes,
   Specialization,
   WantedConsumables
-} from '../shared/model';
-import { ComputeService } from './compute.service';
-import { DATA } from './data/bfa-data';
+} from "../model";
+import { ComputeService } from "./compute.service";
+import { DATA } from "./data/bfa-data";
 
 @Injectable()
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
   private resetAllForms: Subject<any> = new Subject<any>();
   private logoUrlSubject: Subject<string> = new Subject<string>();
-  private requiredMaterialsAlchemySubject: Subject<MaterialCategory> = new Subject<
+  private requiredMaterialsAlchemySubject: Subject<
     MaterialCategory
-  >();
-  private requiredMaterialsCookingSubject: Subject<MaterialCategory> = new Subject<
+  > = new Subject<MaterialCategory>();
+  private requiredMaterialsCookingSubject: Subject<
     MaterialCategory
-  >();
+  > = new Subject<MaterialCategory>();
   private wantedAlchemyConsumables: WantedConsumables = new WantedConsumables();
   private wantedCookingConsumables: WantedConsumables = new WantedConsumables();
   private recipes: Recipes = new Recipes();
@@ -141,7 +141,9 @@ export class StateService {
    * @param material Material to update
    */
   public updateRecipe(material: CraftedMaterial): void {
-    this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
+    this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+      material
+    );
   }
 
   /**
@@ -150,7 +152,9 @@ export class StateService {
    */
   private addRecipe(material: CraftedMaterial): void {
     if (!this.recipes[material.idMaterial]) {
-      this.recipes[material.idMaterial] = this.computeService.computeRecipe(material);
+      this.recipes[material.idMaterial] = this.computeService.computeRecipe(
+        material
+      );
     }
   }
 
@@ -175,7 +179,7 @@ export class StateService {
 
     // Pushing new subject
     requiredMaterialsSubject.next({
-      category: 'Required Materials',
+      category: "Required Materials",
       requiredMaterialArray: this.computeService.updateRequiredMaterial(
         wantedConsumables,
         this.recipes

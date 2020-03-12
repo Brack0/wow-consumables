@@ -10,7 +10,7 @@ import {
   Potion,
   Reagent,
   Specialization
-} from '../../shared/model';
+} from "../../model";
 
 // Init data
 
@@ -19,26 +19,26 @@ import {
  */
 const specMelee = new Specialization({
   idSpec: 0,
-  name: 'Melee',
-  icon: 'assets/images/svg/battle-axe.svg'
+  name: "Melee",
+  icon: "assets/images/svg/battle-axe.svg"
 });
 
 const specRanged = new Specialization({
   idSpec: 1,
-  name: 'Ranged',
-  icon: 'assets/images/svg/wizard-staff.svg'
+  name: "Ranged",
+  icon: "assets/images/svg/wizard-staff.svg"
 });
 
 const specTank = new Specialization({
   idSpec: 2,
-  name: 'Tank',
-  icon: 'assets/images/svg/slashed-shield.svg'
+  name: "Tank",
+  icon: "assets/images/svg/slashed-shield.svg"
 });
 
 const specHealer = new Specialization({
   idSpec: 3,
-  name: 'Healer',
-  icon: 'assets/images/svg/health-increase.svg'
+  name: "Healer",
+  icon: "assets/images/svg/health-increase.svg"
 });
 
 /**
@@ -46,10 +46,10 @@ const specHealer = new Specialization({
  */
 const currentContent = new Content({
   idContent: 2,
-  expansionName: 'Battle for Azeroth',
-  patch: 'Version 8.1.0 (28833)',
+  expansionName: "Battle for Azeroth",
+  patch: "Version 8.1.0 (28833)",
   releaseDate: new Date(2018, 11, 19),
-  url: 'https://worldofwarcraft.com/en-us/news/228248924'
+  url: "https://worldofwarcraft.com/en-us/news/228248924"
 });
 
 /**
@@ -57,55 +57,55 @@ const currentContent = new Content({
  */
 const crystalVial = new Reagent(currentContent, {
   idMaterial: 3371,
-  name: 'Crystal Vial',
+  name: "Crystal Vial",
   stackSize: 200
 });
 
 const expulsom = new Reagent(currentContent, {
   idMaterial: 152668,
-  name: 'Expulsom',
+  name: "Expulsom",
   stackSize: 200
 });
 
 const hydrocore = new Reagent(currentContent, {
   idMaterial: 162460,
-  name: 'Hydrocore',
+  name: "Hydrocore",
   stackSize: 200
 });
 
 const wildFlour = new Reagent(currentContent, {
   idMaterial: 160399,
-  name: 'Wild Flour',
+  name: "Wild Flour",
   stackSize: 200
 });
 
 const powderedSugar = new Reagent(currentContent, {
   idMaterial: 160712,
-  name: 'Powdered Sugar',
+  name: "Powdered Sugar",
   stackSize: 200
 });
 
 const freshPotato = new Reagent(currentContent, {
   idMaterial: 160709,
-  name: 'Fresh Potato',
+  name: "Fresh Potato",
   stackSize: 200
 });
 
 const choralHoney = new Reagent(currentContent, {
   idMaterial: 160398,
-  name: 'Choral Honey',
+  name: "Choral Honey",
   stackSize: 200
 });
 
 const foosaka = new Reagent(currentContent, {
   idMaterial: 160400,
-  name: 'Foosaka',
+  name: "Foosaka",
   stackSize: 200
 });
 
 const wildBerries = new Reagent(currentContent, {
   idMaterial: 160710,
-  name: 'Wild Berries',
+  name: "Wild Berries",
   stackSize: 200
 });
 
@@ -117,7 +117,7 @@ const majorsFrothyCoffee = new Reagent(currentContent, {
 
 const sanguicell = new Reagent(currentContent, {
   idMaterial: 162461,
-  name: 'Sanguicell',
+  name: "Sanguicell",
   stackSize: 200
 });
 
@@ -126,19 +126,19 @@ const sanguicell = new Reagent(currentContent, {
  */
 const riverbud = new Plant(currentContent, {
   idMaterial: 152505,
-  name: 'Riverbud',
+  name: "Riverbud",
   stackSize: 200
 });
 
 const seaStalk = new Plant(currentContent, {
   idMaterial: 152511,
-  name: 'Sea Stalk',
+  name: "Sea Stalk",
   stackSize: 200
 });
 
 const starMoss = new Plant(currentContent, {
   idMaterial: 152506,
-  name: 'Star Moss',
+  name: "Star Moss",
   stackSize: 200
 });
 
@@ -162,7 +162,7 @@ const sirensPollen = new Plant(currentContent, {
 
 const anchorWeed = new Plant(currentContent, {
   idMaterial: 152510,
-  name: 'Anchor Weed',
+  name: "Anchor Weed",
   stackSize: 200
 });
 
@@ -171,31 +171,31 @@ const anchorWeed = new Plant(currentContent, {
  */
 const thickPaleoSteak = new Meat(currentContent, {
   idMaterial: 154899,
-  name: 'Thick Paleo Steak',
+  name: "Thick Paleo Steak",
   stackSize: 200
 });
 
 const meatyHaunch = new Meat(currentContent, {
   idMaterial: 154898,
-  name: 'Meaty Haunch',
+  name: "Meaty Haunch",
   stackSize: 200
 });
 
 const stringyLoins = new Meat(currentContent, {
   idMaterial: 154897,
-  name: 'Stringy Loins',
+  name: "Stringy Loins",
   stackSize: 200
 });
 
 const brinyFlesh = new Meat(currentContent, {
   idMaterial: 152631,
-  name: 'Briny Flesh',
+  name: "Briny Flesh",
   stackSize: 200
 });
 
 const cursedHaunch = new Meat(currentContent, {
   idMaterial: 163782,
-  name: 'Cursed Haunch',
+  name: "Cursed Haunch",
   stackSize: 200
 });
 
@@ -204,55 +204,55 @@ const cursedHaunch = new Meat(currentContent, {
  */
 const midnightSalmon = new Fish(currentContent, {
   idMaterial: 162515,
-  name: 'Midnight Salmon',
+  name: "Midnight Salmon",
   stackSize: 200
 });
 
 const redtailLoach = new Fish(currentContent, {
   idMaterial: 152549,
-  name: 'Redtail Loach',
+  name: "Redtail Loach",
   stackSize: 200
 });
 
 const tiragardePerch = new Fish(currentContent, {
   idMaterial: 152548,
-  name: 'Tiragarde Perch',
+  name: "Tiragarde Perch",
   stackSize: 200
 });
 
 const greatSeaCatfish = new Fish(currentContent, {
   idMaterial: 152547,
-  name: 'Great Sea Catfish',
+  name: "Great Sea Catfish",
   stackSize: 200
 });
 
 const laneSnapper = new Fish(currentContent, {
   idMaterial: 152546,
-  name: 'Lane Snapper',
+  name: "Lane Snapper",
   stackSize: 200
 });
 
 const frenziedFangtooth = new Fish(currentContent, {
   idMaterial: 152545,
-  name: 'Frenzied Fangtooth',
+  name: "Frenzied Fangtooth",
   stackSize: 200
 });
 
 const slimyMackerel = new Fish(currentContent, {
   idMaterial: 152544,
-  name: 'Slimy Mackerel',
+  name: "Slimy Mackerel",
   stackSize: 200
 });
 
 const sandShifter = new Fish(currentContent, {
   idMaterial: 152543,
-  name: 'Sand Shifterd',
+  name: "Sand Shifterd",
   stackSize: 200
 });
 
 const aromaticFishOil = new Fish(currentContent, {
   idMaterial: 160711,
-  name: 'Aromatic Fish Oil',
+  name: "Aromatic Fish Oil",
   stackSize: 200
 });
 
@@ -261,9 +261,9 @@ const aromaticFishOil = new Fish(currentContent, {
  */
 const flaskCurrents = new Flask(currentContent, {
   idMaterial: 152638,
-  name: 'Flask of the Currents',
+  name: "Flask of the Currents",
   stackSize: 20,
-  effect: 'Increases Agility by 238',
+  effect: "Increases Agility by 238",
   utility: [specMelee, specTank],
   rankedCraftMaterial: [
     {
@@ -337,9 +337,9 @@ const flaskCurrents = new Flask(currentContent, {
 
 const flaskFathoms = new Flask(currentContent, {
   idMaterial: 152639,
-  name: 'Flask of Endless Fathoms',
+  name: "Flask of Endless Fathoms",
   stackSize: 20,
-  effect: 'Increases Intellect by 238',
+  effect: "Increases Intellect by 238",
   utility: [specRanged, specHealer],
   rankedCraftMaterial: [
     {
@@ -413,9 +413,9 @@ const flaskFathoms = new Flask(currentContent, {
 
 const flaskUndertow = new Flask(currentContent, {
   idMaterial: 152641,
-  name: 'Flask of the Undertow',
+  name: "Flask of the Undertow",
   stackSize: 20,
-  effect: 'Increases Strength by 238',
+  effect: "Increases Strength by 238",
   utility: [specMelee, specTank],
   rankedCraftMaterial: [
     {
@@ -489,9 +489,9 @@ const flaskUndertow = new Flask(currentContent, {
 
 const flaskHorizon = new Flask(currentContent, {
   idMaterial: 152640,
-  name: 'Flask of the Vast Horizon',
+  name: "Flask of the Vast Horizon",
   stackSize: 20,
-  effect: 'Increases Stamina by 357',
+  effect: "Increases Stamina by 357",
   utility: [specTank],
   rankedCraftMaterial: [
     {
@@ -565,9 +565,9 @@ const flaskHorizon = new Flask(currentContent, {
 
 const mysticalCauldron = new Flask(currentContent, {
   idMaterial: 162519,
-  name: 'Mystical Cauldron',
+  name: "Mystical Cauldron",
   stackSize: 20,
-  effect: 'Creates 30 flasks based on class and talents',
+  effect: "Creates 30 flasks based on class and talents",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -668,9 +668,9 @@ const mysticalCauldron = new Flask(currentContent, {
  */
 const coastalHealingPotion = new Potion(currentContent, {
   idMaterial: 152494,
-  name: 'Coastal Healing Potion',
+  name: "Coastal Healing Potion",
   stackSize: 20,
-  effect: 'Restores 33 251 health',
+  effect: "Restores 33 251 health",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -720,9 +720,9 @@ const coastalHealingPotion = new Potion(currentContent, {
 
 const coastalManaPotion = new Potion(currentContent, {
   idMaterial: 152495,
-  name: 'Coastal Mana Potion',
+  name: "Coastal Mana Potion",
   stackSize: 20,
-  effect: 'Restores 11 084 mana',
+  effect: "Restores 11 084 mana",
   utility: [specRanged, specHealer],
   rankedCraftMaterial: [
     {
@@ -772,9 +772,9 @@ const coastalManaPotion = new Potion(currentContent, {
 
 const coastalRejuvenationPotion = new Potion(currentContent, {
   idMaterial: 163082,
-  name: 'Coastal Rejuvenation Potion',
+  name: "Coastal Rejuvenation Potion",
   stackSize: 20,
-  effect: 'Restores 33 251 health and 8 313 mana',
+  effect: "Restores 33 251 health and 8 313 mana",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -824,9 +824,9 @@ const coastalRejuvenationPotion = new Potion(currentContent, {
 
 const potionReplenishment = new Potion(currentContent, {
   idMaterial: 152561,
-  name: 'Potion of Replenishment',
+  name: "Potion of Replenishment",
   stackSize: 20,
-  effect: 'Restores 25 000 mana over 10 seconds',
+  effect: "Restores 25 000 mana over 10 seconds",
   utility: [specRanged, specHealer],
   rankedCraftMaterial: [
     {
@@ -888,9 +888,9 @@ const potionReplenishment = new Potion(currentContent, {
 
 const battlePotionAgility = new Potion(currentContent, {
   idMaterial: 163223,
-  name: 'Battle Potion of Agility',
+  name: "Battle Potion of Agility",
   stackSize: 20,
-  effect: 'Increases Agility by 900 for 25 seconds',
+  effect: "Increases Agility by 900 for 25 seconds",
   utility: [specMelee, specTank],
   rankedCraftMaterial: [
     {
@@ -952,9 +952,9 @@ const battlePotionAgility = new Potion(currentContent, {
 
 const battlePotionIntellect = new Potion(currentContent, {
   idMaterial: 163222,
-  name: 'Battle Potion of Intellect',
+  name: "Battle Potion of Intellect",
   stackSize: 20,
-  effect: 'Increases Intellect by 900 for 25 seconds',
+  effect: "Increases Intellect by 900 for 25 seconds",
   utility: [specRanged, specHealer],
   rankedCraftMaterial: [
     {
@@ -1016,9 +1016,9 @@ const battlePotionIntellect = new Potion(currentContent, {
 
 const battlePotionStrength = new Potion(currentContent, {
   idMaterial: 163224,
-  name: 'Battle Potion of Strength',
+  name: "Battle Potion of Strength",
   stackSize: 20,
-  effect: 'Increases Strength by 900 for 25 seconds',
+  effect: "Increases Strength by 900 for 25 seconds",
   utility: [specMelee, specTank],
   rankedCraftMaterial: [
     {
@@ -1080,9 +1080,9 @@ const battlePotionStrength = new Potion(currentContent, {
 
 const battlePotionStamina = new Potion(currentContent, {
   idMaterial: 163225,
-  name: 'Battle Potion of Stamina',
+  name: "Battle Potion of Stamina",
   stackSize: 20,
-  effect: 'Increases Stamina by 1100 for 25 seconds',
+  effect: "Increases Stamina by 1100 for 25 seconds",
   utility: [specTank],
   rankedCraftMaterial: [
     {
@@ -1144,9 +1144,9 @@ const battlePotionStamina = new Potion(currentContent, {
 
 const potionRisingDeath = new Potion(currentContent, {
   idMaterial: 152559,
-  name: 'Potion of Rising Death',
+  name: "Potion of Rising Death",
   stackSize: 20,
-  effect: 'Throws death bolts at target for 25 seconds',
+  effect: "Throws death bolts at target for 25 seconds",
   utility: [specRanged],
   rankedCraftMaterial: [
     {
@@ -1208,9 +1208,9 @@ const potionRisingDeath = new Potion(currentContent, {
 
 const potionBurstingBlood = new Potion(currentContent, {
   idMaterial: 152560,
-  name: 'Potion of Bursting Blood',
+  name: "Potion of Bursting Blood",
   stackSize: 20,
-  effect: 'Gives melee a chance of additionnal damage for 25 seconds',
+  effect: "Gives melee a chance of additionnal damage for 25 seconds",
   utility: [specMelee],
   rankedCraftMaterial: [
     {
@@ -1272,9 +1272,9 @@ const potionBurstingBlood = new Potion(currentContent, {
 
 const steelskinPotion = new Potion(currentContent, {
   idMaterial: 152557,
-  name: 'Steelskin Potion',
+  name: "Steelskin Potion",
   stackSize: 20,
-  effect: 'Increases Armor by 900 for 25 seconds',
+  effect: "Increases Armor by 900 for 25 seconds",
   utility: [specTank],
   rankedCraftMaterial: [
     {
@@ -1336,9 +1336,9 @@ const steelskinPotion = new Potion(currentContent, {
 
 const lightfootPotion = new Potion(currentContent, {
   idMaterial: 152497,
-  name: 'Potion of Bursting Blood',
+  name: "Potion of Bursting Blood",
   stackSize: 20,
-  effect: 'Increases movement speed by 150%',
+  effect: "Increases movement speed by 150%",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1388,9 +1388,9 @@ const lightfootPotion = new Potion(currentContent, {
 
 const seaMistPotion = new Potion(currentContent, {
   idMaterial: 152550,
-  name: 'Sea Mist Potion',
+  name: "Sea Mist Potion",
   stackSize: 20,
-  effect: 'Slow fall for 1 minute',
+  effect: "Slow fall for 1 minute",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1440,9 +1440,9 @@ const seaMistPotion = new Potion(currentContent, {
 
 const potionConcealment = new Potion(currentContent, {
   idMaterial: 152503,
-  name: 'Potion of Concealment',
+  name: "Potion of Concealment",
   stackSize: 20,
-  effect: 'Hides while standing still. Lasts 3 minutes',
+  effect: "Hides while standing still. Lasts 3 minutes",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1494,7 +1494,7 @@ const draughtDeception = new Potion(currentContent, {
   idMaterial: 152503,
   name: "Demitri's Draught of Deception",
   stackSize: 20,
-  effect: 'Invisibility for 18 seconds',
+  effect: "Invisibility for 18 seconds",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1556,9 +1556,9 @@ const draughtDeception = new Potion(currentContent, {
 
 const potionUnveilingEye = new Potion(currentContent, {
   idMaterial: 166270,
-  name: 'Potion of the Unveiling Eye',
+  name: "Potion of the Unveiling Eye",
   stackSize: 20,
-  effect: 'Stealth detection for 10 minutes',
+  effect: "Stealth detection for 10 minutes",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1623,9 +1623,9 @@ const potionUnveilingEye = new Potion(currentContent, {
  */
 const grilledCatfish = new Food(currentContent, {
   idMaterial: 154889,
-  name: 'Grilled Catfish',
+  name: "Grilled Catfish",
   stackSize: 20,
-  effect: 'Restores 83 128 health and 41 564 mana over 20 seconds',
+  effect: "Restores 83 128 health and 41 564 mana over 20 seconds",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1663,9 +1663,9 @@ const grilledCatfish = new Food(currentContent, {
 
 const seasonedLoins = new Food(currentContent, {
   idMaterial: 154891,
-  name: 'Seasoned Loins',
+  name: "Seasoned Loins",
   stackSize: 20,
-  effect: 'Restores 166 256 health and 83 128 mana over 20 seconds',
+  effect: "Restores 166 256 health and 83 128 mana over 20 seconds",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1715,9 +1715,9 @@ const seasonedLoins = new Food(currentContent, {
 
 const heartsbaneHexwurst = new Food(currentContent, {
   idMaterial: 163781,
-  name: 'Heartsbane Hexwurst',
+  name: "Heartsbane Hexwurst",
   stackSize: 20,
-  effect: 'Restores 35 757 health and 17 878 mana over 20 seconds',
+  effect: "Restores 35 757 health and 17 878 mana over 20 seconds",
   utility: [specMelee, specRanged, specTank, specHealer],
   craftNumber: 5,
   craftMaterials: [
@@ -1738,7 +1738,7 @@ const heartsbaneHexwurst = new Food(currentContent, {
 
 const honeyPotPie = new Food(currentContent, {
   idMaterial: 165755,
-  name: 'Honey Potpie',
+  name: "Honey Potpie",
   stackSize: 20,
   effect: "Slows melee attackers' movement speed by 30% for 5 sec",
   utility: [specMelee, specRanged, specTank, specHealer],
@@ -1764,9 +1764,9 @@ const honeyPotPie = new Food(currentContent, {
  */
 const kulTiramisu = new Food(currentContent, {
   idMaterial: 154881,
-  name: 'Kul Tiramisu',
+  name: "Kul Tiramisu",
   stackSize: 20,
-  effect: 'Grants 41 Critical Strike',
+  effect: "Grants 41 Critical Strike",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1840,9 +1840,9 @@ const kulTiramisu = new Food(currentContent, {
 
 const loaLoaf = new Food(currentContent, {
   idMaterial: 154887,
-  name: 'Loa Loaf',
+  name: "Loa Loaf",
   stackSize: 20,
-  effect: 'Grants 41 Mastery',
+  effect: "Grants 41 Mastery",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1916,9 +1916,9 @@ const loaLoaf = new Food(currentContent, {
 
 const ravenberryTarts = new Food(currentContent, {
   idMaterial: 154883,
-  name: 'Ravenberry Tarts',
+  name: "Ravenberry Tarts",
   stackSize: 20,
-  effect: 'Grants 41 Haste',
+  effect: "Grants 41 Haste",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -1994,7 +1994,7 @@ const monDazi = new Food(currentContent, {
   idMaterial: 154885,
   name: "Mon'Dazi",
   stackSize: 20,
-  effect: 'Grants 41 Versatility',
+  effect: "Grants 41 Versatility",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2068,9 +2068,9 @@ const monDazi = new Food(currentContent, {
 
 const wildBerryBread = new Food(currentContent, {
   idMaterial: 166343,
-  name: 'Wild Berry Bread',
+  name: "Wild Berry Bread",
   stackSize: 20,
-  effect: 'Grants 113 Stamina',
+  effect: "Grants 113 Stamina",
   utility: [specTank],
   rankedCraftMaterial: [
     {
@@ -2147,9 +2147,9 @@ const wildBerryBread = new Food(currentContent, {
  */
 const honeyGlazedHaunches = new Food(currentContent, {
   idMaterial: 154882,
-  name: 'Honey-Glazed Haunches',
+  name: "Honey-Glazed Haunches",
   stackSize: 20,
-  effect: 'Grants 55 Critical Strike',
+  effect: "Grants 55 Critical Strike",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2201,7 +2201,7 @@ const sailorsPie = new Food(currentContent, {
   idMaterial: 154888,
   name: "Sailor's Pie",
   stackSize: 20,
-  effect: 'Grants 55 Mastery',
+  effect: "Grants 55 Mastery",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2277,7 +2277,7 @@ const swampFishChips = new Food(currentContent, {
   idMaterial: 154884,
   name: "Swamp Fish 'n Chips",
   stackSize: 20,
-  effect: 'Grants 55 Haste',
+  effect: "Grants 55 Haste",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2339,9 +2339,9 @@ const swampFishChips = new Food(currentContent, {
 
 const spicedSnapper = new Food(currentContent, {
   idMaterial: 154886,
-  name: 'Spiced Snapper',
+  name: "Spiced Snapper",
   stackSize: 20,
-  effect: 'Grants 55 Versatility',
+  effect: "Grants 55 Versatility",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2391,9 +2391,9 @@ const spicedSnapper = new Food(currentContent, {
 
 const seasonedSteakAndPotatoes = new Food(currentContent, {
   idMaterial: 166344,
-  name: 'Seasoned Steak and Potatoes',
+  name: "Seasoned Steak and Potatoes",
   stackSize: 20,
-  effect: 'Grants 150 Stamina',
+  effect: "Grants 150 Stamina",
   utility: [specTank],
   rankedCraftMaterial: [
     {
@@ -2467,9 +2467,9 @@ const seasonedSteakAndPotatoes = new Food(currentContent, {
 
 const boralusBloodSausage = new Food(currentContent, {
   idMaterial: 166804,
-  name: 'Boralus Blood Sausage',
+  name: "Boralus Blood Sausage",
   stackSize: 20,
-  effect: 'Gives 85 to a primary stat',
+  effect: "Gives 85 to a primary stat",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2546,9 +2546,9 @@ const boralusBloodSausage = new Food(currentContent, {
  */
 const galleyBanquet = new Food(currentContent, {
   idMaterial: 156525,
-  name: 'Galley Banquet',
+  name: "Galley Banquet",
   stackSize: 20,
-  effect: 'Gives 75 to a stat based on specilization',
+  effect: "Gives 75 to a stat based on specilization",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2660,7 +2660,7 @@ const bountifulCaptainsFeast = new Food(currentContent, {
   idMaterial: 156526,
   name: "Bountiful Captain's Feast",
   stackSize: 20,
-  effect: 'Gives 100 to a stat based on specilization',
+  effect: "Gives 100 to a stat based on specilization",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2770,9 +2770,9 @@ const bountifulCaptainsFeast = new Food(currentContent, {
 
 const sanguinatedFeast = new Food(currentContent, {
   idMaterial: 166240,
-  name: 'Sanguinated Feast',
+  name: "Sanguinated Feast",
   stackSize: 20,
-  effect: 'Gives 100 to a stat based on specilization',
+  effect: "Gives 100 to a stat based on specilization",
   utility: [specMelee, specRanged, specTank, specHealer],
   rankedCraftMaterial: [
     {
@@ -2856,9 +2856,14 @@ const sanguinatedFeast = new Food(currentContent, {
   ]
 });
 
-const SPECIALIZATIONS: Specialization[] = [specMelee, specRanged, specTank, specHealer];
+const SPECIALIZATIONS: Specialization[] = [
+  specMelee,
+  specRanged,
+  specTank,
+  specHealer
+];
 const REAGENTS: MaterialCategory = {
-  category: 'Reagents',
+  category: "Reagents",
   materialArray: [
     crystalVial,
     expulsom,
@@ -2874,15 +2879,29 @@ const REAGENTS: MaterialCategory = {
   ]
 };
 const PLANTS: MaterialCategory = {
-  category: 'Plants',
-  materialArray: [riverbud, seaStalk, starMoss, akundasBite, wintersKiss, sirensPollen, anchorWeed]
+  category: "Plants",
+  materialArray: [
+    riverbud,
+    seaStalk,
+    starMoss,
+    akundasBite,
+    wintersKiss,
+    sirensPollen,
+    anchorWeed
+  ]
 };
 const MEATS: MaterialCategory = {
-  category: 'Meats',
-  materialArray: [thickPaleoSteak, meatyHaunch, stringyLoins, brinyFlesh, cursedHaunch]
+  category: "Meats",
+  materialArray: [
+    thickPaleoSteak,
+    meatyHaunch,
+    stringyLoins,
+    brinyFlesh,
+    cursedHaunch
+  ]
 };
 const FISHS: MaterialCategory = {
-  category: 'Fishs',
+  category: "Fishs",
   materialArray: [
     midnightSalmon,
     redtailLoach,
@@ -2896,11 +2915,17 @@ const FISHS: MaterialCategory = {
   ]
 };
 const FLASKS: ConsumableCategory = {
-  category: 'Flasks',
-  consumableArray: [flaskCurrents, flaskFathoms, flaskUndertow, flaskHorizon, mysticalCauldron]
+  category: "Flasks",
+  consumableArray: [
+    flaskCurrents,
+    flaskFathoms,
+    flaskUndertow,
+    flaskHorizon,
+    mysticalCauldron
+  ]
 };
 const POTIONS: ConsumableCategory = {
-  category: 'Potions',
+  category: "Potions",
   consumableArray: [
     coastalHealingPotion,
     coastalManaPotion,
@@ -2921,15 +2946,26 @@ const POTIONS: ConsumableCategory = {
   ]
 };
 const LIGHT_MEALS: ConsumableCategory = {
-  category: 'Light Meals',
-  consumableArray: [grilledCatfish, seasonedLoins, heartsbaneHexwurst, honeyPotPie]
+  category: "Light Meals",
+  consumableArray: [
+    grilledCatfish,
+    seasonedLoins,
+    heartsbaneHexwurst,
+    honeyPotPie
+  ]
 };
 const DESSERTS: ConsumableCategory = {
-  category: 'Desserts',
-  consumableArray: [kulTiramisu, loaLoaf, ravenberryTarts, monDazi, wildBerryBread]
+  category: "Desserts",
+  consumableArray: [
+    kulTiramisu,
+    loaLoaf,
+    ravenberryTarts,
+    monDazi,
+    wildBerryBread
+  ]
 };
 const LARGE_MEALS: ConsumableCategory = {
-  category: 'Large Meals',
+  category: "Large Meals",
   consumableArray: [
     honeyGlazedHaunches,
     sailorsPie,
@@ -2940,20 +2976,29 @@ const LARGE_MEALS: ConsumableCategory = {
   ]
 };
 const FEASTS: ConsumableCategory = {
-  category: 'Feasts',
+  category: "Feasts",
   consumableArray: [galleyBanquet, bountifulCaptainsFeast, sanguinatedFeast]
 };
 
 const ALL_ALCHEMY: ConsumableCategory[] = [FLASKS, POTIONS];
 
-const ALL_FOODS: ConsumableCategory[] = [FEASTS, LARGE_MEALS, DESSERTS, LIGHT_MEALS];
+const ALL_FOODS: ConsumableCategory[] = [
+  FEASTS,
+  LARGE_MEALS,
+  DESSERTS,
+  LIGHT_MEALS
+];
 
 const ALL_ALCHEMY_MATERIAL: MaterialCategory[] = ALL_ALCHEMY.map(
-  alchemyCategory => new MaterialCategory(alchemyCategory.category, alchemyCategory.consumableArray)
+  alchemyCategory =>
+    new MaterialCategory(
+      alchemyCategory.category,
+      alchemyCategory.consumableArray
+    )
 );
 
 const ALL_FOODS_MATERIAL: MaterialCategory = new MaterialCategory(
-  'Foods',
+  "Foods",
   ALL_FOODS.reduce((foodArray, food) => {
     return [...foodArray, ...food.consumableArray];
   }, [])

@@ -1,9 +1,9 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Theme } from 'src/app/shared/model';
+import { Injectable, EventEmitter } from "@angular/core";
+import { Theme } from "src/app/model";
 
 @Injectable()
 export class ThemeStorage {
-  static storageKey = 'wow-consumable-theme-storage-current';
+  static storageKey = "wow-consumable-theme-storage-current";
 
   setTheme(theme: Theme) {
     try {

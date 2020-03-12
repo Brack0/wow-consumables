@@ -1,80 +1,47 @@
-import { OverlayModule } from '@angular/cdk/overlay';
-import { APP_BASE_HREF } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OverlayModule } from "@angular/cdk/overlay";
+import { APP_BASE_HREF } from "@angular/common";
+import { NgModule } from "@angular/core";
 import {
   MatButtonModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatMenuModule,
-  MatSliderModule,
   MatTabsModule,
   MatTooltipModule
-} from '@angular/material';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouteReuseStrategy } from '@angular/router';
-import { environment } from '../environments/environment';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {
-  ConsumableComponent,
-  ConsumableGridComponent,
-  MaterialComponent,
-  MaterialGridComponent,
-  SpecializationComponent
-} from './components/elements';
-import {
-  FooterComponent,
-  HeaderComponent,
-  NavbarComponent,
-  ResetComponent,
-  ThemeSelectorComponent
-} from './components/global';
+} from "@angular/material";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RouteReuseStrategy } from "@angular/router";
+import { environment } from "../environments/environment";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 import {
   AlchemyComponent,
   CookingComponent,
   HomeComponent,
   OverviewComponent
-} from './components/pages';
-import { CustomRouteReuseStrategy } from './reuse-strategy';
-import { ComputeService, StateService, ThemeStorage } from './services';
-import { StyleService } from './services/style.service';
+} from "./pages";
+import { CustomRouteReuseStrategy } from "./reuse-strategy";
+import { ComputeService, StateService, ThemeStorage } from "./services";
+import { StyleService } from "./services/style.service";
+import { SharedModule } from "./shared/shared.module";
+import { ShellModule } from "./shell/shell.module";
 
 @NgModule({
   declarations: [
     AlchemyComponent,
     AppComponent,
-    ConsumableComponent,
-    ConsumableGridComponent,
     CookingComponent,
-    MaterialComponent,
-    MaterialGridComponent,
     OverviewComponent,
-    SpecializationComponent,
-    ThemeSelectorComponent,
-    HeaderComponent,
-    HomeComponent,
-    FooterComponent,
-    NavbarComponent,
-    ResetComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatButtonModule,
-    MatSliderModule,
-    MatIconModule,
-    MatGridListModule,
-    MatMenuModule,
     MatTooltipModule,
     AppRoutingModule,
-    OverlayModule
+    OverlayModule,
+    SharedModule,
+    ShellModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: environment.baseHref },

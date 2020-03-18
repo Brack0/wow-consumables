@@ -44,35 +44,35 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               {
-                "input": "src/styles.scss"
+                "input": "src/styles/styles.scss"
               },
               {
-                "input": "src/assets/bfa-theme.css",
+                "input": "src/assets/custom-themes/bfa-theme.css",
                 "lazy": true,
                 "bundleName": "bfa-theme"
               },
               {
-                "input": "src/assets/legion-theme.css",
+                "input": "src/assets/custom-themes/legion-theme.css",
                 "lazy": true,
                 "bundleName": "legion-theme"
               },
               {
-                "input": "src/assets/wod-theme.css",
+                "input": "src/assets/custom-themes/wod-theme.css",
                 "lazy": true,
                 "bundleName": "wod-theme"
               },
               {
-                "input": "src/assets/mop-theme.css",
+                "input": "src/assets/custom-themes/mop-theme.css",
                 "lazy": true,
                 "bundleName": "mop-theme"
               },
               {
-                "input": "src/assets/cataclysm-theme.css",
+                "input": "src/assets/custom-themes/cataclysm-theme.css",
                 "lazy": true,
                 "bundleName": "cataclysm-theme"
               },
               {
-                "input": "src/assets/wotlk-theme.css",
+                "input": "src/assets/custom-themes/wotlk-theme.css",
                 "lazy": true,
                 "bundleName": "wotlk-theme"
               }
@@ -131,7 +131,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles/styles.scss"],
             "scripts": []
           }
         },

@@ -1,0 +1,27 @@
+@import "../../node_modules/@angular/material/theming";
+
+@import "../app/shell/components/footer/footer-theme";
+@import "../app/shell/components/header/header-theme";
+@import "../app/pages/home/home-theme";
+@import "../app/shell/components/navbar/navbar-theme";
+
+// Styles for the docs app that are based on the current theme.
+@mixin app-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .h3-container {
+    h3 {
+      background-color: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+    }
+  }
+
+  @include footer-theme($theme);
+  @include header-theme($theme);
+  @include home-theme($theme);
+  @include nav-bar-theme($theme);
+}

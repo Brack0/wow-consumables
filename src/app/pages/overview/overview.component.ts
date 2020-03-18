@@ -4,9 +4,9 @@ import {
   Component,
   OnInit
 } from "@angular/core";
-import { StateService } from "src/app/services";
 import { MaterialCategory, Specialization } from "src/app/model";
-import { ProfessionComponent } from "../abstract";
+import { StateService } from "src/app/shared/services";
+import { ProfessionComponent } from "../profession/abstract";
 
 @Component({
   selector: "app-overview",

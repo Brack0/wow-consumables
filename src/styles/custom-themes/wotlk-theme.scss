@@ -1,0 +1,10 @@
+@import '../app-theme';
+
+// Define a theme.
+$primary: mat-palette($mat-light-blue, 300);
+$accent: mat-palette($mat-grey, 50);
+
+$theme: mat-dark-theme($primary, $accent);
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+@include app-theme($theme);

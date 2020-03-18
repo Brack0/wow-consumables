@@ -1,0 +1,16 @@
+@import '../app-theme';
+
+// Define a theme.
+$wod-primary: (
+  500: #422116,
+  contrast: (
+    500: #ffffff
+  )
+);
+// custom ligth theme : default 500
+$primary: mat-palette($wod-primary, 500, 500, 500);
+$accent: mat-palette($mat-grey, 600);
+$theme: mat-light-theme($primary, $accent);
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+@include app-theme($theme);

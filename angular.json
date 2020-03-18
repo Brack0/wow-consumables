@@ -7,26 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
-          "skipTests": true
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:module": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "style": "scss"
         }
       },
       "root": "",
@@ -41,38 +22,42 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               {
-                "input": "src/styles.scss"
+                "input": "src/styles/styles.scss"
               },
               {
-                "input": "src/assets/bfa-theme.css",
+                "input": "src/assets/custom-themes/bfa-theme.css",
                 "lazy": true,
                 "bundleName": "bfa-theme"
               },
               {
-                "input": "src/assets/legion-theme.css",
+                "input": "src/assets/custom-themes/legion-theme.css",
                 "lazy": true,
                 "bundleName": "legion-theme"
               },
               {
-                "input": "src/assets/wod-theme.css",
+                "input": "src/assets/custom-themes/wod-theme.css",
                 "lazy": true,
                 "bundleName": "wod-theme"
               },
               {
-                "input": "src/assets/mop-theme.css",
+                "input": "src/assets/custom-themes/mop-theme.css",
                 "lazy": true,
                 "bundleName": "mop-theme"
               },
               {
-                "input": "src/assets/cataclysm-theme.css",
+                "input": "src/assets/custom-themes/cataclysm-theme.css",
                 "lazy": true,
                 "bundleName": "cataclysm-theme"
               },
               {
-                "input": "src/assets/wotlk-theme.css",
+                "input": "src/assets/custom-themes/wotlk-theme.css",
                 "lazy": true,
                 "bundleName": "wotlk-theme"
               }
@@ -92,7 +77,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -101,6 +85,11 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -130,16 +119,27 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles/styles.scss"
+            ],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
-            "exclude": ["**/node_modules/**"]
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {

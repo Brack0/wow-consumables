@@ -1,0 +1,16 @@
+@import '../app-theme';
+
+// Define a theme.
+$mop-primary: (
+  200: #14aa6c,
+  contrast: (
+    200: rgba(black, 0.87)
+  )
+);
+// custom dark theme : default 200
+$primary: mat-palette($mop-primary, 200, 200, 200);
+$accent: mat-palette($mat-grey, 50);
+$theme: mat-dark-theme($primary, $accent);
+// Include all theme styles for the components.
+@include angular-material-theme($theme);
+@include app-theme($theme);

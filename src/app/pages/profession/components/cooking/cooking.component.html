@@ -1,0 +1,17 @@
+<div class="main-content">
+  <app-material-grid [materialCategory]="requiredMaterials" *ngIf="requiredMaterials && requiredMaterials.requiredMaterialArray?.length"></app-material-grid>
+
+  <mat-tab-group [(selectedIndex)]="tabIndex" (animationDone)="callRefreshWowTooltip()">
+    <mat-tab label="Consumables">
+      <div *ngFor="let category of foodsCategories">
+        <app-consumable-grid [consumableCategory]="category"></app-consumable-grid>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Recipes">
+      <div *ngFor="let category of foodsCategories">
+        <app-consumable-grid [consumableCategory]="category" [displayMaterial]="true"></app-consumable-grid>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

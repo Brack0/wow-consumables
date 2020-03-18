@@ -4,7 +4,7 @@ language: node_js
 sudo: false
 dist: trusty
 node_js:
-  - '10.16.0'
+  - 13
 
 branches:
   except:

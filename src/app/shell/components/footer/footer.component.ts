@@ -2,16 +2,16 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  OnInit
-} from "@angular/core";
-import { StateService } from "src/app/shared/services";
-import { Content } from "src/app/model";
+  OnInit,
+} from '@angular/core';
+import { Content } from 'src/app/model';
+import { StateService } from 'src/app/shared/services';
 
 @Component({
-  selector: "app-footer",
-  templateUrl: "./footer.component.html",
-  styleUrls: ["./footer.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterComponent implements OnInit {
   public content: Content;

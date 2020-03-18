@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   Consumable,
   ConsumableType,
@@ -8,10 +8,10 @@ import {
   Potion,
   Recipes,
   RequiredMaterial,
-  WantedConsumables
-} from "../../model";
+  WantedConsumables,
+} from '../../model';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class ComputeService {
   constructor() {}
 

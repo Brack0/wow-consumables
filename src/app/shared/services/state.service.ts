@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Observable, of, Subject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
 import {
   Consumable,
   ConsumableCategory,
@@ -9,12 +9,12 @@ import {
   MaterialCategory,
   Recipes,
   Specialization,
-  WantedConsumables
-} from "../../model";
-import { ComputeService } from "./compute.service";
-import { DATA } from "../data/bfa-data";
+  WantedConsumables,
+} from '../../model';
+import { DATA } from '../data/bfa-data';
+import { ComputeService } from './compute.service';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class StateService {
   private refreshWowTooltip: Subject<any> = new Subject<any>();
   private resetAllForms: Subject<any> = new Subject<any>();
@@ -179,11 +179,11 @@ export class StateService {
 
     // Pushing new subject
     requiredMaterialsSubject.next({
-      category: "Required Materials",
+      category: 'Required Materials',
       requiredMaterialArray: this.computeService.updateRequiredMaterial(
         wantedConsumables,
         this.recipes
-      )
+      ),
     });
   }
 }

@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { Material } from "src/app/model";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Material } from 'src/app/model';
 
 @Component({
-  selector: "app-material",
-  templateUrl: "./material.component.html",
-  styleUrls: ["./material.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-material',
+  templateUrl: './material.component.html',
+  styleUrls: ['./material.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MaterialComponent {
   @Input()

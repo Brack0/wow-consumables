@@ -3,25 +3,25 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
-  OnInit
-} from "@angular/core";
+  OnInit,
+} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
   FormGroup,
-  Validators
-} from "@angular/forms";
-import * as _ from "lodash";
-import { debounceTime } from "rxjs/operators";
-import { StateService } from "src/app/shared/services";
-import { Consumable } from "src/app/model";
-import { CustomValidators } from "src/app/shared/validators";
+  Validators,
+} from '@angular/forms';
+import * as _ from 'lodash';
+import { debounceTime } from 'rxjs/operators';
+import { Consumable } from 'src/app/model';
+import { StateService } from 'src/app/shared/services';
+import { CustomValidators } from 'src/app/shared/validators';
 
 @Component({
-  selector: "app-consumable",
-  templateUrl: "./consumable.component.html",
-  styleUrls: ["./consumable.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-consumable',
+  templateUrl: './consumable.component.html',
+  styleUrls: ['./consumable.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConsumableComponent implements OnInit {
   @Input()
@@ -57,17 +57,17 @@ export class ConsumableComponent implements OnInit {
       rankNumber: [{ value: this.rankNumber, disabled: !this.rankNumber }],
       // Input number with custom validators
       wantedNumber: [
-        this.consumable.wantedNumber || "",
+        this.consumable.wantedNumber || '',
         [
           Validators.min(0),
           Validators.max(this.consumable.maxNumber),
-          CustomValidators.inputStep(this.consumable.craftNumber)
-        ]
-      ]
+          CustomValidators.inputStep(this.consumable.craftNumber),
+        ],
+      ],
     });
 
-    const wantedNumberControl = this.form.get("wantedNumber");
-    const rankNumberControl = this.form.get("rankNumber");
+    const wantedNumberControl = this.form.get('wantedNumber');
+    const rankNumberControl = this.form.get('rankNumber');
 
     // subscribe to input value and update with a debounce time of 500ms
     wantedNumberControl.valueChanges
@@ -90,7 +90,7 @@ export class ConsumableComponent implements OnInit {
         wantedNumberControl.setValidators([
           Validators.min(0),
           Validators.max(100 * this.consumable.craftNumber),
-          CustomValidators.inputStep(this.consumable.craftNumber)
+          CustomValidators.inputStep(this.consumable.craftNumber),
         ]);
 
         if (wantedNumberControl.value) {
@@ -105,13 +105,11 @@ export class ConsumableComponent implements OnInit {
       }
     });
 
-    this.stateService
-      .getResetAllForms()
-      .subscribe(reset =>
-        this.form.reset({
-          rankNumber: { value: this.rankNumber, disabled: !this.rankNumber }
-        })
-      );
+    this.stateService.getResetAllForms().subscribe(reset =>
+      this.form.reset({
+        rankNumber: { value: this.rankNumber, disabled: !this.rankNumber },
+      })
+    );
   }
 
   /**

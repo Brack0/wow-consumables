@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, OnInit } from "@angular/core";
-import { MaterialCategory, ConsumableType } from 'src/app/model';
+import { ChangeDetectorRef, OnInit } from '@angular/core';
+import { ConsumableType, MaterialCategory } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 
 export abstract class ProfessionComponent implements OnInit {

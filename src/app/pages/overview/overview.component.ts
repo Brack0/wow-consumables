@@ -2,17 +2,17 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  OnInit
-} from "@angular/core";
-import { MaterialCategory, Specialization } from "src/app/model";
-import { StateService } from "src/app/shared/services";
-import { ProfessionComponent } from "../profession/abstract";
+  OnInit,
+} from '@angular/core';
+import { MaterialCategory, Specialization } from 'src/app/model';
+import { StateService } from 'src/app/shared/services';
+import { ProfessionComponent } from '../profession/abstract';
 
 @Component({
-  selector: "app-overview",
-  templateUrl: "./overview.component.html",
-  styleUrls: ["./overview.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverviewComponent extends ProfessionComponent implements OnInit {
   public specializations: Specialization[];

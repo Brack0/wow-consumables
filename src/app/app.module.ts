@@ -1,15 +1,15 @@
-import { OverlayModule } from "@angular/cdk/overlay";
-import { APP_BASE_HREF } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { RouteReuseStrategy } from "@angular/router";
-import { environment } from "../environments/environment";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { CustomRouteReuseStrategy } from "./core/reuse-strategy";
-import { SharedModule } from "./shared/shared.module";
-import { ShellModule } from "./shell/shell.module";
+import { OverlayModule } from '@angular/cdk/overlay';
+import { APP_BASE_HREF } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouteReuseStrategy } from '@angular/router';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CustomRouteReuseStrategy } from './core/reuse-strategy';
+import { SharedModule } from './shared/shared.module';
+import { ShellModule } from './shell/shell.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,15 +19,15 @@ import { ShellModule } from "./shell/shell.module";
     OverlayModule,
     SharedModule,
     ShellModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: environment.baseHref },
     {
       provide: RouteReuseStrategy,
-      useClass: CustomRouteReuseStrategy
-    }
+      useClass: CustomRouteReuseStrategy,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

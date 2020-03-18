@@ -2,7 +2,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 /**
  * Step validator on input number
- * @param step
+ * @param step Step value
  */
 export function inputStep(step: number): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
@@ -10,8 +10,8 @@ export function inputStep(step: number): ValidatorFn {
       return {
         step: {
           value: step,
-          message: `Please enter a multiple of ${step}.`
-        }
+          message: `Please enter a multiple of ${step}.`,
+        },
       };
     }
     return null;

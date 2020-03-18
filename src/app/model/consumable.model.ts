@@ -3,7 +3,7 @@ import { CraftedMaterial } from './crafted-material.model';
 import { Specialization } from './specialization.model';
 
 export abstract class Consumable extends CraftedMaterial {
-  effect: String = '';
+  effect: string = '';
   utility: Specialization[];
   maxNumber: number = this.craftNumber * 100;
   wantedNumber: number = 0;

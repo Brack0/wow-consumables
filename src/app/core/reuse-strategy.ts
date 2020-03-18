@@ -1,4 +1,8 @@
-import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  DetachedRouteHandle,
+  RouteReuseStrategy,
+} from '@angular/router';
 
 function routeToUrl(route: ActivatedRouteSnapshot): string {
   if (route.url) {
@@ -57,7 +61,10 @@ export class CustomRouteReuseStrategy implements RouteReuseStrategy {
     return this.handlers[calcKey(route)];
   }
 
-  shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
+  shouldReuseRoute(
+    future: ActivatedRouteSnapshot,
+    curr: ActivatedRouteSnapshot
+  ): boolean {
     const futureKey = calcKey(future);
     const currentKey = calcKey(curr);
     return futureKey === currentKey;

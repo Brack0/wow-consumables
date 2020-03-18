@@ -4,14 +4,14 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build-themes && ng serve",
-    "build": "npm run build-themes && ng build",
-    "prod": "npm run build-themes && ng build --aot --prod",
-    "watch-themes": "node-sass --watch src/styles/custom-themes/ -o src/assets/custom-themes/",
-    "build-themes": "node-sass src/styles/custom-themes/ -o src/assets/custom-themes/",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "npm run build-themes && npx ng serve",
+    "build": "npm run build-themes && npx ng build",
+    "prod": "npm run build-themes && npx ng build --aot --prod",
+    "watch-themes": "npx node-sass --watch src/styles/custom-themes/ -o src/assets/custom-themes/",
+    "build-themes": "npx node-sass src/styles/custom-themes/ -o src/assets/custom-themes/",
+    "test": "npx ng test",
+    "lint": "npx ng lint",
+    "e2e": "npx ng e2e"
   },
   "private": true,
   "dependencies": {

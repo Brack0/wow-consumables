@@ -1,7 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { MatSliderModule, MatInputModule } from "@angular/material";
+import { MatInputModule } from "@angular/material/input";
+import { MatSliderModule } from "@angular/material/slider";
 import { ConsumableGridComponent } from "./consumable-grid/consumable-grid.component";
 import { ConsumableComponent } from "./consumable/consumable.component";
 import { MaterialGridComponent } from "./material-grid/material-grid.component";

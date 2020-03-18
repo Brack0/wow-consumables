@@ -1,11 +1,6 @@
 import { OverlayModule } from "@angular/cdk/overlay";
 import { APP_BASE_HREF } from "@angular/common";
 import { NgModule } from "@angular/core";
-import {
-  MatButtonModule,
-  MatTabsModule,
-  MatTooltipModule
-} from "@angular/material";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouteReuseStrategy } from "@angular/router";
@@ -21,9 +16,6 @@ import { ShellModule } from "./shell/shell.module";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatTabsModule,
-    MatButtonModule,
-    MatTooltipModule,
     OverlayModule,
     SharedModule,
     ShellModule,

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { SharedModule } from "src/app/shared/shared.module";
 import { AlchemyComponent } from "./components/alchemy/alchemy.component";
 import { CookingComponent } from "./components/cooking/cooking.component";
-import { MatTabsModule } from "@angular/material";
+import { MatTabsModule } from "@angular/material/tabs";
 
 export const routes: Routes = [
   { path: "alchemy", component: AlchemyComponent },

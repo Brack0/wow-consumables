@@ -3,6 +3,7 @@ import { MaterialCategory, ConsumableType } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 
 export abstract class ProfessionComponent implements OnInit {
+  public tabIndex: number = 0;
   public requiredMaterials: MaterialCategory;
   private tabInit: boolean[];
 
@@ -15,10 +16,10 @@ export abstract class ProfessionComponent implements OnInit {
     this.initFirstTab();
   }
 
-  public callRefreshWowTooltip($event): void {
-    if (!this.tabInit[$event.index]) {
+  public callRefreshWowTooltip(): void {
+    if (!this.tabInit[this.tabIndex]) {
       this.stateService.callRefreshWowTooltip();
-      this.tabInit[$event.index] = true;
+      this.tabInit[this.tabIndex] = true;
     }
   }
 

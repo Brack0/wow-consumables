@@ -1,10 +1,8 @@
 import { OverlayModule } from '@angular/cdk/overlay';
-import { APP_BASE_HREF } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy } from '@angular/router';
-import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomRouteReuseStrategy } from './core/reuse-strategy';
@@ -22,7 +20,6 @@ import { ShellModule } from './shell/shell.module';
     AppRoutingModule,
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: environment.baseHref },
     {
       provide: RouteReuseStrategy,
       useClass: CustomRouteReuseStrategy,

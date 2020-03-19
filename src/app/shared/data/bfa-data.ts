@@ -20,25 +20,25 @@ import {
 const specMelee = new Specialization({
   idSpec: 0,
   name: 'Melee',
-  icon: '/assets/images/svg/battle-axe.svg',
+  icon: 'assets/images/svg/battle-axe.svg',
 });
 
 const specRanged = new Specialization({
   idSpec: 1,
   name: 'Ranged',
-  icon: '/assets/images/svg/wizard-staff.svg',
+  icon: 'assets/images/svg/wizard-staff.svg',
 });
 
 const specTank = new Specialization({
   idSpec: 2,
   name: 'Tank',
-  icon: '/assets/images/svg/slashed-shield.svg',
+  icon: 'assets/images/svg/slashed-shield.svg',
 });
 
 const specHealer = new Specialization({
   idSpec: 3,
   name: 'Healer',
-  icon: '/assets/images/svg/health-increase.svg',
+  icon: 'assets/images/svg/health-increase.svg',
 });
 
 /**

@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "npm run build-themes && npx ng serve",
     "build": "npm run build-themes && npx ng build",
-    "prod": "npm run build-themes && npx ng build --aot --prod",
+    "prod": "npm run build-themes && npx ng build --prod --base-href /wow-consumables/",
     "watch-themes": "npx node-sass --watch src/styles/custom-themes/ -o src/assets/custom-themes/",
     "build-themes": "npx node-sass src/styles/custom-themes/ -o src/assets/custom-themes/",
     "test": "npx ng test",
@@ -26,7 +26,6 @@
     "@angular/platform-browser-dynamic": "~9.0.6",
     "@angular/router": "~9.0.6",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -47,7 +46,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "protractor": "~5.4.3",
+    "node-sass": "^4.13.1",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"

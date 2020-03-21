@@ -1,0 +1,21 @@
+export enum Specialization {
+  ALL = 'ALL',
+
+  // ROLE
+  MELEE = 'MELEE',
+  RANGED = 'RANGED',
+  HEALER = 'HEALER',
+  TANK = 'TANK',
+
+  // MAIN STAT
+  STRENGTH = 'STRENGTH',
+  AGILITY = 'AGILITY',
+  INTELLECT = 'INTELLECT',
+  STAMINA = 'STAMINA',
+
+  // ARMOR TYPE
+  CLOTH = 'CLOTH',
+  LEATHER = 'LEATHER',
+  MAIL = 'MAIL',
+  PLATE = 'PLATE',
+}

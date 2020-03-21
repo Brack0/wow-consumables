@@ -11,6 +11,7 @@
     "build:themes": "npx node-sass src/styles/custom-themes/ -o src/assets/custom-themes/",
     "start": "node dist/server/main.server.js",
     "prod": "npm run build:themes && npx ng build --prod --base-href /wow-consumables/",
+    "json-schema": "ts-node --project tsconfig.server.json tools/json-schema/index.ts",
     "test": "npx ng test",
     "lint": "npx ng lint",
     "e2e": "npx ng e2e"
@@ -38,7 +39,7 @@
     "@angular/compiler-cli": "~9.0.6",
     "@angular/language-service": "~9.0.6",
     "@types/express": "^4.17.3",
-    "@types/jasmine": "~3.5.0",
+    "@types/jasmine": "^3.5.9",
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash-es": "^4.17.3",
     "@types/morgan": "^1.9.0",
@@ -55,8 +56,9 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "morgan": "^1.10.0",
     "node-sass": "^4.13.1",
-    "ts-node": "~8.3.0",
+    "ts-node": "^8.3.0",
     "tslint": "~5.18.0",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "typescript-json-schema": "^0.42.0"
   }
 }

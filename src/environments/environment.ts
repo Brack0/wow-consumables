@@ -1,3 +1,6 @@
+import { LogLevel } from '../logger';
+
 export const environment = {
-  production: false
+  production: false,
+  logLevel: LogLevel.DEBUG,
 };

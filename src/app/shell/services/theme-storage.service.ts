@@ -3,7 +3,7 @@ import { Theme } from 'src/app/model';
 
 @Injectable()
 export class ThemeStorageService {
-  static storageKey = 'wow-consumable-theme-storage-current';
+  static storageKey = 'wow-consumables-theme-storage-current';
 
   setTheme(theme: Theme) {
     try {

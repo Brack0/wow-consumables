@@ -1,1 +1,1 @@
-export { ProfessionComponent } from "./profession.abstract";
+export { ProfessionComponent } from './profession.abstract';

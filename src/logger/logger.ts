@@ -19,19 +19,22 @@ export class Logger {
 
   constructor(private configLogLevel: LogLevel) {}
 
-  private log(logLevel: LogLevel, message: any) {
+  private log(logLevel: LogLevel, message?: any) {
     if (this.configLogLevel >= logLevel) {
       console.log(this.formatLog(logLevel, message));
     }
   }
 
-  private formatLog(logLevel: LogLevel, message: any) {
+  private formatLog(
+    logLevel: LogLevel,
+    message: any = 'undefined or null value provided to logger'
+  ) {
     return [
       new Date().toISOString(),
       '|',
       LogLevel[logLevel].padEnd(6),
       ':',
-      message.trim(),
+      message.toString().trim(),
     ].join(' ');
   }
 

@@ -11,7 +11,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import * as _ from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { debounceTime } from 'rxjs/operators';
 import { Consumable } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
@@ -42,7 +42,7 @@ export class ConsumableComponent implements OnInit {
   public ngOnInit() {
     // Cloning consumable (Read only access to recipes)
     this.consumable = this.displayMaterial
-      ? _.cloneDeep(this.consumableInput)
+      ? cloneDeep(this.consumableInput)
       : this.consumableInput;
     // Init slider on model
     this.rankNumber = this.consumable.rank;

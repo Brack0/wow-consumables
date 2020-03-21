@@ -23,6 +23,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "watch": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -80,6 +81,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "watch": false,
               "budgets": [
                 {
                   "type": "initial",

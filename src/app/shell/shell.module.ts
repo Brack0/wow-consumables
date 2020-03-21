@@ -11,7 +11,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { StyleService } from './services/style.service';
-import { ThemeStorageService } from './services/theme-storage.service';
 
 @NgModule({
   imports: [
@@ -36,6 +35,6 @@ import { ThemeStorageService } from './services/theme-storage.service';
     ResetComponent,
     ThemeSelectorComponent,
   ],
-  providers: [StyleService, ThemeStorageService],
+  providers: [StyleService],
 })
 export class ShellModule {}

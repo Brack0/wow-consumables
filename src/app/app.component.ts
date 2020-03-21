@@ -5,6 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { StateService } from './shared/services';
+import { Logger } from 'src/logger';
 
 declare let $WowheadPower: any;
 
@@ -17,10 +18,10 @@ declare let $WowheadPower: any;
 export class AppComponent implements OnInit, AfterViewChecked {
   private needWowRefresh: boolean = false;
 
-  constructor(private stateService: StateService) {}
+  constructor(private stateService: StateService, private logger: Logger) {}
 
   public ngOnInit(): void {
-    this.stateService.getRefreshWowTooltip().subscribe(update => {
+    this.stateService.getRefreshWowTooltip().subscribe(() => {
       this.needWowRefresh = true;
     });
   }
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit, AfterViewChecked {
   public ngAfterViewChecked(): void {
     if (this.needWowRefresh) {
       this.needWowRefresh = false;
+      this.logger.debug('refresh wow tooltip');
       $WowheadPower.refreshLinks();
     }
   }

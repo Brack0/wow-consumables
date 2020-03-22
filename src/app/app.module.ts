@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { CustomRouteReuseStrategy } from './core/reuse-strategy';
 import { SharedModule } from './shared/shared.module';
 import { ShellModule } from './shell/shell.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { ShellModule } from './shell/shell.module';
     BrowserModule,
     BrowserAnimationsModule,
     OverlayModule,
+    HttpClientModule,
     SharedModule,
     ShellModule,
     AppRoutingModule,

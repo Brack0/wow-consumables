@@ -6,6 +6,7 @@ import {
 } from '@angular/core';
 import { StateService } from './shared/services';
 import { Logger } from 'src/logger';
+import { DataService } from './shared/new-service/data.service';
 
 declare let $WowheadPower: any;
 
@@ -18,9 +19,14 @@ declare let $WowheadPower: any;
 export class AppComponent implements OnInit, AfterViewChecked {
   private needWowRefresh: boolean = false;
 
-  constructor(private stateService: StateService, private logger: Logger) {}
+  constructor(
+    private stateService: StateService,
+    private dataService: DataService,
+    private logger: Logger
+  ) {}
 
   public ngOnInit(): void {
+    this.dataService.initData();
     this.stateService.getRefreshWowTooltip().subscribe(() => {
       this.needWowRefresh = true;
     });

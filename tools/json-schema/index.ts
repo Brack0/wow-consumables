@@ -8,7 +8,7 @@ import {
   PartialArgs,
 } from 'typescript-json-schema';
 
-const schemaPath = 'tools/json-schema/schema.ts';
+const schemaPath = 'src/app/new-model/schema.ts';
 const outputPath = 'src/assets/json/schema/';
 
 cleanOutputPath();

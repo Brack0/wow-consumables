@@ -1,5 +1,5 @@
-import { Content } from '../../src/app/new-model/content.model';
-import { Materials } from '../../src/app/new-model/material.model';
+import { Content } from './content.model';
+import { Materials } from './material.model';
 
 interface SchemaInterface {
   $schema: string;

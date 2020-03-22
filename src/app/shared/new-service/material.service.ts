@@ -1,24 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { first, map } from 'rxjs/operators';
+import { Material, Profession } from 'src/app/new-model/material.model';
 import { DataService } from './data.service';
-import { Profession, Material } from 'src/app/new-model/material.model';
 
 @Injectable({ providedIn: 'root' })
 export class MaterialService {
   constructor(private dataService: DataService) {}
 
-  getMaterialById(id: number): Material | undefined {
-    return this.dataService
-      .getMaterials()
-      .find(material => material.idMaterial === id);
+  getMaterialById(id: number): Observable<Material> {
+    return this.dataService.getMaterials().pipe(
+      first(),
+      map(materials => materials.find(material => material.idMaterial === id))
+    );
   }
 
-  getMaterials(): Material[] {
-    return this.dataService.getMaterials();
+  getMaterials(): Observable<Material[]> {
+    return this.dataService.getMaterials().pipe(first());
   }
 
-  getMaterialsByProfession(profession: Profession): Material[] {
-    return this.dataService
-      .getMaterials()
-      .filter(material => material.profession === profession);
+  getMaterialsByProfession(profession: Profession): Observable<Material[]> {
+    return this.dataService.getMaterials().pipe(
+      first(),
+      map(materials =>
+        materials.filter(material => material.profession === profession)
+      )
+    );
   }
 }

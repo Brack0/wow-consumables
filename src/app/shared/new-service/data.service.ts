@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Content } from 'src/app/new-model/content.model';
 import { Material } from 'src/app/new-model/material.model';
 import { ContentSchema, MaterialSchema } from 'src/app/new-model/schema';
@@ -8,8 +9,8 @@ const jsonPath = 'assets/json/data/';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  public content: Content;
-  public materials: Material[];
+  private contentSubject = new Subject<Content>();
+  private materialsSubject = new Subject<Material[]>();
 
   constructor(private httpClient: HttpClient) {}
 
@@ -19,11 +20,11 @@ export class DataService {
   }
 
   public getContent() {
-    return this.content;
+    return this.contentSubject.asObservable();
   }
 
   public getMaterials() {
-    return this.materials;
+    return this.materialsSubject.asObservable();
   }
 
   private getContentData() {
@@ -31,7 +32,7 @@ export class DataService {
       .get(`${jsonPath}content.json`)
       .subscribe((data: ContentSchema) => {
         delete data.$schema;
-        this.content = data;
+        this.contentSubject.next(data);
       });
   }
 
@@ -39,7 +40,7 @@ export class DataService {
     this.httpClient
       .get(`${jsonPath}material.json`)
       .subscribe((data: MaterialSchema) => {
-        this.materials = data.materials;
+        this.materialsSubject.next(data.materials);
       });
   }
 }

@@ -5,6 +5,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,6 +14,13 @@ import { ThemeSelectorComponent } from './components/theme-selector/theme-select
 import { StyleService } from './services/style.service';
 
 @NgModule({
+  declarations: [
+    FooterComponent,
+    HeaderComponent,
+    NavbarComponent,
+    ResetComponent,
+    ThemeSelectorComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -20,15 +28,9 @@ import { StyleService } from './services/style.service';
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
+    SharedModule,
   ],
   exports: [
-    FooterComponent,
-    HeaderComponent,
-    NavbarComponent,
-    ResetComponent,
-    ThemeSelectorComponent,
-  ],
-  declarations: [
     FooterComponent,
     HeaderComponent,
     NavbarComponent,

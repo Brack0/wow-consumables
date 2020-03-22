@@ -1,19 +1,27 @@
 <footer>
-  <div class="footer-list">
-    <div class="footer-logo" *ngIf="logoUrl">
-      <img class="logo" [src]="logoUrl" [alt]="content.expansionName">
-    </div>
+  <div class="footer-list" *ngIf="content">
+    <img
+      *ngIf="logoUrl"
+      class="logo"
+      [src]="logoUrl"
+      [alt]="content.expansionName"
+    />
 
-    <div class="footer-links">
-      <ul>
+    <div>
+      <ul class="footer-links">
         <li>
-          <a href="{{content.url}}" target="_blank">{{ content.getFullName() }}</a>
+          <a class="footer-link" href="{{ content.url }}" target="_blank">{{
+            content | contentFullname
+          }}</a>
         </li>
       </ul>
     </div>
 
     <div class="footer-copyright">
-      <p>Powered by Github, Angular and Material Angular. Code licensed under an MIT-style License.</p>
+      <p>
+        Powered by Github, Angular and Material Angular. Code licensed under an
+        MIT-style License.
+      </p>
     </div>
   </div>
 </footer>

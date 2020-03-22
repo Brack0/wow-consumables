@@ -5,10 +5,10 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Theme } from 'src/app/model';
-import { StateService } from 'src/app/shared/services';
 import { StyleService } from '../../services/style.service';
 import { Logger } from 'src/logger';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { ContentService } from 'src/app/shared/new-service/content.service';
 
 @Component({
   selector: 'app-theme-selector',
@@ -73,7 +73,7 @@ export class ThemeSelectorComponent implements OnInit {
   ];
   constructor(
     private styleService: StyleService,
-    private stateService: StateService,
+    private contentService: ContentService,
     private localStorageService: LocalStorageService,
     private logger: Logger
   ) {}
@@ -98,7 +98,7 @@ export class ThemeSelectorComponent implements OnInit {
       this.styleService.setStyle('theme', this.currentTheme.href);
     }
 
-    this.stateService.setLogo(this.currentTheme.logoUrl);
+    this.contentService.updateLogoUrl(this.currentTheme.logoUrl);
     this.localStorageService.setItem('themeId', this.currentTheme.id);
   }
 

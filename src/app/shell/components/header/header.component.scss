@@ -1,28 +1,42 @@
-.header-background {
-  .header-section {
-    text-align: center;
+@import '~@angular/material/theming';
 
-    .header-headline {
-      h1 {
-        font-size: 56px;
-        font-weight: 300;
-        line-height: 56px;
-        margin: 15px 5px;
-      }
+header {
+  @include mat-elevation(6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
 
-      h2 {
-        font-size: 18px;
-        font-variant: small-caps;
-        font-weight: 300;
-        line-height: 28px;
-        margin: 15px 0 25px 0;
-      }
-    }
+.navbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.navbar-hide-small {
+  @media (max-width: 720px) {
+    display: none;
   }
 }
 
-@media (max-width: 720px) {
-  .header-background {
-    top: 89px;
+.navbar-show-small {
+  display: none;
+
+  @media (max-width: 720px) {
+    display: flex;
   }
+
+  .navbar-link {
+    text-decoration: inherit;
+    flex: 1;
+  }
+}
+
+.logo {
+  height: 26px;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
 }

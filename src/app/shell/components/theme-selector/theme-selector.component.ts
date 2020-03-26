@@ -5,13 +5,14 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Theme } from 'src/app/model';
-import { StyleService } from '../../services/style.service';
-import { Logger } from 'src/logger';
-import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { ContentService } from 'src/app/shared/new-service/content.service';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { Logger } from 'src/logger';
+import { StyleService } from '../../services/style.service';
+import { THEMES } from './themes';
 
 @Component({
-  selector: 'app-theme-selector',
+  selector: 'wowc-theme-selector',
   templateUrl: './theme-selector.component.html',
   styleUrls: ['./theme-selector.component.scss'],
   encapsulation: ViewEncapsulation.None,
@@ -20,57 +21,8 @@ import { ContentService } from 'src/app/shared/new-service/content.service';
 export class ThemeSelectorComponent implements OnInit {
   currentTheme: Theme;
   defaultThemeId: number = 8;
+  themes: Theme[] = THEMES;
 
-  themes: Theme[] = [
-    {
-      id: 8,
-      primaryColor: '#051F46',
-      href: 'assets/custom-themes/bfa-theme.css',
-      label: 'Battle for Azeroth',
-      logoUrl: 'assets/images/png/wow-bfa-icon.png',
-      isDark: false,
-    },
-    {
-      id: 7,
-      primaryColor: '#1B5E20',
-      href: 'assets/custom-themes/legion-theme.css',
-      label: 'Legion',
-      logoUrl: 'assets/images/png/wow-legion-icon.png',
-      isDark: false,
-    },
-    {
-      id: 6,
-      primaryColor: '#520000',
-      href: 'assets/custom-themes/wod-theme.css',
-      label: 'Warlords of Draenor',
-      logoUrl: 'assets/images/png/wow-wod-icon.png',
-      isDark: false,
-    },
-    {
-      id: 5,
-      primaryColor: '#14AA6C',
-      href: 'assets/custom-themes/mop-theme.css',
-      label: 'Mists of Pandaria',
-      logoUrl: 'assets/images/png/wow-mop-icon.png',
-      isDark: true,
-    },
-    {
-      id: 4,
-      primaryColor: '#660000',
-      href: 'assets/custom-themes/cataclysm-theme.css',
-      label: 'Cataclysm',
-      logoUrl: 'assets/images/png/wow-cataclysm-icon.png',
-      isDark: false,
-    },
-    {
-      id: 3,
-      primaryColor: '#4FC3F7',
-      href: 'assets/custom-themes/wotlk-theme.css',
-      label: 'Wrath of the Lich King',
-      logoUrl: 'assets/images/png/wow-wotlk-icon.png',
-      isDark: true,
-    },
-  ];
   constructor(
     private styleService: StyleService,
     private contentService: ContentService,

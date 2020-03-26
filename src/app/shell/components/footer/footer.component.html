@@ -1,11 +1,6 @@
 <footer>
   <div class="footer-list" *ngIf="content">
-    <img
-      *ngIf="logoUrl"
-      class="logo"
-      [src]="logoUrl"
-      [alt]="content.expansionName"
-    />
+    <img *ngIf="logoUrl" class="logo" [src]="logoUrl" [alt]="content.expansionName" />
 
     <div>
       <ul class="footer-links">

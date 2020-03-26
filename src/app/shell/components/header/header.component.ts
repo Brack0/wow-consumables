@@ -1,16 +1,8 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
+  selector: 'wowc-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderComponent {
-  @Input()
-  title: string;
-  @Input()
-  subtitle: string;
-
-  constructor() {}
-}
+export class HeaderComponent {}

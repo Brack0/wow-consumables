@@ -3,9 +3,9 @@
   "version": "1.0.0-bfa",
   "license": "MIT",
   "scripts": {
-    "serve": "concurrently --no-color \"npm run watch:themes\" \"npx ng serve\"",
+    "serve": "concurrently --raw \"npm run watch:themes\" \"npx ng serve\"",
     "watch:themes": "npx node-sass --watch src/styles/custom-themes/ -o src/assets/custom-themes/",
-    "build": "concurrently --no-color \"npm run build:browser\" \"npm run build:server\"",
+    "build": "concurrently --raw \"npm run build:browser\" \"npm run build:server\"",
     "build:browser": "npm run build:themes && npx ng build --base-href /wow-consumables/",
     "build:server": "npx tsc -p tsconfig.server.json",
     "build:themes": "npx node-sass src/styles/custom-themes/ -o src/assets/custom-themes/",

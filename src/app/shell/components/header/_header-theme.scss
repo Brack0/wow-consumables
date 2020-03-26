@@ -5,11 +5,21 @@
   $background: map-get($theme, background);
   $foreground: map-get($theme, foreground);
 
-  app-header {
-    background: mat-color($primary);
+  wowc-header {
+    color: mat-color($primary, default-contrast);
 
-    .header-headline {
-      color: mat-color($primary, default-contrast);
+    header {
+      background: mat-color($primary);
+
+      .logo {
+        height: 26px;
+        margin: 0 4px 3px 0;
+        vertical-align: middle;
+      }
+
+      .svg-logo {
+        fill: mat-color($primary, default-contrast);
+      }
     }
   }
 }

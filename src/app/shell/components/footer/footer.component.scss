@@ -27,13 +27,13 @@ footer {
     text-decoration: none;
     white-space: pre-line;
 
-    &:hover {
-      text-decoration: underline;
-    }
-
     @media (max-width: 790px) {
       display: block;
       text-align: center;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

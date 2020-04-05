@@ -23,7 +23,7 @@ export class DataService {
   }
 
   public getMaterials() {
-    if (!this.content) {
+    if (!this.materials) {
       return this.getMaterialData();
     }
     return of(this.materials);

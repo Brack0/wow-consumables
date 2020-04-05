@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, Subject } from 'rxjs';
-import { first } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
 import { Content } from 'src/app/new-model/content.model';
 import { DataService } from './data.service';
 
 @Injectable({ providedIn: 'root' })
 export class ContentService {
-  logoUrlSubject = new Subject<string>();
+  private logoUrlSubject = new Subject<string>();
 
   constructor(private dataService: DataService) {}
 
   getContent(): Observable<Content> {
-    return this.dataService.getContent().pipe(first());
+    return this.dataService.getContent();
   }
 
   getLogoUrl() {

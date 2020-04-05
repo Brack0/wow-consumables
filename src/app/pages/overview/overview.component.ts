@@ -7,7 +7,7 @@ import {
 import { MaterialCategory, Specialization } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 import { ProfessionComponent } from '../profession/abstract';
-import { WowheadService } from 'src/app/shared/new-service/wowhead.service';
+import { WowheadService } from 'src/app/shared/new-services';
 
 @Component({
   selector: 'app-overview',

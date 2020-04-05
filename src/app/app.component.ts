@@ -1,6 +1,6 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Logger } from 'src/logger';
-import { WowheadService } from './shared/new-service/wowhead.service';
+import { WowheadService } from './shared/new-services';
 
 declare let $WowheadPower: any;
 

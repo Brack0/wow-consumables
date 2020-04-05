@@ -5,7 +5,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Theme } from 'src/app/model';
-import { ContentService } from 'src/app/shared/new-service/content.service';
+import { ContentService } from 'src/app/shared/new-services';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { Logger } from 'src/logger';
 import { StyleService } from '../../services/style.service';
@@ -55,7 +55,7 @@ export class ThemeSelectorComponent implements OnInit {
   }
 
   private getTheme(id: number) {
-    return this.themes.find(theme => theme.id === id);
+    return this.themes.find((theme) => theme.id === id);
   }
 
   private initTheme() {

@@ -6,10 +6,6 @@ export enum Profession {
   FOOD = 'FOOD',
 }
 
-export interface Materials {
-  materials: Material[];
-}
-
 export interface Material {
   category: string;
   idMaterial: number;

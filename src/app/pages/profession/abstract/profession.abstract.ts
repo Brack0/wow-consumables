@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { ConsumableType, MaterialCategory } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
-import { WowheadService } from 'src/app/shared/new-service/wowhead.service';
+import { WowheadService } from 'src/app/shared/new-services';
 
 export abstract class ProfessionComponent implements OnInit {
   public tabIndex: number = 0;

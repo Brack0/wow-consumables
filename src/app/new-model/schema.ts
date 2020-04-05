@@ -1,8 +1,12 @@
 import { Content } from './content.model';
-import { Materials } from './material.model';
+import { Material } from './material.model';
 
 interface SchemaInterface {
   $schema: string;
+}
+
+interface Materials {
+  materials: Material[];
 }
 
 export type ContentSchema = Content & SchemaInterface;

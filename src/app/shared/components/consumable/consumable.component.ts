@@ -16,7 +16,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Consumable } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 import { CustomValidators } from 'src/app/shared/validators';
-import { WowheadService } from '../../new-service/wowhead.service';
+import { WowheadService } from '../../new-services';
 
 @Component({
   selector: 'app-consumable',

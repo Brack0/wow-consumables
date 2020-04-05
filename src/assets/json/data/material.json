@@ -1,4 +1,10 @@
 {
   "$schema": "../schema/material.schema.json",
-  "materials": []
+  "materials": [
+    {
+      "category": "Meat",
+      "idMaterial": 154899,
+      "name": "Thick Paleo Steak"
+    }
+  ]
 }

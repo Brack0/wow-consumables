@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { Content } from 'src/app/new-model/content.model';
-import { ContentService } from 'src/app/shared/new-service/content.service';
+import { ContentService } from 'src/app/shared/new-services';
 
 @Component({
   selector: 'wowc-footer',
@@ -23,12 +23,12 @@ export class FooterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.contentService.getContent().subscribe(content => {
+    this.contentService.getContent().subscribe((content) => {
       this.content = content;
       this.cd.markForCheck();
     });
 
-    this.contentService.getLogoUrl().subscribe(logoUrl => {
+    this.contentService.getLogoUrl().subscribe((logoUrl) => {
       this.logoUrl = logoUrl;
       this.cd.markForCheck();
     });

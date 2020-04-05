@@ -1,0 +1,15 @@
+.icon-quantity {
+  height: 68px;
+  width: 68px;
+  position: relative;
+
+  .quantity {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    pointer-events: none;
+  }
+}

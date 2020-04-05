@@ -6,8 +6,6 @@ export class WowheadService {
   private refreshWowTooltipSubject: Subject<void> = new Subject<void>();
   refreshWowTooltip$ = this.refreshWowTooltipSubject.asObservable();
 
-  constructor() {}
-
   /**
    * Call a refresh of wow tooltip
    */

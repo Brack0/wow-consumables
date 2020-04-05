@@ -1,36 +1,25 @@
-import {
-  AfterViewChecked,
-  Component,
-  OnInit,
-} from '@angular/core';
-import { StateService } from './shared/services';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Logger } from 'src/logger';
-import { DataService } from './shared/new-service/data.service';
+import { WowheadService } from './shared/new-service/wowhead.service';
 
 declare let $WowheadPower: any;
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'wowc-root',
+  template: '<wowc-full-page></wowc-full-page>',
 })
 export class AppComponent implements OnInit, AfterViewChecked {
   private needWowRefresh: boolean = false;
 
-  constructor(
-    private stateService: StateService,
-    private dataService: DataService,
-    private logger: Logger
-  ) {}
+  constructor(private logger: Logger, private wowheadService: WowheadService) {}
 
-  public ngOnInit(): void {
-    this.dataService.initData();
-    this.stateService.getRefreshWowTooltip().subscribe(() => {
+  ngOnInit() {
+    this.wowheadService.refreshWowTooltip$.subscribe(() => {
       this.needWowRefresh = true;
     });
   }
 
-  public ngAfterViewChecked(): void {
+  ngAfterViewChecked() {
     if (this.needWowRefresh) {
       this.needWowRefresh = false;
       this.logger.debug('refresh wow tooltip');

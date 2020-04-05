@@ -1,0 +1,19 @@
+@import '../../node_modules/@angular/material/theming';
+
+// Include material core styles.
+@include mat-core();
+
+@import '../app/shell/components/header/header-theme';
+@import '../app/shell/components/footer/footer-theme';
+@import '../app/shared/components/sub-header/sub-header-theme';
+@import '../app/pages/home/home-theme';
+@import './custom-elements/h3-container-theme';
+
+// Styles for the app that are based on the current theme.
+@mixin custom-material-theme($theme) {
+  @include h3-container-theme($theme);
+  @include footer-theme($theme);
+  @include header-theme($theme);
+  @include home-theme($theme);
+  @include sub-header-theme($theme);
+}

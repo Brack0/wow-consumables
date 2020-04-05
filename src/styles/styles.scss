@@ -1,48 +1,15 @@
-@import '~@angular/material/theming';
-@import './app-theme';
+@import '~normalize-scss';
+@import 'scrollbar';
 
-// Include material core styles.
-@include mat-core();
+// Load default theme
+@import 'custom-themes/bfa-theme';
 
-// Default theme : BFA
-$bfa-primary: (
-  500: #051f46,
-  contrast: (
-    500: #ffffff,
-  ),
-);
-$primary: mat-palette($bfa-primary, 500, 500, 500);
-$accent: mat-palette($mat-grey, 600);
-$theme: mat-light-theme($primary, $accent);
-@include angular-material-theme($theme);
-@include app-theme($theme);
-
-// General properties
 html,
 body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-}
-body {
   overflow: hidden;
-}
-
-.root {
-  display: flex;
-  min-height: calc(100vh - 53px);
-  flex-direction: column;
-  position: absolute;
-  overflow-y: auto;
-  top: 53px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  @media (max-width: 720px) {
-    min-height: calc(100vh - 89px);
-    top: 89px;
-  }
 }
 
 .main-content {
@@ -56,8 +23,4 @@ body {
     padding-top: 25px;
     padding-bottom: 0;
   }
-}
-
-.iconlarge {
-  margin: auto;
 }

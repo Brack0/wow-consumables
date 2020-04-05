@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, OnInit } from '@angular/core';
 import { ConsumableType, MaterialCategory } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
+import { WowheadService } from 'src/app/shared/new-service/wowhead.service';
 
 export abstract class ProfessionComponent implements OnInit {
   public tabIndex: number = 0;
@@ -9,6 +10,7 @@ export abstract class ProfessionComponent implements OnInit {
 
   constructor(
     protected stateService: StateService,
+    protected wowheadService: WowheadService,
     protected cd: ChangeDetectorRef
   ) {}
 
@@ -18,20 +20,20 @@ export abstract class ProfessionComponent implements OnInit {
 
   public callRefreshWowTooltip(): void {
     if (!this.tabInit[this.tabIndex]) {
-      this.stateService.callRefreshWowTooltip();
+      this.wowheadService.callRefreshWowTooltip();
       this.tabInit[this.tabIndex] = true;
     }
   }
 
   protected initFirstTab() {
-    this.stateService.callRefreshWowTooltip();
+    this.wowheadService.callRefreshWowTooltip();
     this.tabInit = [true];
   }
 
   protected getRequiredMaterial(type: ConsumableType) {
-    this.stateService.getRequiredMaterial(type).subscribe(materials => {
+    this.stateService.getRequiredMaterial(type).subscribe((materials) => {
       this.requiredMaterials = materials;
-      this.stateService.callRefreshWowTooltip();
+      this.wowheadService.callRefreshWowTooltip();
       this.cd.markForCheck();
     });
   }

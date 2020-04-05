@@ -4,7 +4,8 @@ import { environment } from './environments/environment';
 import { angularFallback } from './server/angular-routing';
 import { Logger } from './logger';
 
-const PORT = 4200;
+const PORT = 4000;
+const STATIC_ROUTE = '/wow-consumables';
 const app = express();
 const logger = new Logger(environment.logLevel);
 
@@ -20,7 +21,9 @@ app.use(
 
 // Start express server
 const server = app.listen(PORT, () => {
-  logger.info('Express server running on port 4200');
+  logger.info(
+    `Express server running on http://localhost:${PORT}${STATIC_ROUTE}`
+  );
 });
 
 // Close on kill signals

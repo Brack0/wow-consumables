@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Content } from 'src/app/new-model/content.model';
 import { Material } from 'src/app/new-model/material.model';
 import { ContentSchema, MaterialSchema } from 'src/app/new-model/schema';
@@ -9,38 +10,41 @@ const jsonPath = 'assets/json/data/';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  private contentSubject = new Subject<Content>();
-  private materialsSubject = new Subject<Material[]>();
+  private content: Content;
+  private materials: Material[];
 
   constructor(private httpClient: HttpClient) {}
 
-  initData() {
-    this.getContentData();
-    this.getMaterialData();
-  }
-
   public getContent() {
-    return this.contentSubject.asObservable();
+    if (!this.content) {
+      return this.getContentData();
+    }
+    return of(this.content);
   }
 
   public getMaterials() {
-    return this.materialsSubject.asObservable();
+    if (!this.content) {
+      return this.getMaterialData();
+    }
+    return of(this.materials);
   }
 
   private getContentData() {
-    this.httpClient
-      .get(`${jsonPath}content.json`)
-      .subscribe((data: ContentSchema) => {
+    return this.httpClient.get(`${jsonPath}content.json`).pipe(
+      map((data: ContentSchema) => {
         delete data.$schema;
-        this.contentSubject.next(data);
-      });
+        this.content = data;
+        return data;
+      })
+    );
   }
 
   private getMaterialData() {
-    this.httpClient
-      .get(`${jsonPath}material.json`)
-      .subscribe((data: MaterialSchema) => {
-        this.materialsSubject.next(data.materials);
-      });
+    return this.httpClient.get(`${jsonPath}material.json`).pipe(
+      map((data: MaterialSchema) => {
+        this.materials = data.materials;
+        return data.materials;
+      })
+    );
   }
 }

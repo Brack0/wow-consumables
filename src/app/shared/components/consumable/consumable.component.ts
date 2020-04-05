@@ -16,6 +16,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Consumable } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 import { CustomValidators } from 'src/app/shared/validators';
+import { WowheadService } from '../../new-service/wowhead.service';
 
 @Component({
   selector: 'app-consumable',
@@ -36,7 +37,8 @@ export class ConsumableComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private cd: ChangeDetectorRef,
-    private stateService: StateService
+    private stateService: StateService,
+    private wowheadService: WowheadService
   ) {}
 
   public ngOnInit() {
@@ -101,11 +103,11 @@ export class ConsumableComponent implements OnInit {
           this.stateService.updateWantedConsumables(this.consumable);
         }
       } else {
-        this.stateService.callRefreshWowTooltip();
+        this.wowheadService.callRefreshWowTooltip();
       }
     });
 
-    this.stateService.getResetAllForms().subscribe(reset =>
+    this.stateService.getResetAllForms().subscribe((reset) =>
       this.form.reset({
         rankNumber: { value: this.rankNumber, disabled: !this.rankNumber },
       })

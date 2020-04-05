@@ -7,6 +7,7 @@ import {
 import { ConsumableCategory, ConsumableType } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 import { ProfessionComponent } from '../../abstract';
+import { WowheadService } from 'src/app/shared/new-service/wowhead.service';
 
 @Component({
   selector: 'app-cooking',
@@ -19,9 +20,10 @@ export class CookingComponent extends ProfessionComponent implements OnInit {
 
   constructor(
     protected stateService: StateService,
+    protected wowheadService: WowheadService,
     protected cd: ChangeDetectorRef
   ) {
-    super(stateService, cd);
+    super(stateService, wowheadService, cd);
   }
 
   ngOnInit() {
@@ -33,7 +35,7 @@ export class CookingComponent extends ProfessionComponent implements OnInit {
    * Gather data from StateService
    */
   protected getData(): void {
-    this.stateService.getFoods().subscribe(foodsCategories => {
+    this.stateService.getFoods().subscribe((foodsCategories) => {
       this.foodsCategories = foodsCategories;
     });
 

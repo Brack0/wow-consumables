@@ -4,16 +4,16 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
+      "name": "Debug (ng serve)",
       "url": "http://localhost:4200",
       "webRoot": "${workspaceFolder}"
     },
     {
       "type": "chrome",
-      "request": "attach",
-      "name": "Attach to Chrome",
-      "port": 9222,
+      "request": "launch",
+      "name": "Debug (with Express server)",
+      "url": "http://localhost:4000/wow-consumables",
       "webRoot": "${workspaceFolder}"
-    }
+    },
   ]
 }

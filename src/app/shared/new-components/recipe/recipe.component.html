@@ -1,0 +1,13 @@
+<div *ngIf="material">
+  <div>
+    <wowc-material [idMaterial]="material.idMaterial" [quantity]="material.recipe.craftNumber" orientation="column">
+    </wowc-material>
+    <div>
+      <div>Specializations</div>
+    </div>
+  </div>
+  <div>
+    <wowc-material *ngFor="let reagent of material.recipe.reagents" [idMaterial]="reagent.idMaterial"
+      [quantity]="reagent.amount" orientation="column"></wowc-material>
+  </div>
+</div>

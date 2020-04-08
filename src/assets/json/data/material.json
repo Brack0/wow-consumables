@@ -5,6 +5,41 @@
       "category": "Meat",
       "idMaterial": 154899,
       "name": "Thick Paleo Steak"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152510,
+      "name": "Anchor Weed"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 152668,
+      "name": "Expulsom"
+    },
+    {
+      "category": "Sausage",
+      "idMaterial": 163781,
+      "name": "Heartsbane Hexwurst",
+      "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
+      "profession": "FOOD",
+      "specializations": ["MELEE", "RANGED"],
+      "recipe": {
+        "craftNumber": 1,
+        "reagents": [
+          {
+            "idMaterial": 154899,
+            "amount": 5
+          },
+          {
+            "idMaterial": 152510,
+            "amount": 3
+          },
+          {
+            "idMaterial": 152668,
+            "amount": 10
+          }
+        ]
+      }
     }
   ]
 }

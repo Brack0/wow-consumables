@@ -1,0 +1,45 @@
+.recipe {
+  display: grid;
+  grid-template-areas:
+    'material specializations'
+    'effect   effect'
+    'crafts   crafts';
+  grid-gap: 8px 16px;
+  align-items: center;
+
+  &.rank-recipe {
+    grid-template-areas:
+      'material specializations'
+      'effect   effect'
+      'rank     rank'
+      'crafts   crafts';
+  }
+
+  .material {
+    grid-area: material;
+  }
+
+  .specializations {
+    grid-area: specializations;
+  }
+
+  .effect {
+    grid-area: effect;
+    justify-self: center;
+  }
+
+  .rank-selector {
+    grid-area: rank;
+    justify-self: center;
+    .mat-slider {
+      width: 250px;
+    }
+  }
+
+  .craft-materials {
+    grid-area: crafts;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 120px);
+    justify-content: space-evenly;
+  }
+}

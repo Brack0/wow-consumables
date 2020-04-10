@@ -22,7 +22,10 @@
       "name": "Heartsbane Hexwurst",
       "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
       "profession": "FOOD",
-      "specializations": ["MELEE", "RANGED"],
+      "specializations": [
+        "MELEE",
+        "RANGED"
+      ],
       "recipe": {
         "craftNumber": 1,
         "reagents": [
@@ -36,9 +39,73 @@
           },
           {
             "idMaterial": 152668,
-            "amount": 10
+            "amount": 250
           }
         ]
+      }
+    },
+    {
+      "category": "Sausage",
+      "idMaterial": 163782,
+      "name": "Heartsbane Hexwurst",
+      "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
+      "profession": "FOOD",
+      "specializations": [
+        "MELEE",
+        "RANGED"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "idMaterial": 154899,
+              "amount": 5
+            },
+            {
+              "idMaterial": 152510,
+              "amount": 3
+            },
+            {
+              "idMaterial": 152668,
+              "amount": 250
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 2,
+          "reagents": [
+            {
+              "idMaterial": 154899,
+              "amount": 5
+            },
+            {
+              "idMaterial": 152510,
+              "amount": 3
+            },
+            {
+              "idMaterial": 152668,
+              "amount": 150
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 3,
+          "reagents": [
+            {
+              "idMaterial": 154899,
+              "amount": 5
+            },
+            {
+              "idMaterial": 152510,
+              "amount": 3
+            },
+            {
+              "idMaterial": 152668,
+              "amount": 100
+            }
+          ]
+        }
       }
     }
   ]

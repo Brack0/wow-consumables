@@ -1,4 +1,4 @@
-import { Recipe } from './recipe.model';
+import { RankedRecipe, Recipe } from './recipe.model';
 import { Specialization } from './specialization.model';
 
 export enum Profession {
@@ -14,5 +14,5 @@ export interface Material {
   effect?: string;
   specializations?: Specialization[];
   recipe?: Recipe;
-  recipes?: Recipe[];
+  recipes?: RankedRecipe;
 }

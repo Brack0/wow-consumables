@@ -60,9 +60,12 @@
           "$ref": "#/definitions/Recipe"
         },
         "recipes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Recipe"
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[0-9]+$": {
+              "$ref": "#/definitions/Recipe"
+            }
           }
         }
       },

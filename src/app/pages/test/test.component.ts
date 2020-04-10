@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Material } from 'src/app/new-model/material.model';
-import { MaterialService, WowheadService } from 'src/app/shared/new-services';
+import { MaterialService } from 'src/app/shared/new-services';
 
 @Component({
   selector: 'wowc-test',
@@ -10,15 +10,11 @@ import { MaterialService, WowheadService } from 'src/app/shared/new-services';
 export class TestComponent implements OnInit {
   materials: Material[];
 
-  constructor(
-    private materialService: MaterialService,
-    private wowheadService: WowheadService
-  ) {}
+  constructor(private materialService: MaterialService) {}
 
   ngOnInit() {
     this.materialService.getMaterials().subscribe((materials) => {
       this.materials = materials;
-      this.wowheadService.callRefreshWowTooltip();
     });
   }
 }

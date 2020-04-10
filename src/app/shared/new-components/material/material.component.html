@@ -1,7 +1,12 @@
 <div class="material" [style.flex-direction]="orientation">
   <div class="icon-quantity">
-    <a href="https://www.wowhead.com/item={{material.idMaterial}}" class="itemRef"></a>
-    <span *ngIf="quantity" class="quantity">{{ quantity | times:showTimesSymbol }}</span>
+    <a
+      href="https://www.wowhead.com/item={{ material.idMaterial }}"
+      class="itemRef"
+    ></a>
+    <span *ngIf="quantity" class="quantity">{{
+      quantity | times: showTimesSymbol
+    }}</span>
   </div>
-  <div class="name">{{material.name}}</div>
+  <div class="name">{{ material.name }}</div>
 </div>

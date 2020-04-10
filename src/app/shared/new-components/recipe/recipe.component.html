@@ -1,13 +1,40 @@
-<div *ngIf="material">
-  <div>
-    <wowc-material [idMaterial]="material.idMaterial" [quantity]="material.recipe.craftNumber" orientation="column">
+<div *ngIf="material" class="recipe" [class.rank-recipe]="rank">
+  <div class="material">
+    <wowc-material
+      [idMaterial]="material.idMaterial"
+      [quantity]="getCraftNumber()"
+      orientation="column"
+    >
     </wowc-material>
-    <div>
-      <div>Specializations</div>
-    </div>
   </div>
-  <div>
-    <wowc-material *ngFor="let reagent of material.recipe.reagents" [idMaterial]="reagent.idMaterial"
-      [quantity]="reagent.amount" orientation="column"></wowc-material>
+
+  <div class="specializations">
+    <div>Specializations</div>
+  </div>
+
+  <div *ngIf="rank" class="rank-selector">
+    <mat-slider
+      thumbLabel
+      min="1"
+      max="3"
+      step="1"
+      color="primary"
+      [value]="rank"
+      (change)="updateRank($event)"
+    ></mat-slider>
+  </div>
+
+  <div class="effect">
+    {{ material.effect }}
+  </div>
+
+  <div class="craft-materials">
+    <wowc-material
+      *ngFor="let reagent of getReagents()"
+      [idMaterial]="reagent.idMaterial"
+      [quantity]="reagent.amount"
+      orientation="column"
+      [showTimesSymbol]="true"
+    ></wowc-material>
   </div>
 </div>

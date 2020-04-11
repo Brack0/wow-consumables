@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatSliderChange } from '@angular/material/slider';
 import { Material } from 'src/app/new-model/material.model';
 import { RecipeReagent } from 'src/app/new-model/recipe.model';
 import { MaterialService, WowheadService } from '../../new-services';
@@ -51,7 +50,7 @@ export class RecipeComponent implements OnInit {
     return this.material.recipe.reagents;
   }
 
-  updateRank(event: MatSliderChange) {
-    this.rank = event.value;
+  updateRank(newRank: number) {
+    this.rank = newRank;
   }
 }

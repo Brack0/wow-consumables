@@ -1,0 +1,10 @@
+<mat-chip-list>
+  <mat-chip
+    *ngFor="let rankNumber of ranks"
+    [selected]="rankNumber === rank"
+    [selectable]="false"
+    (click)="updateRank(rankNumber)"
+  >
+    Rank {{ rankNumber }}
+  </mat-chip>
+</mat-chip-list>

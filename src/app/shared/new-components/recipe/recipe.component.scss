@@ -1,18 +1,25 @@
+@import '~@angular/material/theming';
+
+:host {
+  @include mat-elevation(2);
+}
+
 .recipe {
+  padding: 10px;
   display: grid;
-  grid-template-areas:
-    'material specializations'
+  grid-template:
+    'material specializations' 120px
     'effect   effect'
-    'crafts   crafts';
-  grid-gap: 8px 16px;
+    'crafts   crafts' / 1fr 1fr;
+  grid-gap: 20px;
   align-items: center;
 
   &.rank-recipe {
-    grid-template-areas:
-      'material specializations'
-      'effect   effect'
+    grid-template:
+      'material specializations' 120px
       'rank     rank'
-      'crafts   crafts';
+      'effect   effect'
+      'crafts   crafts' / 1fr 1fr;
   }
 
   .material {
@@ -26,20 +33,20 @@
   .effect {
     grid-area: effect;
     justify-self: center;
+    width: 250px;
+    text-align: center;
+    font-size: 16px;
   }
 
   .rank-selector {
     grid-area: rank;
     justify-self: center;
-    .mat-slider {
-      width: 250px;
-    }
   }
 
   .craft-materials {
     grid-area: crafts;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 120px);
+    grid-template-columns: repeat(auto-fit, 100px);
     justify-content: space-evenly;
   }
 }

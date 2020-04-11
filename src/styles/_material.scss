@@ -7,6 +7,7 @@
 @import '../app/shell/components/footer/footer-theme';
 @import '../app/shared/components/sub-header/sub-header-theme';
 @import '../app/shared/new-components/category/category-theme';
+@import '../app/shared/new-components/recipe/recipe-theme';
 @import '../app/pages/home/home-theme';
 @import './custom-elements/h3-container-theme';
 
@@ -16,6 +17,7 @@
   @include header-theme($theme);
   @include sub-header-theme($theme);
   @include category-theme($theme);
+  @include recipe-theme($theme);
   @include home-theme($theme);
   @include h3-container-theme($theme);
 }

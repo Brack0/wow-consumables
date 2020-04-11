@@ -86,9 +86,6 @@
     "Recipe": {
       "type": "object",
       "properties": {
-        "rank": {
-          "type": "number"
-        },
         "craftNumber": {
           "type": "number"
         },

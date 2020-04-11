@@ -2,14 +2,9 @@
   "$schema": "../schema/material.schema.json",
   "materials": [
     {
-      "category": "Meat",
-      "idMaterial": 154899,
-      "name": "Thick Paleo Steak"
-    },
-    {
-      "category": "Plant",
-      "idMaterial": 152510,
-      "name": "Anchor Weed"
+      "category": "Reagent",
+      "idMaterial": 3371,
+      "name": "Crystal Vial"
     },
     {
       "category": "Reagent",
@@ -17,41 +12,1046 @@
       "name": "Expulsom"
     },
     {
-      "category": "Sausage",
-      "idMaterial": 163781,
-      "name": "Heartsbane Hexwurst",
-      "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
-      "profession": "COOKING",
+      "category": "Reagent",
+      "idMaterial": 162460,
+      "name": "Hydrocore"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160399,
+      "name": "Wild Flour"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160712,
+      "name": "Powdered Sugar"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160709,
+      "name": "Fresh Potato"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160398,
+      "name": "Choral Honey"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160400,
+      "name": "Foosaka"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160710,
+      "name": "Wild Berries"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 160705,
+      "name": "Major's Frothy Coffee"
+    },
+    {
+      "category": "Reagent",
+      "idMaterial": 162461,
+      "name": "Sanguicell"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152505,
+      "name": "Riverbud"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152511,
+      "name": "Sea Stalk"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152506,
+      "name": "Star Moss"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152507,
+      "name": "Akunda's Bite"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152508,
+      "name": "Winter's Kiss"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152509,
+      "name": "Siren's Pollen"
+    },
+    {
+      "category": "Plant",
+      "idMaterial": 152510,
+      "name": "Anchor Weed"
+    },
+    {
+      "category": "Meat",
+      "idMaterial": 154899,
+      "name": "Thick Paleo Steak"
+    },
+    {
+      "category": "Meat",
+      "idMaterial": 154898,
+      "name": "Meaty Haunch"
+    },
+    {
+      "category": "Meat",
+      "idMaterial": 154897,
+      "name": "Stringy Loins"
+    },
+    {
+      "category": "Meat",
+      "idMaterial": 152631,
+      "name": "Briny Flesh"
+    },
+    {
+      "category": "Meat",
+      "idMaterial": 163782,
+      "name": "Cursed Haunch"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 162515,
+      "name": "Midnight Salmon"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152549,
+      "name": "Redtail Loach"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152548,
+      "name": "Tiragarde Perch"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152547,
+      "name": "Great Sea Catfish"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152546,
+      "name": "Lane Snapper"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152545,
+      "name": "Frenzied Fangtooth"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152544,
+      "name": "Slimy Mackerel"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 152543,
+      "name": "Sand Shifterd"
+    },
+    {
+      "category": "Fish",
+      "idMaterial": 160711,
+      "name": "Aromatic Fish Oil"
+    },
+    {
+      "category": "Flask",
+      "idMaterial": 152638,
+      "name": "Flask of the Currents",
+      "profession": "ALCHEMY",
+      "effect": "Increases Agility by 238",
       "specializations": [
         "MELEE",
-        "RANGED"
+        "TANK"
       ],
-      "recipe": {
-        "craftNumber": 1,
-        "reagents": [
-          {
-            "idMaterial": 154899,
-            "amount": 5
-          },
-          {
-            "idMaterial": 152510,
-            "amount": 3
-          },
-          {
-            "idMaterial": 152668,
-            "amount": 250
-          }
-        ]
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 20,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
       }
     },
     {
-      "category": "Sausage",
-      "idMaterial": 163782,
-      "name": "Heartsbane Hexwurst",
-      "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
-      "profession": "COOKING",
+      "category": "Flask",
+      "idMaterial": 152639,
+      "name": "Flask of Endless Fathoms",
+      "profession": "ALCHEMY",
+      "effect": "Increases Intellect by 238",
+      "specializations": [
+        "RANGED",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 20,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Flask",
+      "idMaterial": 152641,
+      "name": "Flask of the Undertow",
+      "profession": "ALCHEMY",
+      "effect": "Increases Strength by 238",
       "specializations": [
         "MELEE",
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 20,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152507
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Flask",
+      "idMaterial": 152640,
+      "name": "Flask of the Vast Horizon",
+      "profession": "ALCHEMY",
+      "effect": "Increases Stamina by 357",
+      "specializations": [
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 20,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152510
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152508
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Flask",
+      "idMaterial": 162519,
+      "name": "Mystical Cauldron",
+      "profession": "ALCHEMY",
+      "effect": "Creates 30 flasks based on class and talents",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 4,
+              "idMaterial": 152638
+            },
+            {
+              "amount": 4,
+              "idMaterial": 152639
+            },
+            {
+              "amount": 4,
+              "idMaterial": 152641
+            },
+            {
+              "amount": 4,
+              "idMaterial": 152640
+            },
+            {
+              "amount": 5,
+              "idMaterial": 152668
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162460
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 3,
+              "idMaterial": 152638
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152639
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152641
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152640
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152668
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162460
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 3,
+              "idMaterial": 152638
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152639
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152641
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152640
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152668
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162460
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152494,
+      "name": "Coastal Healing Potion",
+      "profession": "ALCHEMY",
+      "effect": "Restores 33 251 health",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 7,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 2,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 2,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152495,
+      "name": "Coastal Mana Potion",
+      "profession": "ALCHEMY",
+      "effect": "Restores 11 084 mana",
+      "specializations": [
+        "RANGED",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 7,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 2,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 2,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 163082,
+      "name": "Coastal Rejuvenation Potion",
+      "profession": "ALCHEMY",
+      "effect": "Restores 33 251 health and 8 313 mana",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 2,
+              "idMaterial": 152494
+            },
+            {
+              "amount": 2,
+              "idMaterial": 152495
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 1,
+              "idMaterial": 152494
+            },
+            {
+              "amount": 1,
+              "idMaterial": 152495
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 1,
+              "idMaterial": 152494
+            },
+            {
+              "amount": 1,
+              "idMaterial": 152495
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152561,
+      "name": "Potion of Replenishment",
+      "profession": "ALCHEMY",
+      "effect": "Restores 25 000 mana over 10 seconds",
+      "specializations": [
+        "RANGED",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 163223,
+      "name": "Battle Potion of Agility",
+      "profession": "ALCHEMY",
+      "effect": "Increases Agility by 900 for 25 seconds",
+      "specializations": [
+        "MELEE",
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 163222,
+      "name": "Battle Potion of Intellect",
+      "profession": "ALCHEMY",
+      "effect": "Increases Intellect by 900 for 25 seconds",
+      "specializations": [
+        "RANGED",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 163224,
+      "name": "Battle Potion of Strength",
+      "profession": "ALCHEMY",
+      "effect": "Increases Strength by 900 for 25 seconds",
+      "specializations": [
+        "MELEE",
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 163225,
+      "name": "Battle Potion of Stamina",
+      "profession": "ALCHEMY",
+      "effect": "Increases Stamina by 1100 for 25 seconds",
+      "specializations": [
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152559,
+      "name": "Potion of Rising Death",
+      "profession": "ALCHEMY",
+      "effect": "Throws death bolts at target for 25 seconds",
+      "specializations": [
         "RANGED"
       ],
       "recipes": {
@@ -59,53 +1059,1739 @@
           "craftNumber": 1,
           "reagents": [
             {
-              "idMaterial": 154899,
-              "amount": 5
+              "amount": 15,
+              "idMaterial": 152511
             },
             {
-              "idMaterial": 152510,
-              "amount": 3
+              "amount": 10,
+              "idMaterial": 152506
             },
             {
-              "idMaterial": 152668,
-              "amount": 250
+              "amount": 1,
+              "idMaterial": 3371
             }
           ]
         },
         "2": {
-          "craftNumber": 2,
+          "craftNumber": 1,
           "reagents": [
             {
-              "idMaterial": 154899,
-              "amount": 5
+              "amount": 10,
+              "idMaterial": 152511
             },
             {
-              "idMaterial": 152510,
-              "amount": 3
+              "amount": 8,
+              "idMaterial": 152506
             },
             {
-              "idMaterial": 152668,
-              "amount": 150
+              "amount": 1,
+              "idMaterial": 3371
             }
           ]
         },
         "3": {
-          "craftNumber": 3,
+          "craftNumber": 1,
           "reagents": [
             {
-              "idMaterial": 154899,
-              "amount": 5
+              "amount": 10,
+              "idMaterial": 152511
             },
             {
-              "idMaterial": 152510,
-              "amount": 3
+              "amount": 8,
+              "idMaterial": 152506
             },
             {
-              "idMaterial": 152668,
-              "amount": 100
+              "amount": 1,
+              "idMaterial": 3371
             }
           ]
         }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152560,
+      "name": "Potion of Bursting Blood",
+      "profession": "ALCHEMY",
+      "effect": "Gives melee a chance of additionnal damage for 25 seconds",
+      "specializations": [
+        "MELEE"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152557,
+      "name": "Steelskin Potion",
+      "profession": "ALCHEMY",
+      "effect": "Increases Armor by 900 for 25 seconds",
+      "specializations": [
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152505
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152497,
+      "name": "Potion of Bursting Blood",
+      "profession": "ALCHEMY",
+      "effect": "Increases movement speed by 150%",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152550,
+      "name": "Sea Mist Potion",
+      "profession": "ALCHEMY",
+      "effect": "Slow fall for 1 minute",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152503,
+      "name": "Potion of Concealment",
+      "profession": "ALCHEMY",
+      "effect": "Hides while standing still. Lasts 3 minutes",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152509
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 152503,
+      "name": "Demitri's Draught of Deception",
+      "profession": "ALCHEMY",
+      "effect": "Invisibility for 18 seconds",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 5,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 5,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Potion",
+      "idMaterial": 166270,
+      "name": "Potion of the Unveiling Eye",
+      "profession": "ALCHEMY",
+      "effect": "Stealth detection for 10 minutes",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 5,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 3,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 3,
+              "idMaterial": 152506
+            },
+            {
+              "amount": 3,
+              "idMaterial": 152511
+            },
+            {
+              "amount": 1,
+              "idMaterial": 3371
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Feasts",
+      "idMaterial": 156525,
+      "name": "Galley Banquet",
+      "profession": "COOKING",
+      "effect": "Gives 75 to a stat based on specilization",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 10,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 10,
+              "idMaterial": 152548
+            },
+            {
+              "amount": 10,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 30,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162515
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 9,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 9,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 9,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 9,
+              "idMaterial": 152548
+            },
+            {
+              "amount": 9,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 28,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162515
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 8,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 8,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152543
+            },
+            {
+              "amount": 8,
+              "idMaterial": 152548
+            },
+            {
+              "amount": 8,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 25,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 1,
+              "idMaterial": 162515
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Feasts",
+      "idMaterial": 156526,
+      "name": "Bountiful Captain's Feast",
+      "profession": "COOKING",
+      "effect": "Gives 100 to a stat based on specilization",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 20,
+              "idMaterial": 152549
+            },
+            {
+              "amount": 20,
+              "idMaterial": 152545
+            },
+            {
+              "amount": 20,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 20,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 12,
+              "idMaterial": 154881
+            },
+            {
+              "amount": 12,
+              "idMaterial": 154885
+            },
+            {
+              "amount": 3,
+              "idMaterial": 162515
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 18,
+              "idMaterial": 152549
+            },
+            {
+              "amount": 18,
+              "idMaterial": 152545
+            },
+            {
+              "amount": 18,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 18,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 11,
+              "idMaterial": 154881
+            },
+            {
+              "amount": 11,
+              "idMaterial": 154885
+            },
+            {
+              "amount": 2,
+              "idMaterial": 162515
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 152549
+            },
+            {
+              "amount": 15,
+              "idMaterial": 152545
+            },
+            {
+              "amount": 15,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 15,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 10,
+              "idMaterial": 154881
+            },
+            {
+              "amount": 10,
+              "idMaterial": 154885
+            },
+            {
+              "amount": 2,
+              "idMaterial": 162515
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Feasts",
+      "idMaterial": 166240,
+      "name": "Sanguinated Feast",
+      "profession": "COOKING",
+      "effect": "Gives 100 to a stat based on specilization",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 20,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 20,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 30,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 20,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 20,
+              "idMaterial": 162461
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 18,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 18,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 28,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 17,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 17,
+              "idMaterial": 162461
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 1,
+          "reagents": [
+            {
+              "amount": 15,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 15,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 25,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 15,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 15,
+              "idMaterial": 162461
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 154882,
+      "name": "Honey-Glazed Haunches",
+      "profession": "COOKING",
+      "effect": "Grants 55 Critical Strike",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 154898
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 154888,
+      "name": "Sailor's Pie",
+      "profession": "COOKING",
+      "effect": "Grants 55 Mastery",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160709
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160709
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152631
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 4,
+              "idMaterial": 160709
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 154884,
+      "name": "Swamp Fish 'n Chips",
+      "profession": "COOKING",
+      "effect": "Grants 55 Haste",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152544
+            },
+            {
+              "amount": 3,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160709
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152544
+            },
+            {
+              "amount": 3,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160709
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152544
+            },
+            {
+              "amount": 3,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160709
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 154886,
+      "name": "Spiced Snapper",
+      "profession": "COOKING",
+      "effect": "Grants 55 Versatility",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152546
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152546
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 152546
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 166344,
+      "name": "Seasoned Steak and Potatoes",
+      "profession": "COOKING",
+      "effect": "Grants 150 Stamina",
+      "specializations": [
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160709
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Large Meals",
+      "idMaterial": 166804,
+      "name": "Boralus Blood Sausage",
+      "profession": "COOKING",
+      "effect": "Gives 85 to a primary stat",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 162461
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 162461
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 6,
+              "idMaterial": 154899
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 162461
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Desserts",
+      "idMaterial": 154881,
+      "name": "Kul Tiramisu",
+      "profession": "COOKING",
+      "effect": "Grants 41 Critical Strike",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160705
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160705
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160705
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Desserts",
+      "idMaterial": 154887,
+      "name": "Loa Loaf",
+      "profession": "COOKING",
+      "effect": "Grants 41 Mastery",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Desserts",
+      "idMaterial": 154883,
+      "name": "Ravenberry Tarts",
+      "profession": "COOKING",
+      "effect": "Grants 41 Haste",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160710
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160710
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160398
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160710
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Desserts",
+      "idMaterial": 154885,
+      "name": "Mon'Dazi",
+      "profession": "COOKING",
+      "effect": "Grants 41 Versatility",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 10,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Desserts",
+      "idMaterial": 166343,
+      "name": "Wild Berry Bread",
+      "profession": "COOKING",
+      "effect": "Grants 113 Stamina",
+      "specializations": [
+        "TANK"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 8,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 8,
+              "idMaterial": 160710
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 8,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 8,
+              "idMaterial": 160710
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 8,
+              "idMaterial": 160399
+            },
+            {
+              "amount": 8,
+              "idMaterial": 160710
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160712
+            },
+            {
+              "amount": 2,
+              "idMaterial": 160711
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Light Meals",
+      "idMaterial": 154889,
+      "name": "Grilled Catfish",
+      "profession": "COOKING",
+      "effect": "Restores 83 128 health and 41 564 mana over 20 seconds",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152547
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152547
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 152547
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Light Meals",
+      "idMaterial": 154891,
+      "name": "Seasoned Loins",
+      "profession": "COOKING",
+      "effect": "Restores 166 256 health and 83 128 mana over 20 seconds",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipes": {
+        "1": {
+          "craftNumber": 5,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        },
+        "2": {
+          "craftNumber": 7,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        },
+        "3": {
+          "craftNumber": 10,
+          "reagents": [
+            {
+              "amount": 5,
+              "idMaterial": 154897
+            },
+            {
+              "amount": 5,
+              "idMaterial": 160400
+            }
+          ]
+        }
+      }
+    },
+    {
+      "category": "Light Meals",
+      "idMaterial": 163781,
+      "name": "Heartsbane Hexwurst",
+      "profession": "COOKING",
+      "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipe": {
+        "craftNumber": 5,
+        "reagents": [
+          {
+            "amount": 5,
+            "idMaterial": 160400
+          },
+          {
+            "amount": 5,
+            "idMaterial": 154898
+          },
+          {
+            "amount": 5,
+            "idMaterial": 163782
+          }
+        ]
+      }
+    },
+    {
+      "category": "Light Meals",
+      "idMaterial": 165755,
+      "name": "Honey Potpie",
+      "profession": "COOKING",
+      "effect": "Slows melee attackers' movement speed by 30% for 5 sec",
+      "specializations": [
+        "MELEE",
+        "RANGED",
+        "TANK",
+        "HEALER"
+      ],
+      "recipe": {
+        "craftNumber": 5,
+        "reagents": [
+          {
+            "amount": 10,
+            "idMaterial": 160398
+          },
+          {
+            "amount": 5,
+            "idMaterial": 154898
+          },
+          {
+            "amount": 5,
+            "idMaterial": 163782
+          }
+        ]
       }
     }
   ]

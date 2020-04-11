@@ -1,5 +1,4 @@
 export interface Recipe {
-  rank?: number;
   craftNumber: number;
   reagents: RecipeReagent[];
 }

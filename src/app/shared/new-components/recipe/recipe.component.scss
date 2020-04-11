@@ -47,6 +47,7 @@
     grid-area: crafts;
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
+    row-gap: 15px;
     justify-content: space-evenly;
   }
 }

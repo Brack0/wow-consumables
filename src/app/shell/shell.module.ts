@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
 import { ContentFullNamePipe } from './pipes/content-fullname.pipe';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { ContentFullNamePipe } from './pipes/content-fullname.pipe';
     ResetComponent,
     ThemeSelectorComponent,
     ContentFullNamePipe,
+    SidenavComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +34,7 @@ import { ContentFullNamePipe } from './pipes/content-fullname.pipe';
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
+    MatSidenavModule,
     MatTooltipModule,
   ],
   exports: [FullPageComponent],

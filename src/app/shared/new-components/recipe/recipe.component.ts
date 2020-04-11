@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Material } from 'src/app/new-model/material.model';
 import { RecipeReagent } from 'src/app/new-model/recipe.model';
 import { MaterialService, WowheadService } from '../../new-services';
@@ -7,6 +12,7 @@ import { MaterialService, WowheadService } from '../../new-services';
   selector: 'wowc-recipe',
   templateUrl: './recipe.component.html',
   styleUrls: ['./recipe.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecipeComponent implements OnInit {
   @Input()

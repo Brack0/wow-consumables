@@ -21,8 +21,6 @@ export class RankSelectorComponent {
 
   readonly ranks: number[] = [1, 2, 3];
 
-  constructor() {}
-
   updateRank(newRank: number) {
     this.rank = newRank;
     this.rankChange.emit(newRank);

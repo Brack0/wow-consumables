@@ -9,7 +9,10 @@
   </div>
 
   <div class="specializations">
-    <div>Specializations</div>
+    <wowc-specialization
+      *ngFor="let specialization of material.specializations"
+      [specialization]="specialization"
+    ></wowc-specialization>
   </div>
 
   <div *ngIf="rank" class="rank-selector">
@@ -19,7 +22,7 @@
     ></wowc-rank-selector>
   </div>
 
-  <div class="effect">
+  <div *ngIf="material.effect" class="effect">
     {{ material.effect }}
   </div>
 

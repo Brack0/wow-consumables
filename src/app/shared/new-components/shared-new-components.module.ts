@@ -6,13 +6,15 @@ import { CategoryComponent } from './category/category.component';
 import { MaterialComponent } from './material/material.component';
 import { RankSelectorComponent } from './rank-selector/rank-selector.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { SpecializationComponent } from './specialization/specialization.component';
 
 @NgModule({
   declarations: [
+    CategoryComponent,
     MaterialComponent,
     RecipeComponent,
     RankSelectorComponent,
-    CategoryComponent,
+    SpecializationComponent,
   ],
   imports: [CommonModule, PipesModule, MatChipsModule],
   exports: [
@@ -20,6 +22,7 @@ import { RecipeComponent } from './recipe/recipe.component';
     MaterialComponent,
     RankSelectorComponent,
     RecipeComponent,
+    SpecializationComponent,
   ],
 })
 export class SharedNewComponentsModule {}

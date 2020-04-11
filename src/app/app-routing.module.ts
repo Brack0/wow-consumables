@@ -27,11 +27,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/overview/overview.module').then((m) => m.OverviewModule),
   },
-  {
-    path: 'test',
-    loadChildren: () =>
-      import('./pages/test/test.module').then((m) => m.TestModule),
-  },
   { path: '**', redirectTo: '/home' },
 ];
 

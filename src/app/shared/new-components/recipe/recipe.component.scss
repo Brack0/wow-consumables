@@ -7,31 +7,18 @@
 .recipe {
   padding: 10px;
   display: grid;
-  grid-template:
-    'material specializations' 120px
-    'effect   effect'
-    'crafts   crafts' / 1fr 1fr;
+  grid-template-columns: 1fr 140px;
   grid-gap: 20px;
   align-items: center;
 
-  &.rank-recipe {
-    grid-template:
-      'material specializations' 120px
-      'rank     rank'
-      'effect   effect'
-      'crafts   crafts' / 1fr 1fr;
-  }
-
-  .material {
-    grid-area: material;
-  }
-
   .specializations {
-    grid-area: specializations;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
   }
 
   .effect {
-    grid-area: effect;
+    grid-column-end: span 2;
     justify-self: center;
     width: 250px;
     text-align: center;
@@ -39,12 +26,12 @@
   }
 
   .rank-selector {
-    grid-area: rank;
+    grid-column-end: span 2;
     justify-self: center;
   }
 
   .craft-materials {
-    grid-area: crafts;
+    grid-column-end: span 2;
     display: grid;
     grid-template-columns: repeat(auto-fit, 100px);
     row-gap: 15px;

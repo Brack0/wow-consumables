@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { SpecializationIconPipe } from './specialization-icon/specialization-icon.pipe';
 import { TimesPipe } from './times/times.pipe';
 
 @NgModule({
-  declarations: [TimesPipe],
-  exports: [TimesPipe],
+  declarations: [SpecializationIconPipe, TimesPipe],
+  exports: [SpecializationIconPipe, TimesPipe],
 })
 export class PipesModule {}

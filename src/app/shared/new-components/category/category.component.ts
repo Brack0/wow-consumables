@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'wowc-category',
@@ -11,11 +6,7 @@ import {
   styleUrls: ['./category.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent {
   @Input()
   categoryTitle: string;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

@@ -13,7 +13,7 @@ import {
 })
 export class CategoryComponent implements OnInit {
   @Input()
-  title: string;
+  categoryTitle: string;
 
   constructor() {}
 

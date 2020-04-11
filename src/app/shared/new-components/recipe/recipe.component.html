@@ -3,7 +3,7 @@
     <wowc-material
       [idMaterial]="material.idMaterial"
       [quantity]="getCraftNumber()"
-      orientation="column"
+      [orientation]="'column'"
     >
     </wowc-material>
   </div>
@@ -28,8 +28,7 @@
       *ngFor="let reagent of getReagents()"
       [idMaterial]="reagent.idMaterial"
       [quantity]="reagent.amount"
-      orientation="column"
-      [showTimesSymbol]="true"
+      [orientation]="'column'"
     ></wowc-material>
   </div>
 </div>

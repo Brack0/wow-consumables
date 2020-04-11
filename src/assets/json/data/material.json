@@ -21,7 +21,7 @@
       "idMaterial": 163781,
       "name": "Heartsbane Hexwurst",
       "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
-      "profession": "FOOD",
+      "profession": "COOKING",
       "specializations": [
         "MELEE",
         "RANGED"
@@ -49,7 +49,7 @@
       "idMaterial": 163782,
       "name": "Heartsbane Hexwurst",
       "effect": "Restores 35 757 health and 17 878 mana over 20 seconds",
-      "profession": "FOOD",
+      "profession": "COOKING",
       "specializations": [
         "MELEE",
         "RANGED"

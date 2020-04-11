@@ -1,10 +1,6 @@
+import { Profession } from './profession.model';
 import { RankedRecipe, Recipe } from './recipe.model';
 import { Specialization } from './specialization.model';
-
-export enum Profession {
-  ALCHEMY = 'ALCHEMY',
-  FOOD = 'FOOD',
-}
 
 export interface Material {
   category: string;

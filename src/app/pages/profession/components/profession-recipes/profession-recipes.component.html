@@ -1,0 +1,6 @@
+<wowc-category *ngFor="let category of categories" [categoryTitle]="category">
+  <wowc-recipe
+    *ngFor="let material of professionCategories[category]"
+    [idMaterial]="material.idMaterial"
+  ></wowc-recipe>
+</wowc-category>

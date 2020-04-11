@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Material, Profession } from 'src/app/new-model/material.model';
+import { Material } from 'src/app/new-model/material.model';
+import { Profession } from 'src/app/new-model/profession.model';
 import { DataService } from './data.service';
 
 @Injectable({ providedIn: 'root' })

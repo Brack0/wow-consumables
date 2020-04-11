@@ -79,7 +79,7 @@
     "Profession": {
       "enum": [
         "ALCHEMY",
-        "FOOD"
+        "COOKING"
       ],
       "type": "string"
     },

@@ -1,8 +1,39 @@
-<div class="header-background">
-  <div class="header-section">
-    <div class="header-headline">
-      <h1 class="mat-h1">{{title}}</h1>
-      <h2 *ngIf="subtitle">{{subtitle}}</h2>
+<header>
+  <nav class="navbar-header">
+    <div class="navbar-left">
+      <a mat-button routerLink="/" aria-label="Home">
+        <img
+          class="logo"
+          src="assets/images/svg/wow-minimalist-icon.svg"
+          alt="angular"
+        />
+        <span>Home</span>
+      </a>
+      <a
+        mat-button
+        class="navbar-hide-small"
+        routerLink="/professions"
+        aria-label="Professions"
+      >
+        <span>Professions</span>
+      </a>
+      <a
+        mat-button
+        class="navbar-hide-small"
+        routerLink="/overview"
+        aria-label="Cooking"
+      >
+        <span>Overview</span>
+      </a>
     </div>
-  </div>
-</div>
+    <div class="navbar-right">
+      <wowc-reset></wowc-reset>
+      <wowc-theme-selector></wowc-theme-selector>
+      <wowc-github-logo></wowc-github-logo>
+    </div>
+  </nav>
+  <nav class="navbar-show-small">
+    <a mat-button class="navbar-link" routerLink="/professions">Professions</a>
+    <a mat-button class="navbar-link" routerLink="/overview">Overview</a>
+  </nav>
+</header>

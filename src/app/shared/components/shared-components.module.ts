@@ -8,8 +8,17 @@ import { ConsumableComponent } from './consumable/consumable.component';
 import { MaterialGridComponent } from './material-grid/material-grid.component';
 import { MaterialComponent } from './material/material.component';
 import { SpecializationComponent } from './specialization/specialization.component';
+import { SubHeaderComponent } from './sub-header/sub-header.component';
 
 @NgModule({
+  declarations: [
+    ConsumableComponent,
+    ConsumableGridComponent,
+    MaterialComponent,
+    MaterialGridComponent,
+    SpecializationComponent,
+    SubHeaderComponent,
+  ],
   imports: [CommonModule, ReactiveFormsModule, MatInputModule, MatSliderModule],
   exports: [
     ConsumableComponent,
@@ -17,13 +26,7 @@ import { SpecializationComponent } from './specialization/specialization.compone
     MaterialComponent,
     MaterialGridComponent,
     SpecializationComponent,
-  ],
-  declarations: [
-    ConsumableComponent,
-    ConsumableGridComponent,
-    MaterialComponent,
-    MaterialGridComponent,
-    SpecializationComponent,
+    SubHeaderComponent,
   ],
 })
 export class SharedComponentsModule {}

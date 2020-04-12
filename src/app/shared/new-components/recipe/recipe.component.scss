@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+
+:host {
+  @include mat-elevation(2);
+}
+
+.recipe {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  grid-gap: 20px;
+  align-items: center;
+
+  .specializations {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+
+  .effect {
+    grid-column-end: span 2;
+    justify-self: center;
+    width: 250px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .rank-selector {
+    grid-column-end: span 2;
+    justify-self: center;
+  }
+
+  .craft-materials {
+    grid-column-end: span 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 100px);
+    row-gap: 15px;
+    justify-content: space-evenly;
+  }
+}

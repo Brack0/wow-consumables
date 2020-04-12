@@ -39,14 +39,6 @@ export class StateService {
   }
 
   /**
-   * Call a refresh of wow tooltip
-   * All subscribers will receive a event
-   */
-  public callRefreshWowTooltip(): void {
-    this.refreshWowTooltip.next();
-  }
-
-  /**
    * Subscribe to get when to reset all forms
    */
   public getResetAllForms(): Subject<any> {

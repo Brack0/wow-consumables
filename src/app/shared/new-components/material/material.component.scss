@@ -1,0 +1,28 @@
+.material {
+  display: flex;
+  align-items: center;
+}
+
+.icon-quantity {
+  height: 68px;
+  width: 68px;
+  position: relative;
+
+  .quantity {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 700;
+    -webkit-text-stroke: 2px black;
+  }
+}
+
+.name {
+  text-align: center;
+  font-size: 12px;
+}

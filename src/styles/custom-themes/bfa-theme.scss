@@ -1,16 +1,18 @@
-@import '../app-theme';
+@import '../material';
 
 // Define a theme.
 $bfa-primary: (
   500: #051f46,
   contrast: (
-    500: #ffffff
-  )
+    500: #ffffff,
+  ),
 );
+
 // custom light theme : default 500
 $primary: mat-palette($bfa-primary, 500, 500, 500);
 $accent: mat-palette($mat-grey, 600);
 $theme: mat-light-theme($primary, $accent);
+
 // Include all theme styles for the components.
 @include angular-material-theme($theme);
-@include app-theme($theme);
+@include custom-material-theme($theme);

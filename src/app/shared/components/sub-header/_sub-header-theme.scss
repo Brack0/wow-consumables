@@ -1,0 +1,15 @@
+@mixin sub-header-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  wowc-sub-header {
+    background: mat-color($primary);
+
+    .sub-header-background {
+      color: mat-color($primary, default-contrast);
+    }
+  }
+}

@@ -5,8 +5,9 @@ import {
   OnInit,
 } from '@angular/core';
 import { MaterialCategory, Specialization } from 'src/app/model';
+import { WowheadService } from 'src/app/shared/new-services';
 import { StateService } from 'src/app/shared/services';
-import { ProfessionComponent } from '../profession/abstract';
+import { ProfessionComponent } from '../profession-old/abstract';
 
 @Component({
   selector: 'app-overview',
@@ -20,9 +21,10 @@ export class OverviewComponent extends ProfessionComponent implements OnInit {
 
   constructor(
     protected stateService: StateService,
+    protected wowheadService: WowheadService,
     protected cd: ChangeDetectorRef
   ) {
-    super(stateService, cd);
+    super(stateService, wowheadService, cd);
   }
 
   ngOnInit() {
@@ -34,11 +36,11 @@ export class OverviewComponent extends ProfessionComponent implements OnInit {
    * Gather data from StateService
    */
   protected getData(): void {
-    this.stateService.getSpecializations().subscribe(specializations => {
+    this.stateService.getSpecializations().subscribe((specializations) => {
       this.specializations = specializations;
     });
 
-    this.stateService.getMaterials().subscribe(materialCategories => {
+    this.stateService.getMaterials().subscribe((materialCategories) => {
       this.materialCategories = materialCategories;
     });
   }

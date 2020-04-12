@@ -1,0 +1,37 @@
+<div *ngIf="material" class="recipe" [class.rank-recipe]="rank">
+  <div class="material">
+    <wowc-material
+      [idMaterial]="material.idMaterial"
+      [quantity]="getCraftNumber()"
+      [orientation]="'column'"
+    >
+    </wowc-material>
+  </div>
+
+  <div class="specializations">
+    <wowc-specialization
+      *ngFor="let specialization of material.specializations"
+      [specialization]="specialization"
+    ></wowc-specialization>
+  </div>
+
+  <div *ngIf="rank" class="rank-selector">
+    <wowc-rank-selector
+      [rank]="3"
+      (rankChange)="updateRank($event)"
+    ></wowc-rank-selector>
+  </div>
+
+  <div *ngIf="material.effect" class="effect">
+    {{ material.effect }}
+  </div>
+
+  <div class="craft-materials">
+    <wowc-material
+      *ngFor="let reagent of getReagents()"
+      [idMaterial]="reagent.idMaterial"
+      [quantity]="reagent.amount"
+      [orientation]="'column'"
+    ></wowc-material>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="main-content">
+  <app-material-grid
+    [materialCategory]="requiredMaterials"
+    *ngIf="requiredMaterials && requiredMaterials.requiredMaterialArray?.length"
+  ></app-material-grid>
+
+  <div *ngFor="let category of foodsCategories">
+    <app-consumable-grid [consumableCategory]="category"></app-consumable-grid>
+  </div>
+</div>

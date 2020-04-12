@@ -1,0 +1,19 @@
+@mixin profession-nav-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark-theme: map-get($theme, is-dark);
+  $nav-background-opacity: if($is-dark-theme, 0.2, 0.03);
+
+  wowc-profession-nav {
+    .mat-expansion-panel {
+      background: rgba(0, 0, 0, $nav-background-opacity);
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0;
+    }
+  }
+}

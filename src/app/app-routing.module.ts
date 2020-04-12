@@ -6,19 +6,19 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./pages/home/home.module').then(m => m.HomeModule),
+      import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'profession',
+    path: 'professions',
     loadChildren: () =>
-      import('./pages/profession/profession.module').then(
-        m => m.ProfessionModule
+      import('./pages/professions/professions.module').then(
+        (m) => m.ProfessionsModule
       ),
   },
   {
     path: 'overview',
     loadChildren: () =>
-      import('./pages/overview/overview.module').then(m => m.OverviewModule),
+      import('./pages/overview/overview.module').then((m) => m.OverviewModule),
   },
   { path: '**', redirectTo: '/home' },
 ];

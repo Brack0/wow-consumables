@@ -11,11 +11,12 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import * as _ from 'lodash';
+import cloneDeep from 'lodash-es/cloneDeep';
 import { debounceTime } from 'rxjs/operators';
 import { Consumable } from 'src/app/model';
 import { StateService } from 'src/app/shared/services';
 import { CustomValidators } from 'src/app/shared/validators';
+import { WowheadService } from '../../new-services';
 
 @Component({
   selector: 'app-consumable',
@@ -36,13 +37,14 @@ export class ConsumableComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private cd: ChangeDetectorRef,
-    private stateService: StateService
+    private stateService: StateService,
+    private wowheadService: WowheadService
   ) {}
 
   public ngOnInit() {
     // Cloning consumable (Read only access to recipes)
     this.consumable = this.displayMaterial
-      ? _.cloneDeep(this.consumableInput)
+      ? cloneDeep(this.consumableInput)
       : this.consumableInput;
     // Init slider on model
     this.rankNumber = this.consumable.rank;
@@ -101,11 +103,11 @@ export class ConsumableComponent implements OnInit {
           this.stateService.updateWantedConsumables(this.consumable);
         }
       } else {
-        this.stateService.callRefreshWowTooltip();
+        this.wowheadService.callRefreshWowTooltip();
       }
     });
 
-    this.stateService.getResetAllForms().subscribe(reset =>
+    this.stateService.getResetAllForms().subscribe((reset) =>
       this.form.reset({
         rankNumber: { value: this.rankNumber, disabled: !this.rankNumber },
       })

@@ -4,16 +4,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { FullPageComponent } from './components/full-page/full-page.component';
+import { GithubLogoComponent } from './components/github-logo/github-logo.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { ResetComponent } from './components/reset/reset.component';
 import { ThemeSelectorComponent } from './components/theme-selector/theme-selector.component';
-import { StyleService } from './services/style.service';
-import { ThemeStorageService } from './services/theme-storage.service';
+import { ContentFullNamePipe } from './pipes/content-fullname.pipe';
 
 @NgModule({
+  declarations: [
+    FooterComponent,
+    FullPageComponent,
+    GithubLogoComponent,
+    HeaderComponent,
+    ResetComponent,
+    ThemeSelectorComponent,
+    ContentFullNamePipe,
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,21 +31,8 @@ import { ThemeStorageService } from './services/theme-storage.service';
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
+    MatTooltipModule,
   ],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-    NavbarComponent,
-    ResetComponent,
-    ThemeSelectorComponent,
-  ],
-  declarations: [
-    FooterComponent,
-    HeaderComponent,
-    NavbarComponent,
-    ResetComponent,
-    ThemeSelectorComponent,
-  ],
-  providers: [StyleService, ThemeStorageService],
+  exports: [FullPageComponent],
 })
 export class ShellModule {}

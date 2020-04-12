@@ -4,11 +4,11 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-import { Content } from 'src/app/model';
-import { StateService } from 'src/app/shared/services';
+import { Content } from 'src/app/new-model/content.model';
+import { ContentService } from 'src/app/shared/new-services';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'wowc-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,15 +19,16 @@ export class FooterComponent implements OnInit {
 
   constructor(
     private cd: ChangeDetectorRef,
-    private stateService: StateService
+    private contentService: ContentService
   ) {}
 
   ngOnInit() {
-    this.stateService.getContent().subscribe(content => {
+    this.contentService.getContent().subscribe((content) => {
       this.content = content;
+      this.cd.markForCheck();
     });
 
-    this.stateService.getLogo().subscribe(logoUrl => {
+    this.contentService.getLogoUrl().subscribe((logoUrl) => {
       this.logoUrl = logoUrl;
       this.cd.markForCheck();
     });

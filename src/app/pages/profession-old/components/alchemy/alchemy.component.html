@@ -1,0 +1,9 @@
+<div class="main-content">
+  <app-material-grid
+    [materialCategory]="requiredMaterials"
+    *ngIf="requiredMaterials && requiredMaterials.requiredMaterialArray?.length"
+  ></app-material-grid>
+  <div *ngFor="let category of alchemyCategories">
+    <app-consumable-grid [consumableCategory]="category"></app-consumable-grid>
+  </div>
+</div>

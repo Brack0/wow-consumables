@@ -9,17 +9,10 @@ const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'profession-old',
+    path: 'professions',
     loadChildren: () =>
-      import('./pages/profession-old/profession.module').then(
-        (m) => m.ProfessionModule
-      ),
-  },
-  {
-    path: 'profession',
-    loadChildren: () =>
-      import('./pages/profession/profession.module').then(
-        (m) => m.ProfessionModule
+      import('./pages/professions/professions.module').then(
+        (m) => m.ProfessionsModule
       ),
   },
   {

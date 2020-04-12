@@ -43,6 +43,8 @@ export class ProfessionRecipesComponent implements OnInit {
   }
 
   sortInCategories(materials: Material[]) {
+    this.professionCategories = {};
+    this.categories = [];
     for (const material of materials) {
       if (this.professionCategories[material.category]) {
         this.professionCategories[material.category].push(material);

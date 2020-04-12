@@ -10,7 +10,7 @@ export class ProfessionResolver implements Resolve<Profession> {
   resolve(route: ActivatedRouteSnapshot): Observable<Profession> {
     const professionParam = route.paramMap.get('profession');
 
-    const profession = Profession[professionParam.toUpperCase()];
+    const profession: Profession = Profession[professionParam.toUpperCase()];
     if (profession) {
       return of(profession);
     } else {

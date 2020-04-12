@@ -18,7 +18,7 @@ export const routes: Routes = [
     MatTabsModule,
     SharedModule,
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, AlchemyComponent, CookingComponent],
   declarations: [AlchemyComponent, CookingComponent],
 })
-export class ProfessionModule {}
+export class ProfessionOldModule {}

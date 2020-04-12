@@ -114,7 +114,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-lodash
+lodash-es
 MIT
 Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
 

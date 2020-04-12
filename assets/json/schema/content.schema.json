@@ -1,0 +1,29 @@
+{
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "expansionName": {
+      "type": "string"
+    },
+    "patch": {
+      "type": "string"
+    },
+    "releaseDate": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "$schema",
+    "expansionName",
+    "patch",
+    "releaseDate",
+    "url"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

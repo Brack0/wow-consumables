@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+.profession-nav {
+  position: sticky;
+  top: 25px;
+}
+
+.profession-nav-content {
+  margin: 25px;
+  width: 200px;
+  max-height: 75vh;
+  overflow: auto;
+}
+
+.mat-expansion-panel {
+  @include mat-elevation(0);
+}
+
+.mat-expansion-panel-header {
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+}

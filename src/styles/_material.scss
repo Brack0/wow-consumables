@@ -9,6 +9,7 @@
 @import '../app/shared/new-components/category/category-theme';
 @import '../app/shared/new-components/recipe/recipe-theme';
 @import '../app/pages/home/home-theme';
+@import '../app/pages/profession/components/profession-nav/profession-nav-theme';
 @import './custom-elements/h3-container-theme';
 
 // Styles for the app that are based on the current theme.
@@ -19,5 +20,6 @@
   @include category-theme($theme);
   @include recipe-theme($theme);
   @include home-theme($theme);
+  @include profession-nav-theme($theme);
   @include h3-container-theme($theme);
 }

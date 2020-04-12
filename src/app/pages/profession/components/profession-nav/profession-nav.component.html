@@ -1,0 +1,31 @@
+<div class="profession-nav">
+  <nav class="profession-nav-content">
+    <mat-accordion multi [displayMode]="'flat'">
+      <ng-container *ngFor="let profession of professions">
+        <mat-divider></mat-divider>
+        <mat-expansion-panel expanded>
+          <mat-expansion-panel-header
+            collapsedHeight="40px"
+            expandedHeight="40px"
+          >
+            {{ profession | titlecase }}
+          </mat-expansion-panel-header>
+          <mat-nav-list dense>
+            <a
+              mat-list-item
+              routerLink="/profession/{{ profession | lowercase }}/crafts"
+            >
+              Crafts
+            </a>
+            <a
+              mat-list-item
+              routerLink="/profession/{{ profession | lowercase }}/recipes"
+            >
+              Recipes
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </ng-container>
+    </mat-accordion>
+  </nav>
+</div>

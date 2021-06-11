@@ -1,6 +1,6 @@
 {
   "name": "wow-consumables",
-  "version": "1.0.0-bfa",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

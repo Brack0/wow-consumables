@@ -1,6 +1,6 @@
-# WowConsumables [![Build Status](https://travis-ci.org/Brack0/wow-consumables.svg?branch=master)](https://travis-ci.org/Brack0/wow-consumables)
+# WowConsumables [![Build Status](https://travis-ci.org/Brack0/wow-consumables.svg?branch=master)](https://travis-ci.org/Brack0/wow-consumables) [![Project Status](https://img.shields.io/badge/status-abandoned-red)]()
 
-_Edit (**May 2019**)_ : This is an Angular App (v8.0) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
+This is an Angular App (v9.0) for World of Warcraft content. There are many purpose for this app besides it's own utility, here are some of them : practice Angular, work by my own, share my experience on github, improve inherent skills (typescript, javascript, HTML5).
 
 The app is supposed to give the component people need in order to have consumables for raiding in wow.
 
@@ -8,30 +8,9 @@ The app is supposed to give the component people need in order to have consumabl
 >
 > _There are four types of consumables for raiding (flasks, food, potions and runes. Most of the guild will ask you to have at least flask and food. Runes are not craftable, food is obtainable by everyone (with cooking profession, and affordable at the auction house), flasks and potions require to be alchemist (not everyone can craft them and they are expensive to buy). The app should help people to plan orders to their favorite alchemist and cooker._
 
-## Project status
-
-There is currently only one documentation file :
-
-- _README.md_ : Github doc and basic info
-
-High level stuff planned :
-
-#### Tech
-
-- Angular 6.1 :heavy_check_mark:
-- Performance issues :heavy_check_mark:
-- Reset button :heavy_check_mark:
-- ~~Expansion/~~ Theme switch :heavy_check_mark:
-
-#### Content
-
-- New theme (Colors, icons, ...) :heavy_check_mark:
-- Battle for Azeroth professions data :heavy_check_mark:
-- New professions ?
-
 ## Angular CLI doc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.
 
 ## CI & Deployment
 
@@ -42,8 +21,6 @@ Deploy on GH pages : https://brack0.github.io/wow-consumables/
 ## Releases
 
 #### Battle for Azeroth :
-
-&nbsp;&nbsp;&nbsp;&nbsp;_Work in Progress_
 
 - [Source code (zip)](https://github.com/Brack0/wow-consumables/archive/bfa-release-src-v1.0.0.zip)
 - [Source code (tar.gz)](https://github.com/Brack0/wow-consumables/archive/bfa-release-src-v1.0.0.tar.gz)
